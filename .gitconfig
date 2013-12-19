@@ -1,0 +1,11 @@
+[user]
+	name = Chiel92
+	email = ctje92@gmail.com
+[diff]
+    tool = vimdiff
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	history-view-vpane-position = 139
+	file-view-vpane-position = 704
+	main-window-view = HistoryView
