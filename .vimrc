@@ -4,13 +4,13 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-" My Bundles here:
+" My Plugins here:
 "
 "
 " *******************************************************
@@ -18,73 +18,68 @@ Bundle 'gmarik/vundle'
 " ********************  collection  *********************
 " *******************                ********************
 " Syntax checker support
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " Advanced on the fly autocompletion
-"Bundle 'Chiel92/YouCompleteMe'
-Bundle 'Valloric/YouCompleteMe'
+"Plugin 'Chiel92/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 " Class browser
-Bundle "majutsushi/tagbar"
+Plugin 'majutsushi/tagbar'
 " Filetree browser
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " Autoformatting support
-Bundle 'Chiel92/vim-autoformat'
+Plugin 'Chiel92/vim-autoformat'
 " Snippet support
-Bundle 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 " Buffer explorer
- Bundle 'corntrace/bufexplorer'
+ Plugin 'corntrace/bufexplorer'
 " Fuzzy File Finder
-"Bundle 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 " Automatic tag file generator
-Bundle 'xolox/vim-easytags'
-Bundle 'xolox/vim-misc'
-Bundle 'tpope/vim-sensible'
-"Bundle 'tpope/vim-sleuth'
+"Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
+Plugin 'tpope/vim-sensible'
+"Plugin 'tpope/vim-sleuth'
 " *******************                ********************
 " ********************  collection  *********************
 " *********************   VIMIDE   **********************
 " *******************************************************
 "
 " Integrated debugger
-"Bundle 'jabapyth/vim-debug'
+"Plugin 'jabapyth/vim-debug'
 " Matchit
-Bundle 'edsono/vim-matchit'
+Plugin 'edsono/vim-matchit'
 " Surround
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " Extend repeat command functionality
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
 " Gitwrapper
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " Autoformatting for javascript
-Bundle 'einars/js-beautify'
+Plugin 'einars/js-beautify'
 " Solarized colorscheme for vim
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 " NERDCommenter
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 " Better HTML5 support
-Bundle 'othree/html5.vim'
-" Better C# compiler plugin
-Bundle 'Chiel92/vim-csharp-compiler-plugin'
+Plugin 'othree/html5.vim'
 " Coffee script support
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tomasr/molokai'
-Bundle 'kien/rainbow_parentheses.vim'
-" Haskell stuff
-Bundle 'bitc/vim-hdevtools'
-Bundle 'kana/vim-filetype-haskell'
-Bundle 'godlygeek/tabular'
-"Bundle 'frerich/unicode-haskell'
-"Bundle 'lukerandall/haskellmode-vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tomasr/molokai'
+Plugin 'kien/rainbow_parentheses.vim'
+" Tabularizing
+Plugin 'godlygeek/tabular'
 
-filetype plugin indent on     " required!
+call vundle#end()             " required
+filetype plugin indent on     " required
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" NOTE: comments after Plugin command are not allowed..
 
 "
 " *** OTHER CONFIGURATION ***
@@ -114,7 +109,7 @@ let mapleader = ","
 
 "set colorscheme to solarized
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 set t_Co=256
 
 au VimEnter * RainbowParenthesesToggle
