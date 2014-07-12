@@ -5,10 +5,11 @@ c() {
 
 # Some git aliases
 alias pull="git pull; git submodule update --recursive"
+alias push="git push"
 alias commit="git commit -a"
 
 # Misc aliases
-alias die="shutdown -h now"
+alias die="sudo shutdown -h now"
 alias open=gnome-open
 alias tmux="TERM=screen-256color-bce tmux"
 
