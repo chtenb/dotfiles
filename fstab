@@ -1,0 +1,25 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+proc            /proc           proc    nodev,noexec,nosuid 0       0
+# / was on /dev/sda7 during installation
+UUID=01fdd839-1677-4fe5-8911-a1e3ed5f0dc7 /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sda6 during installation
+UUID=9d944a38-0ebc-4b9e-814c-d42adfbf333f none            swap    sw              0       0
+
+
+#We want to have the data partition always mounted
+/dev/sda5	/media/Data	ntfs	defaults,user,exec,nls=utf8,umask=000,uid=1000	0	0
+
+#Now we will bind a few folders from the data partition in home
+#This allows ubuntu one to sync them
+#Besides it looks nice in home and we can easily access the folders
+/media/Data/Music			/home/chiel/Music		none	bind	0	0
+/media/Data/Documents		/home/chiel/Documents	none	bind	0	0
+/media/Data/www				/home/chiel/www			none	bind	0	0
+/media/Data/Projects		/home/chiel/Projects	none	bind	0	0
+/media/Data/Images			/home/chiel/Images		none	bind	0	0
