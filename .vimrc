@@ -86,8 +86,7 @@ filetype plugin indent on     " required
 "
 
 set number          " Absolute line numbering on current line
-set relativenumber  " Relative line numbering on other lines
-set undofile        " remember undo history
+set undofile        " Remember undo history
 set undodir=$HOME/.vimundo/ " set a directory to store the undo history
 set ignorecase      " Do case insensitive matching
 set smartcase       " Do smart case matching
@@ -107,10 +106,10 @@ set list
 
 let mapleader = ","
 
-"set colorscheme to solarized
+" Color settings
 set background=dark
 "colorscheme solarized
-set t_Co=256
+"set t_Co=256
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -122,8 +121,10 @@ noremap <F2> :BufExplorer<CR>
 "Autoformat code
 noremap <F3> :Autoformat<CR><CR>
 "Compile
-"noremap <F4> :<C-U>silent make<CR>:redraw!<CR>
-nnoremap <F4> :w<CR>:make<CR>:redraw!<CR>
+"noremap <F5> :<C-U>silent make<CR>:redraw!<CR>
+nnoremap <F5> :w<CR>:make<CR>:redraw!<CR>
+" Decent save shortcut
+nnoremap <C-s> :w<CR>
 " Disable ex mode, it's useless and annoying. Map Q to format instead.
 nnoremap Q gq
 " Let's make it easy to edit this file
@@ -136,9 +137,11 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap Y y$
 
 let g:UltiSnipsExpandTrigger="<c-j>"
-let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1 "Not working ??
 let g:ycm_filetype_blacklist = {}
 
 let g:ycm_csharp_server_stdout_logfile_format = "~/omnisharp_stdout_log_{port}"
@@ -183,7 +186,9 @@ au FileType coffee setl shiftwidth=2
 au FileType python set textwidth=140
 
 autocmd FileType tex set makeprg=pdflatex\ %
+autocmd FileType tex filetype indent off
 
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': ['coffee'] }
+let g:syntastic_python_python_exec = 'python3.3'
