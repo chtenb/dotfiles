@@ -22,3 +22,5 @@ vim()
     command vim "$@"
     stty "$STTYOPTS"
 }
+
+# Enable colors
