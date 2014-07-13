@@ -5,21 +5,20 @@
 # that works even if disks are added and removed. See fstab(5).
 #
 # <file system> <mount point>   <type>  <options>       <dump>  <pass>
-proc            /proc           proc    nodev,noexec,nosuid 0       0
-# / was on /dev/sda7 during installation
-UUID=01fdd839-1677-4fe5-8911-a1e3ed5f0dc7 /               ext4    errors=remount-ro 0       1
-# swap was on /dev/sda6 during installation
-UUID=9d944a38-0ebc-4b9e-814c-d42adfbf333f none            swap    sw              0       0
+# / was on /dev/sda6 during installation
+UUID=9976f40b-66a4-406f-ba47-bf25a0010e58 /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/sda2 during installation
+UUID=94F7-DADD  /boot/efi       vfat    defaults        0       1
+# swap was on /dev/sda7 during installation
+UUID=36592c69-ceb8-4ac2-ba9c-b9b8e1820b0d none            swap    sw              0       0
 
 
-#We want to have the data partition always mounted
-/dev/sda5	/media/Data	ntfs	defaults,user,exec,nls=utf8,umask=000,uid=1000	0	0
+# We want to have the data partition always mounted
+/dev/sda5   /media/Data ntfs    defaults,user,exec,nls=utf8,umask=000,uid=1000  0   0
 
-#Now we will bind a few folders from the data partition in home
-#This allows ubuntu one to sync them
-#Besides it looks nice in home and we can easily access the folders
-/media/Data/Music			/home/chiel/Music		none	bind	0	0
-/media/Data/Documents		/home/chiel/Documents	none	bind	0	0
-/media/Data/www				/home/chiel/www			none	bind	0	0
-/media/Data/Projects		/home/chiel/Projects	none	bind	0	0
-/media/Data/Images			/home/chiel/Images		none	bind	0	0
+# Now we will bind a few folders from the data partition in home for easy access
+/media/Data/Dropbox    /home/chiel/Dropbox     none    bind    0   0
+/media/Data/Music      /home/chiel/Music       none    bind    0   0
+/media/Data/Documents  /home/chiel/Documents   none    bind    0   0
+/media/Data/Pictures   /home/chiel/Pictures    none    bind    0   0
+
