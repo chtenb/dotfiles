@@ -1,6 +1,8 @@
 [user]
 	name = Chiel92
 	email = ctje92@gmail.com
+[core]
+	editor = vim
 [diff]
     tool = vimdiff
 [giggle]

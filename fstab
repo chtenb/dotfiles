@@ -17,8 +17,8 @@ UUID=36592c69-ceb8-4ac2-ba9c-b9b8e1820b0d none            swap    sw            
 /dev/sda5   /media/Data ntfs    defaults,user,exec,nls=utf8,umask=000,uid=1000  0   0
 
 # Now we will bind a few folders from the data partition in home for easy access
-/media/Data/Dropbox    /home/chiel/Dropbox     none    bind    0   0
-/media/Data/Music      /home/chiel/Music       none    bind    0   0
-/media/Data/Documents  /home/chiel/Documents   none    bind    0   0
-/media/Data/Pictures   /home/chiel/Pictures    none    bind    0   0
+/media/Data/Dropbox            /home/chiel/Dropbox     none    bind    0   0
+/media/Data/Dropbox/Music      /home/chiel/Music       none    bind    0   0
+/media/Data/Dropbox/Documents  /home/chiel/Documents   none    bind    0   0
+/media/Data/Dropbox/Pictures   /home/chiel/Pictures    none    bind    0   0
 
