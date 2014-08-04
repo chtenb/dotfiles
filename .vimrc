@@ -191,4 +191,4 @@ autocmd FileType tex filetype indent off
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': ['coffee'] }
-let g:syntastic_python_python_exec = 'python3.3'
+let g:syntastic_python_python_exec = 'python3'
