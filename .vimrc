@@ -30,6 +30,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Chiel92/vim-autoformat'
 " Snippet support
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 " Buffer explorer
  Plugin 'corntrace/bufexplorer'
 " Fuzzy File Finder
@@ -116,6 +117,8 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+"Disable annoying help
+noremap <F1> <Esc>
 "Open bufferexplorer
 noremap <F2> :BufExplorer<CR>
 "Autoformat code
