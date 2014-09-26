@@ -8,7 +8,7 @@
 # / was on /dev/sda6 during installation
 UUID=9976f40b-66a4-406f-ba47-bf25a0010e58 /               ext4    errors=remount-ro 0       1
 # /boot/efi was on /dev/sda2 during installation
-UUID=94F7-DADD  /boot/efi       vfat    defaults        0       1
+#UUID=94F7-DADD  /boot/efi       vfat    defaults        0       1
 # swap was on /dev/sda7 during installation
 UUID=36592c69-ceb8-4ac2-ba9c-b9b8e1820b0d none            swap    sw              0       0
 
@@ -22,3 +22,4 @@ UUID=36592c69-ceb8-4ac2-ba9c-b9b8e1820b0d none            swap    sw            
 /media/Data/Dropbox/Documents  /home/chiel/Documents   none    bind    0   0
 /media/Data/Dropbox/Pictures   /home/chiel/Pictures    none    bind    0   0
 
+UUID=94F7-DADD	/boot/efi	vfat	defaults	0	1

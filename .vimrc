@@ -69,6 +69,9 @@ Plugin 'tomasr/molokai'
 Plugin 'kien/rainbow_parentheses.vim'
 " Tabularizing
 Plugin 'godlygeek/tabular'
+" Colorscheme
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -107,18 +110,15 @@ set list
 
 let mapleader = ","
 
-" Color settings
-set background=dark
-"colorscheme solarized
-"set t_Co=256
-
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 "Disable annoying help
-noremap <F1> <Esc>
+nnoremap <F1> <Esc>
+inoremap <F1> <Esc>
+vnoremap <F1> <Esc>
 "Open bufferexplorer
 noremap <F2> :BufExplorer<CR>
 "Autoformat code
@@ -154,6 +154,11 @@ let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 " Easytags shouldn't show updatetime warning
 let g:easytags_updatetime_warn = 0
 
+" Color settings
+set background=dark
+"colorscheme solarized
+"set t_Co=256
+
 "Some settings for the GUI
 if has("gui_running")
     "disable scrollbars
@@ -165,6 +170,9 @@ if has("gui_running")
     set guioptions-=m
     "Disable all cursor blinking:
     set guicursor+=a:blinkon0
+    colorscheme base16-ashes
+    " Convenient fontsize
+    set guifont=Monospace\ 11
 endif
 
 " Return to last edit position when opening files (You want this!)
