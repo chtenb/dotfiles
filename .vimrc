@@ -197,7 +197,9 @@ au FileType coffee setl shiftwidth=2
 au FileType python set textwidth=140
 
 autocmd FileType tex set makeprg=pdflatex\ %
-autocmd FileType tex filetype indent off
+autocmd BufRead,BufNewFile *.tex filetype indent off
+"autocmd BufEnter echo &ft
+"autocmd FileType tex set autoindent
 
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'active_filetypes': [],
