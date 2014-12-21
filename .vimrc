@@ -72,6 +72,8 @@ Plugin 'godlygeek/tabular'
 " Colorscheme
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'chriskempson/base16-vim'
+" Cython
+Plugin 'tshirtman/vim-cython'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -146,6 +148,7 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:ycm_autoclose_preview_window_after_insertion = 1 "Not working ??
 let g:ycm_filetype_blacklist = {}
+let g:ycm_confirm_extra_conf = 0
 
 let g:ycm_csharp_server_stdout_logfile_format = "~/omnisharp_stdout_log_{port}"
 let g:ycm_csharp_server_stderr_logfile_format = "~/omnisharp_stderr_log_{port}"
@@ -198,6 +201,8 @@ au FileType python set textwidth=140
 
 autocmd FileType tex set makeprg=pdflatex\ %
 autocmd BufRead,BufNewFile *.tex filetype indent off
+"autocmd FileType tex nnoremap <F6> :!pdflatex %<cr><cr>
+autocmd FileType tex nnoremap <F6> :!pdflatex %;bibtex %:r.aux;pdflatex %;pdflatex %<cr><cr>
 "autocmd BufEnter echo &ft
 "autocmd FileType tex set autoindent
 

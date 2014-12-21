@@ -3,8 +3,6 @@
 	email = ctje92@gmail.com
 [core]
 	editor = vim
-[diff]
-    tool = vimdiff
 [giggle]
 	main-window-maximized = true
 	main-window-geometry = 0x0+0+0
@@ -13,3 +11,5 @@
 	main-window-view = HistoryView
 [push]
 	default = matching
+[credential]
+	helper = cache

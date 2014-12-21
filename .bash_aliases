@@ -3,6 +3,9 @@ c() {
     ls -a
 }
 
+# Prevent gvim from print annoying error message
+alias gvim="gvim 2> /dev/null"
+
 # Some git aliases
 alias pull="git pull; git submodule update --recursive"
 alias push="git push"
