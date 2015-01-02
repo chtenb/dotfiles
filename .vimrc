@@ -213,3 +213,8 @@ let g:syntastic_python_python_exec = 'python3'
 
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 
+" TEST
+function s:Meowf(par)
+    echom a:par
+endfunction
+command! -nargs=1 Meow call s:Meowf(<f-args>)
