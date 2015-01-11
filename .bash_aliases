@@ -32,3 +32,5 @@ then
     TERM=xterm-256color
 fi
 
+# Add local bin directory to path
+PATH=$PATH:~/bin

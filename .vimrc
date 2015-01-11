@@ -32,7 +32,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Buffer explorer
- Plugin 'corntrace/bufexplorer'
+Plugin 'corntrace/bufexplorer'
 " Fuzzy File Finder
 "Plugin 'kien/ctrlp.vim'
 " Automatic tag file generator
@@ -74,6 +74,8 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'chriskempson/base16-vim'
 " Cython
 Plugin 'tshirtman/vim-cython'
+
+Plugin 'dsawardekar/wordpress.vim'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -180,9 +182,9 @@ endif
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
 
 " FILETYPE SPECIFIC STUFF
 
