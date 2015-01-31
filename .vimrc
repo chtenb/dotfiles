@@ -75,8 +75,6 @@ Plugin 'chriskempson/base16-vim'
 " Cython
 Plugin 'tshirtman/vim-cython'
 
-Plugin 'dsawardekar/wordpress.vim'
-
 call vundle#end()             " required
 filetype plugin indent on     " required
 "
@@ -203,7 +201,6 @@ au FileType python set textwidth=140
 
 autocmd FileType tex set makeprg=pdflatex\ %
 autocmd BufRead,BufNewFile *.tex filetype indent off
-"autocmd FileType tex nnoremap <F6> :!pdflatex %<cr><cr>
 autocmd FileType tex nnoremap <F6> :!pdflatex %;bibtex %:r.aux;pdflatex %;pdflatex %<cr><cr>
 "autocmd BufEnter echo &ft
 "autocmd FileType tex set autoindent
@@ -215,8 +212,8 @@ let g:syntastic_python_python_exec = 'python3'
 
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 
-" TEST
-function s:Meowf(par)
-    echom a:par
-endfunction
-command! -nargs=1 Meow call s:Meowf(<f-args>)
+let g:NERDCustomDelimiters = {
+    \ 'html': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/' },
+    \ 'xhtml': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/'}, 
+    \}
+let NERD_html_alt_style=1
