@@ -196,8 +196,9 @@ au FileType cs compiler xbuild
 autocmd BufRead,BufNewFile *.sage set filetype=python
 autocmd BufRead,BufNewFile *.sage set makeprg=sage\ --preparse\ %
 
+au FileType python set textwidth=90
+
 au FileType coffee setl shiftwidth=2
-au FileType python set textwidth=140
 
 autocmd FileType tex set makeprg=pdflatex\ %
 autocmd BufRead,BufNewFile *.tex filetype indent off
