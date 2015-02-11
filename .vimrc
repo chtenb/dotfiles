@@ -184,7 +184,11 @@ autocmd BufReadPost *
             \   exe "normal! g`\"" |
             \ endif
 
+
+"
 " FILETYPE SPECIFIC STUFF
+"
+
 
 au FileType haskell nnoremap <buffer> <F3> :Tab /^[^=]*\zs=<CR>
 au FileType haskell nnoremap <buffer> <F5> :HdevtoolsType<CR>
@@ -203,8 +207,7 @@ au FileType coffee setl shiftwidth=2
 autocmd FileType tex set makeprg=pdflatex\ %
 autocmd BufRead,BufNewFile *.tex filetype indent off
 autocmd FileType tex nnoremap <F6> :!pdflatex %;bibtex %:r.aux;pdflatex %;pdflatex %<cr><cr>
-"autocmd BufEnter echo &ft
-"autocmd FileType tex set autoindent
+au FileType tex set textwidth=90
 
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'active_filetypes': [],
