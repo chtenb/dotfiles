@@ -1,6 +1,7 @@
 "
 " *** VUNDLE CONFIGURATION ***
 "
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
@@ -10,9 +11,6 @@ call vundle#begin()
 " required!
 Plugin 'gmarik/vundle'
 
-" My Plugins here:
-"
-"
 " *******************************************************
 " *********************   VIMIDE   **********************
 " ********************  collection  *********************
@@ -74,18 +72,11 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'chriskempson/base16-vim'
 " Cython
 Plugin 'tshirtman/vim-cython'
+" TypeScript
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
-"
-" Brief help
-" :PluginList          - list configured bundles
-" :PluginInstall(!)    - install(update) bundles
-" :PluginSearch(!) foo - search(or refresh cache first) for foo
-" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Plugin command are not allowed..
 
 "
 " *** OTHER CONFIGURATION ***
@@ -137,7 +128,7 @@ nmap <silent> ,ev :e $MYVIMRC<cr>
 " And to source this file as well
 nmap <silent> ,sv :so $MYVIMRC<cr>
 " Easily use YCM's goto definition command
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Give Y a sane meaning
 nnoremap Y y$
 
@@ -184,11 +175,18 @@ autocmd BufReadPost *
             \   exe "normal! g`\"" |
             \ endif
 
+"autocmd InsertLeave,TextChanged * if expand('%') != '' | Autoformat | endif
+"autocmd InsertLeave,TextChanged * Autoformat
 
 "
 " FILETYPE SPECIFIC STUFF
 "
+set autoindent
+set nocindent
+set nosmartindent
 
+let g:formatprg_typescript = "tsfmt"
+let g:formatprg_args_expr_typescript = '"%"'
 
 au FileType haskell nnoremap <buffer> <F3> :Tab /^[^=]*\zs=<CR>
 au FileType haskell nnoremap <buffer> <F5> :HdevtoolsType<CR>
@@ -200,14 +198,15 @@ au FileType cs compiler xbuild
 autocmd BufRead,BufNewFile *.sage set filetype=python
 autocmd BufRead,BufNewFile *.sage set makeprg=sage\ --preparse\ %
 
-au FileType python set textwidth=90
+au FileType python set textwidth=95
+au FileType markdown set textwidth=95
 
 au FileType coffee setl shiftwidth=2
 
 autocmd FileType tex set makeprg=pdflatex\ %
-autocmd BufRead,BufNewFile *.tex filetype indent off
+autocmd FileType tex set indentexpr=
+autocmd FileType tex set indentkeys=
 autocmd FileType tex nnoremap <F6> :!pdflatex %;bibtex %:r.aux;pdflatex %;pdflatex %<cr><cr>
-au FileType tex set textwidth=90
 
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'active_filetypes': [],
@@ -217,7 +216,7 @@ let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 
 let g:NERDCustomDelimiters = {
-    \ 'html': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/' },
-    \ 'xhtml': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/'}, 
-    \}
+            \ 'html': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/' },
+            \ 'xhtml': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/'}, 
+            \}
 let NERD_html_alt_style=1

@@ -1,7 +1,11 @@
+# Fast dir crawling
 c() {
     cd "$1"
     ls -a
 }
+
+# Ping google server
+alias pingg="ping google.nl"
 
 # Prevent gvim from print annoying error message
 alias gvim="gvim 2> /dev/null"
