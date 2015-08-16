@@ -38,6 +38,7 @@ Plugin 'corntrace/bufexplorer'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-sensible'
 "Plugin 'tpope/vim-sleuth'
+Plugin 'bling/vim-airline'
 " *******************                ********************
 " ********************  collection  *********************
 " *********************   VIMIDE   **********************
@@ -115,7 +116,7 @@ vnoremap <F1> <Esc>
 "Open bufferexplorer
 noremap <F2> :BufExplorer<CR>
 "Autoformat code
-noremap <F3> :Autoformat<CR><CR>
+noremap <F3> :Autoformat<CR>
 "Compile
 "noremap <F5> :<C-U>silent make<CR>:redraw!<CR>
 nnoremap <F5> :w<CR>:make<CR>:redraw!<CR>
@@ -185,8 +186,21 @@ set autoindent
 set nocindent
 set nosmartindent
 
-let g:formatprg_typescript = "tsfmt"
-let g:formatprg_args_expr_typescript = '"%"'
+autocmd BufRead,BufNewFile *.ma set filetype=ma
+
+let g:formatterpath = ['/home/chiel/formatters']
+let g:formatdef_greeter = '"greeter"'
+"let g:formatters_py_hi = ['greeter']
+
+autocmd BufRead,BufNewFile *.go set filetype=go
+
+autocmd BufWrite *.js :Autoformat
+"let g:autoformat_verbosemode = 1
+"let g:formatprg_args_expr_javascript = '"-".(&expandtab ? "s ".&shiftwidth : "t").(&textwidth ? " -w ".&textwidth : "")." -"'
+let g:formatdef_test = '"asdf"'
+let g:formatdef_another_autopep8 = '"autopep8 - --indent-size 2 ".(&textwidth ? "--max-line-length=".&textwidth : "")'
+
+
 
 au FileType haskell nnoremap <buffer> <F3> :Tab /^[^=]*\zs=<CR>
 au FileType haskell nnoremap <buffer> <F5> :HdevtoolsType<CR>
@@ -198,15 +212,16 @@ au FileType cs compiler xbuild
 autocmd BufRead,BufNewFile *.sage set filetype=python
 autocmd BufRead,BufNewFile *.sage set makeprg=sage\ --preparse\ %
 
-au FileType python set textwidth=95
+"au FileType python set textwidth=95
 au FileType markdown set textwidth=95
 
 au FileType coffee setl shiftwidth=2
 
+autocmd BufRead,BufNewFile *.tex set filetype=tex
 autocmd FileType tex set makeprg=pdflatex\ %
 autocmd FileType tex set indentexpr=
 autocmd FileType tex set indentkeys=
-autocmd FileType tex nnoremap <F6> :!pdflatex %;bibtex %:r.aux;pdflatex %;pdflatex %<cr><cr>
+autocmd FileType tex nnoremap <F6> :!bash compile.sh<cr><cr>
 
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'active_filetypes': [],
@@ -217,6 +232,7 @@ let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indent
 
 let g:NERDCustomDelimiters = {
             \ 'html': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/' },
-            \ 'xhtml': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/'}, 
+            \ 'xhtml': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/'},
+            \ 'ma': { 'left': '#' }
             \}
 let NERD_html_alt_style=1
