@@ -3,64 +3,79 @@ use warnings;
 use feature qw(switch);
 no warnings 'experimental::smartmatch';
 
+sub writeline {
+    print ((join ', ', @_) ."\n");
+}
+
+sub help {
+    writeline 'USAGE: replace <FIND_PATTERN> <SUBSTITUTE_PATTERN> <FILES|DIRECTORIES> [including <PATTERNS>] [exluding <PATTERNS>] [now]';
+    writeline '';
+    writeline 'The patterns are treated as Perl regex patterns and the files and directory patterns are treated like the corresponding grep arguments.';
+    writeline 'If the "now" flag is not given, replace will run in dry mode';
+    writeline '';
+    writeline 'EXAMPLE: replace "number:(\d)" "digit:$1" . ../libs including "*.c" "*.h" excluding "../libs/*.h" now';
+    exit 0;
+}
+
+if ($ARGV[0] ~~ ['help', '--help', '-h']) { help; }
+
 # Configuration parameters
-my $expr = $ARGV[0];
-my $subst;
-my $dir;
-my @include;
-my @exclude;
+my $find = $ARGV[0];
+my $subst = $ARGV[1];
+my @where = ();
+my @include = ();
+my @exclude = ();
 my $dry = 1;
 
 # Retrieve config from commandline arguments
-for my $i (1 .. $#ARGV) {
-    my $command = $ARGV[$i];
+my $current_command = \@where;
+for my $i (2 .. $#ARGV) {
+    my $arg = $ARGV[$i];
 
-    if($command eq 'now') {
-        $dry = 0;
-        next;
+    given($arg) {
+        when('now') { $dry = 0; next; }
+        when('including') { $current_command = \@include; next; }
+        when('excluding') { $current_command = \@exclude; next; }
     }
 
-    my $argument = $ARGV[$i+1];
+    push @$current_command, $arg;
+}
 
-    given($command) {
-        when('with') { $subst = $argument; }
-        when('in') { $dir = $argument; }
-        when('including') { push @include, $argument; }
-        when('excluding') { push @exclude, $argument; }
-    }
+if (not $find or not $subst or not @where) {
+    writeline 'Invalid arguments.';
+    writeline '';
+    help;
 }
 
 my $escaped_include = join ' ', map { sprintf "--include=%s", quotemeta $_ } @include;
 my $escaped_exclude = join ' ', map { sprintf "--exclude=%s", quotemeta $_ } @exclude;
-my $escaped_expr = quotemeta $expr;
+my $escaped_where = join ' ', map { quotemeta $_ } @where;
+my $escaped_expr = quotemeta $find;
 my $escaped_subst = quotemeta $subst;
-my $escaped_dir = quotemeta $dir;
 
-print "Input interpretation: replace $escaped_expr with $escaped_subst in $escaped_dir $escaped_include $escaped_exclude\n";
+writeline "Input interpretation: replace $escaped_expr with $escaped_subst in $escaped_where $escaped_include $escaped_exclude";
 
 # Do shit
 if ($dry) {
-    my $grep_command = "grep --color=always -rHP $escaped_expr $escaped_dir $escaped_include $escaped_exclude";
+    my $grep_command = "grep --color=always -rHP $escaped_expr $escaped_where $escaped_include $escaped_exclude";
+    writeline "Grep command: $grep_command";
     my $grep_out = `$grep_command`;
-    #print "$grep_out\n";
     my @lines = split('\n', $grep_out);
-    #print "@lines\n";
 
     for my $line (@lines) {
         # Retrieve grep info
         my ($file, @text) = split /\:/, $line;
-        print "$file\n";
+        writeline $file;
         my $text = join '', @text;
-        print "   $text\n";
+        writeline "OLD: $text";
 
         # Substitute and print
-        $text =~ s/$expr/$subst/g;
-        print "-->$text\n";
+        $text =~ s/$find/$subst/g;
+        writeline "NEW: $text";
     }
 }
 else {
-    my $grep_command = "grep -rlP $escaped_expr $escaped_dir $escaped_include $escaped_exclude";
-    my $files = `$grep_command`;
-    my $result = `perl -pi -e "s/$expr/$subst/g" $files`;
-    print $result;
+    my $grep_command = "grep -rlP $escaped_expr $escaped_where $escaped_include $escaped_exclude";
+    my @files = `$grep_command`;
+    exec 'perl', '-pi', '-e', "s/$find/$subst/g", @files;
 }
