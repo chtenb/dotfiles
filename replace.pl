@@ -2,9 +2,16 @@ use strict;
 use warnings;
 use feature qw(switch);
 no warnings 'experimental::smartmatch';
-use Term::ANSIColor;
-use Term::ANSIColor 2.01 qw(colorstrip);
 
+
+# Colors
+use Term::ANSIColor;
+my $magenta = color('magenta');
+my $red = color('red');
+my $reset = color('reset');
+
+
+# Utilities
 sub writeline { print ((join ' ', @_) ."\n"); }
 
 sub help {
@@ -18,6 +25,7 @@ sub help {
 }
 
 if ($ARGV[0] ~~ ['help', '--help', '-h']) { help; }
+
 
 # Configuration parameters
 my $find = $ARGV[0];
@@ -57,43 +65,37 @@ my $escaped_where = join ' ', map { quotemeta $_ } @where;
 writeline "Input interpretation: replace $escaped_find with $escaped_subst in $escaped_where $escaped_include $escaped_exclude";
 
 
-# Do shit
+# Do the actual shit
 if ($dry) {
     my $grep_command = "grep -rHP $escaped_find $escaped_where $escaped_include $escaped_exclude";
-    writeline "Grep command: $grep_command";
+    writeline "Grep search command: $grep_command";
     my $grep_out = `$grep_command`;
-    writeline $grep_out;
-    my @lines = split('\n', $grep_out);
 
-
+    # Process grep output per line
+    my @lines = split("\n", $grep_out);
     for my $line (@lines) {
-        # Retrieve grep info
-        my ($file, @text) = split /\:/, $line;
-
-        print color('magenta');
-        writeline colorstrip($file);
-        print color('reset');
-
-        #print color('cyan');
-        #writeline 'Patterns', $find, $subst;
-        #print color('reset');
-
+        # Chop down grep output
+        my ($file, @text) = split ':', $line;
         my $text = join ':', @text;
+
+        # Print everything in nice highlighting
+        writeline "$magenta$file$reset";
+
         my $printvar;
-        my $red = color('red');
-        my $reset = color('reset');
-        ($printvar = $text) =~ s/($find)/$red$1$reset/;
+        ($printvar = $text) =~ s/$find/$red$&$reset/g;
         writeline "OLD: $printvar";
 
-        $text =~ s/$find/qq("$red$subst$reset")/gee;
-        writeline "NEW: $text";
+        ($printvar = $text) =~ s/$find/qq("$red$subst$reset")/gee;
+        writeline "NEW: $printvar";
     }
 }
 else {
     my $grep_command = "grep -rlP $escaped_find $escaped_where $escaped_include $escaped_exclude";
-    my @files = `$grep_command`;
-    my $files = (join ' ', (map quotemeta, (split "\n", (join '', @files))));
-    my $perl_command = "perl -pi -e 's/$find/$subst/g' $files";
+    my $files = `$grep_command`;
+    $files = join ' ', (map quotemeta, (split "\n", $files));
+    my $perl_command = "perl -p -e 's/$find/$subst/g' $files";
     writeline 'Perl replacement command: ', $perl_command;
-    `$perl_command`;
+    print `$perl_command`;
+    writeline 'Replacements successful';
 }
+
