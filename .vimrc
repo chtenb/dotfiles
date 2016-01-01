@@ -29,6 +29,8 @@ Plugin 'Chiel92/vim-autoformat'
 " Snippet support
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+" Easy motion
+Plugin 'easymotion/vim-easymotion'
 " Buffer explorer
 Plugin 'corntrace/bufexplorer'
 " Fuzzy File Finder
@@ -75,6 +77,8 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'tshirtman/vim-cython'
 " TypeScript
 Plugin 'leafgarland/typescript-vim'
+" Kivy
+Plugin 'farfanoide/vim-kivy'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -133,6 +137,43 @@ nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Give Y a sane meaning
 nnoremap Y y$
 
+
+
+
+
+
+:command! RemoveTrailingSpaces %s/\s\+$
+
+
+" Easy motion
+" Require tpope/vim-repeat to enable dot repeat support
+" Jump to anywhere with only `ss{char}{target}`
+" `ss<CR>` repeat last find motion.
+nmap ss <Plug>(easymotion-s)
+map S <Plug>(easymotion-s2)
+
+map sl <Plug>(easymotion-lineforward)
+map sj <Plug>(easymotion-j)
+map sk <Plug>(easymotion-k)
+map sh <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+ " type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+" Smartsign (type `3` and match `3`&`#`)
+let g:EasyMotion_use_smartsign_us = 1
+
+
+
+
+
+
+
+
+
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_complete_in_comments = 1
@@ -187,20 +228,9 @@ set nocindent
 set nosmartindent
 
 autocmd BufRead,BufNewFile *.ma set filetype=ma
-
-let g:formatterpath = ['/home/chiel/formatters']
-let g:formatdef_greeter = '"greeter"'
-"let g:formatters_py_hi = ['greeter']
-
 autocmd BufRead,BufNewFile *.go set filetype=go
 
-autocmd BufWrite *.js :Autoformat
 "let g:autoformat_verbosemode = 1
-"let g:formatprg_args_expr_javascript = '"-".(&expandtab ? "s ".&shiftwidth : "t").(&textwidth ? " -w ".&textwidth : "")." -"'
-let g:formatdef_test = '"asdf"'
-let g:formatdef_another_autopep8 = '"autopep8 - --indent-size 2 ".(&textwidth ? "--max-line-length=".&textwidth : "")'
-
-
 
 au FileType haskell nnoremap <buffer> <F3> :Tab /^[^=]*\zs=<CR>
 au FileType haskell nnoremap <buffer> <F5> :HdevtoolsType<CR>
@@ -212,8 +242,9 @@ au FileType cs compiler xbuild
 autocmd BufRead,BufNewFile *.sage set filetype=python
 autocmd BufRead,BufNewFile *.sage set makeprg=sage\ --preparse\ %
 
-"au FileType python set textwidth=95
+au FileType python set textwidth=90
 au FileType markdown set textwidth=95
+au FileType kv set textwidth=0
 
 au FileType coffee setl shiftwidth=2
 
@@ -227,7 +258,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': ['coffee'] }
 let g:syntastic_python_python_exec = 'python3'
-
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 
 let g:NERDCustomDelimiters = {
