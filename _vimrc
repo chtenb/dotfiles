@@ -105,6 +105,7 @@ set mouse=a         " Enable mouse usage (all modes)
 set lazyredraw      " Don't update the display while executing macros
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " Makes CtrlP faster
 set gdefault        " auto g flag for substitution
+set autochdir       " Autochange working directory when opening new file
 syntax on
 set softtabstop=4
 set tabstop=4
@@ -123,32 +124,19 @@ au Syntax * RainbowParenthesesLoadBraces
 
 
 " Easy motion
-nmap s <Plug>(easymotion-s2)
-nmap t <Plug>(easymotion-t2)
+" Require tpope/vim-repeat to enable dot repeat support
+" Jump to anywhere with only `ss{char}{target}`
+" `ss<CR>` repeat last find motion.
+nmap ss <Plug>(easymotion-s)
+map S <Plug>(easymotion-s2)
 
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-
-" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
-" Without these mappings, `n` & `N` works fine. (These mappings just provide
-" different highlight method and have some other features )
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
-" Gif config
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
+map sl <Plug>(easymotion-lineforward)
+map sj <Plug>(easymotion-j)
+map sk <Plug>(easymotion-k)
+map sh <Plug>(easymotion-linebackward)
 
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
-" Require tpope/vim-repeat to enable dot repeat support
-" Jump to anywhere with only `s{char}{target}`
-" `s<CR>` repeat last find motion.
-nmap s <Plug>(easymotion-s)
-" Bidirectional & within line 't' motion
-omap t <Plug>(easymotion-bd-tl)
 " Use uppercase target labels and type as a lower case
 let g:EasyMotion_use_upper = 1
  " type `l` and match `l`&`L`
@@ -260,7 +248,7 @@ au FileType cs compiler xbuild
 autocmd BufRead,BufNewFile *.sage set filetype=python
 autocmd BufRead,BufNewFile *.sage set makeprg=sage\ --preparse\ %
 
-"au FileType python set textwidth=95
+au FileType python set textwidth=95
 au FileType markdown set textwidth=95
 
 au FileType coffee setl shiftwidth=2
@@ -285,3 +273,7 @@ let g:NERDCustomDelimiters = {
             \}
 let NERD_html_alt_style=1
 
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = ['perl']
+
+let g:syntastic_lua_checkers = ['luacheck']
