@@ -93,7 +93,7 @@ else {
     my $grep_command = "grep -rlP $escaped_find $escaped_where $escaped_include $escaped_exclude";
     my $files = `$grep_command`;
     $files = join ' ', (map quotemeta, (split "\n", $files));
-    my $perl_command = "perl -p -e 's/$find/$subst/g' $files";
+    my $perl_command = "perl -p -i -e 's/$find/$subst/g' $files";
     writeline 'Perl replacement command: ', $perl_command;
     print `$perl_command`;
     writeline 'Replacements successful';
