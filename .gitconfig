@@ -1,15 +1,17 @@
 [user]
-	name = Chiel92
-	email = ctje92@gmail.com
+    name = Chiel ten Brinke
+    email = ctje92@gmail.com
 [core]
-	editor = vim
+    editor = vim
 [giggle]
-	main-window-maximized = true
-	main-window-geometry = 0x0+0+0
-	history-view-vpane-position = 139
-	file-view-vpane-position = 704
-	main-window-view = HistoryView
+    main-window-maximized = true
+    main-window-geometry = 0x0+0+0
+    history-view-vpane-position = 139
+    file-view-vpane-position = 704
+    main-window-view = HistoryView
 [push]
-	default = matching
+    default = simple
 [credential]
-	helper = cache
+    helper = cache
+[fetch]
+    recurseSubmodules = true
