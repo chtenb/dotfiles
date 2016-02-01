@@ -13,9 +13,10 @@ my $reset = color('reset');
 
 
 sub help {
-    say 'USAGE: replace <FIND_PATTERN> <SUBSTITUTE_PATTERN> <FILES|DIRECTORIES> [including <PATTERNS>] [excluding <PATTERNS>] [now]';
+    say 'USAGE: replace <FIND_PATTERN> <SUBSTITUTE_PATTERN> [<FILES|DIRECTORIES>] [including <PATTERNS>] [excluding <PATTERNS>] [now]';
     say;
     say 'The patterns are treated as Perl regex patterns and the files and directory patterns are treated like the corresponding grep arguments.';
+    say 'If no files or directories are given, these default to the current working directory';
     say 'If the "now" flag is not given, replace will run in dry mode';
     say;
     say 'EXAMPLE: replace "number:(\d)" "digit:$1" . ../libs including "*.c" "*.h" excluding "../libs/*.h" now';
@@ -46,7 +47,11 @@ for my $arg (@ARGV) {
     push @$current_command, $arg;
 }
 
-if (not $find or not $subst or not @where) {
+if (not @where) {
+    push @where, '.';
+}
+
+if (not $find or not $subst) {
     say 'Invalid arguments.';
     say;
     help;
@@ -63,7 +68,7 @@ say "Input interpretation: replace $escaped_find with $escaped_subst in $escaped
 
 # Do the actual shit
 if ($dry) {
-    my $grep_command = "grep -rHP $escaped_find $escaped_where $escaped_include $escaped_exclude";
+    my $grep_command = "grep -rIHP $escaped_find $escaped_where $escaped_include $escaped_exclude";
     say "Grep search command: $grep_command";
     my $grep_out = `$grep_command`;
 
@@ -86,7 +91,7 @@ if ($dry) {
     }
 }
 else {
-    my $grep_command = "grep -rlP $escaped_find $escaped_where $escaped_include $escaped_exclude";
+    my $grep_command = "grep -rlIP $escaped_find $escaped_where $escaped_include $escaped_exclude";
     my $files = `$grep_command`;
     $files = join ' ', (map quotemeta, (split "\n", $files));
     my $perl_command = "perl -p -i -e 's/$find/$subst/g' $files";
