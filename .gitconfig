@@ -13,5 +13,7 @@
     default = simple
 [credential]
     helper = cache
+[alias]
+    print = log --all --graph --decorate --oneline
 [fetch]
     recurseSubmodules = true

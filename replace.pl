@@ -15,11 +15,14 @@ my $reset = color('reset');
 sub help {
     say 'USAGE: replace <FIND_PATTERN> <SUBSTITUTE_PATTERN> [<FILES|DIRECTORIES>] [including <PATTERNS>] [excluding <PATTERNS>] [now]';
     say;
-    say 'The patterns are treated as Perl regex patterns and the files and directory patterns are treated like the corresponding grep arguments.';
-    say 'If no files or directories are given, these default to the current working directory';
-    say 'If the "now" flag is not given, replace will run in dry mode';
+    say 'The patterns are treated as Perl regex patterns and the files and';
+    say 'directory patterns are treated like the corresponding grep arguments.';
+    say 'If no files or directories are given, these default to the current';
+    say 'working directory. If the "now" flag is not given, replace will run';
+    say 'in dry mode';
     say;
-    say 'EXAMPLE: replace "number:(\d)" "digit:$1" . ../libs including "*.c" "*.h" excluding "../libs/*.h" now';
+    say 'EXAMPLE:';
+    say 'replace "number:(\d)" "digit:$1" . ../libs including "*.c" "*.h" excluding "../libs/*.h" now';
     exit 0;
 }
 
@@ -34,6 +37,8 @@ my @include = ();
 my @exclude = ();
 my $dry = 1;
 
+# Don't replace in .bak files
+push @exclude, '*.bak';
 
 # Retrieve config from commandline arguments
 my $current_command = \@where;
@@ -76,8 +81,6 @@ if ($dry) {
     my @lines = split("\n", $grep_out);
     for my $line (@lines) {
         # Chop down grep output
-        #my ($file, @text) = split ':', $line;
-        #my $text = join ':', @text;
         my ($file, $text) = $line =~ /^([^:]+):(.*)$/;
 
         # Print everything in nice highlighting
@@ -94,7 +97,7 @@ else {
     my $grep_command = "grep -rlIP $escaped_find $escaped_where $escaped_include $escaped_exclude";
     my $files = `$grep_command`;
     $files = join ' ', (map quotemeta, (split "\n", $files));
-    my $perl_command = "perl -p -i -e 's/$find/$subst/g' $files";
+    my $perl_command = "perl -p -i.bak -e 's/$find/$subst/g' $files";
     say 'Perl replacement command: ', $perl_command;
     print `$perl_command`;
     say 'Replacements successful';
