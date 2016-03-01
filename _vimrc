@@ -1,3 +1,25 @@
+
+if has("gui_running")
+python << EOF
+import os
+import re
+path = os.environ['PATH'].split(';')
+
+def contains_msvcr_lib(folder):
+    try:
+        for item in os.listdir(folder):
+            if re.match(r'msvcr\d+\.dll', item):
+                return True
+    except:
+        pass
+    return False
+
+path = [folder for folder in path if not contains_msvcr_lib(folder)]
+os.environ['PATH'] = ';'.join(path)
+EOF
+endif
+
+
 "set shell=/bin/bash
 "
 " *** VUNDLE CONFIGURATION ***
@@ -20,7 +42,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Syntax checker support
 Plugin 'scrooloose/syntastic'
 " Advanced on the fly autocompletion
-"Plugin 'Valloric/YouCompleteMe'
+if has("gui_running")
+    Plugin 'Valloric/YouCompleteMe'
+endif
 " Class browser
 Plugin 'majutsushi/tagbar'
 " Filetree browser
@@ -38,10 +62,12 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'corntrace/bufexplorer'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-sensible'
-Plugin 'bling/vim-airline'
+if has("gui_running")
+    Plugin 'bling/vim-airline'
+endif
 Plugin 'terryma/vim-multiple-cursors'
 " Fuzzy File Finder
-"Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Automatic tag file generator
 "Plugin 'xolox/vim-easytags'
 "Plugin 'tpope/vim-sleuth'
@@ -62,8 +88,6 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 " Autoformatting for javascript
 Plugin 'einars/js-beautify'
-" Solarized colorscheme for vim
-Plugin 'altercation/vim-colors-solarized'
 " NERDCommenter
 Plugin 'scrooloose/nerdcommenter'
 " Better HTML5 support
@@ -73,6 +97,7 @@ Plugin 'kchmck/vim-coffee-script'
 " Tabularizing
 Plugin 'godlygeek/tabular'
 " Colors
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
@@ -85,6 +110,9 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'jceb/vim-orgmode'
 " Better f/t
 Plugin 'dahu/vim-fanfingtastic'
+
+"Plugin 'chiel92/vim-fate'
+
 call vundle#end()             " required
 filetype plugin indent on     " required
 
@@ -168,6 +196,8 @@ nmap <silent> ,sv :so $MYVIMRC<cr>
 nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Give Y a sane meaning
 nnoremap Y y$
+" Give U a sane meaning
+nnoremap U <C-r>
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -180,7 +210,7 @@ let g:ycm_confirm_extra_conf = 0
 
 let g:ycm_csharp_server_stdout_logfile_format = "~/omnisharp_stdout_log_{port}"
 let g:ycm_csharp_server_stderr_logfile_format = "~/omnisharp_stderr_log_{port}"
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_path_to_python_interpreter = 'c:\Python27_64\python.exe'
 
 " Easytags shouldn't show updatetime warning
 let g:easytags_updatetime_warn = 0
