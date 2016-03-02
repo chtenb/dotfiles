@@ -1,4 +1,4 @@
-use v5.20;
+use v5.18;
 use strict;
 use warnings;
 use feature qw(switch);

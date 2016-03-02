@@ -4,6 +4,11 @@ c() {
     ls -a
 }
 
+# Convenient grep shortcut
+mygrep() {
+    grep -rIP --color "$@"
+}
+
 # Ping google server
 alias pingg="ping google.nl"
 

@@ -34,13 +34,13 @@ Plugin 'easymotion/vim-easymotion'
 " Buffer explorer
 Plugin 'corntrace/bufexplorer'
 " Fuzzy File Finder
-"Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Automatic tag file generator
 "Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-sensible'
-"Plugin 'tpope/vim-sleuth'
 Plugin 'bling/vim-airline'
+Plugin 'terryma/vim-multiple-cursors'
 " *******************                ********************
 " ********************  collection  *********************
 " *********************   VIMIDE   **********************
@@ -80,6 +80,8 @@ Plugin 'leafgarland/typescript-vim'
 " Kivy
 Plugin 'farfanoide/vim-kivy'
 
+"Plugin 'chiel92/vim-fate'
+
 call vundle#end()             " required
 filetype plugin indent on     " required
 
@@ -87,6 +89,7 @@ filetype plugin indent on     " required
 " *** OTHER CONFIGURATION ***
 "
 
+set autochdir
 set number          " Absolute line numbering on current line
 set undofile        " Remember undo history
 set undodir=$HOME/.vimundo/ " set a directory to store the undo history
@@ -257,7 +260,7 @@ autocmd FileType tex nnoremap <F6> :!bash compile.sh<cr><cr>
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': ['coffee'] }
-let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_python_exec = 'python3.5'
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 
 let g:NERDCustomDelimiters = {
