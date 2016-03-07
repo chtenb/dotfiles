@@ -13,16 +13,14 @@ my $reset = color('reset');
 
 
 sub help {
-    say 'USAGE: replace <FIND_PATTERN> <SUBSTITUTE_PATTERN> [<FILES|DIRECTORIES>] [including <PATTERNS>] [excluding <PATTERNS>] [now]';
+    say 'USAGE: replace <FIND_PATTERN> <SUBSTITUTE_PATTERN> [<FILES|DIRECTORIES>] [<ARBITRARY GREP PARAMETERS>] [--now]';
     say;
-    say 'The patterns are treated as Perl regex patterns and the files and';
-    say 'directory patterns are treated like the corresponding grep arguments.';
-    say 'If no files or directories are given, these default to the current';
-    say 'working directory. If the "now" flag is not given, replace will run';
-    say 'in dry mode';
+    say 'The patterns are treated as Perl regex patterns and the other arguments';
+    say 'are treated like the corresponding grep arguments.';
+    say 'If the "now" flag is not given, replace will run in dry mode';
     say;
     say 'EXAMPLE:';
-    say 'replace "number:(\d)" "digit:$1" . ../libs including "*.c" "*.h" excluding "../libs/*.h" now';
+    say 'replace "number:(\d)" "digit:$1" . ../libs --include=*.{cpp,h} --exclude="../libs/*.h" --now';
     exit 0;
 }
 
@@ -32,28 +30,16 @@ if ($ARGV[0] ~~ ['help', '--help', '-h']) { help; }
 # Configuration parameters
 my $find = shift;
 my $subst = shift;
-my @where = ();
-my @include = ();
-my @exclude = ();
+my @remaining = ();
 my $dry = 1;
 
-# Don't replace in .bak files
-push @exclude, '*.bak';
+# Don't replace in .bak, .orig and .swp files files
+push @remaining, '--exclude="*.bak" --exclude="*.orig" --exclude="*.swp"';
 
 # Retrieve config from commandline arguments
-my $current_command = \@where;
 for my $arg (@ARGV) {
-    given($arg) {
-        when('now') { $dry = 0; next; }
-        when('including') { $current_command = \@include; next; }
-        when('excluding') { $current_command = \@exclude; next; }
-    }
-
-    push @$current_command, $arg;
-}
-
-if (not @where) {
-    push @where, '.';
+    if ($arg eq '--now') { $dry = 0; next; }
+    else { push @remaining, $arg; }
 }
 
 if (not $find or not $subst) {
@@ -64,16 +50,15 @@ if (not $find or not $subst) {
 
 my $escaped_find = quotemeta $find;
 my $escaped_subst = quotemeta $subst;
-my $escaped_include = join ' ', map { sprintf "--include=%s", quotemeta $_ } @include;
-my $escaped_exclude = join ' ', map { sprintf "--exclude=%s", quotemeta $_ } @exclude;
-my $escaped_where = join ' ', map { quotemeta $_ } @where;
+#my $escaped_remaining = join ' ', map { quotemeta $_ } @remaining;
+my $escaped_remaining = join ' ', @remaining;
 
-say "Input interpretation: replace $escaped_find with $escaped_subst in $escaped_where $escaped_include $escaped_exclude";
+say "Input interpretation: $magenta replace $reset $find $magenta with $reset $subst $magenta in $reset $escaped_remaining";
 
 
 # Do the actual shit
 if ($dry) {
-    my $grep_command = "grep -rIHP $escaped_find $escaped_where $escaped_include $escaped_exclude";
+    my $grep_command = "grep -rIHP $escaped_find $escaped_remaining";
     say "Grep search command: $grep_command";
     my $grep_out = `$grep_command`;
 
@@ -94,7 +79,7 @@ if ($dry) {
     }
 }
 else {
-    my $grep_command = "grep -rlIP $escaped_find $escaped_where $escaped_include $escaped_exclude";
+    my $grep_command = "grep -rlIP $escaped_find $escaped_remaining";
     my $files = `$grep_command`;
     $files = join ' ', (map quotemeta, (split "\n", $files));
     my $perl_command = "perl -p -i.bak -e 's/$find/$subst/g' $files";
