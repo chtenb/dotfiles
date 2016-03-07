@@ -111,6 +111,8 @@ Plugin 'jceb/vim-orgmode'
 " Better f/t
 Plugin 'dahu/vim-fanfingtastic'
 
+Plugin 'vim-scripts/DrawIt'
+
 "Plugin 'chiel92/vim-fate'
 
 call vundle#end()             " required

@@ -3,6 +3,8 @@
     email = chiel.tenbrinke@intellimagic.com
 [push]
     default = simple
+[credential]
+    helper = cache
 [merge]
     tool = kdiff3
 [mergetool "meld"]
@@ -19,7 +21,7 @@
     fscache = true
     preloadindex = true
     editor = vim
-	whitespace = cr-at-eol
+    whitespace = cr-at-eol
 [guitool "Pull"]
     cmd = "git remote update --prune; git pull origin $(git symbolic-ref HEAD | sed s/refs.heads.//)"
 [guitool "Update remote namespace"]
@@ -48,7 +50,8 @@
     uclone = !sh -c 'git clone --recurse ssh://$(whoami)@development.urios.nl/srv/git/$0.git && installhooks.sh $0/.git'
     getmodules = !sh -c 'git submodule update --init --recursive && installhooks.sh ./.git'
 
-    print = log --all --graph --decorate --oneline
+    print = log --all --notes --graph --decorate --oneline --color=always
+    rlog = !"git --no-pager log --all --graph --decorate --oneline --color=always | tac | awk -f ~/switchslashes.awk | less -X +G -r"
 
     dff = diff --color-words="[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
 
