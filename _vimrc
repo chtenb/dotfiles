@@ -111,6 +111,8 @@ Plugin 'jceb/vim-orgmode'
 " Better f/t
 Plugin 'dahu/vim-fanfingtastic'
 
+Plugin 'tpope/vim-speeddating'
+
 Plugin 'vim-scripts/DrawIt'
 
 "Plugin 'chiel92/vim-fate'
@@ -174,9 +176,12 @@ let g:EasyMotion_smartcase = 1
 " Smartsign (type `3` and match `3`&`#`)
 let g:EasyMotion_use_smartsign_us = 1
 
+nnoremap <c-p> :CtrlPMixed<CR>
+
+"Easily send file to visual studio
+nnoremap <F1> :!start "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /edit "%"<CR><CR>
 
 "Disable annoying help
-nnoremap <F1> <Esc>
 inoremap <F1> <Esc>
 vnoremap <F1> <Esc>
 "Open bufferexplorer

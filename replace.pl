@@ -14,11 +14,11 @@ my $reset = color('reset');
 
 sub help {
     say 'USAGE: replace <FIND_PATTERN> <SUBSTITUTE_PATTERN> [<FILES|DIRECTORIES>] [<ARBITRARY GREP PARAMETERS>] [--now]';
-    say;
+    say '';
     say 'The patterns are treated as Perl regex patterns and the other arguments';
     say 'are treated like the corresponding grep arguments.';
     say 'If the "now" flag is not given, replace will run in dry mode';
-    say;
+    say '';
     say 'EXAMPLE:';
     say 'replace "number:(\d)" "digit:$1" . ../libs --include=*.{cpp,h} --exclude="../libs/*.h" --now';
     exit 0;
@@ -42,9 +42,9 @@ for my $arg (@ARGV) {
     else { push @remaining, $arg; }
 }
 
-if (not $find or not $subst) {
-    say 'Invalid arguments.';
-    say;
+if (not $find) {
+    say 'Invalid arguments. Find pattern not given.';
+    say '';
     help;
 }
 
