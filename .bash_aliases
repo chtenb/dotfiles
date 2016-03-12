@@ -24,8 +24,8 @@ alias commit="git commit -a"
 alias die="sudo shutdown -h now"
 alias open=gnome-open
 alias tmux="TERM=screen-256color-bce tmux"
-alias fate="python3 ~/Projects/tfate/main.py"
-alias gfate="python3 ~/Projects/gfate/main.py"
+alias fate="python3.5 ~/Projects/tfate/main.py"
+alias gfate="python3.5 ~/Projects/gfate/main.py"
 alias replace="perl ~/Projects/dotfiles/replace.pl"
 
 # No ttyctl, so we need to save and then restore terminal settings
