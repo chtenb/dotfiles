@@ -28,13 +28,15 @@ vnoremap <F1> <Esc>
 nnoremap <C-s> :w<CR>
 " Give Y a sane meaning
 nnoremap Y y$
+" Give U a sane meaning and avoid conflicts with resharper
+nnoremap U <C-r>
 " Hide highlighting
 nnoremap <C-l> :noh<CR>
 
-
 " Visual Studio specific
+set backspace=start
 nmap <C-O> :vsc View.NavigateBackward<CR>
 nmap <C-I> :vsc View.NavigateForward<CR>
 nmap <C-]> :vsc Edit.GoToDefinition<CR>
-
+nmap ? :vsc Edit.IncrementalSearch<CR>
 
