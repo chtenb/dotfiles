@@ -4,7 +4,8 @@
 [push]
     default = simple
 [credential]
-    helper = cache
+    ;helper = cache
+    helper = wincred
 [merge]
     tool = kdiff3
 [mergetool "meld"]
@@ -20,7 +21,7 @@
     autocrlf = true
     fscache = true
     preloadindex = true
-    editor = vim
+    editor = vim -u ~/_vimrc.bare
     whitespace = cr-at-eol
 [guitool "Pull"]
     cmd = "git remote update --prune; git pull origin $(git symbolic-ref HEAD | sed s/refs.heads.//)"
@@ -50,12 +51,13 @@
     uclone = !sh -c 'git clone --recurse ssh://$(whoami)@development.urios.nl/srv/git/$0.git && installhooks.sh $0/.git'
     getmodules = !sh -c 'git submodule update --init --recursive && installhooks.sh ./.git'
 
-    print = log --all --notes --graph --decorate --oneline --color=always
-    rlog = !"git --no-pager log --all --graph --decorate --oneline --color=always | tac | awk -f ~/switchslashes.awk | less -X +G -r"
+    lg = log --notes --graph --decorate --oneline --color=always
+    lga = log --all --notes --graph --decorate --oneline --color=always
+    rlog = !"git --no-pager log --all --graph --decorate --oneline --color=never | tac | awk -f ~/switchslashes.awk | less -X +G -r"
 
     dff = diff --color-words="[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
+    shw = show --color-words="[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
 
-    lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
     lg2 = !"git lg2-specific --all"
     lg3 = !"git lg3-specific --all"

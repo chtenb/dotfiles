@@ -1,0 +1,166 @@
+if has("gui_running")
+python << EOF
+import os
+import re
+path = os.environ['PATH'].split(';')
+
+def contains_msvcr_lib(folder):
+    try:
+        for item in os.listdir(folder):
+            if re.match(r'msvcr\d+\.dll', item):
+                return True
+    except:
+        pass
+    return False
+
+path = [folder for folder in path if not contains_msvcr_lib(folder)]
+os.environ['PATH'] = ';'.join(path)
+EOF
+endif
+
+if !has("gui_running")
+    set shell=/usr/bin/bash
+endif
+
+"
+" *** VUNDLE CONFIGURATION ***
+"
+
+set nocompatible               " be iMproved
+filetype off                   " required!
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+
+" let Vundle manage Vundle
+" required!
+Plugin 'VundleVim/Vundle.vim'
+
+" Easy motion
+Plugin 'easymotion/vim-easymotion'
+" Buffer explorer
+Plugin 'corntrace/bufexplorer'
+Plugin 'xolox/vim-misc'
+Plugin 'tpope/vim-sensible'
+Plugin 'terryma/vim-multiple-cursors'
+" Fuzzy File Finder
+Plugin 'ctrlpvim/ctrlp.vim'
+" Matchit
+Plugin 'edsono/vim-matchit'
+" Surround
+Plugin 'tpope/vim-surround'
+" Extend repeat command functionality
+Plugin 'tpope/vim-repeat'
+" Gitwrapper
+Plugin 'tpope/vim-fugitive'
+" NERDCommenter
+Plugin 'scrooloose/nerdcommenter'
+" Tabularizing
+Plugin 'godlygeek/tabular'
+" Colors
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'chriskempson/base16-vim'
+Plugin 'tomasr/molokai'
+Plugin 'kien/rainbow_parentheses.vim'
+" Better f/t
+Plugin 'dahu/vim-fanfingtastic'
+
+Plugin 'vim-scripts/DrawIt'
+
+call vundle#end()             " required
+filetype plugin indent on     " required
+
+"
+" *** OTHER CONFIGURATION ***
+"
+
+
+set number          " Absolute line numbering on current line
+set undofile        " Remember undo history
+set undodir=$HOME/.vimundo/ " set a directory to store the undo history
+set ignorecase      " Do case insensitive matching
+set smartcase       " Do smart case matching
+set hlsearch        " Incremental search
+set autowrite       " Automatically save before commands like :next and :make
+set hidden          " Hide buffers when they are abandoned
+set mouse=a         " Enable mouse usage (all modes)
+set lazyredraw      " Don't update the display while executing macros
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip " Makes CtrlP faster
+set gdefault        " auto g flag for substitution
+set autochdir       " Autochange working directory when opening new file
+syntax on
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set list
+
+let mapleader = ","
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+
+" Easy motion
+" Require tpope/vim-repeat to enable dot repeat support
+" Jump to anywhere with only `ss{char}{target}`
+" `ss<CR>` repeat last find motion.
+nmap ss <Plug>(easymotion-s)
+map S <Plug>(easymotion-s2)
+
+map sl <Plug>(easymotion-lineforward)
+map sj <Plug>(easymotion-j)
+map sk <Plug>(easymotion-k)
+map sh <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+ " type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+" Smartsign (type `3` and match `3`&`#`)
+let g:EasyMotion_use_smartsign_us = 1
+
+nnoremap <c-p> :CtrlPMixed<CR>
+
+"Easily send file to visual studio
+nnoremap <F1> :!start "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /edit "%"<CR><CR>
+
+"Disable annoying help
+inoremap <F1> <Esc>
+vnoremap <F1> <Esc>
+"Open bufferexplorer
+noremap <F2> :BufExplorer<CR>
+"Autoformat code
+noremap <F3> :Autoformat<CR>
+"Compile
+"noremap <F5> :<C-U>silent make<CR>:redraw!<CR>
+nnoremap <F5> :w<CR>:make<CR>:redraw!<CR>
+" Decent save shortcut
+nnoremap <C-s> :w<CR>
+" Disable ex mode, it's useless and annoying. Map Q to format instead.
+nnoremap Q gq
+" Let's make it easy to edit this file
+nmap <silent> ,ev :e $MYVIMRC<cr>
+" And to source this file as well
+nmap <silent> ,sv :so $MYVIMRC<cr>
+" Easily use YCM's goto definition command
+nnoremap <F12> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Give Y a sane meaning
+nnoremap Y y$
+" Give U a sane meaning
+nnoremap U <C-r>
+
+" Color settings
+set background=dark
+"colorscheme solarized
+"set t_Co=256
+
+set autoindent
+set nocindent
+set nosmartindent
+
