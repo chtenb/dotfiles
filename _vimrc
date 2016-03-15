@@ -19,8 +19,10 @@ os.environ['PATH'] = ';'.join(path)
 EOF
 endif
 
+if !has("gui_running")
+    set shell=/usr/bin/bash
+endif
 
-"set shell=/bin/bash
 "
 " *** VUNDLE CONFIGURATION ***
 "
@@ -68,8 +70,10 @@ endif
 Plugin 'terryma/vim-multiple-cursors'
 " Fuzzy File Finder
 Plugin 'ctrlpvim/ctrlp.vim'
+" Ag
+Plugin 'mileszs/ack.vim'
 " Automatic tag file generator
-"Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-easytags'
 "Plugin 'tpope/vim-sleuth'
 " *******************                ********************
 " ********************  collection  *********************
@@ -125,6 +129,10 @@ filetype plugin indent on     " required
 "
 
 
+set autoindent
+set nocindent
+set nosmartindent
+
 set number          " Absolute line numbering on current line
 set undofile        " Remember undo history
 set undodir=$HOME/.vimundo/ " set a directory to store the undo history
@@ -152,8 +160,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-:command! RemoveTrailingSpaces %s/\s\+$
-
 
 " Easy motion
 " Require tpope/vim-repeat to enable dot repeat support
@@ -176,11 +182,20 @@ let g:EasyMotion_smartcase = 1
 " Smartsign (type `3` and match `3`&`#`)
 let g:EasyMotion_use_smartsign_us = 1
 
-nnoremap <c-p> :CtrlPMixed<CR>
 
+" Decent save shortcut
+nnoremap <C-s> :w<CR>
+" Disable ex mode, it's useless and annoying. Map Q to format instead.
+nnoremap Q gq
+" Give Y a sane meaning
+nnoremap Y y$
+" Give U a sane meaning
+nnoremap U <C-r>
+
+
+nnoremap <c-p> :CtrlPMixed<CR>
 "Easily send file to visual studio
 nnoremap <F1> :!start "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /edit "%"<CR><CR>
-
 "Disable annoying help
 inoremap <F1> <Esc>
 vnoremap <F1> <Esc>
@@ -189,43 +204,43 @@ noremap <F2> :BufExplorer<CR>
 "Autoformat code
 noremap <F3> :Autoformat<CR>
 "Compile
-"noremap <F5> :<C-U>silent make<CR>:redraw!<CR>
 nnoremap <F5> :w<CR>:make<CR>:redraw!<CR>
-" Decent save shortcut
-nnoremap <C-s> :w<CR>
-" Disable ex mode, it's useless and annoying. Map Q to format instead.
-nnoremap Q gq
 " Let's make it easy to edit this file
 nmap <silent> ,ev :e $MYVIMRC<cr>
 " And to source this file as well
 nmap <silent> ,sv :so $MYVIMRC<cr>
-" Easily use YCM's goto definition command
-nnoremap <C-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" Give Y a sane meaning
-nnoremap Y y$
-" Give U a sane meaning
-nnoremap U <C-r>
+" YCM's goto definition command
+nnoremap <F12> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Ack word under cursor
+nnoremap <S-F12> :Ack<CR>
+" Show tagbar
+nnoremap <F8> :TagbarToggle<CR>
+
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_autoclose_preview_window_after_insertion = 1 "Not working ??
 let g:ycm_filetype_blacklist = {}
 let g:ycm_confirm_extra_conf = 0
-
-let g:ycm_csharp_server_stdout_logfile_format = "~/omnisharp_stdout_log_{port}"
-let g:ycm_csharp_server_stderr_logfile_format = "~/omnisharp_stderr_log_{port}"
 let g:ycm_path_to_python_interpreter = 'c:\Python27_64\python.exe'
 
-" Easytags shouldn't show updatetime warning
-let g:easytags_updatetime_warn = 0
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
+
 
 " Color settings
 set background=dark
-"colorscheme solarized
-"set t_Co=256
 
 "Some settings for the GUI
 if has("gui_running")
@@ -243,37 +258,11 @@ if has("gui_running")
     set guifont=consolas:h11
 endif
 
-" Return to last edit position when opening files (You want this!)
-autocmd BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") |
-            \   exe "normal! g`\"" |
-            \ endif
-
-"autocmd InsertLeave,TextChanged * if expand('%') != '' | Autoformat | endif
-"autocmd InsertLeave,TextChanged * Autoformat
-
 "
 " FILETYPE SPECIFIC STUFF
 "
-set autoindent
-set nocindent
-set nosmartindent
-
 autocmd BufRead,BufNewFile *.ma set filetype=ma
-
-"let g:formatterpath = ['/home/chiel/formatters']
-"let g:formatdef_greeter = '"echo hello"'
-"let g:formatters_text = ['greeter']
-
 autocmd BufRead,BufNewFile *.go set filetype=go
-
-autocmd BufWrite *.js :Autoformat
-"let g:autoformat_verbosemode = 1
-"let g:formatprg_args_expr_javascript = '"-".(&expandtab ? "s ".&shiftwidth : "t").(&textwidth ? " -w ".&textwidth : "")." -"'
-let g:formatdef_test = '"asdf"'
-let g:formatdef_another_autopep8 = '"autopep8 - --indent-size 2 ".(&textwidth ? "--max-line-length=".&textwidth : "")'
-
-
 
 au FileType haskell nnoremap <buffer> <F3> :Tab /^[^=]*\zs=<CR>
 au FileType haskell nnoremap <buffer> <F5> :HdevtoolsType<CR>
@@ -287,6 +276,7 @@ autocmd BufRead,BufNewFile *.sage set makeprg=sage\ --preparse\ %
 
 au FileType python set textwidth=95
 au FileType markdown set textwidth=95
+au FileType text set textwidth=95
 
 au FileType coffee setl shiftwidth=2
 
