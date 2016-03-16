@@ -1,26 +1,4 @@
-if has("gui_running")
-python << EOF
-import os
-import re
-path = os.environ['PATH'].split(';')
-
-def contains_msvcr_lib(folder):
-    try:
-        for item in os.listdir(folder):
-            if re.match(r'msvcr\d+\.dll', item):
-                return True
-    except:
-        pass
-    return False
-
-path = [folder for folder in path if not contains_msvcr_lib(folder)]
-os.environ['PATH'] = ';'.join(path)
-EOF
-endif
-
-if !has("gui_running")
-    set shell=/usr/bin/bash
-endif
+set shell=/usr/bin/bash
 
 "
 " *** VUNDLE CONFIGURATION ***
@@ -65,16 +43,20 @@ Plugin 'tomasr/molokai'
 Plugin 'kien/rainbow_parentheses.vim'
 " Better f/t
 Plugin 'dahu/vim-fanfingtastic'
-
 Plugin 'vim-scripts/DrawIt'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
 
+
 "
 " *** OTHER CONFIGURATION ***
 "
 
+
+set autoindent
+set nocindent
+set nosmartindent
 
 set number          " Absolute line numbering on current line
 set undofile        " Remember undo history
@@ -98,11 +80,6 @@ set list
 
 let mapleader = ","
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
 
 " Easy motion
 " Require tpope/vim-repeat to enable dot repeat support
@@ -116,8 +93,8 @@ map sj <Plug>(easymotion-j)
 map sk <Plug>(easymotion-k)
 map sh <Plug>(easymotion-linebackward)
 
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
-
+" keep cursor column when JK motion
+let g:EasyMotion_startofline = 0
 " Use uppercase target labels and type as a lower case
 let g:EasyMotion_use_upper = 1
  " type `l` and match `l`&`L`
@@ -125,42 +102,50 @@ let g:EasyMotion_smartcase = 1
 " Smartsign (type `3` and match `3`&`#`)
 let g:EasyMotion_use_smartsign_us = 1
 
-nnoremap <c-p> :CtrlPMixed<CR>
 
-"Easily send file to visual studio
-nnoremap <F1> :!start "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /edit "%"<CR><CR>
-
-"Disable annoying help
-inoremap <F1> <Esc>
-vnoremap <F1> <Esc>
-"Open bufferexplorer
-noremap <F2> :BufExplorer<CR>
-"Autoformat code
-noremap <F3> :Autoformat<CR>
-"Compile
-"noremap <F5> :<C-U>silent make<CR>:redraw!<CR>
-nnoremap <F5> :w<CR>:make<CR>:redraw!<CR>
+" Decent quit shortcut
+nnoremap <C-q> :q<CR>
 " Decent save shortcut
 nnoremap <C-s> :w<CR>
-" Disable ex mode, it's useless and annoying. Map Q to format instead.
-nnoremap Q gq
-" Let's make it easy to edit this file
-nmap <silent> ,ev :e $MYVIMRC<cr>
-" And to source this file as well
-nmap <silent> ,sv :so $MYVIMRC<cr>
-" Easily use YCM's goto definition command
-nnoremap <F12> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Disable ex mode, it's useless and annoying
+nnoremap Q <nop>
 " Give Y a sane meaning
 nnoremap Y y$
 " Give U a sane meaning
 nnoremap U <C-r>
 
+"Fuzzy file finder
+nnoremap <c-p> :CtrlPMixed<CR>
+"Disable annoying help
+nnoremap <F1> <Esc>
+inoremap <F1> <Esc>
+vnoremap <F1> <Esc>
+"Open bufferexplorer
+noremap <F2> :BufExplorer<CR>
+" Easy grepping
+command -nargs=+ GG execute 'silent Ggrep!' <q-args> | cw | redraw!
+" Grep word under cursor, like find all references
+nnoremap <S-F12> :GG <cword><CR>
+
+" Let's make it easy to edit this file
+nmap <silent> ,ev :e $MYVIMRC<cr>
+" And to source this file as well
+nmap <silent> ,sv :so $MYVIMRC<cr>
+
+
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
+
+
 " Color settings
 set background=dark
-"colorscheme solarized
-"set t_Co=256
 
-set autoindent
-set nocindent
-set nosmartindent
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
