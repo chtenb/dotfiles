@@ -1,4 +1,10 @@
 
+
+"
+" *** WINDOWS FIXES ***
+"
+
+
 if has("gui_running")
 python << EOF
 import os
@@ -23,9 +29,11 @@ if !has("gui_running")
     set shell=/usr/bin/bash
 endif
 
+
 "
 " *** VUNDLE CONFIGURATION ***
 "
+
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -70,17 +78,16 @@ endif
 Plugin 'terryma/vim-multiple-cursors'
 " Fuzzy File Finder
 Plugin 'ctrlpvim/ctrlp.vim'
-" Ag
-Plugin 'mileszs/ack.vim'
 " Automatic tag file generator
 Plugin 'xolox/vim-easytags'
+" Automatic detect tab indent settings
 "Plugin 'tpope/vim-sleuth'
 " *******************                ********************
 " ********************  collection  *********************
 " *********************   VIMIDE   **********************
 " *******************************************************
 "
-" Integrated debugger
+" Integrated debugger. Only support python and php.
 "Plugin 'jabapyth/vim-debug'
 " Matchit
 Plugin 'edsono/vim-matchit'
@@ -114,15 +121,16 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'jceb/vim-orgmode'
 " Better f/t
 Plugin 'dahu/vim-fanfingtastic'
-
+" Be able to increment dates
 Plugin 'tpope/vim-speeddating'
-
+" Ascii drawings
 Plugin 'vim-scripts/DrawIt'
-
-"Plugin 'chiel92/vim-fate'
+" Automatic reload vim stuff
+Plugin 'xolox/vim-reload'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
+
 
 "
 " *** OTHER CONFIGURATION ***
@@ -155,11 +163,6 @@ set list
 
 let mapleader = ","
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
 
 " Easy motion
 " Require tpope/vim-repeat to enable dot repeat support
@@ -173,8 +176,8 @@ map sj <Plug>(easymotion-j)
 map sk <Plug>(easymotion-k)
 map sh <Plug>(easymotion-linebackward)
 
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
-
+" keep cursor column when JK motion
+let g:EasyMotion_startofline = 0
 " Use uppercase target labels and type as a lower case
 let g:EasyMotion_use_upper = 1
  " type `l` and match `l`&`L`
@@ -183,16 +186,19 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
 
 
+" Decent quit shortcut
+nnoremap <C-q> :q<CR>
 " Decent save shortcut
 nnoremap <C-s> :w<CR>
-" Disable ex mode, it's useless and annoying. Map Q to format instead.
-nnoremap Q gq
+" Disable ex mode, it's useless and annoying
+nnoremap Q <nop>
 " Give Y a sane meaning
 nnoremap Y y$
 " Give U a sane meaning
 nnoremap U <C-r>
 
 
+"Fuzzy file finder
 nnoremap <c-p> :CtrlPMixed<CR>
 "Easily send file to visual studio
 nnoremap <F1> :!start "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /edit "%"<CR><CR>
@@ -205,21 +211,19 @@ noremap <F2> :BufExplorer<CR>
 noremap <F3> :Autoformat<CR>
 "Compile
 nnoremap <F5> :w<CR>:make<CR>:redraw!<CR>
+" Show tagbar
+nnoremap <F8> :TagbarToggle<CR>
+" YCM's goto definition command
+nnoremap <F12> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Easy grepping
+command -nargs=+ GG execute 'silent Ggrep!' <q-args> | cw | redraw!
+" Grep word under cursor, like find all references
+nnoremap <S-F12> :GG <cword><CR>
+
 " Let's make it easy to edit this file
 nmap <silent> ,ev :e $MYVIMRC<cr>
 " And to source this file as well
 nmap <silent> ,sv :so $MYVIMRC<cr>
-" YCM's goto definition command
-nnoremap <F12> :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" Ack word under cursor
-nnoremap <S-F12> :Ack<CR>
-" Show tagbar
-nnoremap <F8> :TagbarToggle<CR>
-
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -258,9 +262,17 @@ if has("gui_running")
     set guifont=consolas:h11
 endif
 
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+
 "
-" FILETYPE SPECIFIC STUFF
+" *** FILETYPE SPECIFIC STUFF ***
 "
+
+
 autocmd BufRead,BufNewFile *.ma set filetype=ma
 autocmd BufRead,BufNewFile *.go set filetype=go
 
