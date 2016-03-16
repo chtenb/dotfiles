@@ -5,7 +5,7 @@
 "
 
 
-if has("gui_running")
+if has("win32") && has("gui_running")
 python << EOF
 import os
 import re
@@ -25,7 +25,7 @@ os.environ['PATH'] = ';'.join(path)
 EOF
 endif
 
-if !has("gui_running")
+if has("win32") && !has("gui_running")
     set shell=/usr/bin/bash
 endif
 
@@ -197,11 +197,15 @@ nnoremap Y y$
 " Give U a sane meaning
 nnoremap U <C-r>
 
+if has("win32")
+    "Easily send file to visual studio
+    nnoremap <F1> :!start "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /edit "%"<CR><CR>
+else
+    nnoremap <F1> <Esc>
+endif
 
 "Fuzzy file finder
 nnoremap <c-p> :CtrlPMixed<CR>
-"Easily send file to visual studio
-nnoremap <F1> :!start "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /edit "%"<CR><CR>
 "Disable annoying help
 inoremap <F1> <Esc>
 vnoremap <F1> <Esc>
@@ -233,7 +237,11 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filetype_blacklist = {}
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_path_to_python_interpreter = 'c:\Python27_64\python.exe'
+if has("win32")
+    let g:ycm_path_to_python_interpreter = 'c:\Python27_64\python.exe'
+else
+    let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+endif
 
 
 " Return to last edit position when opening files (You want this!)
