@@ -266,8 +266,11 @@ if has("gui_running")
     "Disable all cursor blinking:
     set guicursor+=a:blinkon0
     colorscheme base16-ashes
-    " Convenient fontsize
-    set guifont=consolas:h11
+    if has("win32")
+        set guifont=consolas:h11
+    else
+        set guifont=mono\ 11
+    endif
 endif
 
 au VimEnter * RainbowParenthesesToggle
