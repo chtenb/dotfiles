@@ -18,10 +18,9 @@
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
 [core]
-    autocrlf = true
     fscache = true
     preloadindex = true
-    editor = vim -u ~/_vimrc.bare
+    editor = vim -u ~/.vimrc.bare
     whitespace = cr-at-eol
     trustctime = false
     filemode = false

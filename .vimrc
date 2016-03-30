@@ -159,7 +159,7 @@ set list            " Show list characters
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " Makes CtrlP faster
 
 " This makes all Visual mode selections automatically go to the X11 primary selection
-set clipboard=+autoselect
+set clipboard+=autoselect
 set guioptions+=a
 
 " Sanitize indentation settings
@@ -280,8 +280,11 @@ if has("gui_running")
     "Disable all cursor blinking:
     set guicursor+=a:blinkon0
     colorscheme base16-ashes
-    " Convenient fontsize
-    set guifont=consolas:h11
+    if has("win32")
+        set guifont=consolas:h11
+    else
+        set guifont=mono\ 11
+    endif
 endif
 
 au VimEnter * RainbowParenthesesToggle
