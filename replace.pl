@@ -34,7 +34,7 @@ my @remaining = ();
 my $dry = 1;
 
 # Don't replace in .bak, .orig and .swp files files
-push @remaining, '--exclude="*.bak" --exclude="*.orig" --exclude="*.swp"';
+push @remaining, '--exclude="*.bak" --exclude="*.orig" --exclude="*.swp" --exclude="tags"';
 
 # Retrieve config from commandline arguments
 for my $arg (@ARGV) {

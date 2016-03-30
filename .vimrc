@@ -53,7 +53,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 " Advanced on the fly autocompletion
 if has("gui_running")
-    Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 endif
 " Class browser
 Plugin 'majutsushi/tagbar'
@@ -63,7 +63,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Chiel92/vim-autoformat'
 " Snippet support
 if has("gui_running")
-    Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 endif
 Plugin 'honza/vim-snippets'
 " Easy motion
@@ -73,7 +73,7 @@ Plugin 'corntrace/bufexplorer'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-sensible'
 if has("gui_running")
-    Plugin 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 endif
 Plugin 'terryma/vim-multiple-cursors'
 " Fuzzy File Finder
@@ -127,6 +127,8 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'vim-scripts/DrawIt'
 " Automatic reload vim stuff
 Plugin 'xolox/vim-reload'
+" Toggle source/header
+Plugin 'derekwyatt/vim-fswitch'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -137,7 +139,7 @@ filetype plugin indent on     " required
 "
 
 
-set autoindent
+" We always want autoindent. Nothing fancy.
 set nocindent
 set nosmartindent
 
@@ -151,15 +153,20 @@ set autowrite       " Automatically save before commands like :next and :make
 set hidden          " Hide buffers when they are abandoned
 set mouse=a         " Enable mouse usage (all modes)
 set lazyredraw      " Don't update the display while executing macros
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip " Makes CtrlP faster
 set gdefault        " auto g flag for substitution
 set autochdir       " Autochange working directory when opening new file
-syntax on
+set list            " Show list characters
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip " Makes CtrlP faster
+
+" This makes all Visual mode selections automatically go to the X11 primary selection
+set clipboard=+autoselect
+set guioptions+=a
+
+" Sanitize indentation settings
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set list
 
 let mapleader = ","
 
@@ -180,7 +187,7 @@ map sh <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0
 " Use uppercase target labels and type as a lower case
 let g:EasyMotion_use_upper = 1
- " type `l` and match `l`&`L`
+" type `l` and match `l`&`L`
 let g:EasyMotion_smartcase = 1
 " Smartsign (type `3` and match `3`&`#`)
 let g:EasyMotion_use_smartsign_us = 1
@@ -197,14 +204,20 @@ nnoremap Y y$
 " Give U a sane meaning
 nnoremap U <C-r>
 
+" TODO:  /command "edit.goto FILE_LINE"
 if has("win32")
-    "Easily send file to visual studio
-    nnoremap <F1> :!start "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /edit "%"<CR><CR>
+"Easily send file to visual studio
+    nnoremap <F1> :execute "!start \"C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\IDE\\devenv.exe\" /edit " . bufname("%") . " /command \"edit.goto " . (line(".") + 1) . "\""<CR><CR>
+"nnoremap <F1> :!start "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /edit "%" /command "edit.goto " . (line(".") + 1)<CR><CR>
 else
     nnoremap <F1> <Esc>
 endif
 
 "Fuzzy file finder
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$',
+    \ 'file': '\.exe$\|\.so$\|\.dat$\|\.obj$\|\.bak$\|\.orig$\|\.dll$\|\.lib$'
+    \ }
 nnoremap <c-p> :CtrlPMixed<CR>
 "Disable annoying help
 inoremap <F1> <Esc>
@@ -220,14 +233,15 @@ nnoremap <F8> :TagbarToggle<CR>
 " YCM's goto definition command
 nnoremap <F12> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Easy grepping
-command -nargs=+ GG execute 'silent Ggrep!' <q-args> | cw | redraw!
+command! -nargs=+ GG execute 'silent Ggrep!' <q-args> | cw | redraw!
 " Grep word under cursor, like find all references
 nnoremap <S-F12> :GG <cword><CR>
 
 " Let's make it easy to edit this file
 nmap <silent> ,ev :e $MYVIMRC<cr>
-" And to source this file as well
-nmap <silent> ,sv :so $MYVIMRC<cr>
+
+" Toggle source/header
+nnoremap <c-k><c-o> :FSHere<CR>
 
 
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -238,7 +252,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filetype_blacklist = {}
 let g:ycm_confirm_extra_conf = 0
 if has("win32")
-    let g:ycm_path_to_python_interpreter = 'c:\Python27_64\python.exe'
+    let g:ycm_path_to_python_interpreter = 'c:\Program Files\Python 3.5\python.exe'
 else
     let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 endif
@@ -246,9 +260,9 @@ endif
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") |
-            \   exe "normal! g`\"" |
-            \ endif
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
 
 
 " Color settings
@@ -280,6 +294,7 @@ au Syntax * RainbowParenthesesLoadBraces
 " *** FILETYPE SPECIFIC STUFF ***
 "
 
+autocmd FileType vim,tex let b:autoformat_autoindent=0
 
 autocmd BufRead,BufNewFile *.ma set filetype=ma
 autocmd BufRead,BufNewFile *.go set filetype=go
@@ -293,10 +308,12 @@ au FileType cs compiler xbuild
 
 autocmd BufRead,BufNewFile *.sage set filetype=python
 autocmd BufRead,BufNewFile *.sage set makeprg=sage\ --preparse\ %
+autocmd BufRead,BufNewFile *.ipy set filetype=python
 
-au FileType python set textwidth=95
+set textwidth=0
 au FileType markdown set textwidth=95
 au FileType text set textwidth=95
+au FileType python set textwidth=95
 
 au FileType coffee setl shiftwidth=2
 
@@ -307,17 +324,17 @@ autocmd FileType tex set indentkeys=
 autocmd FileType tex nnoremap <F6> :!bash compile.sh<cr><cr>
 
 let g:syntastic_mode_map = { 'mode': 'active',
-            \ 'active_filetypes': [],
-            \ 'passive_filetypes': ['coffee'] }
+    \ 'active_filetypes': [],
+    \ 'passive_filetypes': ['coffee'] }
 let g:syntastic_python_python_exec = 'python3'
 
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 
 let g:NERDCustomDelimiters = {
-            \ 'html': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/' },
-            \ 'xhtml': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/'},
-            \ 'ma': { 'left': '#' }
-            \}
+    \ 'html': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/' },
+    \ 'xhtml': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/'},
+    \ 'ma': { 'left': '#' }
+    \}
 let NERD_html_alt_style=1
 
 let g:syntastic_enable_perl_checker = 1
