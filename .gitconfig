@@ -70,6 +70,7 @@
     br = branch
     unstage = reset HEAD --
     dc = diff --cached
+    pushf = push --force-with-lease
 [fetch]
     recurseSubmodules = true
 [gc]
