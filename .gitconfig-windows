@@ -1,5 +1,5 @@
 [credential]
     helper = wincred
 [include]
-    path = .gitconfig-base
+    path = ~/dotfiles/.gitconfig-base
 
