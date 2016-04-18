@@ -1,0 +1,28 @@
+[guitool "Pull"]
+    cmd = "git remote update --prune; git pull origin $(git symbolic-ref HEAD | sed s/refs.heads.//)"
+[guitool "Update remote namespace"]
+    cmd = git remote update --prune
+    noconsole = yes
+[guitool "vdiff"]
+    cmd = git vdiff
+    noconsole = yes
+[guitool "p4diff"]
+    cmd = git p4diff
+    noconsole = yes
+[guitool "Clean"]
+    cmd = git clean -x -d -f
+[guitool "Reset and Clean"]
+    cmd = "git reset --hard ; git clean -x -d -f"
+[gui]
+    gcwarning = false
+[alias]
+    vdiff = !sh gitvdiff
+    p4diff = !sh gitp4diff
+    vbdiff = !sh gitvbdiff
+    drlog = !sh -c 'git log --pretty=tformat:%s $0 | sed -nre \"s/^(DR|FR|B)-?([[:digit:]]+).*/\\U\\1-\\2/Ip\" | sort | uniq'
+    drlogx = !sh -c 'git drlog $0 | powershell -NoProfile -ExecutionPolicy Bypass -File /cmd/Get-DRDetails.ps1'
+    iclone = !sh -c 'git clone --recurse ssh://intellimagic@imcentos-git/~/$0.git && installhooks.sh $0/.git'
+    uclone = !sh -c 'git clone --recurse ssh://$(whoami)@development.urios.nl/srv/git/$0.git && installhooks.sh $0/.git'
+    getmodules = !sh -c 'git submodule update --init --recursive && installhooks.sh ./.git'
+[include]
+    path = ~/dotfiles/.gitconfig-windows

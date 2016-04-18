@@ -1,0 +1,4 @@
+[credential]
+    helper = cache
+[include]
+    path = .gitconfig-base

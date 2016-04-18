@@ -1,0 +1,59 @@
+[user]
+    name = Chiel ten Brinke
+    email = chiel.tenbrinke@intellimagic.com
+[push]
+    default = simple
+[merge]
+    tool = kdiff3
+[mergetool]
+    keeptemporaries = false
+    keepbackups = false
+    prompt = false
+    trustexitcode = false
+[mergetool "kdiff3"]
+    path = c:/Program Files/KDiff3/kdiff3.exe
+[diff]
+    guitool = kdiff3
+[difftool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+[core]
+    fscache = true
+    preloadindex = true
+    editor = vim -u ~/.vimrc.bare
+    whitespace = cr-at-eol
+    trustctime = false
+    filemode = false
+[alias]
+    vdiff = !sh gitvdiff
+    p4diff = !sh gitp4diff
+    vbdiff = !sh gitvbdiff
+    drlog = !sh -c 'git log --pretty=tformat:%s $0 | sed -nre \"s/^(DR|FR|B)-?([[:digit:]]+).*/\\U\\1-\\2/Ip\" | sort | uniq'
+
+    lg = log --notes --graph --decorate --oneline --color=always
+    lga = log --all --notes --graph --decorate --oneline --color=always
+    rlog = !"git --no-pager log --all --graph --decorate --oneline --color=never | tac | awk -f ~/switchslashes.awk | less -X +G -r"
+
+    di = diff --color-words="."
+    sh = show --color-words="."
+    dif = diff --color-words="[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
+    sho = show --color-words="[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
+
+    last = log -1 --stat
+    cp = cherry-pick
+    co = checkout
+    cl = clone
+    ci = commit
+    st = status -sb
+    br = branch
+    unstage = reset HEAD --
+    dc = diff --cached
+    pushf = push --force-with-lease
+[fetch]
+    recurseSubmodules = true
+[gc]
+    auto = 256
+[color]
+    ui = true
+[web]
+    browser = google-chrome
+
