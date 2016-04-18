@@ -216,7 +216,7 @@ endif
 "Fuzzy file finder
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$',
-    \ 'file': '\.exe$\|\.so$\|\.dat$\|\.obj$\|\.bak$\|\.orig$\|\.dll$\|\.lib$'
+    \ 'file': '\.exe$\|\.so$\|\.dat$\|\.obj$\|\.bak$\|\.orig$\|\.dll$\|\.lib$\|\.pdf$'
     \ }
 nnoremap <c-p> :CtrlPMixed<CR>
 "Disable annoying help
@@ -257,6 +257,7 @@ else
     let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 endif
 
+let g:autoformat_verbosemode = 1
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *

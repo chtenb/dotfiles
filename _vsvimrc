@@ -3,7 +3,6 @@ set ignorecase      " Do case insensitive matching
 set smartcase       " Do smart case matching
 set hlsearch        " Incremental search
 set gdefault        " auto g flag for substitution
-set list
 
 " Indentation stuff
 set softtabstop=4
@@ -12,8 +11,6 @@ set shiftwidth=4
 set expandtab
 
 set autoindent
-set nocindent
-set nosmartindent
 
 
 let mapleader = ","
@@ -32,6 +29,8 @@ nnoremap Y y$
 nnoremap U <C-r>
 " Hide highlighting
 nnoremap <C-l> :noh<CR>
+" Enable block select
+nnoremap Q <C-v>
 
 " Visual Studio specific
 set backspace=start

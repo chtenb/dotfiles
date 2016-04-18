@@ -37,3 +37,7 @@ fi
 # Add local bin directory to path
 PATH=$PATH:~/bin
 
+PATH=$PATH:~/Projects/arcanist/bin/
+PATH=$PATH:~/Projects/php/
+source ~/Projects/arcanist/resources/shell/bash-completion
+
