@@ -79,7 +79,7 @@ Plugin 'terryma/vim-multiple-cursors'
 " Fuzzy File Finder
 Plugin 'ctrlpvim/ctrlp.vim'
 " Automatic tag file generator
-Plugin 'xolox/vim-easytags'
+"Plugin 'xolox/vim-easytags'
 " Automatic detect tab indent settings
 "Plugin 'tpope/vim-sleuth'
 " *******************                ********************
@@ -97,28 +97,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 " Gitwrapper
 Plugin 'tpope/vim-fugitive'
-" Autoformatting for javascript
-Plugin 'einars/js-beautify'
 " NERDCommenter
 Plugin 'scrooloose/nerdcommenter'
-" Better HTML5 support
-Plugin 'othree/html5.vim'
-" Coffee script support
-Plugin 'kchmck/vim-coffee-script'
 " Tabularizing
 Plugin 'godlygeek/tabular'
-" Colors
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'chriskempson/base16-vim'
-Plugin 'tomasr/molokai'
-Plugin 'kien/rainbow_parentheses.vim'
-" Cython
-Plugin 'tshirtman/vim-cython'
-" TypeScript
-Plugin 'leafgarland/typescript-vim'
-" OrgMode
-Plugin 'jceb/vim-orgmode'
 " Better f/t
 Plugin 'dahu/vim-fanfingtastic'
 " Be able to increment dates
@@ -127,8 +109,21 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'vim-scripts/DrawIt'
 " Automatic reload vim stuff
 Plugin 'xolox/vim-reload'
-" Toggle source/header
+" Colors
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'chriskempson/base16-vim'
+Plugin 'tomasr/molokai'
+Plugin 'kien/rainbow_parentheses.vim'
+" Language support
+Plugin 'tshirtman/vim-cython'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'jceb/vim-orgmode'
 Plugin 'derekwyatt/vim-fswitch'
+Plugin 'wilsaj/chuck.vim'
+Plugin 'othree/html5.vim'
+"Plugin 'kchmck/vim-coffee-script'
+Plugin 'einars/js-beautify'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -265,6 +260,9 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
+" When vimdiffing, always wrap lines
+au VimEnter * if &diff | execute 'windo set wrap' | endif
+
 
 " Color settings
 set background=dark
@@ -330,14 +328,15 @@ autocmd FileType tex nnoremap <F6> :!bash compile.sh<cr><cr>
 let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],
     \ 'passive_filetypes': ['coffee'] }
-let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_python_exec = 'python34'
 
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 
 let g:NERDCustomDelimiters = {
     \ 'html': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/' },
     \ 'xhtml': {  'left': '<!-- ', 'right': '-->', 'leftAlt': '/*','rightAlt': '*/'},
-    \ 'ma': { 'left': '#' }
+    \ 'ma': { 'left': '#' },
+    \ 'chuck': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' }
     \}
 let NERD_html_alt_style=1
 
