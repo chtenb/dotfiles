@@ -13,14 +13,14 @@ my $reset = color('reset');
 
 
 sub help {
-    say 'USAGE: replace <FIND_PATTERN> <SUBSTITUTE_PATTERN> [<FILES|DIRECTORIES>] [<ARBITRARY GREP PARAMETERS>] [--now]';
+    say 'USAGE: replace <FIND_PATTERN> <SUBSTITUTE_PATTERN> [<ARBITRARY GIT GREP PARAMETERS>] [--now]';
     say '';
     say 'The patterns are treated as Perl regex patterns and the other arguments';
     say 'are treated like the corresponding grep arguments.';
     say 'If the "now" flag is not given, replace will run in dry mode';
     say '';
     say 'EXAMPLE:';
-    say 'replace "number:(\d)" "digit:$1" . ../libs --include=*.{cpp,h} --exclude="../libs/*.h" --now';
+    say 'replace "number:(\d)" "digit:$1" ../libs -- \*.{cpp,h} --now';
     exit 0;
 }
 
@@ -34,7 +34,7 @@ my @remaining = ();
 my $dry = 1;
 
 # Don't replace in .bak, .orig and .swp files files
-push @remaining, '--exclude="*.bak" --exclude="*.orig" --exclude="*.swp" --exclude="tags"';
+#push @remaining, '--exclude="*.bak" --exclude="*.orig" --exclude="*.swp" --exclude="tags"';
 
 # Retrieve config from commandline arguments
 for my $arg (@ARGV) {
@@ -58,8 +58,8 @@ say "Input interpretation: $magenta replace $reset $find $magenta with $reset $s
 
 # Do the actual shit
 if ($dry) {
-    my $grep_command = "grep -rIHP $escaped_find $escaped_remaining";
-    say "Grep search command: $grep_command";
+    my $grep_command = "git grep -IHP $escaped_find $escaped_remaining";
+    say "Git grep search command: $grep_command";
     my $grep_out = `$grep_command`;
 
     # Process grep output per line
@@ -79,7 +79,7 @@ if ($dry) {
     }
 }
 else {
-    my $grep_command = "grep -rlIP $escaped_find $escaped_remaining";
+    my $grep_command = "git grep -lIP $escaped_find $escaped_remaining";
     my $files = `$grep_command`;
     $files = join ' ', (map quotemeta, (split "\n", $files));
     my $perl_command = "perl -p -i.bak -e 's/$find/$subst/g' $files";
