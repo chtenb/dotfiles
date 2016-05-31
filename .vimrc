@@ -203,7 +203,6 @@ nnoremap U <C-r>
 if has("win32")
 "Easily send file to visual studio
     nnoremap <F1> :execute "!start \"C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\IDE\\devenv.exe\" /edit " . bufname("%") . " /command \"edit.goto " . (line(".") + 1) . "\""<CR><CR>
-"nnoremap <F1> :!start "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /edit "%" /command "edit.goto " . (line(".") + 1)<CR><CR>
 else
     nnoremap <F1> <Esc>
 endif
@@ -328,7 +327,7 @@ autocmd FileType tex nnoremap <F6> :!bash compile.sh<cr><cr>
 let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],
     \ 'passive_filetypes': ['coffee'] }
-let g:syntastic_python_python_exec = 'python34'
+"let g:syntastic_python_python_exec = 'python34'
 
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 

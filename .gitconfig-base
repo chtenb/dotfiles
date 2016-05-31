@@ -29,7 +29,7 @@
     vbdiff = !sh gitvbdiff
     drlog = !sh -c 'git log --pretty=tformat:%s $0 | sed -nre \"s/^(DR|FR|B)-?([[:digit:]]+).*/\\U\\1-\\2/Ip\" | sort | uniq'
 
-    lg = log --notes --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)' --all
+    lg = log --notes --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)'
     lga = log --all --notes --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)' --all
     rlog = !"git --no-pager log --all --graph --decorate --oneline --color=never | tac | awk -f ~/switchslashes.awk | less -X +G -r"
 
