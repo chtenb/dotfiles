@@ -37,7 +37,10 @@ fi
 # Add local bin directory to path
 PATH=$PATH:~/bin
 
-PATH=$PATH:~/Projects/arcanist/bin/
+# Setup arcanist
 PATH=$PATH:~/Projects/php/
-source ~/Projects/arcanist/resources/shell/bash-completion
-
+if [ -d "~/Projects/arcanist/" ]
+then
+    PATH=$PATH:~/Projects/arcanist/bin/
+    source ~/Projects/arcanist/resources/shell/bash-completion
+fi
