@@ -237,9 +237,6 @@ nmap <silent> ,ev :e $MYVIMRC<cr>
 " Toggle source/header
 nnoremap <c-k><c-o> :FSHere<CR>
 
-" Put the uncopyable messages text into the buffer
-command! PutMessages redir @" | messages | redir END | put
-
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:ycm_collect_identifiers_from_tags_files = 1

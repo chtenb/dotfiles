@@ -42,8 +42,10 @@ PATH=$PATH:~/bin
 
 # Setup arcanist
 PATH=$PATH:~/Projects/php/
+PATH=$PATH:~/Projects/arcanist/bin/
 if [ -d "~/Projects/arcanist/" ]
 then
+    PATH=$PATH:~/Projects/php/
     PATH=$PATH:~/Projects/arcanist/bin/
     source ~/Projects/arcanist/resources/shell/bash-completion
 fi
