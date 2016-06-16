@@ -4,7 +4,7 @@ This is done by tagging them as archive/<branchname> and removing them both loca
 remotely. Before each operation, the user is asked for confirmation.
 """
 # This dependency can be found on github: https://github.com/Chiel92/python-shellout
-from shellout import get, out, confirm
+from pyshellout import get, out, confirm
 
 
 # Tag merged branches
