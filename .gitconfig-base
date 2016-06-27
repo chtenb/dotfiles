@@ -5,6 +5,7 @@
     default = simple
 [merge]
     tool = kdiff3
+    conflictstyle = diff3
 [mergetool]
     keeptemporaries = false
     keepbackups = false

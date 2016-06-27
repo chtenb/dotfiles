@@ -327,7 +327,7 @@ autocmd FileType tex nnoremap <F6> :!bash compile.sh<cr><cr>
 let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],
     \ 'passive_filetypes': ['coffee'] }
-"let g:syntastic_python_python_exec = 'python34'
+let g:syntastic_python_python_exec = 'python34'
 
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 
