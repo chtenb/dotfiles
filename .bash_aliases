@@ -6,8 +6,14 @@ c() {
 
 # Make git grep search submodules as well
 gsg() {
-    { git --no-pager grep -IPn --color $@ & \
-    git --no-pager submodule foreach "git grep -IPn --color $@; true"; } | less -FRX
+    git --no-pager grep "$@"
+    #git --no-pager submodule foreach --recursive "pwd"
+    git --no-pager submodule foreach --recursive "git --no-pager grep $@ ; true"
+
+    #git --no-pager grep -IPn --color "$@"
+    #git --no-pager submodule foreach --recursive "git --no-pager grep -IPn --color $@ ; true"
+    #{ git --no-pager grep -IPn --color "$@" & \
+    #git --no-pager submodule foreach "git --no-pager grep -IPn --color $@ ; true"; } | less -FRX
 }
 
 # Print stderr in red. Usage: $ color command.
