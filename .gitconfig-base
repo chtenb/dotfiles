@@ -27,7 +27,7 @@
     pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
     lg = log --notes --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)'
-    lga = log --all --notes --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)' --all
+    lga = !sh -c 'git lg --all'
 
     last = log -1 --stat
     unstage = reset HEAD --
@@ -36,7 +36,6 @@
 
     cp = cherry-pick
     co = checkout
-    cl = clone
     ci = commit
     st = status -sb
     br = branch
