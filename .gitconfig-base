@@ -26,33 +26,22 @@
     filemode = false
     pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
-    vdiff = !sh gitvdiff
-    p4diff = !sh gitp4diff
-    vbdiff = !sh gitvbdiff
-    drlog = !sh -c 'git log --pretty=tformat:%s $0 | sed -nre \"s/^(DR|FR|B)-?([[:digit:]]+).*/\\U\\1-\\2/Ip\" | sort | uniq'
-
     lg = log --notes --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)'
     lga = log --all --notes --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)' --all
-    rlog = !"git --no-pager log --all --graph --decorate --oneline --color=never | tac | awk -f ~/switchslashes.awk | less -X +G -r"
-
-    #di = diff --color-words="."
-    #sh = show --color-words="."
-    #dif = diff --color-words="[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
-    #sho = show --color-words="[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
-    #dif = !sh -c 'git diff --color "$0" "$1" "$2" | diff-so-fancy | less -X -r'
-    #sho = !sh -c 'git show --color "$0" "$1" "$2" | diff-so-fancy | less -X -r'
-
-    patch = --no-pager diff --no-color
 
     last = log -1 --stat
+    unstage = reset HEAD --
+    pushf = push --force-with-lease
+    update = "!f() { git fetch . "origin/$1:$1" --recurse-submodules=no; }; f"
+
     cp = cherry-pick
     co = checkout
     cl = clone
     ci = commit
     st = status -sb
     br = branch
-    unstage = reset HEAD --
-    pushf = push --force-with-lease
+
+    patch = --no-pager diff --no-color
 [fetch]
     recurseSubmodules = true
 [gc]
