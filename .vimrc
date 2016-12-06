@@ -314,7 +314,6 @@ autocmd BufRead,BufNewFile *.ipy set filetype=python
 set textwidth=0
 au FileType markdown set textwidth=95
 au FileType text set textwidth=95
-au FileType python set textwidth=95
 
 au FileType coffee setl shiftwidth=2
 

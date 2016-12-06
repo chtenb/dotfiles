@@ -32,7 +32,8 @@
     last = log -1 --stat
     unstage = reset HEAD --
     pushf = push --force-with-lease
-    update = "!f() { git fetch . "origin/$1:$1" --recurse-submodules=no; }; f"
+    unlock = "!f() { root=$(git rev-parse --show-toplevel); rm "$root/.git/index.lock"; }; f"
+    update = "!f() { if [ $# -eq 0 ] ; then git reset --hard @{u}; else git fetch . "origin/$1:$1" --recurse-submodules=no; fi }; f"
 
     cp = cherry-pick
     co = checkout
