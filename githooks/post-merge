@@ -1,0 +1,4 @@
+#!/bin/sh
+# NOTE: post-merge only fires after a successful merge, see also the post-commit hook.
+echo Updating submodules
+git submodule update --init --recursive

@@ -1,0 +1,8 @@
+#!/bin/sh
+# Only run submodule update if this was a merge commit (multiple parents).
+# Needed because post-merge does not fire if there were merge conflicts.
+if (( $(git log --pretty=%P -n 1 HEAD | wc -w) > 1 ))
+then
+  echo Updating submodules
+  git submodule update --init --recursive
+fi

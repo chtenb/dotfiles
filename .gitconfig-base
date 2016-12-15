@@ -18,6 +18,7 @@
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
 [core]
+    hooksPath = ~/dotfiles/githooks/
     fscache = true
     preloadindex = true
     editor = vim -u ~/.vimrc.bare
@@ -29,6 +30,7 @@
     lg = log --notes --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)'
     lga = !sh -c 'git lg --all'
 
+    subup = submodule update --init --recursive
     last = log -1 --stat
     unstage = reset HEAD --
     pushf = push --force-with-lease

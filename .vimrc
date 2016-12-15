@@ -78,6 +78,7 @@ endif
 Plugin 'terryma/vim-multiple-cursors'
 " Fuzzy File Finder
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'drmikehenry/vim-fontsize'
 " Automatic tag file generator
 "Plugin 'xolox/vim-easytags'
 " Automatic detect tab indent settings
@@ -246,7 +247,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filetype_blacklist = {}
 let g:ycm_confirm_extra_conf = 0
 if has("win32")
-    let g:ycm_path_to_python_interpreter = 'c:\Program Files\Python 3.5\python.exe'
+    let g:ycm_path_to_python_interpreter = 'c:\Program Files (x86)\Python 3.5\python.exe'
 else
     let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 endif

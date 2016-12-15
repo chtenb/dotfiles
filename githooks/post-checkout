@@ -1,0 +1,7 @@
+#!/bin/sh
+# Only run submodule update when checking out a commit, not when checking out a file.
+if [[ "$3" == "1" ]]
+then
+  echo Updating submodules
+  git submodule update --init --recursive
+fi
