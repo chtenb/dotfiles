@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+if (@ARGV == 0)
+{
+	 die "Missing commit message file as first argument.";
+}
+if (@ARGV > 1)
+{
+	 my $commit_type = $ARGV[1];
+	 exit if ($commit_type =~ /(merge|squash|commit|template)/);
+}
+
+my $current_branch_name = `git rev-parse --abbrev-ref HEAD`;
+if ($current_branch_name =~ /^((DR|B|FR)-[0-9]{6})/)
+{
+	 my $salesforce_id = $1;
+	 open(my $msg_file, "+<", $ARGV[0]) or die "Can't open commit message file: $!";
+	 my $msg = do { local $/; <$msg_file> };
+	 if ($msg =~ /#/)
+	 {
+		  $msg = "\n\n$msg";
+	 }
+	 seek($msg_file, 0, 0);
+	 print($msg_file "$salesforce_id: $msg");
+	 close($msg_file);
+}
