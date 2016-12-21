@@ -27,7 +27,7 @@
     filemode = false
     pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
-    lg = log --notes --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)'
+    lg = log --notes --graph --abbrev-commit --decorate --left-right --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)'
     lga = !sh -c 'git lg --all'
 
     subup = submodule update --init --recursive
