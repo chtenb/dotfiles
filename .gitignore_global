@@ -1,0 +1,8 @@
+# Ignore common temporary and backup files
+*.bak
+*.orig
+*.tmp
+*.swp
+*.swo
+*.swn
+
