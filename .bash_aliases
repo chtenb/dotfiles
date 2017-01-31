@@ -20,12 +20,13 @@ gsg() {
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
 alias ex="explorer ."
-alias gg="git grep -IPn --color"
-alias gr="grep -rIPn --color"
+alias gg="git grep -IPn --color=always"
+alias gr="grep -rIPn --color=always"
 alias pingg="ping google.nl"
 alias die="sudo shutdown -h now"
 alias open="gnome-open"
 alias tmux="TERM=screen-256color-bce tmux"
+alias lesser="less --tabs=4 -RFX"
 
 # Ping google server
 alias pingg="ping google.nl"
