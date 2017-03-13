@@ -252,7 +252,7 @@ else
     let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 endif
 
-let g:autoformat_verbosemode = 1
+"let g:autoformat_verbosemode = 1
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -297,6 +297,9 @@ au Syntax * RainbowParenthesesLoadBraces
 "
 
 autocmd FileType vim,tex let b:autoformat_autoindent=0
+"let g:autoformat_autoindent = 0
+"let g:autoformat_retab = 0
+"let g:autoformat_remove_trailing_spaces = 0
 
 autocmd BufRead,BufNewFile *.ma set filetype=ma
 autocmd BufRead,BufNewFile *.go set filetype=go
