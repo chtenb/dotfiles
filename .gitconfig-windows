@@ -2,4 +2,6 @@
     helper = wincred
 [include]
     path = ~/dotfiles/.gitconfig-base
+[core]
+    autocrlf=false
 
