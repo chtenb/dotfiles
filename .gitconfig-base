@@ -43,7 +43,6 @@
     ci = commit
     st = status -sb
     br = branch
-    ls = branch --list
 
     patch = --no-pager diff --no-color
 [fetch]

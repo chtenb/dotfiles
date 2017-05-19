@@ -27,7 +27,7 @@
 [include]
     path = ~/dotfiles/.gitconfig-windows
 [push]
-	default = current
+	default = simple
 [core]
 	fscache = true
 	preloadindex = true

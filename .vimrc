@@ -123,8 +123,11 @@ Plugin 'jceb/vim-orgmode'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'wilsaj/chuck.vim'
 Plugin 'othree/html5.vim'
+Plugin 'chrisbra/csv.vim'
 "Plugin 'kchmck/vim-coffee-script'
 Plugin 'einars/js-beautify'
+Plugin 'sillyotter/t4-vim'
+Plugin 'adamclerk/vim-razor'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
