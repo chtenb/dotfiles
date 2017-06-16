@@ -206,7 +206,8 @@ nnoremap U <C-r>
 " TODO:  /command "edit.goto FILE_LINE"
 if has("win32")
 "Easily send file to visual studio
-    nnoremap <F1> :execute "!start \"C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\IDE\\devenv.exe\" /edit " . bufname("%") . " /command \"edit.goto " . (line(".") + 1) . "\""<CR><CR>
+    "nnoremap <F1> :execute "!start \"C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\IDE\\devenv.exe\" /edit " . bufname("%") . " /command \"edit.goto " . (line(".") + 1) . "\""<CR><CR>
+    nnoremap <F1> <Esc>
 else
     nnoremap <F1> <Esc>
 endif
@@ -303,6 +304,8 @@ autocmd FileType vim,tex let b:autoformat_autoindent=0
 "let g:autoformat_autoindent = 0
 "let g:autoformat_retab = 0
 "let g:autoformat_remove_trailing_spaces = 0
+let g:formatdef_sort = "'sort'"
+let g:formatters_text = ['sort']
 
 autocmd BufRead,BufNewFile *.ma set filetype=ma
 autocmd BufRead,BufNewFile *.go set filetype=go
