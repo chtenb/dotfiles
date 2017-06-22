@@ -19,11 +19,12 @@ gsg() {
 # Print stderr in red. Usage: $ color command.
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
-if [ -f /path/to/hub.bash_completion ]; then
-  . /path/to/hub.bash_completion
+if [ -f ~/dotfiles/hub.bash_completion.sh ]; then
+  . ~/dotfiles/hub.bash_completion.sh
 fi
 
 alias g="hub"
+__git_complete g __git_main
 alias ex="explorer ."
 alias gg="git grep -IPn --color=always"
 alias gr="grep -rIPn --color=always"
