@@ -1,9 +1,11 @@
-
-
 "
 " *** WINDOWS FIXES ***
 "
+set nocompatible
 
+
+let $PATH .= ';C:\Program Files\MiKTeX 2.9\miktex\bin\x64'
+let $PATH .= ';C:\Strawberry\perl\bin'
 
 if has("win32") && has("gui_running")
 python << EOF
@@ -13,9 +15,10 @@ path = os.environ['PATH'].split(';')
 
 def contains_msvcr_lib(folder):
     try:
-        for item in os.listdir(folder):
-            if re.match(r'msvcr\d+\.dll', item):
-                return True
+        if 'system32' not in folder:
+            for item in os.listdir(folder):
+                if re.match(r'msvcr\d+\.dll', item):
+                    return True
     except:
         pass
     return False
@@ -28,6 +31,7 @@ endif
 if has("win32") && !has("gui_running")
     set shell=/usr/bin/bash
 endif
+
 
 
 "
@@ -128,6 +132,7 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'einars/js-beautify'
 Plugin 'sillyotter/t4-vim'
 Plugin 'adamclerk/vim-razor'
+Plugin 'lervag/vimtex'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -304,8 +309,6 @@ autocmd FileType vim,tex let b:autoformat_autoindent=0
 "let g:autoformat_autoindent = 0
 "let g:autoformat_retab = 0
 "let g:autoformat_remove_trailing_spaces = 0
-let g:formatdef_sort = "'sort'"
-let g:formatters_text = ['sort']
 
 autocmd BufRead,BufNewFile *.ma set filetype=ma
 autocmd BufRead,BufNewFile *.go set filetype=go
@@ -332,6 +335,10 @@ autocmd FileType tex set makeprg=pdflatex\ %
 autocmd FileType tex set indentexpr=
 autocmd FileType tex set indentkeys=
 autocmd FileType tex nnoremap <F6> :!bash compile.sh<cr><cr>
+
+" Vimtex options go here
+
+let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
 
 let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],
