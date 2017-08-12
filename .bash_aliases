@@ -24,7 +24,9 @@ if [ -f ~/dotfiles/hub.bash_completion.sh ]; then
 fi
 
 alias g="hub"
-__git_complete g __git_main
+if [ hash __git_complete 2>/dev/null ]; then
+    __git_complete g __git_main
+fi
 alias ex="explorer ."
 alias gg="git grep -IPn --color=always"
 alias gr="grep -rIPn --color=always"
