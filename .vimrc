@@ -104,7 +104,7 @@ Plugin 'drmikehenry/vim-fontsize'
 " Integrated debugger. Only support python and php.
 "Plugin 'jabapyth/vim-debug'
 " Matchit
-Plugin 'edsono/vim-matchit'
+Plugin 'vim-scripts/matchit.zip'
 " Surround
 Plugin 'tpope/vim-surround'
 " Extend repeat command functionality
