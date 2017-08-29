@@ -3,6 +3,15 @@
 "
 set nocompatible
 
+"filetype plugin indent on
+"syntax enable
+
+"let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
+"let g:vimtex_quickfix_mode = 2
+
+"" Load Vimtex
+"let &rtp  = '~/.vim/bundle/vimtex,' . &rtp
+"let &rtp .= ',~/.vim/bundle/vimtex/after'
 
 let $PATH .= ';C:\Program Files\MiKTeX 2.9\miktex\bin\x64'
 let $PATH .= ';C:\Strawberry\perl\bin'
@@ -32,7 +41,7 @@ if has("win32") && !has("gui_running")
     set shell=/usr/bin/bash
 endif
 
-
+"finish
 
 "
 " *** VUNDLE CONFIGURATION ***
@@ -326,6 +335,7 @@ autocmd BufRead,BufNewFile *.ipy set filetype=python
 
 set textwidth=0
 au FileType markdown set textwidth=95
+au FileType tex set textwidth=150
 au FileType text set textwidth=95
 
 au FileType coffee setl shiftwidth=2
@@ -339,6 +349,7 @@ autocmd FileType tex nnoremap <F6> :!bash compile.sh<cr><cr>
 " Vimtex options go here
 
 let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
+let g:vimtex_quickfix_mode = 2
 
 let g:syntastic_mode_map = { 'mode': 'active',
     \ 'active_filetypes': [],

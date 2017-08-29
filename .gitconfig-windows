@@ -4,4 +4,4 @@
     path = ~/dotfiles/.gitconfig-base
 [core]
     autocrlf=false
-
+    whitespace = cr-at-eol
