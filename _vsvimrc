@@ -21,6 +21,10 @@ let mapleader = ","
 nnoremap <F1> <Esc>
 inoremap <F1> <Esc>
 vnoremap <F1> <Esc>
+"Disable annoying record mode
+nnoremap q <nop>
+inoremap q <nop>
+vnoremap q <nop>
 " Decent save shortcut
 nnoremap <C-s> :w<CR>
 " Give Y a sane meaning

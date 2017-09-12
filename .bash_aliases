@@ -24,7 +24,7 @@ if [ -f ~/dotfiles/hub.bash_completion.sh ]; then
 fi
 
 alias g="hub"
-if [ hash __git_complete 2>/dev/null ]; then
+if [ -z ${__git_complete+x} ]; then
     __git_complete g __git_main
 fi
 alias ex="explorer ."

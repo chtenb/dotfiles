@@ -346,6 +346,8 @@ autocmd FileType tex set indentexpr=
 autocmd FileType tex set indentkeys=
 autocmd FileType tex nnoremap <F6> :!bash compile.sh<cr><cr>
 
+autocmd BufRead,BufNewFile *.t4 set filetype=t4
+
 " Vimtex options go here
 
 let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
