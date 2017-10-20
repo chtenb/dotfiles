@@ -2,6 +2,7 @@
 " *** WINDOWS FIXES ***
 "
 set nocompatible
+set encoding=utf-8
 
 "filetype plugin indent on
 "syntax enable
@@ -265,7 +266,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filetype_blacklist = {}
 let g:ycm_confirm_extra_conf = 0
 if has("win32")
-    let g:ycm_path_to_python_interpreter = 'c:\Program Files (x86)\Python 3.5\python.exe'
+    let g:ycm_path_to_python_interpreter = 'c:\Program Files\Python36\python.exe'
 else
     let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 endif
@@ -302,6 +303,8 @@ if has("gui_running")
     else
         set guifont=mono\ 11
     endif
+else
+    colorscheme Tomorrow-Night
 endif
 
 au VimEnter * RainbowParenthesesToggle
