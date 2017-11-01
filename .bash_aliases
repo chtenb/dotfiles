@@ -28,7 +28,8 @@ if [ -z ${__git_complete+x} ]; then
     __git_complete g __git_main
 fi
 alias ex="explorer ."
-alias gg="git grep -IPn --color=always"
+alias gg="git grep -IPn --color=always --recurse-submodules"
+alias ggn="git grep -IPn --color=always"
 alias gr="grep -rIPn --color=always"
 alias die="sudo shutdown -h now"
 alias open="gnome-open"
