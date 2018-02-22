@@ -5,3 +5,7 @@
 [core]
     autocrlf=false
     whitespace = cr-at-eol
+[web]
+    browser = "chrome"
+[browser "chrome"]
+    path = C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe

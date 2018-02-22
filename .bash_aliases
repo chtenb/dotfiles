@@ -4,18 +4,6 @@ c() {
     ls -a
 }
 
-# Make git grep search submodules as well
-gsg() {
-    git --no-pager grep "$@"
-    #git --no-pager submodule foreach --recursive "pwd"
-    git --no-pager submodule foreach --recursive "git --no-pager grep $@ ; true"
-
-    #git --no-pager grep -IPn --color "$@"
-    #git --no-pager submodule foreach --recursive "git --no-pager grep -IPn --color $@ ; true"
-    #{ git --no-pager grep -IPn --color "$@" & \
-    #git --no-pager submodule foreach "git --no-pager grep -IPn --color $@ ; true"; } | less -FRX
-}
-
 # Print stderr in red. Usage: $ color command.
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
