@@ -12,7 +12,7 @@ if [ -f ~/dotfiles/hub.bash_completion.sh ]; then
 fi
 
 alias g="hub"
-if [ -z ${__git_complete+x} ]; then
+if [ -x "$(command -v __git_complete)" ]; then
     __git_complete g __git_main
 fi
 alias ex="explorer ."
