@@ -47,9 +47,9 @@
     dsi = diff --staged --ignore-all-space
 
     # Fetch a branch x from origin to origin/x, and set it up to track it.
-    add-branch = "!f() { git remote set-branches --add origin "$1"; }; f"
+    add-tracking-branch = "!f() { git remote set-branches --add origin "$1"; }; f"
     # Update current branch to tracking branch, or update given branch x to origin/x.
-    update = "!f() { : git checkout ; if [ $# -eq 0 ] ; then git reset --hard @{u}; else git fetch . "origin/$1:$1" --recurse-submodules=no; fi }; f"
+    retrack = "!f() { : git checkout ; if [ $# -eq 0 ] ; then git reset --hard @{u}; else git fetch . "origin/$1:$1" --recurse-submodules=no; fi }; f"
 
     patch = --no-pager diff --no-color
 

@@ -7,12 +7,8 @@ c() {
 # Print stderr in red. Usage: $ color command.
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
-if [ -f ~/dotfiles/hub.bash_completion.sh ]; then
-  . ~/dotfiles/hub.bash_completion.sh
-fi
-
-alias g="hub"
-if [ -x "$(command -v __git_complete)" ]; then
+alias g="git"
+if [ "$(command -v __git_complete)" ]; then
     __git_complete g __git_main
 fi
 alias ex="explorer ."
