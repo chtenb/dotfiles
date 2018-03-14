@@ -138,6 +138,8 @@ Plugin 'derekwyatt/vim-fswitch'
 Plugin 'wilsaj/chuck.vim'
 Plugin 'othree/html5.vim'
 Plugin 'chrisbra/csv.vim'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'Konfekt/FastFold'
 "Plugin 'kchmck/vim-coffee-script'
 Plugin 'einars/js-beautify'
 Plugin 'sillyotter/t4-vim'
@@ -182,6 +184,11 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Folding
+nnoremap <space> za
+let g:SimpylFold_fold_import=0
+let g:SimpylFold_fold_docstring=0
+
 let mapleader = ","
 
 
@@ -205,6 +212,15 @@ let g:EasyMotion_use_upper = 1
 let g:EasyMotion_smartcase = 1
 " Smartsign (type `3` and match `3`&`#`)
 let g:EasyMotion_use_smartsign_us = 1
+
+
+let g:airline#extensions#tabline#enabled = 1
+nnoremap <C-k> :bprev<CR>
+nnoremap <C-j> :bnext<CR>
+
+
+let g:multi_cursor_exit_from_visual_mode=0
+let g:multi_cursor_exit_from_insert_mode=0
 
 
 " Decent quit shortcut
@@ -236,8 +252,6 @@ nnoremap <c-p> :CtrlPMixed<CR>
 "Disable annoying help
 inoremap <F1> <Esc>
 vnoremap <F1> <Esc>
-"Open bufferexplorer
-noremap <F2> :BufExplorer<CR>
 "Autoformat code
 noremap <F3> :Autoformat<CR>
 "Compile
@@ -255,7 +269,7 @@ nnoremap <S-F12> :GG <cword><CR>
 nmap <silent> ,ev :e $MYVIMRC<cr>
 
 " Toggle source/header
-nnoremap <c-k><c-o> :FSHere<CR>
+"nnoremap <c-k><c-o> :FSHere<CR>
 
 
 let g:UltiSnipsExpandTrigger="<c-j>"
