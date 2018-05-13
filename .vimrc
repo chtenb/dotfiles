@@ -137,7 +137,7 @@ Plugin 'jceb/vim-orgmode'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'wilsaj/chuck.vim'
 Plugin 'othree/html5.vim'
-Plugin 'chrisbra/csv.vim'
+"Plugin 'chrisbra/csv.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Konfekt/FastFold'
 "Plugin 'kchmck/vim-coffee-script'
@@ -145,6 +145,7 @@ Plugin 'einars/js-beautify'
 Plugin 'sillyotter/t4-vim'
 Plugin 'adamclerk/vim-razor'
 Plugin 'lervag/vimtex'
+Plugin 'Chiel92/vim-tsv'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -196,13 +197,12 @@ let mapleader = ","
 " Require tpope/vim-repeat to enable dot repeat support
 " Jump to anywhere with only `ss{char}{target}`
 " `ss<CR>` repeat last find motion.
-nmap ss <Plug>(easymotion-s)
-map S <Plug>(easymotion-s2)
-
-map sl <Plug>(easymotion-lineforward)
-map sj <Plug>(easymotion-j)
-map sk <Plug>(easymotion-k)
-map sh <Plug>(easymotion-linebackward)
+nnoremap ss <Plug>(easymotion-s)
+nnoremap S <Plug>(easymotion-s2)
+nnoremap sl <Plug>(easymotion-lineforward)
+nnoremap sj <Plug>(easymotion-j)
+nnoremap sk <Plug>(easymotion-k)
+nnoremap sh <Plug>(easymotion-linebackward)
 
 " keep cursor column when JK motion
 let g:EasyMotion_startofline = 0
@@ -215,9 +215,10 @@ let g:EasyMotion_use_smartsign_us = 1
 
 
 let g:airline#extensions#tabline#enabled = 1
-nnoremap <C-k> :bprev<CR>
-nnoremap <C-j> :bnext<CR>
+nnoremap <C-h> :bprev<CR>
+nnoremap <C-l> :bnext<CR>
 
+nnoremap <silent> <C-k> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-k>
 
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
@@ -344,8 +345,6 @@ au FileType haskell nnoremap <buffer> <F5> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F6> :HdevtoolsClear<CR>
 au FileType haskell set shiftwidth=2
 
-au FileType cs compiler xbuild
-
 autocmd BufRead,BufNewFile *.sage set filetype=python
 autocmd BufRead,BufNewFile *.sage set makeprg=sage\ --preparse\ %
 autocmd BufRead,BufNewFile *.ipy set filetype=python
@@ -354,6 +353,8 @@ set textwidth=0
 au FileType markdown set textwidth=95
 au FileType tex set textwidth=150
 au FileType text set textwidth=95
+" The indent file for python is broken
+"au FileType python set textwidth=120
 
 au FileType coffee setl shiftwidth=2
 
@@ -389,3 +390,4 @@ let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = ['perl']
 
 let g:syntastic_lua_checkers = ['luacheck']
+let g:formatters_javascript = ['prettier']

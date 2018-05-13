@@ -4,6 +4,10 @@ c() {
     ls -a
 }
 
+wpy() {
+    winpty -Xallow-non-tty python.exe "$@"
+}
+
 # Print stderr in red. Usage: $ color command.
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 

@@ -36,4 +36,4 @@
 [fetch]
 	recurseSubmodules = true
 [winUpdater]
-	recentlySeenVersion = 2.16.2.windows.1
+	recentlySeenVersion = 2.17.0.windows.1
