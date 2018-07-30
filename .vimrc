@@ -218,7 +218,7 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
 
-nnoremap <silent> <C-k> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-k>
+nnoremap <silent> <C-c> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-k>
 
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
@@ -354,7 +354,7 @@ au FileType markdown set textwidth=95
 au FileType tex set textwidth=150
 au FileType text set textwidth=95
 " The indent file for python is broken
-"au FileType python set textwidth=120
+au FileType python set textwidth=150
 
 au FileType coffee setl shiftwidth=2
 

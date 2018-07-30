@@ -30,7 +30,7 @@ nnoremap Y y$
 " Give U a sane meaning and avoid conflicts with resharper
 nnoremap U <C-r>
 " Hide highlighting
-nnoremap <C-l> :noh<CR>
+nnoremap <C-c> :noh<CR>
 " Enable block select
 nnoremap Q <C-v>
 
