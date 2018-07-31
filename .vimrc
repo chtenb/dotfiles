@@ -17,8 +17,12 @@ set encoding=utf-8
 let $PATH .= ';C:\Program Files\MiKTeX 2.9\miktex\bin\x64'
 let $PATH .= ';C:\Strawberry\perl\bin'
 
+if has('python3')
+  silent! python3 1
+endif
+
 if has("win32") && has("gui_running")
-python << EOF
+python3 << EOF
 import os
 import re
 path = os.environ['PATH'].split(';')
@@ -281,7 +285,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filetype_blacklist = {}
 let g:ycm_confirm_extra_conf = 0
 if has("win32")
-    let g:ycm_path_to_python_interpreter = 'c:\Program Files\Python36\python.exe'
+    let g:ycm_path_to_python_interpreter = 'c:\Program Files\Python370\python.exe'
 else
     let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 endif
