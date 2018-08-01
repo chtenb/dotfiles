@@ -7,6 +7,11 @@ c() {
 wpy() {
     winpty -Xallow-non-tty python.exe "$@"
 }
+# Make git grep search submodules as well
+gsg() {
+    git --no-pager grep "$@"
+    git --no-pager submodule foreach --recursive "git --no-pager grep $@ ; true"
+}
 
 # Print stderr in red. Usage: $ color command.
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
@@ -15,6 +20,8 @@ alias g="git"
 if [ "$(command -v __git_complete)" ]; then
     __git_complete g __git_main
 fi
+
+alias l="ls -a --color --classify"
 alias ex="explorer ."
 alias gg="git grep -IPn --color=always --recurse-submodules"
 alias ggn="git grep -IPn --color=always"
