@@ -90,8 +90,6 @@ Plugin 'drmikehenry/vim-fontsize'
 "Plugin 'tpope/vim-sleuth'
 Plugin 'Chiel92/vim-visgo'
 Plugin 'tpope/vim-unimpaired'
-" Integrated debugger. Only support python and php.
-"Plugin 'jabapyth/vim-debug'
 " Matchit
 Plugin 'vim-scripts/matchit.zip'
 " Surround
@@ -134,6 +132,7 @@ Plugin 'sillyotter/t4-vim'
 Plugin 'adamclerk/vim-razor'
 Plugin 'lervag/vimtex'
 Plugin 'Chiel92/vim-tsv'
+Plugin 'vim-scripts/w3af.vim'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
