@@ -32,6 +32,9 @@
     sup = submodule update --init --recursive
     last = log -1 --stat
 
+    mt = mergetool
+    me = merge
+    pl = pull
     ps = push
     psf = push --force-with-lease
     fe = fetch
