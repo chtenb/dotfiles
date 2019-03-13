@@ -63,36 +63,23 @@ call vundle#begin()
 " required!
 Plugin 'VundleVim/Vundle.vim'
 
-" *******************************************************
-" *********************   VIMIDE   **********************
-" ********************  collection  *********************
-" *******************                ********************
-" Syntax checker support
 Plugin 'scrooloose/syntastic'
-" Advanced on the fly autocompletion
 if has("gui_running")
 Plugin 'Valloric/YouCompleteMe'
+"Plugin 'airblade/vim-gitgutter'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'SirVer/ultisnips'
+Plugin 'bling/vim-airline'
 endif
 " Class browser
 Plugin 'majutsushi/tagbar'
-" Filetree browser
 Plugin 'scrooloose/nerdtree'
-" Autoformatting support
 Plugin 'Chiel92/vim-autoformat'
-" Snippet support
-if has("gui_running")
-Plugin 'SirVer/ultisnips'
-endif
 Plugin 'honza/vim-snippets'
-" Easy motion
 Plugin 'easymotion/vim-easymotion'
-" Buffer explorer
 Plugin 'corntrace/bufexplorer'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-sensible'
-if has("gui_running")
-Plugin 'bling/vim-airline'
-endif
 Plugin 'terryma/vim-multiple-cursors'
 " Fuzzy File Finder
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -101,11 +88,8 @@ Plugin 'drmikehenry/vim-fontsize'
 "Plugin 'xolox/vim-easytags'
 " Automatic detect tab indent settings
 "Plugin 'tpope/vim-sleuth'
-" *******************                ********************
-" ********************  collection  *********************
-" *********************   VIMIDE   **********************
-" *******************************************************
-"
+Plugin 'Chiel92/vim-visgo'
+Plugin 'tpope/vim-unimpaired'
 " Integrated debugger. Only support python and php.
 "Plugin 'jabapyth/vim-debug'
 " Matchit
@@ -159,14 +143,26 @@ filetype plugin indent on     " required
 " *** OTHER CONFIGURATION ***
 "
 
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undodir')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile
+endif
+
 
 " We always want autoindent. Nothing fancy.
 set nocindent
 set nosmartindent
 
 set number          " Absolute line numbering on current line
-set undofile        " Remember undo history
-set undodir=$HOME/.vimundo/ " set a directory to store the undo history
 set ignorecase      " Do case insensitive matching
 set smartcase       " Do smart case matching
 set hlsearch        " Incremental search
@@ -201,28 +197,26 @@ let mapleader = ","
 " Require tpope/vim-repeat to enable dot repeat support
 " Jump to anywhere with only `ss{char}{target}`
 " `ss<CR>` repeat last find motion.
-nnoremap ss <Plug>(easymotion-s)
-nnoremap S <Plug>(easymotion-s2)
-nnoremap sl <Plug>(easymotion-lineforward)
-nnoremap sj <Plug>(easymotion-j)
-nnoremap sk <Plug>(easymotion-k)
-nnoremap sh <Plug>(easymotion-linebackward)
+nmap s <Plug>(easymotion-s)
+"nmap ss <Plug>(easymotion-s)
+"nmap S <Plug>(easymotion-s2)
+"nmap sl <Plug>(easymotion-lineforward)
+"nmap sj <Plug>(easymotion-j)
+"nmap sk <Plug>(easymotion-k)
+"nmap sh <Plug>(easymotion-linebackward)
 
-" keep cursor column when JK motion
-let g:EasyMotion_startofline = 0
-" Use uppercase target labels and type as a lower case
-let g:EasyMotion_use_upper = 1
-" type `l` and match `l`&`L`
-let g:EasyMotion_smartcase = 1
-" Smartsign (type `3` and match `3`&`#`)
-let g:EasyMotion_use_smartsign_us = 1
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+let g:EasyMotion_use_upper = 1 " Use uppercase target labels and type as a lower case
+let g:EasyMotion_smartcase = 1 " type `l` and match `l`&`L`
+let g:EasyMotion_use_smartsign_us = 1 " Smartsign (type `3` and match `3`&`#`)
 
-
+let g:indent_guides_enable_on_vim_startup = 1
 let g:airline#extensions#tabline#enabled = 1
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
 
-nnoremap <silent> <C-c> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-k>
+nnoremap <silent> <C-c> :syn sync fromstart \| :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-k>
 
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
@@ -275,7 +269,6 @@ nmap <silent> ,ev :e $MYVIMRC<cr>
 
 " Toggle source/header
 "nnoremap <c-k><c-o> :FSHere<CR>
-
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -395,3 +388,11 @@ let g:syntastic_perl_checkers = ['perl']
 
 let g:syntastic_lua_checkers = ['luacheck']
 let g:formatters_javascript = ['prettier']
+
+let g:formatterpath = ['C:\Users\Chiel.tenBrinke\Desktop']
+
+augroup XML
+    autocmd!
+    autocmd FileType xml setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
+augroup END
+

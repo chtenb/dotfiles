@@ -29,36 +29,33 @@
     pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
     lg = log --notes --graph --abbrev-commit --decorate --left-right --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)'
-
     sup = submodule update --init --recursive
     last = log -1 --stat
-    unstage = reset HEAD --
-    pushf = push --force-with-lease
-    unlock = "!f() { root=$(git rev-parse --show-toplevel); rm "$root/.git/index.lock"; }; f"
 
+    ps = push
+    psf = push --force-with-lease
+    fe = fetch
+    cl = clean -df
+    clx = clean -dfx
     cp = cherry-pick
     co = checkout
     ci = commit
     st = status -sb
     br = branch
-    d = diff
     di = diff --ignore-all-space
     ds = diff --staged
     dsi = diff --staged --ignore-all-space
+    sho = show --ignore-all-space
 
     # Fetch a branch x from origin to origin/x, and set it up to track it.
     add-tracking-branch = "!f() { git remote set-branches --add origin "$1"; }; f"
     # Update current branch to tracking branch, or update given branch x to origin/x.
     retrack = "!f() { : git checkout ; if [ $# -eq 0 ] ; then git reset --hard @{u}; else git fetch . "origin/$1:$1" --recurse-submodules=no; fi }; f"
+    # Remove stuck lock file
+    unlock = "!f() { root=$(git rev-parse --show-toplevel); rm "$root/.git/index.lock"; }; f"
 
     patch = --no-pager diff --no-color
 
-    # Invert staging area
-    # WEIRD: git stash apply stash@{1} also seems to apply the changes stashed in stash@{0}
-    #invertindex = "!f() { git stash --keep-index && git reset HEAD -- && git stash && git stash apply stash@{1} && git add -u && git stash pop --index && git stash drop; }; f"
-    # WEIRD: the git stash pop --index also deletes a lot of files
-    #invertindex = "!f() { git commit -m "inverting index..." && git add -u && git stash && git reset HEAD^ && git stash pop --index; }; f"
-    #invertindex = "!f() { git stash save "unstaged" --keep-index && git stash save "staged" && git stash apply "unstaged" && git commit -a -m "foobar" && git stash apply && git reset HEAD^ && git stash pop; }; f"
 [fetch]
     recurseSubmodules = true
 [gc]
