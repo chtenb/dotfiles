@@ -32,6 +32,7 @@
     sup = submodule update --init --recursive
     last = log -1 --stat
 
+    c = "!f() { ~/dotfiles/interactive-git-checkout/git_checkout.py; }; f"
     bs = bisect
     mt = mergetool
     me = merge
