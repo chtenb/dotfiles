@@ -4,6 +4,11 @@ c() {
     ls -a
 }
 
+# Fast dir crawling
+replace() {
+    perl ~/dotfiles/bin/replace.pl "$@"
+}
+
 wpy() {
     winpty -Xallow-non-tty python.exe "$@"
 }

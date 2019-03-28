@@ -12,5 +12,6 @@ fi
 # User specific environment and startup programs
 
 PATH=$PATH:$HOME/bin
+PATH=$PATH:$HOME/dotfiles/bin
 
 export PATH
