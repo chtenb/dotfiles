@@ -4,19 +4,6 @@
 set nocompatible
 set encoding=utf-8
 
-"filetype plugin indent on
-"syntax enable
-
-"let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
-"let g:vimtex_quickfix_mode = 2
-
-"" Load Vimtex
-"let &rtp  = '~/.vim/bundle/vimtex,' . &rtp
-"let &rtp .= ',~/.vim/bundle/vimtex/after'
-
-let $PATH .= ';C:\Program Files\MiKTeX 2.9\miktex\bin\x64'
-let $PATH .= ';C:\Strawberry\perl\bin'
-
 if has('python3')
   silent! python3 1
 endif
@@ -46,7 +33,37 @@ if has("win32") && !has("gui_running")
     set shell=/usr/bin/bash
 endif
 
-"finish
+
+"
+" FileType detect
+"
+
+autocmd! BufNewFile,BufRead *.vs,*.fs,*gs set ft=glsl
+
+autocmd BufRead,BufNewFile *.ma set filetype=ma
+autocmd BufRead,BufNewFile *.go set filetype=go
+
+autocmd BufRead,BufNewFile *.sage set filetype=python
+autocmd BufRead,BufNewFile *.sage set makeprg=sage\ --preparse\ %
+autocmd BufRead,BufNewFile *.ipy set filetype=python
+
+autocmd BufRead,BufNewFile *.t4 set filetype=t4
+autocmd BufRead,BufNewFile *.tex set filetype=tex
+
+
+"filetype plugin indent on
+"syntax enable
+
+"let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
+"let g:vimtex_quickfix_mode = 2
+
+"" Load Vimtex
+"let &rtp  = '~/.vim/bundle/vimtex,' . &rtp
+"let &rtp .= ',~/.vim/bundle/vimtex/after'
+
+let $PATH .= ';C:\Program Files\MiKTeX 2.9\miktex\bin\x64'
+let $PATH .= ';C:\Strawberry\perl\bin'
+
 
 "
 " *** VUNDLE CONFIGURATION ***
@@ -67,7 +84,7 @@ Plugin 'scrooloose/syntastic'
 if has("gui_running")
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'airblade/vim-gitgutter'
-Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 endif
@@ -89,6 +106,7 @@ Plugin 'drmikehenry/vim-fontsize'
 " Automatic detect tab indent settings
 "Plugin 'tpope/vim-sleuth'
 Plugin 'Chiel92/vim-visgo'
+Plugin 'tikhomirov/vim-glsl'
 Plugin 'tpope/vim-unimpaired'
 " Matchit
 Plugin 'vim-scripts/matchit.zip'
@@ -333,17 +351,10 @@ autocmd FileType vim,tex let b:autoformat_autoindent=0
 "let g:autoformat_retab = 0
 "let g:autoformat_remove_trailing_spaces = 0
 
-autocmd BufRead,BufNewFile *.ma set filetype=ma
-autocmd BufRead,BufNewFile *.go set filetype=go
-
 au FileType haskell nnoremap <buffer> <F3> :Tab /^[^=]*\zs=<CR>
 au FileType haskell nnoremap <buffer> <F5> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F6> :HdevtoolsClear<CR>
 au FileType haskell set shiftwidth=2
-
-autocmd BufRead,BufNewFile *.sage set filetype=python
-autocmd BufRead,BufNewFile *.sage set makeprg=sage\ --preparse\ %
-autocmd BufRead,BufNewFile *.ipy set filetype=python
 
 set textwidth=0
 au FileType markdown set textwidth=95
@@ -354,13 +365,10 @@ au FileType python set textwidth=150
 
 au FileType coffee setl shiftwidth=2
 
-autocmd BufRead,BufNewFile *.tex set filetype=tex
 autocmd FileType tex set makeprg=pdflatex\ %
 autocmd FileType tex set indentexpr=
 autocmd FileType tex set indentkeys=
 autocmd FileType tex nnoremap <F6> :!bash compile.sh<cr><cr>
-
-autocmd BufRead,BufNewFile *.t4 set filetype=t4
 
 " Vimtex options go here
 

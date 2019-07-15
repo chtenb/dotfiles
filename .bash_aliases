@@ -4,7 +4,6 @@ c() {
     ls -a
 }
 
-# Fast dir crawling
 replace() {
     perl ~/dotfiles/bin/replace.pl "$@"
 }

@@ -16,8 +16,6 @@ set autoindent
 
 let mapleader = ","
 
-:command! RemoveTrailingSpaces %s/\s\+$
-
 "Disable annoying help
 nnoremap <F1> <Esc>
 inoremap <F1> <Esc>
