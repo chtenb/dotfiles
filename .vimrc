@@ -98,6 +98,8 @@ Plugin 'corntrace/bufexplorer'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-sensible'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'wellle/targets.vim'
+Plugin 'unblevable/quick-scope'
 " Fuzzy File Finder
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'drmikehenry/vim-fontsize'
@@ -134,6 +136,7 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'ajh17/Spacegray.vim'
 " Language support
 Plugin 'tshirtman/vim-cython'
 Plugin 'leafgarland/typescript-vim'
@@ -271,7 +274,8 @@ vnoremap <F1> <Esc>
 "Autoformat code
 noremap <F3> :Autoformat<CR>
 "Compile
-nnoremap <F5> :w<CR>:make<CR>:redraw!<CR>
+command! Compile let winview=winsaveview()|make|call winrestview(winview)
+nnoremap <F5> :w<CR>:Compile<CR><CR>
 " Show tagbar
 nnoremap <F8> :TagbarToggle<CR>
 " YCM's goto definition command
@@ -315,6 +319,10 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 " Color settings
 set background=dark
 
+let g:spacegray_underline_search = 1
+let g:spacegray_use_italics = 1
+"let g:spacegray_low_contrast = 1
+
 "Some settings for the GUI
 if has("gui_running")
     "disable scrollbars
@@ -326,11 +334,12 @@ if has("gui_running")
     set guioptions-=m
     "Disable all cursor blinking:
     set guicursor+=a:blinkon0
-    colorscheme base16-ashes
+    "colorscheme base16-ashes
+    colorscheme spacegray
     if has("win32")
-        set guifont=consolas:h11
+        set guifont=consolas:h10
     else
-        set guifont=mono\ 11
+        set guifont=mono\ 10
     endif
 else
     colorscheme Tomorrow-Night
@@ -345,6 +354,8 @@ au Syntax * RainbowParenthesesLoadBraces
 "
 " *** FILETYPE SPECIFIC STUFF ***
 "
+
+au bufwrite * :Autoformat
 
 autocmd FileType vim,tex let b:autoformat_autoindent=0
 "let g:autoformat_autoindent = 0
