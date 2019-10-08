@@ -210,8 +210,6 @@ nnoremap <space> za
 let g:SimpylFold_fold_import=0
 let g:SimpylFold_fold_docstring=0
 
-let mapleader = ","
-
 
 " Easy motion
 " Require tpope/vim-repeat to enable dot repeat support
@@ -286,7 +284,7 @@ command! -nargs=+ GG execute 'silent Ggrep!' <q-args> | cw | redraw!
 nnoremap <S-F12> :GG <cword><CR>
 
 " Let's make it easy to edit this file
-nmap <silent> ,ev :e $MYVIMRC<cr>
+nmap <silent> <Leader>ev :e $MYVIMRC<cr>
 
 " Toggle source/header
 "nnoremap <c-k><c-o> :FSHere<CR>
