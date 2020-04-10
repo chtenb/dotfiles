@@ -40,6 +40,6 @@ set backspace=start
 nmap <C-O> :vsc View.NavigateBackward<CR>
 nmap <C-I> :vsc View.NavigateForward<CR>
 nmap <C-]> :vsc Edit.GoToDefinition<CR>
-nmap ? :vsc Edit.IncrementalSearch<CR>
+"nmap ? :vsc Edit.IncrementalSearch<CR>
 nmap s :vsc Tools.InvokeAceJumpCommand<CR>
 

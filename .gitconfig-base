@@ -61,8 +61,8 @@
 
     patch = --no-pager diff --no-color
 
-[fetch]
-    recurseSubmodules = true
+[submodule]
+    recurse = true
 [gc]
     auto = 256
 [color]

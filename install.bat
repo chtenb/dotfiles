@@ -4,3 +4,4 @@ mklink %UserProfile%\.vimrc.bare %UserProfile%\dotfiles\.vimrc.bare
 mklink %UserProfile%\.bash_aliases %UserProfile%\dotfiles\.bash_aliases
 mklink %UserProfile%\.bash_profile %UserProfile%\dotfiles\.bash_profile
 mklink %UserProfile%\.gitconfig %UserProfile%\dotfiles\.gitconfig-intellimagic
+copy %UserProfile%\dotfiles\git_bash_here.ahk "%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"

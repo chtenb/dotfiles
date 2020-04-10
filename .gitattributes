@@ -5,3 +5,13 @@
 # to native line endings on checkout.
 * text
 
+# Improve diffing for many languages
+*.cs diff=csharp
+*.css diff=css
+*.cpp diff=cpp
+*.hpp diff=cpp
+*.c diff=cpp
+*.h diff=cpp
+*.html diff=html
+*.python diff=python
+*.tex diff=text

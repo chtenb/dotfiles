@@ -39,6 +39,7 @@ endif
 "
 
 autocmd! BufNewFile,BufRead *.vs,*.fs,*gs set ft=glsl
+autocmd! BufNewFile,BufRead *.props,*.targets set ft=xml
 
 autocmd BufRead,BufNewFile *.ma set filetype=ma
 autocmd BufRead,BufNewFile *.go set filetype=go
@@ -84,7 +85,7 @@ Plugin 'scrooloose/syntastic'
 if has("gui_running")
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'airblade/vim-gitgutter'
-"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 endif
@@ -97,7 +98,9 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'corntrace/bufexplorer'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-sensible'
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'terryma/vim-multiple-cursors'
+Plugin 'markwu/largefile'
+Plugin 'mg979/vim-visual-multi'
 Plugin 'wellle/targets.vim'
 Plugin 'unblevable/quick-scope'
 " Fuzzy File Finder
@@ -140,7 +143,8 @@ Plugin 'ajh17/Spacegray.vim'
 " Language support
 Plugin 'tshirtman/vim-cython'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'jceb/vim-orgmode'
+" WARNING: org mode makes vim slow, regardless of filetype opened
+"Plugin 'jceb/vim-orgmode'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'wilsaj/chuck.vim'
 Plugin 'othree/html5.vim'
@@ -244,6 +248,7 @@ let g:multi_cursor_exit_from_insert_mode=0
 nnoremap <C-q> :q<CR>
 " Decent save shortcut
 nnoremap <C-s> :w<CR>
+inoremap <C-s> <esc>:w<CR>i
 " Disable ex mode, it's useless and annoying
 nnoremap Q <nop>
 " Give Y a sane meaning
@@ -285,6 +290,10 @@ nnoremap <S-F12> :GG <cword><CR>
 
 " Let's make it easy to edit this file
 nmap <silent> <Leader>ev :e $MYVIMRC<cr>
+
+" URL encode/decode selection
+vnoremap <leader>en :!python -c 'import sys,urllib;print urllib.quote(sys.stdin.read().strip())'<cr>
+vnoremap <leader>de :!python -c 'import sys,urllib;print urllib.unquote(sys.stdin.read().strip())'<cr>
 
 " Toggle source/header
 "nnoremap <c-k><c-o> :FSHere<CR>
@@ -365,6 +374,7 @@ au FileType haskell set shiftwidth=2
 
 set textwidth=0
 au FileType markdown set textwidth=95
+au FileType dot set textwidth=95
 au FileType tex set textwidth=150
 au FileType text set textwidth=95
 " The indent file for python is broken
@@ -405,8 +415,9 @@ let g:formatters_javascript = ['prettier']
 
 let g:formatterpath = ['C:\Users\Chiel.tenBrinke\Desktop']
 
+setlocal foldmethod=indent foldlevelstart=20 foldminlines=3
 augroup XML
     autocmd!
-    autocmd FileType xml setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
+    autocmd FileType xml setlocal foldmethod=indent foldlevelstart=3 foldminlines=3
 augroup END
 

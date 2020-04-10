@@ -5,4 +5,5 @@
 *.swp
 *.swo
 *.swn
+.ycm_extra_conf.py
 
