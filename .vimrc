@@ -363,6 +363,7 @@ au Syntax * RainbowParenthesesLoadBraces
 "
 
 autocmd FileType vim,tex let b:autoformat_autoindent=0
+let g:tex_flavor = 'latex'
 "let g:autoformat_autoindent = 0
 "let g:autoformat_retab = 0
 "let g:autoformat_remove_trailing_spaces = 0
