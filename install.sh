@@ -1,9 +1,9 @@
-ln -s ~/dotfiles/.bash_aliases ~/
-ln -s ~/dotfiles/.vimrc ~/
-ln -s ~/dotfiles/.vimrc.bare ~/
-ln -s ~/dotfiles/.tmux.conf ~/
-ln -s ~/dotfiles/.gitconfig-linux ~/.gitconfig
-ln -s ~/dotfiles/.gitignore_global ~/.gitignore
+ln -sf ~/dotfiles/.bash_aliases ~/
+ln -sf ~/dotfiles/.vimrc ~/
+ln -sf ~/dotfiles/.vimrc.bare ~/
+ln -sf ~/dotfiles/.tmux.conf ~/
+ln -sf ~/dotfiles/.gitconfig-linux ~/.gitconfig
+ln -sf ~/dotfiles/.gitignore_global ~/.gitignore
 
 mkdir ~/.vim/backup/
 mkdir ~/.vim/swap/
