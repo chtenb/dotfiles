@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Only run submodule update when checking out a commit, not when checking out a file.
 if [[ "$3" == "1" ]]
 then
