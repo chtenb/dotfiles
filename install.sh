@@ -4,3 +4,7 @@ ln -s ~/dotfiles/.vimrc.bare ~/
 ln -s ~/dotfiles/.tmux.conf ~/
 ln -s ~/dotfiles/.gitconfig-linux ~/.gitconfig
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore
+
+mkdir ~/.vim/backup/
+mkdir ~/.vim/swap/
+mkdir ~/.vim/undo/

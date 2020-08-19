@@ -27,7 +27,7 @@ color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
 wrapup() {
     cd ~/.task
-    git commit -u -m "Wrap up"
+    git commit -a -m "Wrap up"
     git push
     cd
 }
