@@ -171,6 +171,12 @@ filetype plugin indent on     " required
 let vimDir = '$HOME/.vim'
 let &runtimepath.=','.vimDir
 
+" Using double trailing slashes in the path tells vim to enable a feature
+" where it avoids name collisions.
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
     let myUndoDir = expand(vimDir . '/undodir')
@@ -255,6 +261,19 @@ nnoremap Q <nop>
 nnoremap Y y$
 " Give U a sane meaning
 nnoremap U <C-r>
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R>=&ic?'\c':'\C'<CR><C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gVzv:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R>=&ic?'\c':'\C'<CR><C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gVzv:call setreg('"', old_reg, old_regtype)<CR>
+
 
 " TODO:  /command "edit.goto FILE_LINE"
 if has("win32")
@@ -374,7 +393,7 @@ au FileType haskell set shiftwidth=2
 
 set textwidth=0
 au FileType markdown set textwidth=95
-au FileType dot set textwidth=95
+"au FileType dot set textwidth=95
 au FileType tex set textwidth=150
 au FileType text set textwidth=95
 " The indent file for python is broken

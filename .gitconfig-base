@@ -39,7 +39,7 @@
     pl = pull
     ps = push
     psf = push --force-with-lease
-    fe = fetch
+    fe = fetch --all
     cl = clean -df
     clx = clean -dfx
     cp = cherry-pick
@@ -61,6 +61,8 @@
 
     patch = --no-pager diff --no-color
 
+[advice]
+    detachedHead = false
 [submodule]
     recurse = true
 [gc]

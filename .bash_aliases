@@ -17,6 +17,11 @@ gsg() {
     git --no-pager submodule foreach --recursive "git --no-pager grep $@ ; true"
 }
 
+# tail the latest created file in the directory
+taillatest() {
+    tail "`ls -t | head -1`" "$@"
+}
+
 # Print stderr in red. Usage: $ color command.
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
