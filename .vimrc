@@ -189,6 +189,8 @@ if has('persistent_undo')
     set undofile
 endif
 
+" Dashes are very common in identifiers
+set iskeyword+=-
 
 " We always want autoindent. Nothing fancy.
 set nocindent
@@ -403,6 +405,7 @@ au FileType text set textwidth=95
 au FileType python set textwidth=150
 
 au FileType coffee setl shiftwidth=2
+au FileType yaml setl shiftwidth=2
 
 autocmd FileType tex set makeprg=pdflatex\ %
 autocmd FileType tex set indentexpr=

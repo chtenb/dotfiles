@@ -37,6 +37,8 @@ nnoremap Q <C-v>
 
 " Visual Studio specific
 set backspace=start
+nmap <F3> :vsc Edit.FormatDocument<CR>
+vmap <F3> :vsc Edit.FormatSelection<CR>
 nmap <C-O> :vsc View.NavigateBackward<CR>
 nmap <C-I> :vsc View.NavigateForward<CR>
 nmap <C-]> :vsc Edit.GoToDefinition<CR>

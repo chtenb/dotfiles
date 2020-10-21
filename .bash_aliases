@@ -72,5 +72,5 @@ then
 fi
 
 # Add local bin directory to path
-PATH=$PATH:~/bin
+PATH=$PATH:~/.local/bin
 
