@@ -32,6 +32,8 @@ wrapup() {
     cd
 }
 
+alias t="task"
+
 alias g="git"
 if [ "$(command -v __git_complete)" ]; then
     __git_complete g __git_main
