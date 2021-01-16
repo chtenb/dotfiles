@@ -1,8 +1,11 @@
 [user]
     name = Chiel ten Brinke
     email = ctenbrinke@gmail.com
+[submodule]
+    recurse = true
 [push]
     default = simple
+    recurseSubmodules = false
 [merge]
     tool = kdiff3
     conflictstyle = diff3
@@ -27,6 +30,8 @@
     trustctime = false
     filemode = false
     pager = diff-so-fancy | less --tabs=4 -RFX
+[fetch]
+    prune = true
 [alias]
     lg = log --notes --graph --abbrev-commit --decorate --left-right --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)'
     sup = submodule update --init --recursive
@@ -63,8 +68,6 @@
 
 [advice]
     detachedHead = false
-[submodule]
-    recurse = true
 [gc]
     auto = 256
 [color]

@@ -98,6 +98,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'corntrace/bufexplorer'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-sensible'
+Plugin 'inkarkat/vim-visualrepeat'
 "Plugin 'terryma/vim-multiple-cursors'
 Plugin 'markwu/largefile'
 Plugin 'mg979/vim-visual-multi'
@@ -143,6 +144,8 @@ Plugin 'ajh17/Spacegray.vim'
 " Language support
 Plugin 'tshirtman/vim-cython'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'mzlogin/vim-markdown-toc'
+Plugin 'plasticboy/vim-markdown' " The tabular plugin must come before vim-markdown.
 " WARNING: org mode makes vim slow, regardless of filetype opened
 "Plugin 'jceb/vim-orgmode'
 Plugin 'derekwyatt/vim-fswitch'
@@ -224,6 +227,7 @@ nnoremap <space> za
 let g:SimpylFold_fold_import=0
 let g:SimpylFold_fold_docstring=0
 
+let g:vim_markdown_math=1
 
 " Easy motion
 " Require tpope/vim-repeat to enable dot repeat support
@@ -385,6 +389,8 @@ au Syntax * RainbowParenthesesLoadBraces
 " *** FILETYPE SPECIFIC STUFF ***
 "
 
+au BufRead,BufNewFile *.gv,*.dot setfiletype dot
+
 autocmd FileType vim,tex let b:autoformat_autoindent=0
 let g:tex_flavor = 'latex'
 "let g:autoformat_autoindent = 0
@@ -397,10 +403,10 @@ au FileType haskell nnoremap <buffer> <silent> <F6> :HdevtoolsClear<CR>
 au FileType haskell set shiftwidth=2
 
 set textwidth=0
-au FileType markdown set textwidth=95
 "au FileType dot set textwidth=95
 au FileType tex set textwidth=150
 au FileType text set textwidth=95
+au FileType tsv set textwidth=0
 " The indent file for python is broken
 au FileType python set textwidth=150
 

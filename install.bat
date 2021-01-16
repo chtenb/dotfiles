@@ -1,3 +1,4 @@
+mklink %APPDATA%\Code\User\settings.json %UserProfile%\dotfiles\settings.json
 mklink %UserProfile%\_vsvimrc %UserProfile%\dotfiles\_vsvimrc
 mklink %UserProfile%\.vimrc %UserProfile%\dotfiles\.vimrc
 mklink %UserProfile%\.vimrc.bare %UserProfile%\dotfiles\.vimrc.bare
