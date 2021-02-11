@@ -2,5 +2,54 @@
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "tabnine.experimentalAutoImports": true,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "indent",
+    "vim.hlsearch": true,
+    "vim.gdefault": true,
+    "editor.renderIndentGuides": false,
+    "sync.gist": "22871e9b3bd88e8f83f25c2bed230e61",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["<C-j>"],
+            "commands": [ "selectNextSuggestion" ]
+        },
+        {
+            "before": ["<C-k>"],
+            "commands": [ "selectPrevSuggestion" ]
+        },
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["U"],
+            "after": [ "<C-r>" ]
+        },
+        {
+            "before": ["Y"],
+            "after": [ "y", "$" ]
+        },
+    ],
+    "vim.visualstar": true,
+    "vim.sneak": true,
+    "vim.replaceWithRegister": true,
+    "vim.sneakReplacesF": true,
+    "vim.handleKeys": {
+        "<C-k>": false,
+        "<C-d>": true
+    },
+    "debug.onTaskErrors": "showErrors",
+    "rainbow_csv.enable_auto_csv_lint": false,
+    "vim.smartRelativeLine": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.renderControlCharacters": true,
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "material-icon-theme",
+    "stretchySpaces.excludedLanguages": [
+        "csv",
+        "tsv",
+    ],
+    "stretchySpaces.targetIndentation": 2,
+    "editor.tabSize": "7",
+    "editor.cursorSurroundingLines": 10,
+    "vim.startofline": false
 }

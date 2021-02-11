@@ -48,17 +48,20 @@ if (not $find) {
     help;
 }
 
-my $escaped_find = quotemeta $find;
-my $escaped_subst = quotemeta $subst;
-#my $escaped_remaining = join ' ', map { quotemeta $_ } @remaining;
-my $escaped_remaining = join ' ', @remaining;
+my $bash_escaped_find = $find =~ s/'/'"'"'/gr;
+my $bash_escaped_subst = $subst =~ s/'/'"'"'/gr;
 
-say "Input interpretation: $magenta replace $reset $find $magenta with $reset $subst $magenta in $reset $escaped_remaining";
+my $slashbash_escaped_find = $bash_escaped_find =~ s/\//\\\//gr;
+my $slashbash_escaped_subst = $bash_escaped_subst =~ s/\//\\\//gr; 
+
+my $bash_literal_remaining = join ' ', map { "'$_'"} map { s/'/'"'"'/gr } @remaining;
+
+say "Input interpretation: $magenta replace $reset $find $magenta with $reset $subst $magenta in $reset $bash_literal_remaining";
 
 
 # Do the actual shit
 if ($dry) {
-    my $grep_command = "git grep -IHP $escaped_find $escaped_remaining";
+    my $grep_command = "git grep -IHP '$bash_escaped_find' $bash_literal_remaining";
     say "Git grep search command: $grep_command";
     my $grep_out = `$grep_command`;
 
@@ -79,12 +82,17 @@ if ($dry) {
     }
 }
 else {
-    my $grep_command = "git grep -lIP $escaped_find $escaped_remaining";
+    my $grep_command = "git grep -lIP '$bash_escaped_find' $bash_literal_remaining";
     my $files = `$grep_command`;
     $files = join ' ', (map quotemeta, (split "\n", $files));
-    my $perl_command = "perl -p -i.bak -e 's/$find/$subst/g' $files";
-    say 'Perl replacement command: ', $perl_command;
-    print `$perl_command`;
-    say 'Replacements successful';
+    if (length($files) > 0) {
+        my $perl_command = "perl -p -i'' -e 's/$slashbash_escaped_find/$slashbash_escaped_subst/g' $files";
+        say 'Perl replacement command: ', $perl_command;
+        print `$perl_command`;
+        say 'Replacements successful';
+    }
+    else {
+        say 'Expression not found';
+    }
 }
 

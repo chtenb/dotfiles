@@ -4,8 +4,8 @@ c() {
     ls -a
 }
 
-replace() {
-    perl ~/dotfiles/bin/replace.pl "$@"
+replac() {
+    perl ~/dotfiles/bin/replac.pl "$@"
 }
 
 wpy() {
