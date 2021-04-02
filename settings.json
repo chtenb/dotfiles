@@ -61,11 +61,6 @@
             "filenamePattern": "*.ipynb"
         }
     ],
-    // Always use login shells for interactive stuff
-    "terminal.integrated.shellArgs.windows": ["-l"],
-    "terminal.integrated.shellArgs.osx": [ "-l" ],
-    "terminal.integrated.shellArgs.linux": [ "-l" ],
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "window.zoomLevel": -1
+    "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe"
 }
