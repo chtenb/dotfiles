@@ -42,14 +42,30 @@
     "vim.sneakUseIgnorecaseAndSmartcase": true,
     "editor.renderWhitespace": "boundary",
     "editor.renderControlCharacters": true,
-    "window.zoomLevel": 0,
     "workbench.iconTheme": "material-icon-theme",
     "stretchySpaces.excludedLanguages": [
         "csv",
         "tsv",
     ],
     "stretchySpaces.targetIndentation": 2,
-    "editor.tabSize": "7",
     "editor.cursorSurroundingLines": 10,
-    "vim.startofline": false
+    "vim.startofline": false,
+    "rainbow_csv.autodetect_separators": [
+        "|",
+        ",",
+        ";"
+    ],
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    // Always use login shells for interactive stuff
+    "terminal.integrated.shellArgs.windows": ["-l"],
+    "terminal.integrated.shellArgs.osx": [ "-l" ],
+    "terminal.integrated.shellArgs.linux": [ "-l" ],
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "window.zoomLevel": -1
 }

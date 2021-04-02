@@ -1,2 +1,0 @@
-" Hide highlighting
-nnoremap <C-c> :noh<CR>

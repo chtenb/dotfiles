@@ -39,18 +39,20 @@ if [ "$(command -v __git_complete)" ]; then
     __git_complete g __git_main
 fi
 
+# npm install --global clipboard-cli
+alias cb="clipboard"
 alias l="ls -a --color --classify"
 alias ex="explorer ."
 alias gg="git grep -IPn --color=always --recurse-submodules"
 alias ggn="git grep -IPn --color=always"
 alias gr="git grep --no-index -IPn --color=always"
-alias die="sudo shutdown -h now"
+#alias die="sudo shutdown -h now"
 alias open="gnome-open"
 alias tmux="TERM=screen-256color-bce tmux"
 alias lesser="less --tabs=4 -RFX"
 
 # Ping google server
-alias pingg="ping google.nl"
+#alias pingg="ping google.nl"
 
 # Prevent gvim from print annoying error message
 alias gvim="gvim 2> /dev/null"
