@@ -1,3 +1,6 @@
 [submodule "interactive-git-checkout"]
 	path = interactive-git-checkout
 	url = https://github.com/Chiel92/interactive-git-checkout
+[submodule "python-shellout"]
+	path = python-shellout
+	url = https://github.com/Chiel92/python-shellout
