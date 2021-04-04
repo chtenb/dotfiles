@@ -1,9 +1,0 @@
-#!/bin/bash
-readarray -t lines
-PS3="Select line number: "
-select line in "${lines[@]}";
-do
-  echo "You selected $line ($REPLY)"
-  printf "$line" | clipboard
-  break;
-done < /dev/tty
