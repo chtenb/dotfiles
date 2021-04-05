@@ -44,14 +44,14 @@
     pl = pull
     ps = push
     psf = push --force-with-lease
-    fe = fetch --all
-    cl = clean -df
-    clx = clean -dfx
+    fe = fetch
+    cl = clean
     cp = cherry-pick
     co = checkout
     ci = commit
-    st = status -sb
+    st = status
     br = branch
+    
     di = diff --ignore-all-space
     ds = diff --staged
     dsi = diff --staged --ignore-all-space

@@ -4,3 +4,6 @@
 [submodule "python-shellout"]
 	path = python-shellout
 	url = https://github.com/Chiel92/python-shellout
+[submodule "replac"]
+	path = replac
+	url = https://github.com/Chiel92/replac
