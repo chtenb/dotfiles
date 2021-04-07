@@ -29,7 +29,8 @@ wrapup() {
 }
 
 alias replac="perl ~/dotfiles/replac/replac.pl"
-alias selectlines="python ~/dotfiles/selectlines.py"
+alias selectlines="python ~/dotfiles/scripts/selectlines.py"
+alias sl="selectlines"
 alias t="task"
 
 alias g="git"
