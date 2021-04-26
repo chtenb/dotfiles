@@ -17,17 +17,24 @@
         {
             "before": ["<C-k>"],
             "commands": [ "selectPrevSuggestion" ]
-        },
+        }
     ],
     "vim.normalModeKeyBindings": [
         {
-            "before": ["U"],
-            "after": [ "<C-r>" ]
-        },
-        {
             "before": ["Y"],
             "after": [ "y", "$" ]
+        }
+    ],
+    // https://github.com/VSCodeVim/Vim/issues/2007
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "u" ], "after": [],
+            "commands": [ { "command": "undo" } ]
         },
+        {
+            "before": [ "U" ], "after": [],
+            "commands": [ { "command": "redo" } ]
+        }
     ],
     "vim.visualstar": true,
     "vim.sneak": true,
@@ -66,5 +73,6 @@
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "terminal.integrated.shellArgs.windows": [
         "--login"
-    ]
+    ],
+    "csharp.referencesCodeLens.enabled": false
 }
