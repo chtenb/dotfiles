@@ -47,12 +47,12 @@
     {
         "key": "ctrl+tab",
         "command": "workbench.action.nextEditor",
-        "when": "editorTextFocus"
+        "when": "!terminalFocus"
     },
     {
         "key": "ctrl+shift+tab",
         "command": "workbench.action.previousEditor",
-        "when": "editorTextFocus"
+        "when": "!terminalFocus"
     },
     {
         "key": "ctrl+=",
