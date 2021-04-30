@@ -11,7 +11,7 @@
     "sync.gist": "22871e9b3bd88e8f83f25c2bed230e61",
     "vim.insertModeKeyBindings": [
         {
-            "before": ["<C-j>"],
+            "before": ["<C-l>"],
             "commands": [ "selectNextSuggestion" ]
         },
         {
