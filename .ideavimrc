@@ -1,3 +1,4 @@
+
 set ignorecase      " Do case insensitive matching
 set smartcase       " Do smart case matching
 set hlsearch        " highlight search
@@ -14,15 +15,12 @@ set textwidth=100
 
 set autoindent
 
-
 "Disable annoying help
 nnoremap <F1> <Esc>
 inoremap <F1> <Esc>
 vnoremap <F1> <Esc>
 "Disable annoying record mode
 nnoremap q <nop>
-" Decent save shortcut
-nnoremap <C-s> :w<CR>
 " Give Y a sane meaning
 nnoremap Y y$
 " Give U a sane meaning and avoid conflicts with resharper
@@ -31,14 +29,3 @@ nnoremap U <C-r>
 nnoremap <C-c> :noh<CR>
 " Enable block select
 nnoremap Q <C-v>
-
-" Visual Studio specific
-set backspace=start
-nmap <F3> :vsc Edit.FormatDocument<CR>
-vmap <F3> :vsc Edit.FormatSelection<CR>
-nmap <C-O> :vsc View.NavigateBackward<CR>
-nmap <C-I> :vsc View.NavigateForward<CR>
-nmap <C-]> :vsc Edit.GoToDefinition<CR>
-"nmap ? :vsc Edit.IncrementalSearch<CR>
-nmap s :vsc Tools.InvokeAceJumpCommand<CR>
-

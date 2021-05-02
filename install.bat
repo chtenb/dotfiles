@@ -1,5 +1,7 @@
 mklink %APPDATA%\Code\User\settings.json %UserProfile%\dotfiles\settings.json
 mklink %APPDATA%\Code\User\keybindings.json %UserProfile%\dotfiles\keybindings.json
+del /q %UserProfile%\.ideavimrc
+mklink %UserProfile%\.ideavimrc %UserProfile%\dotfiles\.ideavimrc
 del /q %UserProfile%\_vsvimrc
 mklink %UserProfile%\_vsvimrc %UserProfile%\dotfiles\_vsvimrc
 del /q %UserProfile%\.vimrc
