@@ -41,8 +41,10 @@
     "vim.replaceWithRegister": true,
     "vim.sneakReplacesF": true,
     "vim.handleKeys": {
+        "<C-d>": true,
         "<C-k>": false,
-        "<C-d>": true
+        "<C-t>": false,
+        "<C-n>": false
     },
     "debug.onTaskErrors": "showErrors",
     "rainbow_csv.enable_auto_csv_lint": false,
@@ -69,10 +71,10 @@
             "filenamePattern": "*.ipynb"
         }
     ],
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "terminal.integrated.shellArgs.windows": [
-        "--login"
-    ],
-    "csharp.referencesCodeLens.enabled": false
+    "csharp.referencesCodeLens.enabled": false,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Cascadia Code",
+    "workbench.colorTheme": "SynthWave '84"
 }
