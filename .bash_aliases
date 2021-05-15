@@ -28,7 +28,9 @@ wrapup() {
     cd
 }
 
-alias replac="perl ~/dotfiles/replac/replac.pl"
+replac() {
+    perl ~/dotfiles/replac/replac.pl "$@"
+}
 alias selectlines="python ~/dotfiles/scripts/selectlines.py"
 alias sl="selectlines"
 alias t="task"
@@ -62,10 +64,3 @@ vim()
     command vim "$@"
     stty "$STTYOPTS"
 }
-
-# Set proper $TERM if we are running gnome-terminal
-if [ "$COLORTERM" == "gnome-terminal" ]
-then
-    TERM=xterm-256color
-fi
-
