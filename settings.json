@@ -8,17 +8,6 @@
     "vim.hlsearch": true,
     "vim.gdefault": true,
     "editor.renderIndentGuides": false,
-    "sync.gist": "22871e9b3bd88e8f83f25c2bed230e61",
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["<C-l>"],
-            "commands": [ "selectNextSuggestion" ]
-        },
-        {
-            "before": ["<C-h>"],
-            "commands": [ "selectPrevSuggestion" ]
-        }
-    ],
     "vim.normalModeKeyBindings": [
         {
             "before": ["Y"],
@@ -34,8 +23,15 @@
         {
             "before": [ "U" ], "after": [],
             "commands": [ { "command": "redo" } ]
+        },
+        {
+          "before":["<Esc>"],
+          "after":["<Esc>"],
+          "commands": [
+            ":nohl"
+          ]
         }
-    ],
+      ],
     "vim.visualstar": true,
     "vim.sneak": true,
     "vim.replaceWithRegister": true,
@@ -44,6 +40,8 @@
         "<C-d>": true,
         "<C-k>": false,
         "<C-t>": false,
+        "<C-l>": false,
+        "<C-h>": false,
         "<C-n>": false
     },
     "debug.onTaskErrors": "showErrors",
@@ -65,16 +63,26 @@
         ",",
         ";"
     ],
+    "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "csharp.referencesCodeLens.enabled": false,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Cascadia Code",
+    "terminal.integrated.profiles.windows": {
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "PowerShell": null,
+        "Command Prompt": null
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "editor.codeLensFontFamily": "Cascadia Code",
+    "workbench.colorTheme": "Noctis Lux",
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter.notebook.ipynb",
             "filenamePattern": "*.ipynb"
         }
     ],
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
-    "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "csharp.referencesCodeLens.enabled": false,
-    "editor.fontLigatures": true,
-    "editor.fontFamily": "Cascadia Code",
-    "workbench.colorTheme": "SynthWave '84"
+    "python.showStartPage": false
+    
 }
