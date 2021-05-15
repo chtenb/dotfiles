@@ -28,6 +28,10 @@ wrapup() {
     cd
 }
 
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 alias replac="perl ~/dotfiles/replac/replac.pl"
 alias selectlines="python ~/dotfiles/scripts/selectlines.py"
 alias sl="selectlines"
