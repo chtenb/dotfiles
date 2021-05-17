@@ -28,6 +28,11 @@ wrapup() {
     cd
 }
 
+# Fast dir crawling
+venv() {
+    source "$1.venv/bin/activate"
+}
+
 replac() {
     perl ~/dotfiles/replac/replac.pl "$@"
 }
