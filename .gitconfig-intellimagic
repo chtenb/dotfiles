@@ -29,7 +29,6 @@
 [push]
 	default = simple
 [core]
-    hooksPath = ~/dotfiles/imgithooks
 	fscache = true
 	preloadindex = true
 [mergetool]
