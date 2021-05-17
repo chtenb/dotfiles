@@ -21,7 +21,6 @@
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
 [core]
-    hooksPath = ~/dotfiles/githooks/
     excludesfile = ~/dotfiles/.gitignore_global
     fscache = true
     preloadindex = true
