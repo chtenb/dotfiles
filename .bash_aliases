@@ -28,6 +28,10 @@ wrapup() {
     cd
 }
 
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 # Fast dir crawling
 venv() {
     source "$1.venv/bin/activate"
