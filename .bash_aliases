@@ -1,3 +1,5 @@
+export PATH=~/.npm-global/bin:$PATH
+
 # Fast dir crawling
 c() {
     cd "$1"
