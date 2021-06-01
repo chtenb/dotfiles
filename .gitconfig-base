@@ -70,7 +70,7 @@
     features = line-numbers decorations
     whitespace-error-style = 22 reverse
 [delta "decorations"]
-    syntax-theme = gruvbox-white
+    syntax-theme = gruvbox-light
     commit-decoration-style = bold yellow box ul
     file-style = bold yellow ul
     file-decoration-style = none
