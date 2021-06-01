@@ -84,7 +84,6 @@
     "python.linting.enabled": true,
 
 
-    "workbench.colorTheme": "Noctis Lux",
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter.notebook.ipynb",

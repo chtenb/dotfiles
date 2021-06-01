@@ -5,6 +5,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Setup Nix
 if [ -e /home/chiel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chiel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+export BAT_THEME="base16"
+
 # Fast dir crawling
 c() {
     cd "$1"
