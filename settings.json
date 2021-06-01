@@ -1,10 +1,5 @@
 {
-    "window.zoomLevel": -1,
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "tabnine.experimentalAutoImports": true,
-    "editor.wordWrap": "on",
-    "editor.wrappingIndent": "indent",
+    // VIM
     "vim.hlsearch": true,
     "vim.gdefault": true,
     "editor.renderIndentGuides": false,
@@ -44,28 +39,12 @@
         "<C-h>": false,
         "<C-n>": false
     },
-    "debug.onTaskErrors": "showErrors",
-    "rainbow_csv.enable_auto_csv_lint": false,
     "vim.smartRelativeLine": true,
     "vim.sneakUseIgnorecaseAndSmartcase": true,
-    "editor.renderWhitespace": "boundary",
-    "editor.renderControlCharacters": true,
-    "workbench.iconTheme": "material-icon-theme",
-    "stretchySpaces.excludedLanguages": [
-        "csv",
-        "tsv"
-    ],
-    "stretchySpaces.targetIndentation": 2,
-    "editor.cursorSurroundingLines": 10,
     "vim.startofline": false,
-    "rainbow_csv.autodetect_separators": [
-        "|",
-        ",",
-        ";"
-    ],
+
+    // TERMINAL
     "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "csharp.referencesCodeLens.enabled": false,
-    "editor.fontLigatures": true,
     "editor.fontFamily": "Cascadia Code",
     "terminal.integrated.profiles.windows": {
         "Git Bash": {
@@ -75,7 +54,36 @@
         "Command Prompt": null
     },
     "terminal.integrated.defaultProfile.windows": "Git Bash",
+
+
+    // GENERAL
+    "editor.fontLigatures": true,
     "editor.codeLensFontFamily": "Cascadia Code",
+    "editor.renderWhitespace": "boundary",
+    "editor.renderControlCharacters": true,
+    "editor.cursorSurroundingLines": 10,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "indent",
+    "workbench.iconTheme": "material-icon-theme",
+    "debug.onTaskErrors": "showErrors",
+
+    // DSV
+    "rainbow_csv.enable_auto_csv_lint": false,
+    "rainbow_csv.autodetect_separators": [
+        "|",
+        ",",
+        ";"
+    ],
+
+    // C#
+    "csharp.referencesCodeLens.enabled": false,
+
+    // PYTHON
+    "python.showStartPage": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+
+
     "workbench.colorTheme": "Noctis Lux",
     "workbench.editorAssociations": [
         {
@@ -83,6 +91,10 @@
             "filenamePattern": "*.ipynb"
         }
     ],
-    "python.showStartPage": false
+    "files.associations": {
+        ".gitconfig*": "gitconfig"
+     },
+    "window.zoomLevel": -1,
+    "tabnine.experimentalAutoImports": true
     
 }

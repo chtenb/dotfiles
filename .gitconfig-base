@@ -6,20 +6,6 @@
 [push]
     default = simple
     recurseSubmodules = false
-[merge]
-    tool = kdiff3
-    conflictstyle = diff3
-[mergetool]
-    keeptemporaries = false
-    keepbackups = false
-    prompt = false
-    trustexitcode = false
-[mergetool "kdiff3"]
-    path = c:/Program Files/KDiff3/kdiff3.exe
-[diff]
-    guitool = kdiff3
-[difftool "kdiff3"]
-    path = C:/Program Files/KDiff3/kdiff3.exe
 [core]
     excludesfile = ~/dotfiles/.gitignore_global
     fscache = true
@@ -28,7 +14,6 @@
     whitespace = cr-at-eol
     trustctime = false
     filemode = false
-    pager = diff-so-fancy | less --tabs=4 -RFX
 [fetch]
     prune = true
 [alias]
@@ -51,10 +36,10 @@
     st = status
     br = branch
     
-    di = diff --ignore-all-space
+    di = diff --ignore-all-space --color-moved-ws=ignore-all-space
     ds = diff --staged
-    dsi = diff --staged --ignore-all-space
-    sho = show --ignore-all-space
+    dsi = diff --staged --ignore-all-space --color-moved-ws=ignore-all-space
+    sho = show --ignore-all-space --color-moved-ws=ignore-all-space
 
     # Fetch a branch x from origin to origin/x, and set it up to track it.
     add-tracking-branch = "!f() { git remote set-branches --add origin "$1"; }; f"
@@ -64,23 +49,42 @@
     unlock = "!f() { root=$(git rev-parse --show-toplevel); rm "$root/.git/index.lock"; }; f"
 
     patch = --no-pager diff --no-color
-
 [advice]
     detachedHead = false
 [gc]
     auto = 256
-[color]
-    ui = true
-[color.diff-highlight]
-    oldNormal = "red bold"
-    oldHighlight = "red bold 52"
-    newNormal = "green bold"
-    newHighlight = "green bold 22"
-[color.diff]
-    meta = "yellow"
-    frag = "magenta bold"
-    commit = "yellow bold"
-    old = "red bold"
-    new = "green bold"
-    whitespace = "red reverse"
 
+
+[diff]
+    colorMoved = default
+    colorMovedWS = no
+    guitool = kdiff3
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    features = line-numbers decorations
+    whitespace-error-style = 22 reverse
+[delta "decorations"]
+    syntax-theme = gruvbox-white
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+
+
+[merge]
+    tool = kdiff3
+    conflictstyle = diff3
+[mergetool]
+    keeptemporaries = false
+    keepbackups = false
+    prompt = false
+    trustexitcode = false
+[mergetool "kdiff3"]
+    path = c:/Program Files/KDiff3/kdiff3.exe
+[difftool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe

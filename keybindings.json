@@ -44,16 +44,16 @@
         "command": "-editor.action.formatDocument",
         "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
     },
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.nextEditor",
-        "when": "!terminalFocus"
-    },
-    {
-        "key": "ctrl+shift+tab",
-        "command": "workbench.action.previousEditor",
-        "when": "!terminalFocus"
-    },
+    // {
+    //     "key": "ctrl+tab",
+    //     "command": "workbench.action.nextEditor",
+    //     "when": "!terminalFocus"
+    // },
+    // {
+    //     "key": "ctrl+shift+tab",
+    //     "command": "workbench.action.previousEditor",
+    //     "when": "!terminalFocus"
+    // },
     {
         "key": "ctrl+=",
         "command": "workbench.action.increaseViewSize"
