@@ -82,9 +82,6 @@
     "python.showStartPage": false,
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-
-
-    "workbench.colorTheme": "Noctis Lux",
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter.notebook.ipynb",
@@ -95,6 +92,10 @@
         ".gitconfig*": "gitconfig"
      },
     "window.zoomLevel": -1,
-    "tabnine.experimentalAutoImports": true
+    "tabnine.experimentalAutoImports": true,
+    "workbench.preferredDarkColorTheme": "SynthWave '84",
+    "window.autoDetectColorScheme": true,
+    "color-highlight.markerType": "outline",
+    "workbench.colorTheme": "SynthWave '84"
     
 }
