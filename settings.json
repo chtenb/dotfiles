@@ -88,6 +88,10 @@
             "filenamePattern": "*.ipynb"
         }
     ],
+
+
+
+
     "files.associations": {
         ".gitconfig*": "gitconfig"
      },
@@ -96,6 +100,11 @@
     "workbench.preferredDarkColorTheme": "SynthWave '84",
     "window.autoDetectColorScheme": true,
     "color-highlight.markerType": "outline",
-    "workbench.colorTheme": "SynthWave '84"
+    "workbench.colorTheme": "SynthWave '84",
+    "workbench.colorCustomizations": {
+        "[SynthWave '84]": {
+            "sideBar.background": "#347890"
+        }
+    }
     
 }
