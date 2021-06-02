@@ -1,3 +1,5 @@
+[include]
+    path = delta-themes.gitconfig
 [user]
     name = Chiel ten Brinke
     email = ctenbrinke@gmail.com
@@ -67,7 +69,7 @@
 [interactive]
     diffFilter = delta --color-only
 [delta]
-    features = line-numbers decorations
+    features = line-numbers simple
     whitespace-error-style = 22 reverse
 
 
