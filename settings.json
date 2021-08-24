@@ -169,7 +169,7 @@
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
+        "*.ipynb": "jupyter-notebook"
     },
     "files.associations": {
         ".gitconfig*": "gitconfig"
@@ -186,7 +186,6 @@
     "editor.formatOnType": true,
     "editor.wordWrapColumn": 140,
     "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Noctis Lux",
     "formate.alignColon": false,
     "formate.verticalAlignProperties": false,
     "color-highlight.markRuler": false,
@@ -200,5 +199,10 @@
         // "stylesheet": "../res/asciidoc.css",
         // "kroki-default-options": "inline",
         // "allow-uri-read": true
-    }
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "workbench.colorTheme": "Noctis Lux"
 }
