@@ -73,15 +73,26 @@
     whitespace-error-style = 22 reverse
 
 
+# [merge]
+#     tool = kdiff3
+#     conflictstyle = diff3
+# [mergetool]
+#     keeptemporaries = false
+#     keepbackups = false
+#     prompt = false
+#     trustexitcode = false
+# [mergetool "kdiff3"]
+#     path = c:/Program Files/KDiff3/kdiff3.exe
+# [difftool "kdiff3"]
+#     path = C:/Program Files/KDiff3/kdiff3.exe
+
+
 [merge]
-    tool = kdiff3
-    conflictstyle = diff3
+    tool = vscode
 [mergetool]
     keeptemporaries = false
-    keepbackups = false
-    prompt = false
-    trustexitcode = false
-[mergetool "kdiff3"]
-    path = c:/Program Files/KDiff3/kdiff3.exe
-[difftool "kdiff3"]
-    path = C:/Program Files/KDiff3/kdiff3.exe
+    keepbackup = false
+[mergetool "vscode"]
+    cmd = code --wait --new-window $MERGED
+[difftool "vscode"]
+    cmd = code --wait --diff --new-window $LOCAL $REMOTE
