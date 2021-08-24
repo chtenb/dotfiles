@@ -89,6 +89,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 endif
+Plugin 'dylanaraps/fff.vim'
 " Class browser
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'

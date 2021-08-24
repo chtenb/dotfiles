@@ -13,6 +13,12 @@ c() {
     ls -a --color --classify
 }
 
+# Filemanager
+f() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
+
 wpy() {
     winpty -Xallow-non-tty python.exe "$@"
 }
@@ -40,6 +46,7 @@ wrapup() {
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias npr='npm run'
 
 venv() {
     source "$1.venv/bin/activate"
