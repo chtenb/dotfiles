@@ -85,7 +85,7 @@ Plugin 'scrooloose/syntastic'
 if has("gui_running")
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'airblade/vim-gitgutter'
-Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 endif
