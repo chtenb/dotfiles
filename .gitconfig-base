@@ -81,14 +81,15 @@
 #     keepbackups = false
 #     prompt = false
 #     trustexitcode = false
-# [mergetool "kdiff3"]
-#     path = c:/Program Files/KDiff3/kdiff3.exe
-# [difftool "kdiff3"]
-#     path = C:/Program Files/KDiff3/kdiff3.exe
+[mergetool "kdiff3"]
+    path = c:/Program Files/KDiff3/kdiff3.exe
+[difftool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
 
 
 [merge]
     tool = vscode
+    conflictstyle = diff3
 [mergetool]
     keeptemporaries = false
     keepbackup = false
