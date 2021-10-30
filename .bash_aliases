@@ -36,11 +36,31 @@ taillatest() {
 # Print stderr in red. Usage: $ color command.
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
-wrapup() {
-    cd ~/.task
-    git commit -a -m "Wrap up"
-    git push
-    cd
+printcolors(){
+    for code in {30..37}; do
+    echo -en "\e[${code}m"'\\e['"$code"'m'"\e[0m";
+    echo -en "  \e[$code;1m"'\\e['"$code"';1m'"\e[0m";
+    echo -en "  \e[$code;3m"'\\e['"$code"';3m'"\e[0m";
+    echo -en "  \e[$code;4m"'\\e['"$code"';4m'"\e[0m";
+    echo -e "  \e[$((code+60))m"'\\e['"$((code+60))"'m'"\e[0m";
+    done;
+}
+
+tstop() {
+    task rc.confirmation=off rc.bulk:0 status:pending +ACTIVE ids | xargs -i task {} stop;
+}
+tsw() { 
+    tstop; task $1 start;
+}
+tbreak() {
+    tsw 2b5187ce-1c20-4345-aa38-ac99b6753a5a;
+}
+twrap() {
+    tstop;
+    cd ~/.task;
+    git commit -a -m "Wrap up";
+    git push;
+    cd;
 }
 
 alias ll='ls -alF'
