@@ -147,7 +147,7 @@
     "editor.renderWhitespace": "boundary",
     "editor.renderControlCharacters": true,
     "editor.cursorSurroundingLines": 10,
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "on",
     "editor.wrappingIndent": "indent",
     "workbench.iconTheme": "material-icon-theme",
     "debug.onTaskErrors": "showErrors",
@@ -176,7 +176,6 @@
     },
     "tabnine.experimentalAutoImports": true,
     "color-highlight.markerType": "outline",
-    "editor.tabSize": 8,
     "editor.cursorStyle": "line",
     "editor.insertSpaces": false,
     "editor.lineNumbers": "on",
@@ -184,7 +183,6 @@
     "window.zoomLevel": -1,
     "editor.minimap.enabled": false,
     "editor.formatOnType": true,
-    "editor.wordWrapColumn": 140,
     "workbench.sideBar.location": "right",
     "formate.alignColon": false,
     "formate.verticalAlignProperties": false,
@@ -204,5 +202,10 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
+    "explorer.confirmDragAndDrop": false,
+    "html.format.wrapLineLength": 0,
+    "vim.textwidth": 100,
+    "editor.wordWrapColumn": 200,
+    "editor.bracketPairColorization.enabled": true,
     "workbench.colorTheme": "Noctis Lux"
 }
