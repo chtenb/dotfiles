@@ -4,6 +4,7 @@ nix-env -i delta
 ln -sf ~/dotfiles/.bash_aliases ~/
 ln -sf ~/dotfiles/.vimrc ~/
 ln -sf ~/dotfiles/.vimrc.bare ~/
+ln -sf ~/dotfiles/.taskrc ~/
 ln -sf ~/dotfiles/.tmux.conf ~/
 ln -sf ~/dotfiles/.gitconfig-linux ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore
