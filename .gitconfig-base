@@ -42,6 +42,7 @@
     ds = diff --staged
     dsi = diff --staged --ignore-all-space --color-moved-ws=ignore-all-space
     sho = show --ignore-all-space --color-moved-ws=ignore-all-space
+    splitdiff = diff --ignore-all-space --color-moved-ws=ignore-all-space | git-split-diffs --color | less -RFX
 
     # Fetch a branch x from origin to origin/x, and set it up to track it.
     add-tracking-branch = "!f() { git remote set-branches --add origin "$1"; }; f"
@@ -60,7 +61,10 @@
 [diff]
     colorMoved = default
     colorMovedWS = no
-    guitool = kdiff3
+    guitool = vscode
+
+# [core]
+#     pager = git-split-diffs --color | less -RFX
 [pager]
     diff = delta
     log = delta
@@ -68,9 +72,19 @@
     show = delta
 [interactive]
     diffFilter = delta --color-only
+
 [delta]
     features = line-numbers simple
     whitespace-error-style = 22 reverse
+
+[split-diffs]
+    theme-name = dark
+    syntax-highlighting-theme = dark-plus
+
+[difftool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+[difftool "vscode"]
+    cmd = code --wait --diff --new-window $LOCAL $REMOTE
 
 
 # [merge]
@@ -83,8 +97,6 @@
 #     trustexitcode = false
 [mergetool "kdiff3"]
     path = c:/Program Files/KDiff3/kdiff3.exe
-[difftool "kdiff3"]
-    path = C:/Program Files/KDiff3/kdiff3.exe
 
 
 [merge]
@@ -95,5 +107,3 @@
     keepbackup = false
 [mergetool "vscode"]
     cmd = code --wait --new-window $MERGED
-[difftool "vscode"]
-    cmd = code --wait --diff --new-window $LOCAL $REMOTE

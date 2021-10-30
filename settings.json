@@ -111,7 +111,7 @@
             // 8 comment, unimplemented background
             // 9 ints
             // a
-            // b separator backround
+            // b separator background
             // c
             // d
             // e labels, Deprecated background
@@ -207,5 +207,9 @@
     "vim.textwidth": 100,
     "editor.wordWrapColumn": 200,
     "editor.bracketPairColorization.enabled": true,
-    "workbench.colorTheme": "Noctis Lux"
+
+    // PURESCRIPT
+    "purescript.addSpagoSources": true,
+    "purescript.addNpmPath": true,
+    "purescript.buildCommand": "spago build --purs-args --json-errors"
 }
