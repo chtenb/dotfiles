@@ -1,4 +1,4 @@
 [credential]
     helper = cache
 [include]
-    path = ~/dotfiles/.gitconfig-base
+    path = ~/dotfiles/base.gitconfig

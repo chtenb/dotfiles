@@ -25,7 +25,7 @@
 	uclone = !sh -c 'git clone --recurse ssh://$(whoami)@development.urios.nl/srv/git/$0.git && installhooks.sh $0/.git'
 	getmodules = !sh -c 'git submodule update --init --recursive && installhooks.sh ./.git'
 [include]
-    path = ~/dotfiles/.gitconfig-windows
+    path = ~/dotfiles/windows.gitconfig
 [push]
 	default = simple
 [core]

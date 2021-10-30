@@ -6,7 +6,7 @@ ln -sf ~/dotfiles/.vimrc ~/
 ln -sf ~/dotfiles/.vimrc.bare ~/
 ln -sf ~/dotfiles/.taskrc ~/
 ln -sf ~/dotfiles/.tmux.conf ~/
-ln -sf ~/dotfiles/.gitconfig-linux ~/.gitconfig
+ln -sf ~/dotfiles/linux.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore
 
 mkdir ~/.vim/backup/

@@ -1,7 +1,7 @@
 [credential]
     helper = wincred
 [include]
-    path = ~/dotfiles/.gitconfig-base
+    path = ~/dotfiles/base.gitconfig
 [core]
     hooksPath = ~/dotfiles/githooks
     autocrlf=false

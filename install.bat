@@ -15,6 +15,6 @@ mklink %UserProfile%\.bash_profile %UserProfile%\dotfiles\.bash_profile
 del /q %UserProfile%\.bashrc
 mklink %UserProfile%\.bashrc %UserProfile%\dotfiles\.bashrc
 del /q %UserProfile%\.gitconfig
-mklink %UserProfile%\.gitconfig %UserProfile%\dotfiles\.gitconfig-intellimagic
+mklink %UserProfile%\.gitconfig %UserProfile%\dotfiles\intellimagic.gitconfig
 copy %UserProfile%\dotfiles\git_bash_here.ahk "%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 pause
