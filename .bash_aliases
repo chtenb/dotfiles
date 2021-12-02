@@ -5,7 +5,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Setup Nix
 if [ -e /home/chiel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chiel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-export BAT_THEME="base16"
+export PAGER="less --tabs=4 -RF"
+alias lesser="less --tabs=4 -RF"
 
 # Fast dir crawling
 c() {
@@ -49,16 +50,24 @@ printcolors(){
 tstop() {
     task rc.confirmation=off rc.bulk:0 status:pending +ACTIVE ids | xargs -i task {} stop;
 }
-tsw() { 
+tsw() {
     tstop; task $1 start;
 }
 tbreak() {
-    tsw 2b5187ce-1c20-4345-aa38-ac99b6753a5a;
+    #tsw 2b5187ce-1c20-4345-aa38-ac99b6753a5a;
+    tstop;
+}
+tmail() {
+    tsw add54de8-e569-4ad1-aa82-2ab278bfde35;
+}
+tmeet() {
+    tsw 30cba286-ca1c-4ff7-b575-246641698a2f;
 }
 twrap() {
     tstop;
     cd ~/.task;
-    git commit -a -m "Wrap up";
+    git add .;
+    git commit -m "Wrap up";
     git push;
     cd;
 }
@@ -91,7 +100,6 @@ alias gr="git grep --no-index -IPn --color=always"
 #alias die="sudo shutdown -h now"
 alias open="gnome-open"
 alias tmux="TERM=screen-256color-bce tmux"
-alias lesser="less --tabs=4 -RFX"
 
 # Ping google server
 alias pingg="ping google.nl"
