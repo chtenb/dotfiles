@@ -53,10 +53,6 @@ tstop() {
 tsw() {
     tstop; task $1 start;
 }
-tbreak() {
-    #tsw 2b5187ce-1c20-4345-aa38-ac99b6753a5a;
-    tstop;
-}
 tmail() {
     tsw add54de8-e569-4ad1-aa82-2ab278bfde35;
 }
@@ -75,7 +71,7 @@ twrap() {
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias npr='npm run'
+alias npr='npm run -- '
 
 venv() {
     source "$1.venv/bin/activate"
