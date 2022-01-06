@@ -26,7 +26,39 @@
 # 4. Feel free to include a comment line indicating who is the author of the
 #    theme. E.g. a link to your github user page.
 
-[delta "simple"]
+[delta "ansi4git"]
+    dark = true
+    syntax-theme = ansi
+
+    commit-style = yellow bold italic
+    commit-decoration-style = bold box ul yellow
+    hunk-header-style = file line-number syntax
+    hunk-header-file-style = normal
+    hunk-header-line-number-style = bold magenta
+    hunk-header-decoration-style = yellow box ul
+
+    line-numbers-left-style = normal
+    line-numbers-right-style = normal
+    line-numbers-zero-style = normal italic
+
+    line-numbers-minus-style = brightred auto bold
+    line-numbers-plus-style = brightgreen auto bold
+
+    minus-style = syntax brightred
+    minus-emph-style = syntax bold "#700f0f"
+    plus-style = syntax brightgreen
+    plus-emph-style = syntax bold "#196919"
+
+    map-styles = \
+       bold purple => syntax brightpurple, \
+       bold cyan => syntax brightcyan, \
+       bold blue => syntax brightblue, \
+       bold yellow => syntax brightyellow
+
+    zero-style = syntax
+    whitespace-error-style = "#aaaaaa"
+
+[delta "plain-git-colors"]
     dark = true
     syntax-theme = none
 
@@ -50,7 +82,7 @@
     plus-style = brightgreen normal
     plus-emph-style = brightgreen normal bold
 
-[delta "ansi-syntax-light"]
+[delta "ansi-syntax-light-colors"]
     light = true
     syntax-theme = ansi
 
@@ -83,7 +115,7 @@
     zero-style = syntax
     whitespace-error-style = "#aaaaaa"
 
-[delta "ansi-syntax-dark"]
+[delta "ansi-syntax-dark-colors"]
     dark = true
     syntax-theme = ansi
 
@@ -101,15 +133,15 @@
     line-numbers-minus-style = brightred auto bold
     line-numbers-plus-style = brightgreen auto bold
 
-    # https://coolors.co/490808-911212-005200-208320-391141-056158-161a50-423110
-    minus-style = syntax "#490808"
-    minus-emph-style = syntax bold "#911212"
-    plus-style = syntax "#005200"
-    plus-emph-style = syntax bold "#208320"
+    # https://coolors.co/4f0909-700f0f-0a520a-196919-391141-044a43-161a50-423110
+    minus-style = syntax "#4f0909"
+    minus-emph-style = syntax bold "#700f0f"
+    plus-style = syntax "#0a520a"
+    plus-emph-style = syntax bold "#196919"
 
     map-styles = \
        bold purple => syntax "#391141", \
-       bold cyan => syntax "#056158", \
+       bold cyan => syntax "#044a43", \
        bold blue => syntax "#161a50", \
        bold yellow => syntax "#423110"
 

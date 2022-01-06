@@ -81,6 +81,12 @@
     "workbench.preferredLightColorTheme": "Noctis Lux",
     "window.autoDetectColorScheme": true,
     "workbench.colorCustomizations": {
+        "terminal.ansiBrightRed": "#4f0909",
+        "terminal.ansiBrightGreen": "#0a520a",
+        "terminal.ansiBrightYellow": "#423110",
+        "terminal.ansiBrightBlue": "#161a50",
+        "terminal.ansiBrightMagenta": "#391141",
+        "terminal.ansiBrightCyan": "#044a44",
         "[SynthWave '84]": {
             // Base16:
             // base00 - Default Background

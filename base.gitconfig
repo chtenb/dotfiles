@@ -79,9 +79,9 @@
     side-by-side = false
     file-style = omit
     file-decoration-style = none
-    # features = simple
-    # features = ansi-syntax-light
-    features = ansi-syntax-dark
+    # features = ansi-syntax-light-colors
+    # features = ansi-syntax-dark-colors
+    features = ansi4git
 
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
