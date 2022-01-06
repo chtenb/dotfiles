@@ -28,7 +28,7 @@
 
 [delta "ansi4git"]
     dark = true
-    syntax-theme = ansi
+    syntax-theme = base16
 
     commit-style = yellow bold italic
     commit-decoration-style = bold box ul yellow
@@ -41,19 +41,19 @@
     line-numbers-right-style = normal
     line-numbers-zero-style = normal italic
 
-    line-numbers-minus-style = brightred auto bold
-    line-numbers-plus-style = brightgreen auto bold
+    line-numbers-minus-style = red
+    line-numbers-plus-style = green
 
-    minus-style = syntax brightred
-    minus-emph-style = syntax bold "#700f0f"
-    plus-style = syntax brightgreen
-    plus-emph-style = syntax bold "#196919"
+    minus-style = syntax white
+    minus-emph-style = syntax white
+    plus-style = syntax brightwhite
+    plus-emph-style = syntax brightwhite
 
     map-styles = \
-       bold purple => syntax brightpurple, \
-       bold cyan => syntax brightcyan, \
-       bold blue => syntax brightblue, \
-       bold yellow => syntax brightyellow
+       bold purple => syntax white, \
+       bold cyan => syntax brightwhite, \
+       bold blue => syntax white, \
+       bold yellow => syntax brightwhite
 
     zero-style = syntax
     whitespace-error-style = "#aaaaaa"
@@ -151,6 +151,7 @@
 [delta "all-syntax"]
     light = true
     side-by-side = false
+    keep-plus-minus-markers = true
 
     syntax-theme = ansi
 
