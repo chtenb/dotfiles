@@ -83,6 +83,39 @@
     zero-style = syntax
     whitespace-error-style = "#aaaaaa"
 
+[delta "ansi-syntax-dark"]
+    dark = true
+    syntax-theme = ansi
+
+    commit-style = yellow bold italic
+    commit-decoration-style = bold box ul yellow
+    hunk-header-style = file line-number syntax
+    hunk-header-file-style = normal
+    hunk-header-line-number-style = bold magenta
+    hunk-header-decoration-style = yellow box ul
+
+    line-numbers-left-style = normal
+    line-numbers-right-style = normal
+    line-numbers-zero-style = normal italic
+
+    line-numbers-minus-style = brightred auto bold
+    line-numbers-plus-style = brightgreen auto bold
+
+    # https://coolors.co/490808-911212-005200-208320-391141-056158-161a50-423110
+    minus-style = syntax "#490808"
+    minus-emph-style = syntax bold "#911212"
+    plus-style = syntax "#005200"
+    plus-emph-style = syntax bold "#208320"
+
+    map-styles = \
+       bold purple => syntax "#391141", \
+       bold cyan => syntax "#056158", \
+       bold blue => syntax "#161a50", \
+       bold yellow => syntax "#423110"
+
+    zero-style = syntax
+    whitespace-error-style = "#aaaaaa"
+
 [delta "all-syntax"]
     light = true
     side-by-side = false
