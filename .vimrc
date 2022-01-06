@@ -212,6 +212,7 @@ set gdefault        " auto g flag for substitution
 set autochdir       " Autochange working directory when opening new file
 set list            " Show list characters
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " Makes CtrlP faster
+set sidescroll=10
 
 " This makes all Visual mode selections automatically go to the X11 primary selection
 set clipboard+=autoselect
@@ -334,7 +335,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filetype_blacklist = {}
 let g:ycm_confirm_extra_conf = 0
 if has("win32")
-    let g:ycm_path_to_python_interpreter = 'c:\Program Files\Python370\python.exe'
+    let g:ycm_path_to_python_interpreter = 'C:\Users\chiel.tenbrinke\AppData\Local\Programs\Python\Python310\python.exe'
 else
     let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 endif

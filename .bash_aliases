@@ -5,6 +5,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Setup Nix
 if [ -e /home/chiel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chiel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+# Enable ** globbing
+shopt -s globstar
+
 export PAGER="less --tabs=4 -RF"
 alias lesser="less --tabs=4 -RF"
 
