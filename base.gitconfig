@@ -74,7 +74,13 @@
 [include]
     path = delta-themes.gitconfig
 [delta]
-    features = simple
+    navigate = true
+    line-numbers = true
+    side-by-side = false
+    file-style = omit
+    file-decoration-style = none
+    # features = simple
+    features = ansi-syntax-light
 
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe

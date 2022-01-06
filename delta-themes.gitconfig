@@ -28,12 +28,6 @@
 
 [delta "simple"]
     dark = true
-    navigate = true
-    line-numbers = true
-    side-by-side = false
-
-    file-decoration-style = none
-    file-style = omit
     syntax-theme = none
 
     commit-decoration-style = bold box ul yellow
@@ -58,14 +52,7 @@
 
 [delta "ansi-syntax-light"]
     light = true
-    navigate = true
-    line-numbers = true
-    side-by-side = false
-
-    file-style = omit
-    # TODO: why does setting ansi mess up the colors? the default looks like bat ansi
     syntax-theme = ansi
-    # keep-plus-minus-markers = true
 
     commit-style = yellow bold italic
     commit-decoration-style = bold box ul yellow
@@ -78,15 +65,22 @@
     line-numbers-right-style = normal
     line-numbers-zero-style = normal italic
 
-    line-numbers-minus-style = "#f13450" auto bold
-    line-numbers-plus-style = "#34f150" auto bold
+    line-numbers-minus-style = brightred auto bold
+    line-numbers-plus-style = brightgreen auto bold
 
-    minus-emph-style = syntax bold "#ffc2c2"
-    minus-style = syntax "#ffc2c2"
-    plus-emph-style = syntax bold "#cdfecd"
+    # https://coolors.co/fbdada-f6b6b6-d6ffd6-adffad-feecf7-d8fdf9-e0dff6-ffffe0
+    minus-style = syntax "#fbdada"
+    minus-emph-style = syntax bold "#f6b6b6"
     plus-style = syntax "#d6ffd6"
+    plus-emph-style = syntax bold "#adffad"
 
-    # zero-style = syntax
+    map-styles = \
+       bold purple => syntax "#feecf7", \
+       bold cyan => syntax "#d8fdf9", \
+       bold blue => syntax "#e0dff6", \
+       bold yellow => syntax "#ffffe0"
+
+    zero-style = syntax
     whitespace-error-style = "#aaaaaa"
 
 [delta "all-syntax"]

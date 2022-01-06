@@ -53,12 +53,6 @@ tstop() {
 tsw() {
     tstop; task $1 start;
 }
-tmail() {
-    tsw add54de8-e569-4ad1-aa82-2ab278bfde35;
-}
-tmeet() {
-    tsw 30cba286-ca1c-4ff7-b575-246641698a2f;
-}
 twrap() {
     tstop;
     cd ~/.task;
@@ -66,6 +60,12 @@ twrap() {
     git commit -m "Wrap up";
     git push;
     cd;
+}
+tmeet() {
+    tsw 30cba286-ca1c-4ff7-b575-246641698a2f;
+}
+tmail() {
+    tsw add54de8-e569-4ad1-aa82-2ab278bfde35;
 }
 
 alias ll='ls -alF'
