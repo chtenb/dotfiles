@@ -9,6 +9,8 @@ ln -sf ~/dotfiles/.tmux.conf ~/
 ln -sf ~/dotfiles/linux.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore
 
+ln -sf ~/dotfiles/themes/base16-dark.gitconfig ~/dotfiles/current-theme.gitconfig
+
 mkdir ~/.vim/backup/
 mkdir ~/.vim/swap/
 mkdir ~/.vim/undo/

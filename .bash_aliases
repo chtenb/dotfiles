@@ -115,3 +115,12 @@ vim()
     command vim "$@"
     stty "$STTYOPTS"
 }
+
+darktheme()
+{
+    ln -sf ~/dotfiles/themes/base16-dark.gitconfig ~/dotfiles/current-theme.gitconfig
+}
+lighttheme()
+{
+    ln -sf ~/dotfiles/themes/base16-light.gitconfig ~/dotfiles/current-theme.gitconfig
+}

@@ -26,7 +26,7 @@
 # 4. Feel free to include a comment line indicating who is the author of the
 #    theme. E.g. a link to your github user page.
 
-[delta "ansi4git"]
+[delta "base16-generic"]
     dark = true
     syntax-theme = base16
 
@@ -58,33 +58,9 @@
     zero-style = syntax
     whitespace-error-style = "#aaaaaa"
 
-[delta "plain-git-colors"]
-    dark = true
-    syntax-theme = none
-
-    commit-decoration-style = bold box ul yellow
-    hunk-header-style = file line-number normal
-    hunk-header-file-style = normal
-    hunk-header-line-number-style = bold magenta
-    hunk-header-decoration-style = yellow box ul
-
-    line-numbers-left-style = normal
-    line-numbers-right-style = normal
-    line-numbers-zero-style = normal
-
-    line-numbers-minus-style = brightred auto bold
-    line-numbers-plus-style = brightgreen auto bold
-
-    minus-empty-line-marker-style = normal normal
-    minus-style = brightred normal strike
-    minus-emph-style = brightred normal bold
-    plus-empty-line-marker-style = normal normal
-    plus-style = brightgreen normal
-    plus-emph-style = brightgreen normal bold
-
-[delta "ansi-syntax-light-colors"]
+[delta "base16-light"]
     light = true
-    syntax-theme = ansi
+    syntax-theme = base16
 
     commit-style = yellow bold italic
     commit-decoration-style = bold box ul yellow
@@ -115,9 +91,9 @@
     zero-style = syntax
     whitespace-error-style = "#aaaaaa"
 
-[delta "ansi-syntax-dark-colors"]
+[delta "base16-dark"]
     dark = true
-    syntax-theme = ansi
+    syntax-theme = base16
 
     commit-style = yellow bold italic
     commit-decoration-style = bold box ul yellow
@@ -147,6 +123,30 @@
 
     zero-style = syntax
     whitespace-error-style = "#aaaaaa"
+
+[delta "plain-git-colors"]
+    dark = true
+    syntax-theme = none
+
+    commit-decoration-style = bold box ul yellow
+    hunk-header-style = file line-number normal
+    hunk-header-file-style = normal
+    hunk-header-line-number-style = bold magenta
+    hunk-header-decoration-style = yellow box ul
+
+    line-numbers-left-style = normal
+    line-numbers-right-style = normal
+    line-numbers-zero-style = normal
+
+    line-numbers-minus-style = brightred auto bold
+    line-numbers-plus-style = brightgreen auto bold
+
+    minus-empty-line-marker-style = normal normal
+    minus-style = brightred normal strike
+    minus-emph-style = brightred normal bold
+    plus-empty-line-marker-style = normal normal
+    plus-style = brightgreen normal
+    plus-emph-style = brightgreen normal bold
 
 [delta "all-syntax"]
     light = true
