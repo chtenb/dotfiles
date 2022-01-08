@@ -1,6 +1,6 @@
 [delta "current"]
     dark = true
-    syntax-theme = base16
+    syntax-theme = Material-SynthWave
 
     commit-style = yellow bold italic
     commit-decoration-style = bold box ul yellow
@@ -9,24 +9,24 @@
     hunk-header-line-number-style = bold magenta
     hunk-header-decoration-style = yellow box ul
 
-    line-numbers-left-style = normal
+    line-numbers-minus-style = brightred auto bold
     line-numbers-right-style = normal
+    line-numbers-plus-style = brightgreen auto bold
+    line-numbers-left-style = normal
     line-numbers-zero-style = normal italic
 
-    line-numbers-minus-style = brightred auto bold
-    line-numbers-plus-style = brightgreen auto bold
 
     # https://coolors.co/4f0909-700f0f-0a520a-196919-391141-044a43-161a50-423110
-    minus-style = syntax "#4f0909"
-    minus-emph-style = syntax bold "#700f0f"
-    plus-style = syntax "#0a520a"
-    plus-emph-style = syntax bold "#196919"
+    minus-style = syntax "#250404"
+    minus-emph-style = syntax bold "#400909"
+    plus-style = syntax "#052405"
+    plus-emph-style = syntax bold "#0e3d0e"
 
     map-styles = \
-       bold purple => syntax "#391141", \
-       bold cyan => syntax "#044a43", \
-       bold blue => syntax "#161a50", \
-       bold yellow => syntax "#423110"
+       bold purple => syntax "#1c0521", \
+       bold cyan => syntax "#002925", \
+       bold blue => syntax "#060721", \
+       bold yellow => syntax "#211700"
 
     zero-style = syntax
     whitespace-error-style = "#aaaaaa"

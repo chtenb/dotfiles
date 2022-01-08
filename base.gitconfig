@@ -72,14 +72,15 @@
     diffFilter = delta --color-only --features=interactive
 
 [include]
-    path = current-theme.gitconfig
+    path = current-delta-theme.gitconfig
 [delta]
+    features = current
+
     navigate = true
     line-numbers = true
     side-by-side = false
     file-style = omit
     file-decoration-style = none
-    features = current
 
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
