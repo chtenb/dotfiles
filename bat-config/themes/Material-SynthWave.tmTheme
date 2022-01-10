@@ -12,7 +12,7 @@
           <key>background</key>
           <string>#292D3E</string>
           <key>foreground</key>
-          <string>#ffffff</string>
+          <string>#BBBBBB</string>
         </dict>
       </dict>
       <dict>
@@ -32,7 +32,7 @@
         <key>name</key>
         <string>Variables</string>
         <key>scope</key>
-        <string>variable, string constant.other.placeholder</string>
+        <string>variable, string constant.other.placeholder, source</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>

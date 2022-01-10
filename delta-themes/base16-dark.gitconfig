@@ -16,11 +16,11 @@
     line-numbers-zero-style = normal italic
 
 
-    # https://coolors.co/4f0909-700f0f-0a520a-196919-391141-044a43-161a50-423110
+    # https://coolors.co/250404-400909-052405-0e3d0e-1c0521-002925-060721-211700
     minus-style = syntax "#250404"
-    minus-emph-style = syntax bold "#400909"
+    minus-emph-style = syntax bold "#590d0d"
     plus-style = syntax "#052405"
-    plus-emph-style = syntax bold "#0e3d0e"
+    plus-emph-style = syntax bold "#135313"
 
     map-styles = \
        bold purple => syntax "#1c0521", \
