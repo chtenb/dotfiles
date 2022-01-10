@@ -1,6 +1,6 @@
 [delta "current"]
     dark = true
-    syntax-theme = Material-SynthWave
+    syntax-theme = ansi
 
     commit-style = yellow bold italic
     commit-decoration-style = bold box ul yellow
