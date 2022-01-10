@@ -41,11 +41,24 @@ taillatest() {
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
 printcolors(){
+    echo "foreground"
     for code in {30..37}; do
     echo -en "\e[${code}m"'\\e['"$code"'m'"\e[0m";
     echo -en "  \e[$code;1m"'\\e['"$code"';1m'"\e[0m";
+    echo -en "  \e[$code;2m"'\\e['"$code"';2m'"\e[0m";
     echo -en "  \e[$code;3m"'\\e['"$code"';3m'"\e[0m";
     echo -en "  \e[$code;4m"'\\e['"$code"';4m'"\e[0m";
+    echo -en "  \e[$code;5m"'\\e['"$code"';5m'"\e[0m";
+    echo -e "  \e[$((code+60))m"'\\e['"$((code+60))"'m'"\e[0m";
+    done;
+    echo "background"
+    for code in {40..47}; do
+    echo -en "\e[${code}m"'\\e['"$code"'m'"\e[0m";
+    echo -en "  \e[$code;1m"'\\e['"$code"';1m'"\e[0m";
+    echo -en "  \e[$code;2m"'\\e['"$code"';2m'"\e[0m";
+    echo -en "  \e[$code;3m"'\\e['"$code"';3m'"\e[0m";
+    echo -en "  \e[$code;4m"'\\e['"$code"';4m'"\e[0m";
+    echo -en "  \e[$code;5m"'\\e['"$code"';5m'"\e[0m";
     echo -e "  \e[$((code+60))m"'\\e['"$((code+60))"'m'"\e[0m";
     done;
 }
@@ -118,9 +131,9 @@ vim()
 
 darktheme()
 {
-    ln -sf ~/dotfiles/themes/base16-dark.gitconfig ~/dotfiles/current-theme.gitconfig
+    ln -sf ~/dotfiles/delta-themes/base16-dark.gitconfig ~/dotfiles/current-delta-theme.gitconfig
 }
 lighttheme()
 {
-    ln -sf ~/dotfiles/themes/base16-light.gitconfig ~/dotfiles/current-theme.gitconfig
+    ln -sf ~/dotfiles/delta-themes/base16-light.gitconfig ~/dotfiles/current-delta-theme.gitconfig
 }

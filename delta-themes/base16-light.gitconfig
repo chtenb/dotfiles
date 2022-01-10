@@ -1,6 +1,6 @@
 [delta "current"]
     light = true
-    syntax-theme = base16
+    syntax-theme = ansi
 
     commit-style = yellow bold italic
     commit-decoration-style = bold box ul yellow
