@@ -81,16 +81,16 @@
     file-decoration-style = none
     features = current
 
+# [split-diffs]
+#     theme-name = dark
+#     syntax-highlighting-theme = dark-plus
+# [core]
+#     pager = git-split-diffs --color | less -RFX
+
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
 [difftool "vscode"]
     cmd = code --wait --diff --new-window $LOCAL $REMOTE
-
-# [core]
-#     pager = git-split-diffs --color | less -RFX
-# [split-diffs]
-#     theme-name = dark
-#     syntax-highlighting-theme = dark-plus
 
 
 # [merge]

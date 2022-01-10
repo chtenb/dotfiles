@@ -81,14 +81,10 @@
     "workbench.preferredLightColorTheme": "Noctis Lux",
     "window.autoDetectColorScheme": true,
     "workbench.colorCustomizations": {
-        "terminal.ansiWhite": "#4f0909",
-        "terminal.ansiBrightWhite": "#0a520a",
         "[Noctis Lux]": {
-            "terminal.ansiWhite": "#fbdada",
-            "terminal.ansiBrightWhite": "#d6ffd6",
         },
         "[SynthWave '84]": {
-        }
+        },
     },
     // GENERAL
     "editor.fontFamily": "Cascadia Code",
@@ -162,5 +158,6 @@
     "purescript.addSpagoSources": true,
     "purescript.addNpmPath": true,
     "purescript.buildCommand": "spago build --purs-args --json-errors",
-    "workbench.colorTheme": "Noctis Lux"
+    "workbench.colorTheme": "My Custom Theme",
+    "editor.codeLens": false
 }

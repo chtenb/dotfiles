@@ -7,3 +7,6 @@
 [submodule "replac"]
 	path = replac
 	url = https://github.com/Chiel92/replac
+[submodule "ansi16"]
+	path = ansi16
+	url = https://github.com/chtenb/ansi16
