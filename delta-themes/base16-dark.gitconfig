@@ -9,24 +9,24 @@
     hunk-header-line-number-style = bold magenta
     hunk-header-decoration-style = yellow box ul
 
-    line-numbers-minus-style = brightred auto bold
-    line-numbers-right-style = normal
     line-numbers-plus-style = brightgreen auto bold
+    line-numbers-right-style = normal
+    line-numbers-minus-style = brightred auto bold
     line-numbers-left-style = normal
     line-numbers-zero-style = normal italic
 
 
     # https://coolors.co/250404-400909-052405-0e3d0e-1c0521-002925-060721-211700
-    minus-style = syntax "#250404"
-    minus-emph-style = syntax bold "#590d0d"
-    plus-style = syntax "#052405"
-    plus-emph-style = syntax bold "#135313"
+    minus-style = syntax "#2e1010"
+    minus-emph-style = syntax bold "#3c1515"
+    plus-style = syntax "#102316"
+    plus-emph-style = syntax bold "#1a3823"
 
     map-styles = \
-       bold purple => syntax "#1c0521", \
-       bold cyan => syntax "#002925", \
-       bold blue => syntax "#060721", \
-       bold yellow => syntax "#211700"
+       bold purple => syntax "#2d1025", \
+       bold cyan => syntax "#112c29", \
+       bold blue => syntax "#20132a", \
+       bold yellow => syntax "#1d2613"
 
     zero-style = syntax
     whitespace-error-style = "#aaaaaa"
