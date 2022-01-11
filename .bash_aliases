@@ -131,9 +131,9 @@ vim()
 
 darktheme()
 {
-    ln -sf ~/dotfiles/delta-themes/base16-dark.gitconfig ~/dotfiles/current-delta-theme.gitconfig
+    cp -f ~/dotfiles/delta-themes/base16-dark.gitconfig ~/dotfiles/current-delta-theme.gitconfig
 }
 lighttheme()
 {
-    ln -sf ~/dotfiles/delta-themes/base16-light.gitconfig ~/dotfiles/current-delta-theme.gitconfig
+    cp -f ~/dotfiles/delta-themes/base16-light.gitconfig ~/dotfiles/current-delta-theme.gitconfig
 }
