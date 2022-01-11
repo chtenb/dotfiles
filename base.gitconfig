@@ -8,6 +8,7 @@
     recurseSubmodules = false
 [core]
     excludesfile = ~/dotfiles/.gitignore_global
+    hooksPath = ~/dotfiles/githooks
     fscache = true
     preloadindex = true
     editor = vim -u ~/.vimrc.bare

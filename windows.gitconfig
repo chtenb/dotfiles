@@ -3,7 +3,6 @@
 [include]
     path = ~/dotfiles/base.gitconfig
 [core]
-    hooksPath = ~/dotfiles/githooks
     autocrlf=false
     whitespace = cr-at-eol
 [web]

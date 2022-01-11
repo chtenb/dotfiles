@@ -158,6 +158,6 @@
     "purescript.addSpagoSources": true,
     "purescript.addNpmPath": true,
     "purescript.buildCommand": "spago build --purs-args --json-errors",
-    "workbench.colorTheme": "My Custom Theme",
+    "workbench.colorTheme": "Noctis Lux",
     "editor.codeLens": false
 }
