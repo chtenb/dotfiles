@@ -92,4 +92,6 @@ color.undo.before=red
 news.version=2.6.0
 context.work.read=project:work
 context.work.write=project:work
-context=work
+context.setup.read=pro:setup
+context.setup.write=pro:setup
+context=setup

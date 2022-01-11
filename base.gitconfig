@@ -75,7 +75,7 @@
     path = current-delta-theme.gitconfig
 [delta]
     features = current
-    syntax-theme = material-ansi16
+    syntax-theme = ansi16
 
     navigate = true
     line-numbers = true
