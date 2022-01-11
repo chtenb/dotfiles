@@ -18,9 +18,9 @@
 
     # https://coolors.co/250404-400909-052405-0e3d0e-1c0521-002925-060721-211700
     minus-style = syntax "#2e1010"
-    minus-emph-style = syntax bold "#3c1515"
+    minus-emph-style = syntax "#3c1515"
     plus-style = syntax "#102316"
-    plus-emph-style = syntax bold "#1a3823"
+    plus-emph-style = syntax "#1a3823"
 
     map-styles = \
        bold purple => syntax "#2d1025", \
