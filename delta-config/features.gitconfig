@@ -26,6 +26,38 @@
 # 4. Feel free to include a comment line indicating who is the author of the
 #    theme. E.g. a link to your github user page.
 
+[delta "zebra-dark"]
+    minus-style = syntax "#330f0f"
+    minus-emph-style = syntax "#4f1917"
+    plus-style = syntax "#0e2f19"
+    plus-emph-style = syntax "#174525"
+
+    map-styles = \
+       bold purple => syntax "#330f29", \
+       bold blue => syntax "#271344", \
+       bold cyan => syntax "#0d3531", \
+       bold yellow => syntax "#222f14"
+
+    zero-style = syntax
+    whitespace-error-style = "#aaaaaa"
+
+
+[delta "zebra-light"]
+    minus-style = syntax "#fbdada"
+    minus-emph-style = syntax "#f6b6b6"
+    plus-style = syntax "#d6ffd6"
+    plus-emph-style = syntax "#adffad"
+
+    map-styles = \
+       bold purple => syntax "#feecf7", \
+       bold blue => syntax "#e5dff6", \
+       bold cyan => syntax "#d8fdf6", \
+       bold yellow => syntax "#f4ffe0"
+
+    zero-style = syntax
+    whitespace-error-style = "#aaaaaa"
+
+
 [delta "decent-decorations"]
     commit-style = yellow bold italic
     commit-decoration-style = bold box ul yellow
@@ -39,6 +71,7 @@
     line-numbers-minus-style = brightred auto bold
     line-numbers-left-style = normal
     line-numbers-zero-style = normal italic
+
 
 [delta "plain-git-colors"]
     dark = true
@@ -63,6 +96,7 @@
     plus-empty-line-marker-style = normal normal
     plus-style = brightgreen normal
     plus-emph-style = brightgreen normal bold
+
 
 [delta "just-syntax"]
     light = true

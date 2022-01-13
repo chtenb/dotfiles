@@ -1,0 +1,14 @@
+[include]
+    path = features.gitconfig
+    path = current.gitconfig
+
+[delta]
+    features = decent-decorations current
+    # features = plain-git-colors
+    syntax-theme = ansi16
+
+    navigate = true
+    line-numbers = true
+    side-by-side = false
+    file-style = omit
+    file-decoration-style = none

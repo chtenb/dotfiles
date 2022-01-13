@@ -129,11 +129,11 @@ vim()
     stty "$STTYOPTS"
 }
 
-darktheme()
+dark()
 {
-    cp -f ~/dotfiles/delta-themes/base16-dark.gitconfig ~/dotfiles/current-delta-theme.gitconfig
+    cp -f ~/dotfiles/delta-config/dark.gitconfig ~/dotfiles/delta-config/current.gitconfig
 }
-lighttheme()
+light()
 {
-    cp -f ~/dotfiles/delta-themes/base16-light.gitconfig ~/dotfiles/current-delta-theme.gitconfig
+    cp -f ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig
 }

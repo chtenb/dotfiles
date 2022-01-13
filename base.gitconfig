@@ -60,7 +60,7 @@
     ui=always
 
 [diff]
-    colorMoved = dimmed-zebra
+    colorMoved = default
     colorMovedWS = ignore-space-at-eol
     guitool = vscode
 
@@ -73,18 +73,7 @@
     diffFilter = delta --color-only --features=interactive
 
 [include]
-    path = current-delta-theme.gitconfig
-    path = delta-themes/other.gitconfig
-[delta]
-    features = current
-    # features = plain-git-colors
-    syntax-theme = ansi16
-
-    navigate = true
-    line-numbers = true
-    side-by-side = false
-    file-style = omit
-    file-decoration-style = none
+    path = delta-config/main.gitconfig
 
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
