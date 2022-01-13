@@ -60,8 +60,8 @@
     ui=always
 
 [diff]
-    colorMoved = default
-    colorMovedWS = no # Don't ignore whitespace by default
+    colorMoved = dimmed-zebra
+    colorMovedWS = ignore-space-at-eol
     guitool = vscode
 
 [pager]
@@ -74,8 +74,10 @@
 
 [include]
     path = current-delta-theme.gitconfig
+    path = delta-themes/other.gitconfig
 [delta]
     features = current
+    # features = plain-git-colors
     syntax-theme = ansi16
 
     navigate = true
@@ -83,12 +85,6 @@
     side-by-side = false
     file-style = omit
     file-decoration-style = none
-
-# [split-diffs]
-#     theme-name = dark
-#     syntax-highlighting-theme = dark-plus
-# [core]
-#     pager = git-split-diffs --color | less -RFX
 
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe

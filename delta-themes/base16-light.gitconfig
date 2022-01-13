@@ -18,15 +18,15 @@
 
     # https://coolors.co/fbdada-f6b6b6-d6ffd6-adffad-feecf7-d8fdf9-e0dff6-ffffe0
     minus-style = syntax "#fbdada"
-    minus-emph-style = syntax bold "#f6b6b6"
+    minus-emph-style = syntax "#f6b6b6"
     plus-style = syntax "#d6ffd6"
-    plus-emph-style = syntax bold "#adffad"
+    plus-emph-style = syntax "#adffad"
 
     map-styles = \
        bold purple => syntax "#feecf7", \
-       bold cyan => syntax "#d8fdf9", \
-       bold blue => syntax "#e0dff6", \
-       bold yellow => syntax "#ffffe0"
+       bold blue => syntax "#e5dff6", \
+       bold cyan => syntax "#d8fdf6", \
+       bold yellow => syntax "#f4ffe0"
 
     zero-style = syntax
     whitespace-error-style = "#aaaaaa"

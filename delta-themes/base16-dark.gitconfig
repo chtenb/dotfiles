@@ -16,17 +16,17 @@
     line-numbers-zero-style = normal italic
 
 
-    # https://coolors.co/250404-400909-052405-0e3d0e-1c0521-002925-060721-211700
-    minus-style = syntax "#2e1010"
-    minus-emph-style = syntax "#3c1515"
-    plus-style = syntax "#102316"
-    plus-emph-style = syntax "#1a3823"
+    # https://coolors.co/311111-441818-311128-23152e-112c1a-1d3f27-11312d-222f14
+    minus-style = syntax "#330f0f"
+    minus-emph-style = syntax "#4f1917"
+    plus-style = syntax "#0e2f19"
+    plus-emph-style = syntax "#174525"
 
     map-styles = \
-       bold purple => syntax "#2d1025", \
-       bold cyan => syntax "#112c29", \
-       bold blue => syntax "#20132a", \
-       bold yellow => syntax "#1d2613"
+       bold purple => syntax "#330f29", \
+       bold blue => syntax "#271344", \
+       bold cyan => syntax "#0d3531", \
+       bold yellow => syntax "#222f14"
 
     zero-style = syntax
     whitespace-error-style = "#aaaaaa"

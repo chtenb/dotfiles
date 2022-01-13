@@ -26,10 +26,7 @@
 # 4. Feel free to include a comment line indicating who is the author of the
 #    theme. E.g. a link to your github user page.
 
-[delta "base16-generic"]
-    dark = true
-    syntax-theme = base16
-
+[delta "decent-decorations"]
     commit-style = yellow bold italic
     commit-decoration-style = bold box ul yellow
     hunk-header-style = file line-number syntax
@@ -37,26 +34,11 @@
     hunk-header-line-number-style = bold magenta
     hunk-header-decoration-style = yellow box ul
 
-    line-numbers-left-style = normal
+    line-numbers-plus-style = brightgreen auto bold
     line-numbers-right-style = normal
+    line-numbers-minus-style = brightred auto bold
+    line-numbers-left-style = normal
     line-numbers-zero-style = normal italic
-
-    line-numbers-minus-style = red
-    line-numbers-plus-style = green
-
-    minus-style = syntax white
-    minus-emph-style = syntax white
-    plus-style = syntax brightwhite
-    plus-emph-style = syntax brightwhite
-
-    map-styles = \
-       bold purple => syntax white, \
-       bold cyan => syntax brightwhite, \
-       bold blue => syntax white, \
-       bold yellow => syntax brightwhite
-
-    zero-style = syntax
-    whitespace-error-style = "#aaaaaa"
 
 [delta "plain-git-colors"]
     dark = true
@@ -82,7 +64,7 @@
     plus-style = brightgreen normal
     plus-emph-style = brightgreen normal bold
 
-[delta "all-syntax"]
+[delta "just-syntax"]
     light = true
     side-by-side = false
     keep-plus-minus-markers = true
