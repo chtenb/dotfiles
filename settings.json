@@ -158,7 +158,8 @@
     "purescript.addSpagoSources": true,
     "purescript.addNpmPath": true,
     "purescript.buildCommand": "spago build --purs-args --json-errors",
-    "workbench.colorTheme": "My Custom Theme",
     "editor.codeLens": false,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "editor.tabSize": 2,
+    "workbench.colorTheme": "My Material Synthwave Theme"
 }
