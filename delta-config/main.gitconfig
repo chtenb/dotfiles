@@ -3,12 +3,13 @@
     path = current.gitconfig
 
 [delta]
-    # features = plain-git-colors
+    syntax-theme = terminal-ansi16
     features = decent-decorations current
-    syntax-theme = ansi16
+    # features = plain-git-colors
 
     navigate = true
     line-numbers = true
     side-by-side = false
     file-style = omit
     file-decoration-style = none
+    relative-paths = true

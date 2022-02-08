@@ -66,9 +66,9 @@
     hunk-header-line-number-style = bold magenta
     hunk-header-decoration-style = yellow box ul
 
-    line-numbers-plus-style = brightgreen auto bold
+    line-numbers-plus-style = green auto
     line-numbers-right-style = normal
-    line-numbers-minus-style = brightred auto bold
+    line-numbers-minus-style = red auto
     line-numbers-left-style = normal
     line-numbers-zero-style = normal italic
 
@@ -107,3 +107,29 @@
 
     minus-style = syntax
     plus-style = syntax
+
+[delta "hoopoe"]
+    # author: https://github.com/dandavison
+    light = true
+    pink = "#ffe0e0"
+    dark-pink = "#ffc0c0"
+    green = "#d0ffd0"
+    dark-green = "#a0efa0"
+    dark-green-2 = "#067a00"
+    minus-style = normal hoopoe.pink
+    minus-emph-style = normal hoopoe.dark-pink
+    minus-non-emph-style = minus-style
+    plus-style = syntax hoopoe.green
+    plus-emph-style = syntax hoopoe.dark-green
+    plus-non-emph-style = plus-style
+    minus-empty-line-marker-style = minus-style
+    plus-empty-line-marker-style = plus-style
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = hoopoe.dark-green-2
+    hunk-header-style = file line-number syntax
+    syntax-theme = GitHub
+    zero-style = syntax
