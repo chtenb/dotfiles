@@ -77,10 +77,11 @@
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     // THEMING
     "editor.semanticHighlighting.enabled": true,
-    "workbench.preferredDarkColorTheme": "SynthWave '84",
-    "workbench.preferredLightColorTheme": "Noctis Lux",
+    "workbench.preferredDarkColorTheme": "Synthwave Material Ansi 16",
+    "workbench.preferredLightColorTheme": "Noctis Lux Ansi 16",
     "window.autoDetectColorScheme": true,
     "workbench.colorCustomizations": {
+        // "editor.lineHighlightBackground": "#00000000",
         "[Noctis Lux]": {
         },
         "[SynthWave '84]": {
@@ -90,7 +91,7 @@
     "editor.fontFamily": "Cascadia Code",
     "editor.fontLigatures": true,
     "editor.codeLensFontFamily": "Cascadia Code",
-    "editor.renderWhitespace": "boundary",
+    // "editor.renderWhitespace": "boundary",
     "editor.renderControlCharacters": true,
     "editor.cursorSurroundingLines": 10,
     "editor.wordWrap": "on",
@@ -122,11 +123,9 @@
     },
     "tabnine.experimentalAutoImports": true,
     "color-highlight.markerType": "outline",
-    "editor.cursorStyle": "line",
     "editor.insertSpaces": false,
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "window.zoomLevel": -1,
     "editor.minimap.enabled": false,
     "editor.formatOnType": true,
     "workbench.sideBar.location": "right",
@@ -152,7 +151,6 @@
     "html.format.wrapLineLength": 0,
     "vim.textwidth": 100,
     "editor.wordWrapColumn": 200,
-    "editor.bracketPairColorization.enabled": true,
 
     // PURESCRIPT
     "purescript.addSpagoSources": true,
@@ -161,5 +159,10 @@
     "editor.codeLens": false,
     "files.insertFinalNewline": true,
     "editor.tabSize": 2,
-    "workbench.colorTheme": "My Material Synthwave Theme"
+    "workbench.colorTheme": "Synthwave Material Ansi 16",
+    "editor.renderLineHighlight": "line",
+    "workbench.startupEditor": "none",
+    "purescript.formatter": "purs-tidy",
+    "editor.formatOnSave": true,
+    "window.zoomLevel": -1
 }

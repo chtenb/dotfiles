@@ -15,6 +15,7 @@
     whitespace = cr-at-eol
     trustctime = false
     filemode = false
+    safecrlf = false
 [fetch]
     prune = true
 [alias]
@@ -78,7 +79,7 @@
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
 [difftool "vscode"]
-    cmd = code --wait --diff --new-window $LOCAL $REMOTE
+    cmd = code --wait --diff $LOCAL $REMOTE
 
 
 # [merge]
@@ -92,7 +93,7 @@
 [mergetool "kdiff3"]
     path = c:/Program Files/KDiff3/kdiff3.exe
 [mergetool "vscode"]
-    cmd = code --wait --new-window $MERGED
+    cmd = code --wait $MERGED
 
 [merge]
     tool = vscode
