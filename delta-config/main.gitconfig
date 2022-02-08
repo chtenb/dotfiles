@@ -3,8 +3,8 @@
     path = current.gitconfig
 
 [delta]
-    features = decent-decorations current
     # features = plain-git-colors
+    features = decent-decorations current
     syntax-theme = ansi16
 
     navigate = true

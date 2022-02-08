@@ -94,4 +94,3 @@ context.work.read=project:work
 context.work.write=project:work
 context.setup.read=pro:setup
 context.setup.write=pro:setup
-context=setup
