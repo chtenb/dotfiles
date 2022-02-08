@@ -10,6 +10,21 @@
     navigate = true
     line-numbers = true
     side-by-side = false
-    file-style = omit
-    file-decoration-style = none
     relative-paths = true
+    conflictstyle = diff3
+
+[delta "decent-decorations"]
+    commit-style = yellow bold italic
+    commit-decoration-style = bold box ul yellow
+
+    file-style = yellow
+    file-decoration-style = yellow ol ul
+
+    hunk-header-style = syntax
+    hunk-header-decoration-style = blue box
+
+    line-numbers-plus-style = green auto
+    line-numbers-right-style = normal
+    line-numbers-minus-style = red auto
+    line-numbers-left-style = normal
+    line-numbers-zero-style = normal italic

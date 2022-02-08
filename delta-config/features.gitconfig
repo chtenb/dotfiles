@@ -58,20 +58,6 @@
     whitespace-error-style = "#aaaaaa"
 
 
-[delta "decent-decorations"]
-    commit-style = yellow bold italic
-    commit-decoration-style = bold box ul yellow
-    hunk-header-style = file line-number syntax
-    hunk-header-file-style = normal
-    hunk-header-line-number-style = bold magenta
-    hunk-header-decoration-style = yellow box ul
-
-    line-numbers-plus-style = green auto
-    line-numbers-right-style = normal
-    line-numbers-minus-style = red auto
-    line-numbers-left-style = normal
-    line-numbers-zero-style = normal italic
-
 
 [delta "plain-git-colors"]
     dark = true
