@@ -42,7 +42,8 @@
     ds = diff --staged
     dsi = diff --staged --ignore-all-space --color-moved-ws=ignore-all-space
     sho = "show --ignore-all-space --color-moved-ws=ignore-all-space"
-    shosyn = "!f() { git show --ignore-all-space --color-moved=no | delta --features ansi-syntax-light; }; f"
+
+    nonum = "!f() { git -c delta.line-numbers=false "$@"; }; f"
 
     # Fetch a branch x from origin to origin/x, and set it up to track it.
     add-tracking-branch = "!f() { git remote set-branches --add origin "$1"; }; f"
