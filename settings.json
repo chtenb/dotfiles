@@ -82,10 +82,8 @@
     "window.autoDetectColorScheme": true,
     "workbench.colorCustomizations": {
         // "editor.lineHighlightBackground": "#00000000",
-        "[Noctis Lux]": {
-        },
-        "[SynthWave '84]": {
-        },
+        "[Noctis Lux]": {},
+        "[SynthWave '84]": {},
     },
     // GENERAL
     "editor.fontFamily": "Cascadia Code",
@@ -151,7 +149,6 @@
     "html.format.wrapLineLength": 0,
     "vim.textwidth": 100,
     "editor.wordWrapColumn": 200,
-
     // PURESCRIPT
     "purescript.addSpagoSources": true,
     "purescript.addNpmPath": true,
@@ -159,10 +156,10 @@
     "editor.codeLens": false,
     "files.insertFinalNewline": true,
     "editor.tabSize": 2,
-    "workbench.colorTheme": "Synthwave Material Ansi 16",
     "editor.renderLineHighlight": "line",
     "workbench.startupEditor": "none",
     "purescript.formatter": "purs-tidy",
     "editor.formatOnSave": true,
-    "window.zoomLevel": -1
+    "window.zoomLevel": -1,
+    "workbench.colorTheme": "Noctis Lux Ansi 16"
 }

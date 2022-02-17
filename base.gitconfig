@@ -72,7 +72,7 @@
     reflog = delta
     show = delta
 [interactive]
-    diffFilter = delta --color-only --features=interactive
+    diffFilter = delta --color-only --features interactive
 
 [include]
     path = delta-config/main.gitconfig

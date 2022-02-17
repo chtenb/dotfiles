@@ -28,3 +28,8 @@
     line-numbers-minus-style = red auto
     line-numbers-left-style = normal
     line-numbers-zero-style = normal italic
+
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+    features = current

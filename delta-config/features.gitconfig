@@ -58,7 +58,6 @@
     whitespace-error-style = "#aaaaaa"
 
 
-
 [delta "plain-git-colors"]
     dark = true
     syntax-theme = none
