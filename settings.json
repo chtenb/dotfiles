@@ -2,7 +2,6 @@
     // VIM
     "vim.hlsearch": true,
     "vim.gdefault": true,
-    "editor.renderIndentGuides": false,
     "vim.normalModeKeyBindings": [
         {
             "before": [
@@ -119,13 +118,14 @@
     "files.associations": {
         ".gitconfig*": "gitconfig"
     },
-    "tabnine.experimentalAutoImports": true,
+    "files.insertFinalNewline": true,
+    "editor.renderLineHighlight": "line",
+    "workbench.startupEditor": "none",
     "color-highlight.markerType": "outline",
     "editor.insertSpaces": false,
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.minimap.enabled": false,
-    "editor.formatOnType": true,
     "workbench.sideBar.location": "right",
     "formate.alignColon": false,
     "formate.verticalAlignProperties": false,
@@ -152,14 +152,21 @@
     // PURESCRIPT
     "purescript.addSpagoSources": true,
     "purescript.addNpmPath": true,
-    "purescript.buildCommand": "spago build --purs-args --json-errors",
-    "editor.codeLens": false,
-    "files.insertFinalNewline": true,
-    "editor.tabSize": 2,
-    "editor.renderLineHighlight": "line",
-    "workbench.startupEditor": "none",
     "purescript.formatter": "purs-tidy",
-    "editor.formatOnSave": true,
+    "[purescript]": {
+        "editor.formatOnSave": true,
+    },
+    "editor.tabSize": 2,
+    "workbench.colorTheme": "Noctis Lux Ansi 16",
+    "customizeUI.font.monospace": "CozetteVector",
+    "customizeUI.font.regular": "CozetteVector",
     "window.zoomLevel": -1,
-    "workbench.colorTheme": "Noctis Lux Ansi 16"
+    "editor.codeLens": true,
+    "diffEditor.codeLens": true,
+    "gitblame.ignoreWhitespace": true,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.mode.active": "zen",
+    "workbench.activityBar.visible": false,
+    "purescript.exportsCodeLens": false,
+    "tabnine.experimentalAutoImports": true,
 }

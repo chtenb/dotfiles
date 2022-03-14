@@ -37,6 +37,7 @@
     ci = commit
     st = status
     br = branch
+    rb = rebase
     
     di = "diff --ignore-all-space --color-moved-ws=ignore-all-space"
     ds = diff --staged
