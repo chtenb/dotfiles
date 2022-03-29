@@ -73,7 +73,7 @@
         "PowerShell": null,
         "Command Prompt": null
     },
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.defaultProfile.windows": "Nushell",
     // THEMING
     "editor.semanticHighlighting.enabled": true,
     "workbench.preferredDarkColorTheme": "Synthwave Material Ansi 16",
@@ -85,7 +85,7 @@
         "[SynthWave '84]": {},
     },
     // GENERAL
-    "editor.fontFamily": "Cascadia Code",
+    "editor.fontFamily": "Cascadia Code,FiraCode Nerd Font",
     "editor.fontLigatures": true,
     "editor.codeLensFontFamily": "Cascadia Code",
     // "editor.renderWhitespace": "boundary",
@@ -167,5 +167,5 @@
     "purescript.exportsCodeLens": false,
     "tabnine.experimentalAutoImports": true,
     "window.zoomLevel": -1,
-    "workbench.colorTheme": "Noctis Lux Ansi 16",
+    "workbench.colorTheme": "Synthwave Material Ansi 16",
 }

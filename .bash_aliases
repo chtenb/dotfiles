@@ -44,8 +44,6 @@ taillatest() {
 # Print stderr in red. Usage: $ color command.
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
-alias rcname="python -c \"for i,c in enumerate(f'{input():<12}'[:12]): print(f'\t<C{i+1:>02}>{ord(c)}</C{i+1:>02}>')\""
-
 printcolors(){
     echo "foreground"
     for code in {30..37}; do
@@ -118,6 +116,7 @@ alias ex="explorer ."
 alias gg="git grep -IPn --color=always --recurse-submodules"
 alias ggn="git grep -IPn --color=always"
 alias gr="git grep --no-index -IPn --color=always"
+alias rcname="python -c \"for i,c in enumerate(f'{input():<12}'[:12]): print(f'\t<C{i+1:>02}>{ord(c)}</C{i+1:>02}>')\""
 #alias die="sudo shutdown -h now"
 alias open="gnome-open"
 alias tmux="TERM=screen-256color-bce tmux"
@@ -138,11 +137,6 @@ vim()
     stty "$STTYOPTS"
 }
 
-dark()
-{
-    cp -f ~/dotfiles/delta-config/dark.gitconfig ~/dotfiles/delta-config/current.gitconfig
-}
-light()
-{
-    cp -f ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig
-}
+alias dark="cp -f ~/dotfiles/delta-config/dark.gitconfig ~/dotfiles/delta-config/current.gitconfig"
+alias light="cp -f ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig"
+
