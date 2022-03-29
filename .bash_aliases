@@ -11,6 +11,9 @@ shopt -s globstar
 export PAGER="less --tabs=4 -RF"
 alias lesser="less --tabs=4 -RF"
 
+# jj completion
+# source <(jj debug completion)
+
 # Fast dir crawling
 c() {
     cd "$1"
@@ -88,6 +91,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias npr='npm run -- '
+alias npe='npm exec -- '
 
 venv() {
     source "$1.venv/bin/activate"

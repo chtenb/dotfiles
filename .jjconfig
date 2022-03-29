@@ -1,0 +1,6 @@
+[user]
+name = "chtenb"
+email = "ctenbrinke@gmail.com"
+
+[alias]
+l = ["log", "-r", "(heads(remote_branches())..@):"]
