@@ -164,13 +164,13 @@ let $config = {
   color_config: $default_theme
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
-  quick_completions: false  # set this to false to prevent auto-selecting completions when only one remains
+  quick_completions: true # set this to false to prevent auto-selecting completions when only one remains
   partial_completions: true  # set this to false to prevent partial filling of the prompt
   animate_prompt: false # redraw the prompt every second
   float_precision: 2
   use_ansi_coloring: true
   filesize_format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, zb, zib, auto
-  edit_mode: vi # emacs, vi
+  edit_mode: emacs # emacs, vi
   max_history_size: 10000
   menu_config: {
     columns: 4
@@ -203,7 +203,7 @@ let $config = {
       name: completion_menu
       modifier: none
       keycode: tab
-      mode: vi_normal # Options: emacs vi_normal vi_insert
+      mode: emacs # Options: emacs vi_normal vi_insert
       event: {
         until: [
           { send: menu name: completion_menu }
@@ -222,7 +222,7 @@ let $config = {
       name: history_menu
       modifier: control
       keycode: char_x
-      mode: vi_insert
+      mode: emacs
       event: {
         until: [
           { send: menu name: history_menu }
@@ -234,7 +234,7 @@ let $config = {
       name: history_previous
       modifier: control
       keycode: char_z
-      mode: vi_normal
+      mode: emacs
       event: {
         until: [
           { send: menupageprevious }
@@ -247,6 +247,7 @@ let $config = {
 
 
 ###### STARSHIP ######
+
 let-env STARSHIP_SHELL = "nu"
 
 def create_left_prompt [] {
@@ -277,10 +278,47 @@ alias rcname = python -c "for i,c in enumerate(f'{input():<12}'[:12]): print(f'\
 alias dark = cp ~/dotfiles/delta-config/dark.gitconfig ~/dotfiles/delta-config/current.gitconfig
 alias light = cp ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig
 
-alias ll = ls -alF
-alias la = ls -A
-alias l = ls -CF
+alias l = ls -a
+alias ll = ls -alf
 alias npr = npm run -- 
 alias npe = npm exec -- 
 
 alias t = task
+
+
+###### COMMAND ######
+
+def-env c [path] {
+  cd $path
+  ls -a
+}
+
+def replac [...args] {
+    perl ~/dotfiles/replac/replac.pl $args
+}
+def tstop [] {
+    task rc.confirmation=off rc.bulk:0 status:pending +ACTIVE ids | xargs -i task {} stop
+}
+def tsw [task] {
+    tstop
+    task $task start
+}
+def-env twrap [] {
+    tstop
+    cd ~/.task
+    git add .
+    git commit -m "Wrap up"
+    git push
+    cd
+}
+
+def printcolors [] {
+    echo "foreground"
+    for $color-offset in [30 40 90] {
+      for $color in 0..7 {
+        for $style in 1..5 {
+          build-string $"\e[($color + $color-offset);($style)m" $'\e[($color + $color-offset)($style)m' "\e[0m"
+        } | str collect
+      } | flatten
+    } | flatten
+}
