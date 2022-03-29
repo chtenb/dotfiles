@@ -37,3 +37,5 @@
 	recurseSubmodules = true
 [winUpdater]
 	recentlySeenVersion = 2.17.0.windows.1
+[credential "http://devhub:3000"]
+	provider = generic

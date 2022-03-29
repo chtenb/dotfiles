@@ -43,6 +43,7 @@
     ds = diff --staged
     dsi = diff --staged --ignore-all-space --color-moved-ws=ignore-all-space
     sho = "show --ignore-all-space --color-moved-ws=ignore-all-space"
+    dst = "diff --stat=150,100 --stat-graph-width=50"
 
     nonum = "!f() { git -c delta.line-numbers=false "$@"; }; f"
 
