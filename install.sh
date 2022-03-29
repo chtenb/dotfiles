@@ -7,6 +7,7 @@ ln -sf ~/dotfiles/.taskrc ~/
 ln -sf ~/dotfiles/.tmux.conf ~/
 ln -sf ~/dotfiles/linux.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore
+ln -sf ~/dotfiles/.jjconfig ~/.jjconfig
 
 ln -sf ~/dotfiles/delta-themes/base16-dark.gitconfig ~/dotfiles/current-delta-theme.gitconfig
 
