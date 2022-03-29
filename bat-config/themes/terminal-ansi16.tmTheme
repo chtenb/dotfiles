@@ -7,13 +7,26 @@
 	<key>colorSpaceName</key>
 	<string>sRGB</string>
 	<key>comment</key>
-	<string>Generated from the ansi16 template at https://github.com/chtenb/ansi16</string>
+	<string>Generated from the ansi16 template at https://github.com/chtenb/ansi16. The colors in this theme are encoded as RRGGBBAA where RR is an ANSI palette number from 00 to 0f (the 8 colors and their bright versions), and AA is the special value 00 to indicate this encoding is being used.</string>
 	<key>name</key>
-	<string>Ansi 16 Terminal</string>
+	<string>Ansi 16 Terminal Theme for Bat</string>
 	<key>semanticClass</key>
 	<string>theme.ansi16</string>
 	<key>settings</key>
 	<array>
+		<dict>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#00000001</string>
+				<key>foreground</key>
+				<string>#00000001</string>
+				<key>gutter</key>
+				<string>#00000001</string>
+				<key>gutterForeground</key>
+				<string>#00000001</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>name</key>
 			<string>Invalid</string>
@@ -33,7 +46,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#08000000</string>
+				<string>#0b000000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -62,11 +75,202 @@
 			<key>name</key>
 			<string>CSS Classes</string>
 			<key>scope</key>
-			<string>entity.other.attribute-name.class</string>
+			<string>entity.other.attribute-name.pseudo-class, entity.other.attribute-name.pseudo-element</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#0b000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>CSS Variables</string>
+			<key>scope</key>
+			<string>source.css variable</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0f000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>CSS Properties</string>
+			<key>scope</key>
+			<string>source.css support.type.property-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#07000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>COMMENT</string>
+			<key>scope</key>
+			<string>comment, punctuation.definition.comment, string.quoted.docstring</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#00000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>VALUE TYPE, BUILTIN TYPE, TAG</string>
+			<key>scope</key>
+			<string>keyword.type, entity.name.tag, meta.tag.sgml, entity.name.type.struct, support.type, support.class, support.type.sys-types, support.type.built-in</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#01000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>STRING, SYMBOL</string>
+			<key>scope</key>
+			<string>string, constant.other.symbol</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#02000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>TYPE, ATTRIBUTE</string>
+			<key>scope</key>
+			<string>entity.name, entity.other.attribute-name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#03000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>FUNCTION, METHOD, OPERATOR</string>
+			<key>scope</key>
+			<string>entity.name.function, variable.function, meta.function-call</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#04000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>KEYWORD, STORAGE</string>
+			<key>scope</key>
+			<string>keyword, storage</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#05000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>SUPPORT, SPECIAL, BUILTIN OTHER</string>
+			<key>scope</key>
+			<string>support, keyword.other.special-method, variable.language, string.regexp, constant.character.escape, support.other.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#06000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>TEXT</string>
+			<key>scope</key>
+			<string>source, text, variable, entity.name.variable, constant.other.placeholder</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#07000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>CONSTANT</string>
+			<key>scope</key>
+			<string>constant.numeric, constant.language, support.constant, constant.character, constant.escape, keyword.other.unit</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#09000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>STRING LINK</string>
+			<key>scope</key>
+			<string>string.other.link</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0a000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ALT TYPE</string>
+			<key>scope</key>
+			<string>entity.name.type.parameter, entity.name.type.type-parameter, variable.other.generic-type</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0b000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ALT FUNCTION</string>
+			<key>scope</key>
+			<string>keyword.operator, support.function</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0c000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ALT KEYWORD</string>
+			<key>scope</key>
+			<string>keyword.other</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0d000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>PUNCTUATION</string>
+			<key>scope</key>
+			<string>punctuation.definition.tag, punctuation, punctuation.definition.tag.html, punctuation.definition.tag.begin.html, punctuation.definition.tag.end.html, punctuation.section.embedded, keyword.other.template, keyword.other.substitution, meta.separator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0e000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>ALT VARIABLE</string>
+			<key>scope</key>
+			<string>entity.name.variable.field, entity.name.variable.property, variable.other.property, variable.other.field</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0f000000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -161,7 +365,7 @@
 			<key>name</key>
 			<string>Storage</string>
 			<key>scope</key>
-			<string>source.js storage, source.js keyword.declaration, keyword.declaration.function.js, storage.type.function.js</string>
+			<string>source.js storage, source.js keyword.declaration</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -306,35 +510,15 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Markdown - Plain</string>
+			<string>Markup - Bold</string>
 			<key>scope</key>
-			<string>text.html.markdown, punctuation.definition.list_item.markdown</string>
+			<string>markup.bold, markup.bold string</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string></string>
 				<key>foreground</key>
-				<string>#07000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Markup Raw Inline</string>
-			<key>scope</key>
-			<string>text.html.markdown markup.inline.raw.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#05000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Markup Raw Inline Punctuation</string>
-			<key>scope</key>
-			<string>text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#0e000000</string>
+				<string>#01000000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -344,8 +528,56 @@
 			<string>markdown.heading, markup.heading, markup.heading entity.name, markup.heading.markdown punctuation.definition.heading.markdown, markup.heading.setext</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#01000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup - Underline and Link</string>
+			<key>scope</key>
+			<string>markup.underline</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>underline</string>
 				<key>foreground</key>
 				<string>#02000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markdown - Link Anchor and Title</string>
+			<key>scope</key>
+			<string>constant.other.reference.link.markdown, string.other.link.title.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#03000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup - Raw &amp; Fenced Block</string>
+			<key>scope</key>
+			<string>markup.raw, markup.fenced_code, markup.inline.raw</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#04000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markdown - Link Description</string>
+			<key>scope</key>
+			<string>string.other.link.description.title.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#05000000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -358,158 +590,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#01000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markup - Bold</string>
-			<key>scope</key>
-			<string>markup.bold, markup.bold string</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
-				<key>foreground</key>
-				<string>#09000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markup - Bold-Italic</string>
-			<key>scope</key>
-			<string>markup.bold markup.italic, markup.italic markup.bold, markup.quote markup.bold, markup.bold markup.italic string, markup.italic markup.bold string, markup.quote markup.bold string</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
-				<key>foreground</key>
-				<string>#09000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markup - Underline</string>
-			<key>scope</key>
-			<string>markup.underline</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>underline</string>
-				<key>foreground</key>
-				<string>#03000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markup - Strike</string>
-			<key>scope</key>
-			<string>markup.strike</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>strike</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Blockquote</string>
-			<key>scope</key>
-			<string>markup.quote punctuation.definition.blockquote.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#08000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markup - Quote</string>
-			<key>scope</key>
-			<string>markup.quote</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Link title</string>
-			<key>scope</key>
-			<string>string.other.link.title.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#0b000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Link Description</string>
-			<key>scope</key>
-			<string>string.other.link.description.title.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#04000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Link Anchor</string>
-			<key>scope</key>
-			<string>constant.other.reference.link.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#0b000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markup - Raw Block</string>
-			<key>scope</key>
-			<string>markup.raw.block</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#07000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Fenced Language</string>
-			<key>scope</key>
-			<string>markup.fenced_code.block.markdown, markup.inline.raw.string.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
 				<string>#05000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Fenced Bode Block Variable</string>
-			<key>scope</key>
-			<string>variable.language.fenced.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#06000000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Separator</string>
-			<key>scope</key>
-			<string>meta.separator</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
-				<key>foreground</key>
-				<string>#06000000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -525,9 +606,70 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>Markup - Quote</string>
+			<key>scope</key>
+			<string>markup.quote</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#06000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markdown - Plain</string>
+			<key>scope</key>
+			<string>text.html.markdown, punctuation.definition.list_item.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#07000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup - Strike</string>
+			<key>scope</key>
+			<string>markup.strike</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>strike</string>
+				<key>foreground</key>
+				<string>#08000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup - Bold-Italic</string>
+			<key>scope</key>
+			<string>markup.bold markup.italic, markup.italic markup.bold, markup.quote markup.bold, markup.bold markup.italic string, markup.italic markup.bold string, markup.quote markup.bold string</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#09000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markdown - Fenced Bode Block Variable</string>
+			<key>scope</key>
+			<string>variable.language.fenced.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#0f000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Types</string>
 			<key>scope</key>
-			<string>entity.name.type</string>
+			<string>source.purescript entity.name.type</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -538,7 +680,7 @@
 			<key>name</key>
 			<string>Classes</string>
 			<key>scope</key>
-			<string>entity.name.class</string>
+			<string>source.purescript entity.name.class</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
