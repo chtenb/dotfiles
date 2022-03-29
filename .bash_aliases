@@ -8,6 +8,10 @@ if [ -e /home/chiel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chiel/.nix
 # Enable ** globbing
 shopt -s globstar
 
+# Set up starship
+export STARSHIP_CONFIG=~/dotfiles/starship.toml
+eval "$(starship init bash)"
+
 export PAGER="less --tabs=4 -RF"
 alias lesser="less --tabs=4 -RF"
 
@@ -42,6 +46,8 @@ taillatest() {
 
 # Print stderr in red. Usage: $ color command.
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
+
+alias rcname="python -c \"for i,c in enumerate(f'{input():<12}'[:12]): print(f'\t<C{i+1:>02}>{ord(c)}</C{i+1:>02}>')\""
 
 printcolors(){
     echo "foreground"

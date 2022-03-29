@@ -12,6 +12,8 @@
     side-by-side = false
     relative-paths = true
     conflictstyle = diff3
+    wrap-max-lines = 0
+    max-line-length = 2048
 
 [delta "decent-decorations"]
     commit-style = yellow bold italic
