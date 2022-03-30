@@ -73,6 +73,11 @@
         "PowerShell": null,
         "Command Prompt": null
     },
+    "terminal.integrated.profiles.linux": {
+        "Nushell": {
+            "cmd": "nu"
+        }
+    },
     "terminal.integrated.defaultProfile.windows": "Nushell",
     // THEMING
     "editor.semanticHighlighting.enabled": true,

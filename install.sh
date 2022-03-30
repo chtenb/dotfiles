@@ -1,4 +1,5 @@
 echo "bat and delta must be installed manually using downloaded .deb files"
+echo "nushell must be installed manually, e.g. using cargo install nu"
 
 ln -sf ~/dotfiles/.bash_aliases ~/
 ln -sf ~/dotfiles/.vimrc ~/
@@ -20,3 +21,5 @@ chmod +x ~/.local/bin/replac
 
 ln -sf /usr/bin/batcat ~/.local/bin/bat
 ln -sfT ~/dotfiles/bat-config ~/.config/bat
+
+ln -sf ~/dotfiles/default_config.nu ~/.config/nushell/config.nu
