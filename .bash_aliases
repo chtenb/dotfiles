@@ -8,10 +8,6 @@ if [ -e /home/chiel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chiel/.nix
 # Enable ** globbing
 shopt -s globstar
 
-# Set up starship
-export STARSHIP_CONFIG=~/dotfiles/starship.toml
-eval "$(starship init bash)"
-
 export PAGER="less --tabs=4 -RF"
 alias lesser="less --tabs=4 -RF"
 
