@@ -67,6 +67,9 @@
     // TERMINAL
     "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
     "terminal.integrated.profiles.windows": {
+        "Nushell": {
+            "path": "nu"
+        },
         "Git Bash": {
             "source": "Git Bash"
         },
@@ -75,10 +78,11 @@
     },
     "terminal.integrated.profiles.linux": {
         "Nushell": {
-            "cmd": "nu"
+            "path": "nu"
         }
     },
     "terminal.integrated.defaultProfile.windows": "Nushell",
+    "terminal.integrated.defaultProfile.linux": "Nushell",
     // THEMING
     "editor.semanticHighlighting.enabled": true,
     "workbench.preferredDarkColorTheme": "Synthwave Material Ansi 16",
