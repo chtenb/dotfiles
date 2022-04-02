@@ -269,10 +269,12 @@
     },
     {
         "key": "ctrl+l",
-        "command": "workbench.action.quickOpenSelectNext"
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
     },
     {
         "key": "ctrl+h",
-        "command": "workbench.action.quickOpenSelectPrevious"
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
     },
 ]

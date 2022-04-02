@@ -340,11 +340,15 @@ def printcolors [] {
 }
 
 
-def "g c" [] {
+def "git cb" [] {
   let branches = (git branch --color=never | lines | where (($it | str starts-with "*") == false))
   echo $branches
-  let index = (input "Type branch number to checkout: ")
-  # let branch = $branches | where index == $index
-  # git checkout $branch
+  let input = (input "Type branch number to checkout and press enter to move on: " | str trim -a)
+  if (($input | str length) > 0) {
+    let index = ($input | into int)
+    let branch = ($branches | get $index | str trim -a)
+    ^git checkout $branch
+  } else {
+    echo Aborting...
+  }
 }
-
