@@ -242,6 +242,20 @@ let $config = {
         ]
       }
     }
+    {
+      name: history_hint
+      modifier: control
+      keycode: char_l
+      mode: emacs
+      event: [ { send: HistoryHintComplete } ]
+    }
+    {
+      name: history_hint
+      modifier: control
+      keycode: enter
+      mode: emacs
+      event: [ { send: HistoryHintWordComplete } ]
+    }
   ]
 }
 

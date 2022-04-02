@@ -67,9 +67,9 @@
     // TERMINAL
     "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
     "terminal.integrated.profiles.windows": {
-        "Nushell": {
-            "path": "nu"
-        },
+        // "Nushell": {
+        //     "path": "nu"
+        // },
         "Git Bash": {
             "source": "Git Bash"
         },
@@ -180,4 +180,5 @@
     "terminal.integrated.fontSize": 12,
     // "window.zoomLevel": -1,
     // "terminal.integrated.gpuAcceleration": "off",
+    "terminal.integrated.minimumContrastRatio": 1,
 }
