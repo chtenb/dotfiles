@@ -263,7 +263,9 @@ let-env LS_COLORS = "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=
 
 ###### PATH ######
 
-let-env Path = ($env.Path | prepend 'C:\Program Files\Git\usr\bin')
+let-env STARSHIP_CONFIG = if (sys).host.name == "Windows" {
+  let-env Path = ($env.Path | prepend 'C:\Program Files\Git\usr\bin')
+}
 
 ###### ALIAS ######
 
@@ -341,9 +343,7 @@ def "git cb" [] {
 ###### STARSHIP ######
 
 let-env STARSHIP_SHELL = "nu"
-# let-env STARSHIP_CONFIG = '~/dotfiles/starship.toml'
-# How to make this platform independent?
-let-env STARSHIP_CONFIG = 'C:\users\chiel.tenbrinke\dotfiles\starship.toml'
+
 # let-env STARSHIP_LOG = 'trace starship module git_branch'
 let-env STARSHIP_LOG = 'trace starship timings'
 
@@ -362,3 +362,10 @@ let-env PROMPT_INDICATOR_VI_INSERT = ": "
 let-env PROMPT_INDICATOR_VI_NORMAL = "〉"
 let-env PROMPT_MULTILINE_INDICATOR = "::: "
 
+
+
+# let-env STARSHIP_CONFIG = if (sys).host.name == "Windows" {
+#   'C:\users\chiel.tenbrinke\dotfiles\starship.toml'
+# } else {
+#   '~/dotfiles/starship.toml'
+# }       
