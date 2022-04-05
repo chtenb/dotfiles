@@ -277,4 +277,9 @@
         "command": "workbench.action.quickOpenSelectPrevious",
         "when": "inQuickOpen"
     },
+    {
+        "key": "cmd+s",
+        "command": "searchEditorApplyChanges.apply",
+        "when": "inSearchEditor"
+    }
 ]
