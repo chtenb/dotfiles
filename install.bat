@@ -19,4 +19,6 @@ mklink %UserProfile%\.gitconfig %UserProfile%\dotfiles\intellimagic.gitconfig
 copy %UserProfile%\dotfiles\git_bash_here.ahk "%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 del /q %UserProfile%\AppData\Roaming\nushell\config.nu
 mklink %UserProfile%\AppData\Roaming\nushell\config.nu %UserProfile%\dotfiles\default_config.nu
+del /q %UserProfile%\.wezterm.lua
+mklink %UserProfile%\.wezterm.lua %UserProfile%\dotfiles\wezterm.lua
 pause

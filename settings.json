@@ -65,7 +65,8 @@
     "vim.sneakUseIgnorecaseAndSmartcase": true,
     "vim.startofline": false,
     // TERMINAL
-    "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
+    // "terminal.external.windowsExec": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.external.windowsExec": "C:\\Program Files\\wezterm\\wezterm-gui.exe",
     "terminal.integrated.profiles.windows": {
         // "Nushell": {
         //     "path": "nu"

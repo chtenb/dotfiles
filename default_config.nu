@@ -339,29 +339,22 @@ def "git cb" [] {
   }
 }
 
-
 ###### STARSHIP ######
 
 let-env STARSHIP_SHELL = "nu"
-
-# let-env STARSHIP_LOG = 'trace starship module git_branch'
-let-env STARSHIP_LOG = 'trace starship timings'
+let-env STARSHIP_SESSION_KEY = (random chars -l 16)
 
 def create_left_prompt [] {
   starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
 }
 
-# Use nushell functions to define your right and left prompt
 let-env PROMPT_COMMAND = { create_left_prompt }
 let-env PROMPT_COMMAND_RIGHT = ""
 
-# The prompt indicators are environmental variables that represent
-# the state of the prompt
 let-env PROMPT_INDICATOR = ""
 let-env PROMPT_INDICATOR_VI_INSERT = ": "
 let-env PROMPT_INDICATOR_VI_NORMAL = "〉"
-let-env PROMPT_MULTILINE_INDICATOR = "::: "
-
+let-env PROMPT_MULTILINE_INDICATOR = (starship prompt --continuation)
 
 
 # let-env STARSHIP_CONFIG = if (sys).host.name == "Windows" {
@@ -369,3 +362,10 @@ let-env PROMPT_MULTILINE_INDICATOR = "::: "
 # } else {
 #   '~/dotfiles/starship.toml'
 # }       
+
+
+###### OH-MY-POSH ######
+# let-env PROMPT_COMMAND = { oh-my-posh print primary }
+# let-env PROMPT_COMMAND_RIGHT = { oh-my-posh print right }
+# let-env PROMPT_COMMAND = { oh-my-posh print primary --config ~/dotfiles/spaceship.omp.json }
+# let-env PROMPT_COMMAND_RIGHT = { oh-my-posh print right --config ~/dotfiles/spaceship.omp.json }
