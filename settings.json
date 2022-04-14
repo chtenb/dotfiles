@@ -180,7 +180,7 @@
     "workbench.activityBar.visible": false,
     "purescript.exportsCodeLens": false,
     "tabnine.experimentalAutoImports": true,
-    "workbench.colorTheme": "Synthwave Material Ansi 16",
+    "workbench.colorTheme": "Noctis Lux Ansi 16",
     "editor.fontSize": 12,
     "terminal.integrated.fontSize": 12,
     // "window.zoomLevel": -1,
