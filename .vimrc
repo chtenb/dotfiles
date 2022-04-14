@@ -184,14 +184,14 @@ set undodir=~/.vim/undo//
 set nobackup
 
 " Keep undo history across sessions by storing it in a file
-if has('persistent_undo')
-    let myUndoDir = expand(vimDir . '/undodir')
-    " Create dirs
-    call system('mkdir ' . vimDir)
-    call system('mkdir ' . myUndoDir)
-    let &undodir = myUndoDir
-    set undofile
-endif
+"if has('persistent_undo')
+    "let myUndoDir = expand(vimDir . '/undodir')
+    "" Create dirs
+    "call system('mkdir ' . vimDir)
+    "call system('mkdir ' . myUndoDir)
+    "let &undodir = myUndoDir
+    "set undofile
+"endif
 
 " Dashes are very common in identifiers
 set iskeyword+=-
