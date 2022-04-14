@@ -281,5 +281,15 @@
         "key": "cmd+s",
         "command": "searchEditorApplyChanges.apply",
         "when": "inSearchEditor"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && !suggestWidgetVisible && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
     }
 ]

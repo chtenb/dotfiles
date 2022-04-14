@@ -84,6 +84,10 @@
     },
     "terminal.integrated.defaultProfile.windows": "Nushell",
     "terminal.integrated.defaultProfile.linux": "Nushell",
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen",
+        "-workbench.action.quickOpenView"
+    ],
     // THEMING
     "editor.semanticHighlighting.enabled": true,
     "workbench.preferredDarkColorTheme": "Synthwave Material Ansi 16",

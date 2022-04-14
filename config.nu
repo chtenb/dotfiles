@@ -265,9 +265,25 @@ let $config = {
   ]
   keybindings: [
     {
-      name: completion_menu
+      name: history_hint
+      name: commands_menu
+      modifier: control
+      keycode: tab
+      mode: emacs
+      event: [ { send: HistoryHintComplete } ]
+    }
+    {
+      name: history_hint_word
+      name: commands_menu
       modifier: none
       keycode: tab
+      mode: emacs
+      event: [ { send: HistoryHintWordComplete } ]
+    }
+    {
+      name: completion_menu
+      modifier: control
+      keycode: char_l
       mode: emacs # Options: emacs vi_normal vi_insert
       event: {
         until: [
@@ -278,8 +294,8 @@ let $config = {
     }
     {
       name: completion_previous
-      modifier: shift
-      keycode: backtab
+      modifier: control
+      keycode: char_h
       mode: [emacs, vi_normal, vi_insert] # Note: You can add the same keybinding to all modes by using a list
       event: { send: menuprevious }
     }
@@ -322,13 +338,13 @@ let $config = {
       mode: [emacs, vi_normal, vi_insert]
       event: { send: menu name: vars_menu }
     }
-    {
-      name: commands_with_description
-      modifier: control
-      keycode: char_u
-      mode: [emacs, vi_normal, vi_insert]
-      event: { send: menu name: commands_with_description }
-    }
+    # {
+    #   name: commands_with_description
+    #   modifier: control
+    #   keycode: char_u
+    #   mode: [emacs, vi_normal, vi_insert]
+    #   event: { send: menu name: commands_with_description }
+    # }
   ]
 }
 
