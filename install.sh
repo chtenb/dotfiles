@@ -22,4 +22,5 @@ chmod +x ~/.local/bin/replac
 ln -sf /usr/bin/batcat ~/.local/bin/bat
 ln -sfT ~/dotfiles/bat-config ~/.config/bat
 
-ln -sf ~/dotfiles/default_config.nu ~/.config/nushell/config.nu
+ln -sf ~/dotfiles/config.nu ~/.config/nushell/config.nu
+ln -sf ~/dotfiles/env.nu ~/.config/nushell/env.nu
