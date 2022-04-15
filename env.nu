@@ -35,9 +35,9 @@ let-env NU_PLUGIN_DIRS = [
 ###### PATH ######
 
 if (sys).host.name == "Windows" {
-  $env.Path
-  let-env Path = ($env.Path | prepend 'C:\Program Files\Git\usr\bin')
-  $env.Path
+  # $env.Path
+  # let-env PATH = ($env.PATH | prepend 'C:\Program Files\Git\usr\bin')
+  # $env.Path
 }
   # $env.Path | where  ($it | str contains 'Git')
   # let-env Path = ($env.Path | append 'C:\Program Files\Git\usr\bin')
