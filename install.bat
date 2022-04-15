@@ -23,4 +23,7 @@ del /q %UserProfile%\AppData\Roaming\nushell\env.nu
 mklink %UserProfile%\AppData\Roaming\nushell\env.nu %UserProfile%\dotfiles\env.nu
 del /q %UserProfile%\.wezterm.lua
 mklink %UserProfile%\.wezterm.lua %UserProfile%\dotfiles\wezterm.lua
+del /q %APPDATA%\alacritty\alacritty.yml
+mkdir %APPDATA%\alacritty
+mklink %APPDATA%\alacritty\alacritty.yml %UserProfile%\dotfiles\alacritty.yml
 pause

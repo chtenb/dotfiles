@@ -28,7 +28,7 @@ nnoremap Y y$
 " Give U a sane meaning and avoid conflicts with resharper
 nnoremap U <C-r>
 " Hide highlighting
-nnoremap <C-c> :noh<CR>
+nnoremap <Esc> :noh<CR><Esc>
 " Enable block select
 nnoremap Q <C-v>
 
@@ -39,8 +39,8 @@ vmap <F3> :vsc Edit.FormatSelection<CR>
 nmap <C-O> :vsc View.NavigateBackward<CR>
 nmap <C-I> :vsc View.NavigateForward<CR>
 nmap <C-]> :vsc Edit.GoToDefinition<CR>
-nmap <C-L> :vsc Window.NextTab<CR>
-nmap <C-H> :vsc Window.PreviousTab<CR>
+"nmap <C-L> :vsc Window.NextTab<CR>
+"nmap <C-H> :vsc Window.PreviousTab<CR>
 "nmap ? :vsc Edit.IncrementalSearch<CR>
 nmap s :vsc Tools.InvokeAceJumpCommand<CR>
 
