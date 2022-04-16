@@ -300,6 +300,13 @@ let $config = {
       event: { send: menuprevious }
     }
     {
+      name: completion_previous_1
+      modifier: control
+      keycode: backspace
+      mode: [emacs, vi_normal, vi_insert] # Note: You can add the same keybinding to all modes by using a list
+      event: { send: menuprevious }
+    }
+    {
       name: history_menu
       modifier: control
       keycode: char_x
