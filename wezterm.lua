@@ -1,10 +1,10 @@
 local wezterm = require 'wezterm';
 
 wezterm.on("window-config-reloaded", function(window, pane)
-    local name = "Noctis Lux Ansi 16"
+    local name = "Noctis Lux Ansi16"
     local appearance = window:get_appearance()
     if appearance:find("Dark") then
-        name = "Synthwave Material Ansi 16"
+        name = "Synthwave Material Ansi16"
     end
 
     local overrides = window:get_config_overrides() or {}

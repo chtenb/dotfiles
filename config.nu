@@ -365,8 +365,9 @@ alias ggn = git grep -IPn --color=always
 alias gr = git grep --no-index -IPn --color=always
 alias rcname = python -c "for i,c in enumerate(f'{input():<12}'[:12]): print(f'\t<C{i+1:>02}>{ord(c)}</C{i+1:>02}>')"
 
-alias dark = cp ~/dotfiles/delta-config/dark.gitconfig ~/dotfiles/delta-config/current.gitconfig
-alias light = cp ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig
+alias darkcol = cp ~/dotfiles/delta-config/dark.gitconfig ~/dotfiles/delta-config/current.gitconfig
+alias lightcol = cp ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig
+alias ansicol = cp ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig
 
 alias l = ls -a
 alias ll = ls -alf

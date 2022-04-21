@@ -33,12 +33,17 @@ let-env NU_PLUGIN_DIRS = [
 # let-env PATH = ($env.PATH | prepend '/some/path')
 
 ###### PATH ######
-
-if (sys).host.name == "Windows" {
-  # $env.Path
-  # let-env PATH = ($env.PATH | prepend 'C:\Program Files\Git\usr\bin')
-  # $env.Path
+def-env extendPathsWindows [] {
+  if (sys).host.name == "Windows" {
+    let-env Path = ($env.Path | prepend 'C:\Program Files\Git\usr\bin')
+  }
 }
+
+extendPathsWindows
+
+    # $env.Path
+    # let-env PATH = ($env.PATH | prepend 'C:\Program Files\Git\usr\bin')
+    # $env.Path
   # $env.Path | where  ($it | str contains 'Git')
   # let-env Path = ($env.Path | append 'C:\Program Files\Git\usr\bin')
 

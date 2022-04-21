@@ -29,7 +29,6 @@
 [push]
 	default = simple
 [core]
-	fscache = true
 	preloadindex = true
 [mergetool]
 	keepbackup = false

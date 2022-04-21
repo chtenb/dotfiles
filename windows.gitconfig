@@ -5,6 +5,7 @@
 [core]
     autocrlf=false
     whitespace = cr-at-eol
+    fsmonitor = true
 [web]
     browser = "chrome"
 [browser "chrome"]
