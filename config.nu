@@ -367,7 +367,7 @@ alias rcname = python -c "for i,c in enumerate(f'{input():<12}'[:12]): print(f'\
 
 alias darkcol = cp ~/dotfiles/delta-config/dark.gitconfig ~/dotfiles/delta-config/current.gitconfig
 alias lightcol = cp ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig
-alias ansicol = cp ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig
+alias ansicol = cp ~/dotfiles/delta-config/ansi.gitconfig ~/dotfiles/delta-config/current.gitconfig
 
 alias l = ls -a
 alias ll = ls -alf

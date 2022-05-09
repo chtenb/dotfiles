@@ -34,9 +34,12 @@ let-env NU_PLUGIN_DIRS = [
 
 ###### PATH ######
 def-env extendPathsWindows [] {
-  if (sys).host.name == "Windows" {
-    let-env Path = ($env.Path | prepend 'C:\Program Files\Git\usr\bin')
+  let new-paths = if (sys).host.name == "Windows" {
+    ['C:\Program Files\Git\usr\bin']
+  } else {
+    []
   }
+  let-env Path = ($env.Path | prepend $new-paths)
 }
 
 extendPathsWindows

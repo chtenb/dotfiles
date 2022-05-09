@@ -89,7 +89,7 @@
         "-workbench.action.quickOpenView"
     ],
     // THEMING
-    "editor.semanticHighlighting.enabled": true,
+    // "editor.semanticHighlighting.enabled": false,
     "workbench.preferredDarkColorTheme": "Synthwave Material Ansi16",
     "workbench.preferredLightColorTheme": "Noctis Lux Ansi16",
     "window.autoDetectColorScheme": true,
@@ -166,8 +166,13 @@
     "purescript.addSpagoSources": true,
     "purescript.addNpmPath": true,
     "purescript.formatter": "purs-tidy",
+    "editor.semanticHighlighting.enabled": "configuredByTheme",
     "[purescript]": {
         "editor.formatOnSave": true,
+    },
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.semanticHighlighting.enabled": false,
     },
     "editor.tabSize": 2,
     "customizeUI.font.monospace": "CozetteVector",
@@ -188,4 +193,7 @@
     "terminal.integrated.minimumContrastRatio": 1,
     "workbench.panel.opensMaximized": "always",
     "Lua.telemetry.enable": false,
+    "rust-analyzer.lens.implementations": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "security.workspace.trust.enabled": false,
 }
