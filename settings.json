@@ -170,6 +170,9 @@
     "[purescript]": {
         "editor.formatOnSave": true,
     },
+    "[haskell]": {
+        "editor.formatOnSave": true,
+    },
     "[rust]": {
         "editor.formatOnSave": true,
         "editor.semanticHighlighting.enabled": false,
@@ -196,4 +199,6 @@
     "rust-analyzer.lens.implementations": false,
     "security.workspace.trust.untrustedFiles": "open",
     "security.workspace.trust.enabled": false,
+    "haskell.manageHLS": "GHCup",
+    "haskell.ghcupExecutablePath": "/home/chiel/.ghcup/bin/ghcup",
 }
