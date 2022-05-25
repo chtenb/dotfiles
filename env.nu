@@ -36,7 +36,7 @@ let-env NU_PLUGIN_DIRS = [
 let new_paths = if (sys).host.name == "Windows" {
   ['C:\Program Files\Git\usr\bin']
 } else {
-  ['~/.cabal/bin', '~/.ghcup/bin']
+  ['/home/chiel/.cabal/bin', '/home/chiel/.ghcup/bin']
 }
 
 let existing_path = if (sys).host.name == "Windows" {
