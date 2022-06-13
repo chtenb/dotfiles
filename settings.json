@@ -214,7 +214,7 @@
     "workbench.activityBar.visible": false,
     "purescript.exportsCodeLens": false,
     "tabnine.experimentalAutoImports": true,
-    "workbench.colorTheme": "Noctis Lux Ansi16",
+    "workbench.colorTheme": "Noctis Lux Ansi 16",
     "editor.fontSize": 12,
     "terminal.integrated.fontSize": 12,
     // "window.zoomLevel": -1,
