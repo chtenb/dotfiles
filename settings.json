@@ -16,39 +16,65 @@
     // https://github.com/VSCodeVim/Vim/issues/2007
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": [
-                "u"
-            ],
+            "before": [ "u" ],
             "after": [],
-            "commands": [
-                {
-                    "command": "undo"
-                }
-            ]
+            "commands": [ { "command": "undo" } ]
         },
         {
-            "before": [
-                "U"
-            ],
+            "before": [ "U" ],
             "after": [],
-            "commands": [
-                {
-                    "command": "redo"
-                }
-            ]
+            "commands": [ { "command": "redo" } ]
         },
         {
-            "before": [
-                "<Esc>"
-            ],
-            "after": [
-                "<Esc>"
-            ],
-            "commands": [
-                ":nohl"
-            ]
-        }
+            "before": [ "<Esc>" ],
+            "after": [ "<Esc>" ],
+            "commands": [ ":nohl", "closeFindWidget" ]
+        },
+        {
+            "before": [ "*" ],
+            "after": [],
+            "commands": [ { "command": "editor.action.nextSelectionMatchFindAction" } ]
+        },
+        {
+            "before": [ "n" ],
+            "after": [],
+            "commands": [ { "command": "editor.action.nextMatchFindAction" } ]
+        },
+        {
+            "before": [ "N" ], "after": [],
+            "commands": [ { "command": "editor.action.previousMatchFindAction" } ]
+        },
+        {
+            "before": [ "/" ], "after": [],
+            "commands": [ { "command": "actions.find" } ]
+        },
     ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [ "*" ],
+            "after": [],
+            "commands": [ { "command": "editor.action.nextSelectionMatchFindAction" } ]
+        },
+        {
+            "before": [ "n" ],
+            "after": [],
+            "commands": [ { "command": "editor.action.nextMatchFindAction" } ]
+        },
+        {
+            "before": [ "N" ], "after": [],
+            "commands": [ { "command": "editor.action.previousMatchFindAction" } ]
+        },
+        {
+            "before": [ "/" ], "after": [],
+            "commands": [ { "command": "actions.find" } ]
+        },
+    ],
+    "macros": {
+        "acceptFindInput": [
+            "editor.action.nextMatchFindAction",
+            "workbench.action.focusActiveEditorGroup"
+        ]
+    },
     "vim.visualstar": true,
     "vim.sneak": true,
     "vim.replaceWithRegister": true,
@@ -201,4 +227,8 @@
     "security.workspace.trust.enabled": false,
     "haskell.manageHLS": "GHCup",
     "haskell.ghcupExecutablePath": "/home/chiel/.ghcup/bin/ghcup",
+    "files.exclude": {
+        "**/.git": false
+},
+"explorer.excludeGitIgnore": true
 }
