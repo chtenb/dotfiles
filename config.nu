@@ -284,8 +284,12 @@ def-env c [path] {
   ls -sa
 }
 
-def replac [...args] {
-  perl ~/dotfiles/replac/replac.pl $args
+def replac [
+  ...args
+  --now
+] {
+  let n = if ($now) { "--now" } else { "" }
+  perl ~/dotfiles/replac/replac.pl $args $n
 }
 def tstop [] {
   task rc.confirmation=off rc.bulk:0 status:pending +ACTIVE ids | xargs -i task {} stop
