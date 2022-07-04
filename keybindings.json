@@ -183,10 +183,6 @@
     },
     {
         "key": "ctrl+6",
-        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-    },
-    {
-        "key": "ctrl+6",
         "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
         "when": "inEditorsPicker && inQuickOpen"
     },
@@ -209,16 +205,6 @@
     },
     {
         "key": "f7",
-        "command": "workbench.action.editor.nextChange",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "alt+f5",
-        "command": "-workbench.action.editor.nextChange",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "f7",
         "command": "workbench.action.compareEditor.nextChange",
         "when": "textCompareEditorVisible"
     },
@@ -226,16 +212,6 @@
         "key": "alt+f5",
         "command": "-workbench.action.compareEditor.nextChange",
         "when": "textCompareEditorVisible"
-    },
-    {
-        "key": "shift+f7",
-        "command": "workbench.action.editor.previousChange",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "shift+alt+f5",
-        "command": "-workbench.action.editor.previousChange",
-        "when": "editorTextFocus"
     },
     {
         "key": "shift+f7",
@@ -309,5 +285,84 @@
         "key": "enter",
         "command": "macros.acceptFindInput",
         "when": "editorFocus && findInputFocussed"
-    }
+    },
+    /**************/
+    /* EDITOR GROUP UNBINDS */
+    /**************/
+    {
+        "key": "ctrl+1",
+        "command": "-workbench.action.focusFirstEditorGroup"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-editor.action.replaceOne",
+        "when": "editorFocus && findWidgetVisible"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-search.action.replace",
+        "when": "matchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-search.action.replaceAllInFile",
+        "when": "fileMatchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-search.action.replaceAllInFolder",
+        "when": "folderMatchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+2",
+        "command": "-workbench.action.terminal.sendSequence",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+2",
+        "command": "-workbench.action.focusSecondEditorGroup"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "-workbench.action.focusThirdEditorGroup"
+    },
+    {
+        "key": "ctrl+4",
+        "command": "-workbench.action.focusFourthEditorGroup"
+    },
+    {
+        "key": "ctrl+5",
+        "command": "-workbench.action.focusFifthEditorGroup"
+    },
+    {
+        "key": "ctrl+6",
+        "command": "-workbench.action.focusSixthEditorGroup"
+    },
+    /**************/
+    /* MERGE BINDS */
+    /**************/
+    {
+        "key": "ctrl+1",
+        "command": "merge-conflict.accept.current"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "merge-conflict.accept.all-current"
+    },
+    {
+        "key": "ctrl+2",
+        "command": "merge-conflict.accept.incoming"
+    },
+    {
+        "key": "ctrl+shift+2",
+        "command": "merge-conflict.accept.all-incoming"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "merge-conflict.accept.both"
+    },
+    {
+        "key": "ctrl+shift+3",
+        "command": "merge-conflict.accept.all-both"
+    },
 ]
