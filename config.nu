@@ -273,6 +273,7 @@ alias l = ls -a
 alias ll = ls -alf
 alias npr = npm run -- 
 alias npe = npm exec -- 
+alias replac = perl ~/dotfiles/replac/replac.pl
 
 alias t = task
 
@@ -284,13 +285,6 @@ def-env c [path] {
   ls -sa
 }
 
-def replac [
-  ...args
-  --now
-] {
-  let n = if ($now) { "--now" } else { "" }
-  perl ~/dotfiles/replac/replac.pl $args $n
-}
 def tstop [] {
   task rc.confirmation=off rc.bulk:0 status:pending +ACTIVE ids | xargs -i task {} stop
 }

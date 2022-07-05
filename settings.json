@@ -87,7 +87,6 @@
         "<C-h>": false,
         "<C-n>": false
     },
-    "vim.smartRelativeLine": true,
     "vim.sneakUseIgnorecaseAndSmartcase": true,
     "vim.startofline": false,
     // TERMINAL
@@ -214,7 +213,7 @@
     "workbench.activityBar.visible": false,
     "purescript.exportsCodeLens": false,
     "tabnine.experimentalAutoImports": true,
-    "workbench.colorTheme": "Noctis Lux Ansi16",
+    "workbench.colorTheme": "Synthwave Material Ansi16",
     "editor.fontSize": 12,
     "terminal.integrated.fontSize": 12,
     // "window.zoomLevel": -1,
@@ -230,5 +229,9 @@
     "files.exclude": {
         "**/.git": false
 },
-"explorer.excludeGitIgnore": true
+"explorer.excludeGitIgnore": true,
+"vim.smartRelativeLine": true,
+"purescript.censorWarnings": [
+    "MissingTypeDeclaration"
+]
 }

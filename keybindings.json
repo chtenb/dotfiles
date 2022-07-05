@@ -183,6 +183,10 @@
     },
     {
         "key": "ctrl+6",
+        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+    },
+    {
+        "key": "ctrl+6",
         "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
         "when": "inEditorsPicker && inQuickOpen"
     },
@@ -364,5 +368,19 @@
     {
         "key": "ctrl+shift+3",
         "command": "merge-conflict.accept.all-both"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "-workbench.action.focusEighthEditorGroup"
     },
 ]

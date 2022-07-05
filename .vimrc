@@ -335,7 +335,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filetype_blacklist = {}
 let g:ycm_confirm_extra_conf = 0
 if has("win32")
-    let g:ycm_path_to_python_interpreter = 'C:\Users\chiel.tenbrinke\AppData\Local\Programs\Python\Python310\python.exe'
+    let g:ycm_path_to_python_interpreter = 'C:\Program Files\Python310\python.exe'
 else
     let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 endif
