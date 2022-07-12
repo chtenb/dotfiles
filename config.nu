@@ -1,8 +1,8 @@
 # Nushell Config File
 
-use ~/dotfiles/nu_scripts/custom-completions/cargo/cargo-completions.nu *
-use ~/dotfiles/nu_scripts/custom-completions/git/git-completions.nu *
-use ~/dotfiles/nu_scripts/custom-completions/npm/npm-completions.nu *
+# use ~/dotfiles/nu_scripts/custom-completions/cargo/cargo-completions.nu *
+# use ~/dotfiles/nu_scripts/custom-completions/git/git-completions.nu *
+# use ~/dotfiles/nu_scripts/custom-completions/npm/npm-completions.nu *
 
 # for more information on themes see
 # https://www.nushell.sh/book/coloring_and_theming.html
@@ -271,6 +271,8 @@ alias ansicol = cp ~/dotfiles/delta-config/ansi.gitconfig ~/dotfiles/delta-confi
 
 alias l = ls -a
 alias ll = ls -alf
+# On windows the npm.cmd gives strange errors, but the bash script does not.
+alias npm = if (sys).host.name == "Windows" { bash 'C:\Program Files\nodejs\npm' } else { npm }
 alias npr = npm run -- 
 alias npe = npm exec -- 
 alias replac = perl ~/dotfiles/replac/replac.pl
