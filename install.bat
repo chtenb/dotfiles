@@ -18,6 +18,10 @@ del /q %UserProfile%\.gitconfig
 mklink %UserProfile%\.gitconfig %UserProfile%\dotfiles\intellimagic.gitconfig
 copy %UserProfile%\dotfiles\git_bash_here.ahk "%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 
+mkdir %UserProfile%\.vim\backup\
+mkdir %UserProfile%\.vim\swap\
+mkdir %UserProfile%\.vim\undo\
+
 mkdir %UserProfile%\AppData\Roaming\nushell\
 del /q %UserProfile%\AppData\Roaming\nushell\config.nu
 mklink %UserProfile%\AppData\Roaming\nushell\config.nu %UserProfile%\dotfiles\config.nu
