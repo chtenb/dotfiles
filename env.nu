@@ -34,7 +34,7 @@ let-env NU_PLUGIN_DIRS = [
 
 ###### PATH ######
 let new_paths = if (sys).host.name == "Windows" {
-  ['C:\Program Files\Git\usr\bin', 'C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin']
+  ['C:\Program Files\Git\usr\bin', 'C:\Program Files\Microsoft Visual Studio\2022\Professional\Msbuild\Current\Bin']
 } else {
   ['/home/chiel/.cabal/bin', '/home/chiel/.ghcup/bin']
 }

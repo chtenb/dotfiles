@@ -234,5 +234,6 @@
 "purescript.censorWarnings": [
     "MissingTypeDeclaration"
 ],
-"git.mergeEditor": true
+"git.mergeEditor": true,
+"livePreview.notifyOnOpenLooseFile": false
 }
