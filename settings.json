@@ -1,4 +1,24 @@
 {
+    "workbench.editor.navigationScope": "editorGroup",
+    // DANCE
+    "dance.modes": {
+        "insert": {
+            "cursorStyle": "line-thin",
+            // "decorations": {
+            //     "applyTo": "main",
+            //     "isWholeLine": false,
+            // },
+        },
+        "normal": {
+            "cursorStyle": "line",
+            // "lineNumbers": "on",
+            "decorations": {
+              "applyTo": "main",
+              "backgroundColor": "$editor.highlightBackground",
+            //   "isWholeLine": true,
+            },
+        },
+    },
     // VIM
     "vim.hlsearch": true,
     "vim.gdefault": true,
@@ -16,57 +36,128 @@
     // https://github.com/VSCodeVim/Vim/issues/2007
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": [ "u" ],
+            "before": [
+                "u"
+            ],
             "after": [],
-            "commands": [ { "command": "undo" } ]
+            "commands": [
+                {
+                    "command": "undo"
+                }
+            ]
         },
         {
-            "before": [ "U" ],
+            "before": [
+                "U"
+            ],
             "after": [],
-            "commands": [ { "command": "redo" } ]
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ]
         },
         {
-            "before": [ "<Esc>" ],
-            "after": [ "<Esc>" ],
-            "commands": [ ":nohl", "closeFindWidget" ]
+            "before": [
+                "<Esc>"
+            ],
+            "after": [
+                "<Esc>"
+            ],
+            "commands": [
+                ":nohl",
+                "closeFindWidget"
+            ]
         },
         {
-            "before": [ "*" ],
+            "before": [
+                "*"
+            ],
             "after": [],
-            "commands": [ { "command": "editor.action.nextSelectionMatchFindAction" } ]
+            "commands": [
+                {
+                    "command": "editor.action.nextSelectionMatchFindAction"
+                }
+            ]
         },
         {
-            "before": [ "n" ],
+            "before": [
+                "n"
+            ],
             "after": [],
-            "commands": [ { "command": "editor.action.nextMatchFindAction" } ]
+            "commands": [
+                {
+                    "command": "editor.action.nextMatchFindAction"
+                }
+            ]
         },
         {
-            "before": [ "N" ], "after": [],
-            "commands": [ { "command": "editor.action.previousMatchFindAction" } ]
+            "before": [
+                "N"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.previousMatchFindAction"
+                }
+            ]
         },
         {
-            "before": [ "/" ], "after": [],
-            "commands": [ { "command": "actions.find" } ]
+            "before": [
+                "/"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "actions.find"
+                }
+            ]
         },
     ],
     "vim.visualModeKeyBindings": [
         {
-            "before": [ "*" ],
+            "before": [
+                "*"
+            ],
             "after": [],
-            "commands": [ { "command": "editor.action.nextSelectionMatchFindAction" } ]
+            "commands": [
+                {
+                    "command": "editor.action.nextSelectionMatchFindAction"
+                }
+            ]
         },
         {
-            "before": [ "n" ],
+            "before": [
+                "n"
+            ],
             "after": [],
-            "commands": [ { "command": "editor.action.nextMatchFindAction" } ]
+            "commands": [
+                {
+                    "command": "editor.action.nextMatchFindAction"
+                }
+            ]
         },
         {
-            "before": [ "N" ], "after": [],
-            "commands": [ { "command": "editor.action.previousMatchFindAction" } ]
+            "before": [
+                "N"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.previousMatchFindAction"
+                }
+            ]
         },
         {
-            "before": [ "/" ], "after": [],
-            "commands": [ { "command": "actions.find" } ]
+            "before": [
+                "/"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "actions.find"
+                }
+            ]
         },
     ],
     "macros": {
@@ -197,6 +288,7 @@
     },
     "[haskell]": {
         "editor.formatOnSave": true,
+        "editor.defaultFormatter": "haskell.haskell",
     },
     "[rust]": {
         "editor.formatOnSave": true,
@@ -213,7 +305,6 @@
     "workbench.activityBar.visible": false,
     "purescript.exportsCodeLens": false,
     "tabnine.experimentalAutoImports": true,
-    "workbench.colorTheme": "Noctis Lux Ansi 16",
     "editor.fontSize": 12,
     "terminal.integrated.fontSize": 12,
     // "window.zoomLevel": -1,
@@ -224,16 +315,18 @@
     "rust-analyzer.lens.implementations": false,
     "security.workspace.trust.untrustedFiles": "open",
     "security.workspace.trust.enabled": false,
-    "haskell.manageHLS": "GHCup",
-    "haskell.ghcupExecutablePath": "/home/chiel/.ghcup/bin/ghcup",
     "files.exclude": {
         "**/.git": false
-},
-"explorer.excludeGitIgnore": true,
-"vim.smartRelativeLine": true,
-"purescript.censorWarnings": [
-    "MissingTypeDeclaration"
-],
-"git.mergeEditor": true,
-"livePreview.notifyOnOpenLooseFile": false
+    },
+    "explorer.excludeGitIgnore": true,
+    "vim.smartRelativeLine": true,
+    "purescript.censorWarnings": [
+        "MissingTypeDeclaration"
+    ],
+    "git.mergeEditor": true,
+    "livePreview.notifyOnOpenLooseFile": false,
+    "workbench.colorTheme": "Synthwave Material Ansi16",
+    "window.zoomLevel": 1,
+    "haskell.manageHLS": "GHCup",
+    "editor.accessibilitySupport": "off"
 }

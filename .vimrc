@@ -254,7 +254,8 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
 
-nnoremap <silent> <C-c> :syn sync fromstart \| :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-k>
+nnoremap <silent> <esc> :noh<cr><esc>
+"nnoremap <silent> <C-c> :syn sync fromstart \| :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-k>
 
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0

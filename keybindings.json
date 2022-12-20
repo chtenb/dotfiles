@@ -1,6 +1,269 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
+        "key": "ctrl+w",
+        "command": "deleteWordLeft",
+        "when": "textInputFocus && !editorReadonly && dance.mode == 'insert'",
+    },
+    // DANCE
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "'",
+        "command": "dance.openMenu",
+        "args": {
+            "menu": {
+                "items": {
+                    "l": {
+                        "text": "character left",
+                        "command": "dance.run",
+                        "args": {
+                            "commands": [
+                                ".select.left.extend",
+                                ".selections.changeDirection",
+                                ".select.right.extend",
+                                ".selections.changeDirection",
+                            ],
+                        },
+                    },
+                    "h": {
+                        "text": "character right",
+                        "command": "dance.run",
+                        "args": {
+                            "commands": [
+                                ".select.right.extend",
+                                ".selections.changeDirection",
+                                ".select.left.extend",
+                                ".selections.changeDirection",
+                            ],
+                        },
+                    },
+                    "j": {
+                        "text": "line down",
+                        "command": "dance.run",
+                        "args": {
+                            "commands": [
+                                ".select.down.extend",
+                                ".selections.changeDirection",
+                                ".select.up.extend",
+                                ".selections.changeDirection",
+                            ],
+                        },
+                    },
+                    "k": {
+                        "text": "line up",
+                        "command": "dance.run",
+                        "args": {
+                            "commands": [
+                                ".select.up.extend",
+                                ".selections.changeDirection",
+                                ".select.down.extend",
+                                ".selections.changeDirection",
+                            ],
+                        },
+                    },
+                    "(": {
+                        "text": "(surround)",
+                        "command": "dance.run",
+                        "args": {
+                            "input": "await replace((x) => '(' + x + ')')",
+                            "commands": [
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "start",
+                                        "shift": "extend",
+                                        "text": "("
+                                    }
+                                ],
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "end",
+                                        "shift": "extend",
+                                        "text": ")"
+                                    }
+                                ],
+                            ],
+                        },
+                    },
+                    "{": {
+                        "text": "{surround}",
+                        "command": "dance.run",
+                        "args": {
+                            "input": "await replace((x) => '{' + x + '}')",
+                            "commands": [
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "start",
+                                        "shift": "extend",
+                                        "text": "{"
+                                    }
+                                ],
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "end",
+                                        "shift": "extend",
+                                        "text": "}"
+                                    }
+                                ],
+                            ],
+                        },
+                    },
+                    "[": {
+                        "text": "[surround]",
+                        "command": "dance.run",
+                        "args": {
+                            "input": "await replace((x) => '[' + x + ']')",
+                            "commands": [
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "start",
+                                        "shift": "extend",
+                                        "text": "["
+                                    }
+                                ],
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "end",
+                                        "shift": "extend",
+                                        "text": "]"
+                                    }
+                                ],
+                            ],
+                        },
+                    },
+                    "<": {
+                        "text": "<surround>",
+                        "command": "dance.run",
+                        "args": {
+                            "input": "await replace((x) => '<' + x + '>')",
+                            "commands": [
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "start",
+                                        "shift": "extend",
+                                        "text": "<"
+                                    }
+                                ],
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "end",
+                                        "shift": "extend",
+                                        "text": ">"
+                                    }
+                                ],
+                            ],
+                        },
+                    },
+                    "\"": {
+                        "text": "\"surround\"",
+                        "command": "dance.run",
+                        "args": {
+                            "input": "await replace((x) => '\"' + x + '\"')",
+                            "commands": [
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "start",
+                                        "shift": "extend",
+                                        "text": "\""
+                                    }
+                                ],
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "end",
+                                        "shift": "extend",
+                                        "text": "\""
+                                    }
+                                ],
+                            ],
+                        },
+                    },
+                    "'": {
+                        "text": "'surround'",
+                        "command": "dance.run",
+                        "args": {
+                            "input": "await replace((x) => `'` + x + `'`)",
+                            "commands": [
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "start",
+                                        "shift": "extend",
+                                        "text": "'"
+                                    }
+                                ],
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "end",
+                                        "shift": "extend",
+                                        "text": "'"
+                                    }
+                                ],
+                            ],
+                        },
+                    },
+                    "`": {
+                        "text": "`surround`",
+                        "command": "dance.run",
+                        "args": {
+                            "input": "await replace((x) => '`' + x + '`')",
+                            "commands": [
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "start",
+                                        "shift": "extend",
+                                        "text": "`"
+                                    }
+                                ],
+                                [
+                                    ".edit.insert",
+                                    {
+                                        "where": "end",
+                                        "shift": "extend",
+                                        "text": "`"
+                                    }
+                                ],
+                            ],
+                        },
+                    },
+                    "d": {
+                        "text": "delete surround",
+                        "command": "dance.run",
+                        "args": {
+                            "input": "await replace((x) => x.slice(1, -1))",
+                            "commands": [
+                                ".selections.save",
+                                ".selections.reduce.edges",
+                                ".edit.delete",
+                                ".selections.restore",
+                            ],
+                        },
+                    },
+                },
+            },
+            "locked": true,
+        },
+        "when": "editorTextFocus && dance.mode == 'normal'",
+    },
+    // END DANCE
+    {
         "key": "shift+escape",
         "command": "notifications.clearAll"
     },
