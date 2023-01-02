@@ -20,11 +20,11 @@ wezterm.on("window-config-reloaded", function(window, pane)
     end
 end)
 
-local path_to_nu = "c:\\Program Files\\nu\\bin\\nu.exe";
 
 return {
     color_scheme_dirs = {"C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm-color-schemes"},
-    default_prog = { path_to_nu },
+    default_prog = { "c:\\Program Files\\nu\\bin\\nu.exe" },
+    -- default_prog = { "C:\\Program Files\\Git\\usr\\bin\\bash.exe" },
     window_close_confirmation = "NeverPrompt",
     hide_tab_bar_if_only_one_tab = true,
 
