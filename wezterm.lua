@@ -28,7 +28,7 @@ return {
     window_close_confirmation = "NeverPrompt",
     hide_tab_bar_if_only_one_tab = true,
 
-    font = wezterm.font_with_fallback({"Cascadia Code", "Cascadia Code,FiraCode Nerd Font"}),
+    font = wezterm.font_with_fallback({"Cascadia Code", "Cascadia Code,CaskaydiaCove NF"}),
     -- You can specify some parameters to influence the font selection;
     -- for example, this selects a Bold, Italic font variant.
     -- font = wezterm.font("JetBrains Mono", {weight="Bold", italic=true})

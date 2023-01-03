@@ -215,7 +215,7 @@
         "[SynthWave '84]": {},
     },
     // GENERAL
-    "editor.fontFamily": "Cascadia Code,FiraCode Nerd Font",
+    "editor.fontFamily": "Cascadia Code,CaskaydiaCove NF",
     "editor.fontLigatures": true,
     "editor.codeLensFontFamily": "Cascadia Code",
     // "editor.renderWhitespace": "boundary",

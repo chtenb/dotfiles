@@ -58,27 +58,27 @@ let-env LS_COLORS = "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=
 
 
 ###### STARSHIP ######
-# let-env STARSHIP_SHELL = "nu"
-# let-env STARSHIP_SESSION_KEY = (random chars -l 16)
-# let-env PROMPT_MULTILINE_INDICATOR = (^starship prompt --continuation)
-# let-env PROMPT_INDICATOR = ""
+let-env STARSHIP_SHELL = "nu"
+let-env STARSHIP_SESSION_KEY = (random chars -l 16)
+let-env PROMPT_MULTILINE_INDICATOR = (^starship prompt --continuation)
+let-env PROMPT_INDICATOR = ""
 
-# let-env PROMPT_COMMAND = {
-#     # jobs are not supported
-#     let width = (term size | get columns | into string)
-#     ^starship prompt $"--cmd-duration=($env.CMD_DURATION_MS)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=($width)"
-# }
+let-env PROMPT_COMMAND = {
+    # jobs are not supported
+    let width = (term size | get columns | into string)
+    ^starship prompt $"--cmd-duration=($env.CMD_DURATION_MS)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=($width)"
+}
 
 # Not well-suited for `starship prompt --right`.
 # Built-in right prompt is equivalent to $fill$right_format in the first prompt line.
 # Thus does not play well with default `add_newline = True`.
-# let-env PROMPT_COMMAND_RIGHT = {''}
+let-env PROMPT_COMMAND_RIGHT = {''}
 
-# let-env STARSHIP_CONFIG = if (sys).host.name == "Windows" {
-#   'C:\users\chiel.tenbrinke\dotfiles\starship.toml'
-# } else {
-#   '~/dotfiles/starship.toml'
-# }       
+let-env STARSHIP_CONFIG = if (sys).host.name == "Windows" {
+  'C:\users\chiel.tenbrinke\dotfiles\starship.toml'
+} else {
+  '~/dotfiles/starship.toml'
+}       
 
 
 ###### OH-MY-POSH ######
