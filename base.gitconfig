@@ -74,21 +74,23 @@
     log = delta
     reflog = delta
     show = delta
+
 [interactive]
-    diffFilter = delta --color-only --features interactive
+    diffFilter = delta --color-only #--features interactive
 
 [include]
     path = delta-config/main.gitconfig
 
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
+
 [difftool "vscode"]
     cmd = code --wait --diff $LOCAL $REMOTE
 
 
-# [merge]
+[merge]
+    conflictstyle = diff3
 #     tool = kdiff3
-#     conflictstyle = diff3
 # [mergetool]
 #     keeptemporaries = false
 #     keepbackups = false

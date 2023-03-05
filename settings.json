@@ -318,7 +318,6 @@
     "files.exclude": {
         "**/.git": false
     },
-    "explorer.excludeGitIgnore": true,
     "vim.smartRelativeLine": true,
     "purescript.censorWarnings": [
         "MissingTypeDeclaration"
@@ -326,7 +325,11 @@
     "git.mergeEditor": true,
     "livePreview.notifyOnOpenLooseFile": false,
     "workbench.colorTheme": "Noctis Lux Ansi16",
-    "window.zoomLevel": 1,
     "haskell.manageHLS": "GHCup",
-    "editor.accessibilitySupport": "off"
+    "editor.accessibilitySupport": "off",
+    "window.restoreWindows": "none",
+    "git.openRepositoryInParentFolders": "never",
+    "editor.unicodeHighlight.allowedCharacters": {
+        "×": true
+    }
 }

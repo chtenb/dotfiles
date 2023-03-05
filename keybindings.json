@@ -379,6 +379,11 @@
         "when": "acceptSuggestionOnEnter && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
     },
     {
+        "key": "enter",
+        "command": "-acceptSelectedSuggestion",
+        "when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+    },
+    {
         "key": "ctrl+tab",
         "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
     },
