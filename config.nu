@@ -66,6 +66,11 @@ let-env config = {
   float_precision: 2
   use_ansi_coloring: true
   edit_mode: emacs # emacs, vi
+  cursor_shape: {
+    emacs: block # block, underscore, line (line is the default)
+    vi_insert: block # block, underscore, line (block is the default)
+    vi_normal: underscore # block, underscore, line  (underscore is the default)
+  }
   completions: {
     case_sensitive: false # set to true to enable case-sensitive completions
     quick: false  # set this to false to prevent auto-selecting completions when only one remains
