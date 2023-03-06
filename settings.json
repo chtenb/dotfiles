@@ -21,8 +21,7 @@
     },
     // VIM
     "vim.hlsearch": true,
-    "vim.gdefault": true,
-    "vim.normalModeKeyBindings": [
+    "vim.gdefault": true, "vim.normalModeKeyBindings": [
         {
             "before": [
                 "Y"
