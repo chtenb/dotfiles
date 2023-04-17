@@ -5,6 +5,17 @@
         "command": "deleteWordLeft",
         "when": "textInputFocus && !editorReadonly && dance.mode == 'insert'",
     },
+    {
+        "key": "shift-c",
+        "command": "dance.run",
+        "args": {
+          "commands": [
+            "dance.selections.expandToLines",
+            "dance.selections.trimWhitespace",
+          ],
+        },
+        "when": "editorTextFocus && dance.mode == 'normal'"
+      },
     // DANCE
     {
         "key": "ctrl+o",

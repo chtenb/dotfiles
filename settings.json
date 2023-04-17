@@ -330,5 +330,12 @@
     "git.openRepositoryInParentFolders": "never",
     "editor.unicodeHighlight.allowedCharacters": {
         "×": true
-    }
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.unusualLineTerminators": "off"
 }

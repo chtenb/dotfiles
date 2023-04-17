@@ -26,6 +26,12 @@
 
 <Multi_key> <Tab> : "	"  # Tab
 
+<Multi_key> <space> <Return> : " "  # Line Separator (U+2028)
+
+<Multi_key> <space> <braceright> : " "  # Paragraph Separator (U+2029)
+
+<Multi_key> <bar> <B> : "𝔹"  # DOUBLE-STRUCK CAPITAL B
+
 # Konami code
 # <Multi_key> <Multi_key> <Up> <Up> <Down> <Down> <Left> <Right> <Left> <Right> <b> <a> : "ᕙ༼ຈل͜ຈ༽ᕗ" # Mighty Donger
 

@@ -374,7 +374,7 @@ if has("gui_running")
     "colorscheme base16-ashes
     colorscheme spacegray
     if has("win32")
-        set guifont=consolas:h10
+        set guifont=Cascadia\ Code:h10,CaskaydiaCove\ NF:h10,Cambria\ Math:h10
     else
         set guifont=mono\ 10
     endif
