@@ -301,7 +301,6 @@
     "gitblame.ignoreWhitespace": true,
     "gitlens.codeLens.enabled": false,
     "gitlens.mode.active": "zen",
-    "workbench.activityBar.visible": false,
     "purescript.exportsCodeLens": false,
     "tabnine.experimentalAutoImports": true,
     "editor.fontSize": 12,
@@ -337,5 +336,7 @@
     "[python]": {
         "editor.formatOnType": true
     },
-    "editor.unusualLineTerminators": "off"
+    "editor.unusualLineTerminators": "off",
+    "editor.inlineSuggest.enabled": true,
+    "workbench.activityBar.visible": false
 }
