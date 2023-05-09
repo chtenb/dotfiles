@@ -322,7 +322,7 @@
     ],
     "git.mergeEditor": true,
     "livePreview.notifyOnOpenLooseFile": false,
-    "workbench.colorTheme": "Noctis Lux Ansi16",
+    "workbench.colorTheme": "Synthwave Material Ansi16",
     "haskell.manageHLS": "GHCup",
     "editor.accessibilitySupport": "off",
     "window.restoreWindows": "none",
