@@ -342,5 +342,7 @@
     "workbench.activityBar.visible": false,
     "FSharp.suggestGitignore": false,
     "workbench.editor.closeEmptyGroups": false,
-    "workbench.editor.closeOnFileDelete": true
+    "workbench.editor.closeOnFileDelete": true,
+    "git.terminalAuthentication": false,
+    "github.gitAuthentication": false
 }
