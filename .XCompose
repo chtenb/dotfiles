@@ -73,7 +73,7 @@
 # Arrows
 <Multi_key> <t> <o> <space> : "→ "  # latex \to
 <Multi_key> <m> <a> <p> <s> <t> <o> : "↦"  # latex \mapsto
-<Multi_key> <m> <u> <l> <t> <i> <m> <a> <p> : "⊸"  # latex \multimap
+<Multi_key> <m> <m> : "⊸"  # latex \multimap
 <Multi_key> <g> <e> <t> <s> : "←"  # latex \gets
 <Multi_key> <i> <m> <p> <l> : "⇒" # latex \Rightarrow
 <Multi_key> <i> <m> <p> <r> : "⇐" # latex \Leftarrow

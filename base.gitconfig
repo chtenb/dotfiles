@@ -19,7 +19,9 @@
 [fetch]
     prune = true
 [alias]
-    lg = "!f() { branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name ${branch}@{upstream} 2>/dev/null); git log --notes --graph --abbrev-commit --decorate --left-right --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)' ${branch} ${upstream:+$upstream} ${@:2}; }; f"
+    # lg = "!f() { branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name ${branch}@{upstream} 2>/dev/null); git log --notes --graph --abbrev-commit --decorate --left-right --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)' ${branch} ${upstream:+$upstream} ${@:2}; }; f"
+    lg = "log --notes --graph --abbrev-commit --decorate --left-right --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)'"
+
     l = "!f() { branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name ${branch}@{upstream} 2>/dev/null); git log -10 --notes --graph --abbrev-commit --decorate --left-right --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)' ${branch} ${upstream:+$upstream} ${@:2}; }; f"
     sup = submodule update --init --recursive
     last = log -1 --stat
@@ -89,21 +91,21 @@
 
 
 [merge]
-    conflictstyle = diff3
-#     tool = kdiff3
-# [mergetool]
-#     keeptemporaries = false
-#     keepbackups = false
-#     prompt = false
-#     trustexitcode = false
-[mergetool "kdiff3"]
-    path = c:/Program Files/KDiff3/kdiff3.exe
-[mergetool "vscode"]
-    cmd = code --wait $MERGED
-
-[merge]
-    tool = vscode
+    tool = meld
     conflictstyle = diff3
 [mergetool]
     keeptemporaries = false
     keepbackup = false
+    hideresolved = true
+#     prompt = false
+#     trustexitcode = false
+
+[mergetool "kdiff3"]
+    path = c:/Program Files/KDiff3/kdiff3.exe
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[mergetool "meld"]
+    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED" --auto-merge
+    trustExitCode = false
+    useAutoMerge = true
+    hasOutput = true

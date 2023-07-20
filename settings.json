@@ -242,7 +242,8 @@
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+        "*.ipynb": "jupyter-notebook",
+        "*.csv": "default"
     },
     "files.associations": {
         ".gitconfig*": "gitconfig"
@@ -322,7 +323,7 @@
     ],
     "git.mergeEditor": true,
     "livePreview.notifyOnOpenLooseFile": false,
-    "workbench.colorTheme": "Synthwave Material Ansi16",
+    "workbench.colorTheme": "Noctis Lux Ansi16",
     "haskell.manageHLS": "GHCup",
     "editor.accessibilitySupport": "off",
     "window.restoreWindows": "none",
@@ -338,5 +339,8 @@
     },
     "editor.unusualLineTerminators": "off",
     "editor.inlineSuggest.enabled": true,
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "FSharp.suggestGitignore": false,
+    "workbench.editor.closeEmptyGroups": false,
+    "workbench.editor.closeOnFileDelete": true
 }
