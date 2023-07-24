@@ -232,7 +232,6 @@ let-env config = {
   keybindings: [
     {
       name: history_hint
-      name: commands_menu
       modifier: control
       keycode: tab
       mode: emacs
@@ -240,7 +239,6 @@ let-env config = {
     }
     {
       name: history_hint_word
-      name: commands_menu
       modifier: none
       keycode: tab
       mode: emacs
@@ -362,10 +360,10 @@ def 256colors [] {
 def "git cb" [] {
   let branches = (git branch --color=never | lines | where (($it | str starts-with "*") == false))
   echo $branches
-  let input = (input "Type branch number to checkout and press enter to move on: " | str trim -a)
+  let input = (input "Type branch number to checkout and press enter to move on: " | str trim)
   if (($input | str length) > 0) {
     let index = ($input | into int)
-    let branch = ($branches | get $index | str trim -a)
+    let branch = ($branches | get $index | str trim)
     ^git checkout $branch
   } else {
     echo Aborting...

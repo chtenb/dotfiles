@@ -209,7 +209,6 @@
     "workbench.preferredLightColorTheme": "Noctis Lux Ansi16",
     "window.autoDetectColorScheme": true,
     "workbench.colorCustomizations": {
-        // "editor.lineHighlightBackground": "#00000000",
         "[Noctis Lux]": {},
         "[SynthWave '84]": {},
     },
@@ -307,7 +306,7 @@
     "editor.fontSize": 12,
     "terminal.integrated.fontSize": 12,
     // "window.zoomLevel": -1,
-    // "terminal.integrated.gpuAcceleration": "off",
+    "terminal.integrated.gpuAcceleration": "off",
     "terminal.integrated.minimumContrastRatio": 1,
     "workbench.panel.opensMaximized": "always",
     "Lua.telemetry.enable": false,
@@ -323,7 +322,6 @@
     ],
     "git.mergeEditor": true,
     "livePreview.notifyOnOpenLooseFile": false,
-    "workbench.colorTheme": "Noctis Lux Ansi16",
     "haskell.manageHLS": "GHCup",
     "editor.accessibilitySupport": "off",
     "window.restoreWindows": "none",
@@ -344,5 +342,6 @@
     "workbench.editor.closeEmptyGroups": false,
     "workbench.editor.closeOnFileDelete": true,
     "git.terminalAuthentication": false,
-    "github.gitAuthentication": false
+    "github.gitAuthentication": false,
+    "workbench.colorTheme": "Noctis Lux Ansi16"
 }
