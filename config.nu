@@ -308,7 +308,7 @@ alias ansicol = cp ~/dotfiles/delta-config/ansi.gitconfig ~/dotfiles/delta-confi
 alias l = ls -a
 alias ll = ls -alf
 # On windows the npm.cmd gives strange errors, but the bash script does not.
-alias npm = if (sys).host.name == "Windows" { bash 'C:\Program Files\nodejs\npm' } else { npm }
+# alias npm = if (sys).host.name == "Windows" { bash 'C:\Program Files\nodejs\npm' } else { npm }
 alias wnpm = bash 'C:\Program Files\nodejs\npm'
 alias npr = npm run -- 
 alias npe = npm exec -- 

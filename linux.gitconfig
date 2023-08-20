@@ -1,4 +1,4 @@
 [credential]
-    helper = cache
+    helper = cache --timeout=72000
 [include]
     path = ~/dotfiles/base.gitconfig
