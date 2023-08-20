@@ -1,8 +1,8 @@
 # Nushell Config File
 
 # use ~/dotfiles/nu_scripts/custom-completions/cargo/cargo-completions.nu *
-# use ~/dotfiles/nu_scripts/custom-completions/git/git-completions.nu *
-# use ~/dotfiles/nu_scripts/custom-completions/npm/npm-completions.nu *
+use ~/dotfiles/nu_scripts/custom-completions/git/git-completions.nu *
+use ~/dotfiles/nu_scripts/custom-completions/npm/npm-completions.nu *
 
 # for more information on themes see
 # https://www.nushell.sh/book/coloring_and_theming.html
@@ -58,7 +58,7 @@ let default_theme = {
 }
 
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   show_banner: false
   color_config: $default_theme
   use_grid_icons: true
@@ -232,7 +232,6 @@ let-env config = {
   keybindings: [
     {
       name: history_hint
-      name: commands_menu
       modifier: control
       keycode: tab
       mode: emacs
@@ -240,7 +239,6 @@ let-env config = {
     }
     {
       name: history_hint_word
-      name: commands_menu
       modifier: none
       keycode: tab
       mode: emacs
@@ -316,9 +314,6 @@ alias replac = perl ~/dotfiles/replac/replac.pl
 
 alias t = task
 
-
-###### COMMAND ######
-
 def-env c [path] {
   cd $path
   ls -sa
@@ -340,34 +335,4 @@ def-env twrap [] {
   cd
 }
 
-def colors [] {
-  [30 40 90 100] | each { |$color_offset| 
-    0..9 | each { |$color|
-      if $color != 8 { # 8 is not a color code
-        1..9 | each { |$style|
-          build-string $"\e[($color + $color_offset);($style)m" $'\e[($color + $color_offset)($style)m' "\e[0m"
-        } | str collect
-      }
-    } | flatten
-  } | flatten
-}
-
-def 256colors [] {
-  0..255 | each { |$color|
-    build-string $"\e[38;5;($color)m" $'($color)' "\e[0m"
-  } | str collect
-}
-
-
-def "git cb" [] {
-  let branches = (git branch --color=never | lines | where (($it | str starts-with "*") == false))
-  echo $branches
-  let input = (input "Type branch number to checkout and press enter to move on: " | str trim -a)
-  if (($input | str length) > 0) {
-    let index = ($input | into int)
-    let branch = ($branches | get $index | str trim -a)
-    ^git checkout $branch
-  } else {
-    echo Aborting...
-  }
-}
+source ~/dotfiles/commands.nu

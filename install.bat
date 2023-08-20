@@ -16,6 +16,9 @@ del /q %UserProfile%\.bashrc
 mklink %UserProfile%\.bashrc %UserProfile%\dotfiles\.bashrc
 del /q %UserProfile%\.gitconfig
 mklink %UserProfile%\.gitconfig %UserProfile%\dotfiles\intellimagic.gitconfig
+del /q %UserProfile%\.XCompose
+mklink %UserProfile%\.XCompose %UserProfile%\dotfiles\.XCompose
+
 copy %UserProfile%\dotfiles\git_bash_here.ahk "%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 
 mkdir %UserProfile%\.vim\backup\
@@ -29,14 +32,9 @@ del /q %UserProfile%\AppData\Roaming\nushell\env.nu
 mklink %UserProfile%\AppData\Roaming\nushell\env.nu %UserProfile%\dotfiles\env.nu
 del /q %UserProfile%\.wezterm.lua
 mklink %UserProfile%\.wezterm.lua %UserProfile%\dotfiles\wezterm.lua
-del /q %APPDATA%\alacritty\alacritty.yml
-mkdir %APPDATA%\alacritty
-mklink %APPDATA%\alacritty\alacritty.yml %UserProfile%\dotfiles\alacritty.yml
 
 echo MANUALLY
-echo choco install nushell
-echo choco install starship
-echo Set the env var %ComSpec% to C:\ProgramData\chocolatey\bin\nu.exe
-echo bat and delta must be installed manually using cargo
+echo winget install nushell
+echo bat and git-delta must be installed manually using cargo
 echo Then manually run bat cache --build and the command ansicol
 pause

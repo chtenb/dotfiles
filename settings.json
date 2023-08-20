@@ -21,8 +21,7 @@
     },
     // VIM
     "vim.hlsearch": true,
-    "vim.gdefault": true,
-    "vim.normalModeKeyBindings": [
+    "vim.gdefault": true, "vim.normalModeKeyBindings": [
         {
             "before": [
                 "Y"
@@ -210,7 +209,6 @@
     "workbench.preferredLightColorTheme": "Noctis Lux Ansi16",
     "window.autoDetectColorScheme": true,
     "workbench.colorCustomizations": {
-        // "editor.lineHighlightBackground": "#00000000",
         "[Noctis Lux]": {},
         "[SynthWave '84]": {},
     },
@@ -243,7 +241,8 @@
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+        "*.ipynb": "jupyter-notebook",
+        "*.csv": "default"
     },
     "files.associations": {
         ".gitconfig*": "gitconfig"
@@ -302,13 +301,12 @@
     "gitblame.ignoreWhitespace": true,
     "gitlens.codeLens.enabled": false,
     "gitlens.mode.active": "zen",
-    "workbench.activityBar.visible": false,
     "purescript.exportsCodeLens": false,
     "tabnine.experimentalAutoImports": true,
     "editor.fontSize": 12,
     "terminal.integrated.fontSize": 12,
     // "window.zoomLevel": -1,
-    // "terminal.integrated.gpuAcceleration": "off",
+    "terminal.integrated.gpuAcceleration": "off",
     "terminal.integrated.minimumContrastRatio": 1,
     "workbench.panel.opensMaximized": "always",
     "Lua.telemetry.enable": false,
@@ -318,15 +316,32 @@
     "files.exclude": {
         "**/.git": false
     },
-    "explorer.excludeGitIgnore": true,
     "vim.smartRelativeLine": true,
     "purescript.censorWarnings": [
         "MissingTypeDeclaration"
     ],
     "git.mergeEditor": true,
     "livePreview.notifyOnOpenLooseFile": false,
-    "workbench.colorTheme": "Noctis Lux Ansi16",
-    "window.zoomLevel": 1,
     "haskell.manageHLS": "GHCup",
-    "editor.accessibilitySupport": "off"
+    "editor.accessibilitySupport": "off",
+    "window.restoreWindows": "none",
+    "git.openRepositoryInParentFolders": "never",
+    "editor.unicodeHighlight.allowedCharacters": {
+        "×": true
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.unusualLineTerminators": "off",
+    "editor.inlineSuggest.enabled": true,
+    "workbench.activityBar.visible": false,
+    "FSharp.suggestGitignore": false,
+    "workbench.editor.closeEmptyGroups": false,
+    "workbench.editor.closeOnFileDelete": true,
+    "git.terminalAuthentication": false,
+    "github.gitAuthentication": false,
+    "workbench.colorTheme": "Noctis Lux Ansi16"
 }

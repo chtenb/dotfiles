@@ -5,6 +5,17 @@
         "command": "deleteWordLeft",
         "when": "textInputFocus && !editorReadonly && dance.mode == 'insert'",
     },
+    {
+        "key": "shift-c",
+        "command": "dance.run",
+        "args": {
+          "commands": [
+            "dance.selections.expandToLines",
+            "dance.selections.trimWhitespace",
+          ],
+        },
+        "when": "editorTextFocus && dance.mode == 'normal'"
+      },
     // DANCE
     {
         "key": "ctrl+o",
@@ -377,6 +388,11 @@
         "key": "enter",
         "command": "-acceptSelectedSuggestion",
         "when": "acceptSuggestionOnEnter && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-acceptSelectedSuggestion",
+        "when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
     },
     {
         "key": "ctrl+tab",
