@@ -1,4 +1,5 @@
 # Author: chtenb <ctenbrinke@gmail.com>
+inherits = "ansi16-syntax"
 
 "ui.background" = { } # 
 "ui.background.separator" = { } # Picker separator below input line
@@ -60,10 +61,11 @@
 #"diagnostic.error" = { } # Diagnostics error (editing area)
 
 
-"diff.plus" = "light-green"
-"diff.delta" = "yellow"
-"diff.minus" = "light-red"
-
+#"diff" = "white"
+"diff.plus" = "green"
+"diff.minus" = "red"
+# "diff.delta" = "yellow"
+"diff.delta.moved" = "magenta"
 
 "markup.normal.completion" = { } # for completion doc popup UI
 "markup.normal.hover" = { } # for hover popup UI
@@ -83,20 +85,4 @@
 "markup.quote" = "light-cyan"
 "markup.raw" = "light-green"
 
-
-"variable" = "light-red"
-"comment" = { fg = "light-gray", modifiers = ["italic"] }
-"constant.numeric" = "yellow"
-"constant" = "yellow"
-"attribute" = "yellow"
-"type" = "light-yellow"
-"string"  = "light-green"
-"variable.other.member" = "light-green"
-"constant.character.escape" = "light-cyan"
-"function" = "light-blue"
-"constructor" = "light-blue"
-"special" = "light-blue"
-"keyword" = "light-magenta"
-"label" = "light-magenta"
-"namespace" = "light-magenta"
 
