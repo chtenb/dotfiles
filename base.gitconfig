@@ -81,7 +81,7 @@
     diffFilter = delta --color-only #--features interactive
 
 [include]
-    path = delta-config/main.gitconfig
+    path = delta/main.gitconfig
 
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe

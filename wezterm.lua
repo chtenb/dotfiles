@@ -33,4 +33,21 @@ return {
     -- for example, this selects a Bold, Italic font variant.
     -- font = wezterm.font("JetBrains Mono", {weight="Bold", italic=true})
     font_size = 10.0,
+    keys = {
+        {
+          key = 'h',
+          mods = 'CTRL|SHIFT',
+          action = wezterm.action.ActivateTabRelative(-1),
+        },
+        {
+          key = 'l',
+          mods = 'CTRL|SHIFT',
+          action = wezterm.action.ActivateTabRelative(1),
+        },
+        {
+          key = 'F4',
+          mods = 'CTRL',
+          action = wezterm.action.CloseCurrentPane{confirm=false},
+        },
+    }
 }

@@ -14,3 +14,4 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
+source C:\Users\chiel.tenbrinke\AppData\Roaming\dystroy\broot\config\launcher\bash\br

@@ -137,6 +137,6 @@ vim()
     stty "$STTYOPTS"
 }
 
-alias dark="cp -f ~/dotfiles/delta-config/dark.gitconfig ~/dotfiles/delta-config/current.gitconfig"
-alias light="cp -f ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig"
+alias dark="cp -f ~/dotfiles/delta/dark.gitconfig ~/dotfiles/delta/current.gitconfig"
+alias light="cp -f ~/dotfiles/delta/light.gitconfig ~/dotfiles/delta/current.gitconfig"
 

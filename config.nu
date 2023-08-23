@@ -299,9 +299,9 @@ alias ggn = git grep -IPn --color=always
 alias gr = git grep --no-index -IPn --color=always
 alias rcname = python -c "for i,c in enumerate(f'{input():<12}'[:12]): print(f'\t<C{i+1:>02}>{ord(c)}</C{i+1:>02}>')"
 
-alias darkcol = cp ~/dotfiles/delta-config/dark.gitconfig ~/dotfiles/delta-config/current.gitconfig
-alias lightcol = cp ~/dotfiles/delta-config/light.gitconfig ~/dotfiles/delta-config/current.gitconfig
-alias ansicol = cp ~/dotfiles/delta-config/ansi.gitconfig ~/dotfiles/delta-config/current.gitconfig
+alias darkcol = cp ~/dotfiles/delta/dark.gitconfig ~/dotfiles/delta/current.gitconfig
+alias lightcol = cp ~/dotfiles/delta/light.gitconfig ~/dotfiles/delta/current.gitconfig
+alias ansicol = cp ~/dotfiles/delta/ansi.gitconfig ~/dotfiles/delta/current.gitconfig
 
 alias l = ls -a
 alias ll = ls -alf
@@ -336,3 +336,5 @@ def-env twrap [] {
 }
 
 source ~/dotfiles/commands.nu
+
+source C:\Users\chiel.tenbrinke\AppData\Roaming\dystroy\broot\config\launcher\nushell\br

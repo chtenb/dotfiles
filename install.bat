@@ -33,8 +33,15 @@ mklink %UserProfile%\AppData\Roaming\nushell\env.nu %UserProfile%\dotfiles\env.n
 del /q %UserProfile%\.wezterm.lua
 mklink %UserProfile%\.wezterm.lua %UserProfile%\dotfiles\wezterm.lua
 
+rmdir /s /q %UserProfile%\AppData\Roaming\dystroy\broot\config
+mklink /d %UserProfile%\AppData\Roaming\dystroy\broot\config %UserProfile%\dotfiles\broot
+
+rmdir /s /q %UserProfile%\AppData\Roaming\helix\
+mklink /d %UserProfile%\AppData\Roaming\helix %UserProfile%\dotfiles\helix
+
 echo MANUALLY
-echo winget install nushell
+echo winget install nushell, or place it in .local
 echo bat and git-delta must be installed manually using cargo
 echo Then manually run bat cache --build and the command ansicol
+echo Install helix and broot from the github releases by placing it in .local
 pause
