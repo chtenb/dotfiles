@@ -36,7 +36,7 @@ mklink %UserProfile%\.wezterm.lua %UserProfile%\dotfiles\wezterm.lua
 rmdir /s /q %UserProfile%\AppData\Roaming\dystroy\broot\config
 mklink /d %UserProfile%\AppData\Roaming\dystroy\broot\config %UserProfile%\dotfiles\broot
 
-rmdir /s /q %UserProfile%\AppData\Roaming\helix\
+rmdir /s /q %UserProfile%\AppData\Roaming\helix
 mklink /d %UserProfile%\AppData\Roaming\helix %UserProfile%\dotfiles\helix
 
 echo MANUALLY
