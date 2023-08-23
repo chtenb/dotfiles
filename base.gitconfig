@@ -11,7 +11,7 @@
     hooksPath = ~/dotfiles/githooks
     fscache = true
     preloadindex = true
-    editor = vim -u ~/.vimrc.bare
+    editor = hx # vim -u ~/.vimrc.bare
     whitespace = cr-at-eol
     trustctime = false
     filemode = false
