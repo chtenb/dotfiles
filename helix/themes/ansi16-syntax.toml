@@ -18,7 +18,7 @@
 # "string.special.path" = "white"
 # "string.special.url" = "white"
 # "string.special.symbol" = "white"
-"comment" = "black"
+"comment" = { fg = "black", modifiers = ["italic"] }
 # "comment.line" = "white"
 # "comment.block" = "white"
 # "comment.block.documentation" = "white"
@@ -32,7 +32,7 @@
 # "punctuation.delimiter" = "white"
 # "punctuation.bracket" = "white"
 # "punctuation.special" = "white"
-"keyword" = "magenta"
+"keyword" = { fg = "magenta", modifiers = ["bold"] }
 # "keyword.control" = "white"
 # "keyword.control.conditional" = "white"
 # "keyword.control.repeat" = "white"
@@ -50,10 +50,10 @@
 "function" = "blue"
 "function.builtin" = "light-blue"
 # "function.method" = "white"
-"function.macro" = "light-blue"
-"function.special" = "light-blue"
+"function.macro" = "cyan"
+"function.special" = "cyan"
 "tag" = "red"
-"tag.builtin" = "magenta"
+"tag.builtin" = { fg = "magenta", modifiers = ["bold"] }
 "namespace" = "white"
 "special" = "white"
 #"markup" = "white"

@@ -34,7 +34,7 @@ inherits = "ansi16-syntax"
 #"ui.text.inactive" = { } # Same as ui.text but when the text is inactive (e.g. suggestions)
 #"ui.text.info" = { } # The key: command text in ui.popup.info boxes
 "ui.virtual.ruler" = { } # Ruler columns (see the editor.rulers config)
-"ui.virtual.whitespace" = { fg = "cyan" } # Visible whitespace characters
+"ui.virtual.whitespace" = { fg = "black" } # Visible whitespace characters
 "ui.virtual.indent-guide" = { fg = "black" } # Vertical indent width guides
 #"ui.virtual.inlay-hint" = { } # Default style for inlay hints of all kinds
 #"ui.virtual.inlay-hint.parameter" = { } # Style for inlay hints of kind parameter (LSPs are not required to set a kind)
@@ -61,11 +61,12 @@ inherits = "ansi16-syntax"
 #"diagnostic.error" = { } # Diagnostics error (editing area)
 
 
+# Gutter line
 #"diff" = "white"
-"diff.plus" = "green"
-"diff.minus" = "red"
-# "diff.delta" = "yellow"
-"diff.delta.moved" = "magenta"
+"diff.plus" = "green" # line added
+"diff.minus" = "red" # removed lines
+"diff.delta" = "yellow" # line modified
+"diff.delta.moved" = "magenta" # line moved
 
 "markup.normal.completion" = { } # for completion doc popup UI
 "markup.normal.hover" = { } # for hover popup UI

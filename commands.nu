@@ -5,7 +5,7 @@ def colors [] {
       if $color != 8 { # 8 is not a color code
         1..9 | each { |$style|
           $"\e[($color + $color_offset);($style)m" + $'\e[($color + $color_offset)($style)m' + "\e[0m"
-        } | str collect
+        } | str join
       }
     } | flatten
   } | flatten
@@ -14,7 +14,7 @@ def colors [] {
 def 256colors [] {
   0..255 | each { |$color|
     $"\e[38;5;($color)m" + $'($color)' + "\e[0m"
-  } | str collect
+  } | str join
 }
 
 
