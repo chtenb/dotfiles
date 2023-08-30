@@ -15,7 +15,7 @@
 # to see hidden and gitignored files and the permissions (then
 # if you don't want the hidden files you can launch `br -H`)
 # A popular flag is the `g` one which displays git related info.
-default_flags = "ihgp"
+default_flags = "gp"
 
 # Date/Time format
 # If you want to change the format for date/time, uncomment the

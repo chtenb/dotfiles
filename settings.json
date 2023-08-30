@@ -13,15 +13,16 @@
             "cursorStyle": "line",
             // "lineNumbers": "on",
             "decorations": {
-              "applyTo": "main",
-              "backgroundColor": "$editor.highlightBackground",
-            //   "isWholeLine": true,
+                "applyTo": "main",
+                "backgroundColor": "$editor.highlightBackground",
+                //   "isWholeLine": true,
             },
         },
     },
     // VIM
     "vim.hlsearch": true,
-    "vim.gdefault": true, "vim.normalModeKeyBindings": [
+    "vim.gdefault": true,
+    "vim.normalModeKeyBindings": [
         {
             "before": [
                 "Y"

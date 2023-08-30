@@ -1,4 +1,8 @@
-# Synthwave Material Ansi16
+[metadata]
+aliases = []
+author = 'chtenb'
+name = 'Synthwave Material'
+
 [colors]
 foreground = "#cccccc"
 background = "#262335"
@@ -8,9 +12,9 @@ cursor_fg = "black"
 selection_fg = "#cccccc"
 selection_bg = "#333041"
 
+# TODO: shift black -> bright black -> white -> bright white
 ansi = ['#676e95' ,'#f07178' ,'#c3e88d' ,'#ffcb6b' ,'#94afeb' ,'#c792ea' ,'#b9dedf' ,'#b4b8d0']
 brights = ['#676e95' ,'#ff5370' ,'#87de97' ,'#f78c6c' ,'#b9dedf' ,'#c792ea' ,'#91f5f8' ,'#dddddd']
-
 
 [colors.indexed] 
 52 = "#330f0f" # minus
@@ -21,3 +25,77 @@ brights = ['#676e95' ,'#ff5370' ,'#87de97' ,'#f78c6c' ,'#b9dedf' ,'#c792ea' ,'#9
 17 = "#271344" # blue
 23 = "#0d3531" # cyan
 58 = "#222f14" # yellow
+
+
+232 = "#2F2E43" # low intensity
+233 = "#393850"
+234 = "#42435E"
+235 = "#4B4E6C"
+236 = "#54597A"
+237 = "#5E6387"
+
+# 238 = "#b8b8b8"
+# 239 = "#b0b0b0"
+# 240 = "#a8a8a8"
+# 241 = "#a0a0a0"
+# 242 = "#909090"
+# 243 = "#808080"
+# 
+# 244 = "#707070"
+# 245 = "#606060"
+# 246 = "#585858"
+# 247 = "#505050"
+# 248 = "#484848"
+# 249 = "#404040"
+
+250 = "#7D83A4"
+251 = "#9297B3"
+252 = "#A8ACC2"
+253 = "#BEC1D2"
+254 = "#D4D6E1"
+255 = "#E9EAF0" # high intensity
+
+[colors.tab_bar]
+background = "#cccccc"
+inactive_tab_edge = "#2F2E43"
+inactive_tab_edge_hover = "#2F2E43"
+
+[colors.tab_bar.active_tab]
+bg_color = "#cccccc"
+fg_color = "#5E6387"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#cccccc"
+fg_color = "#2F2E43"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#cccccc"
+fg_color = "#2F2E43"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab]
+bg_color = "#cccccc"
+fg_color = "#2F2E43"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#cccccc"
+fg_color = "#5E6387"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
