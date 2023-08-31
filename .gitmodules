@@ -7,9 +7,9 @@
 [submodule "replac"]
 	path = replac
 	url = https://github.com/chtenb/replac
-[submodule "ansi16"]
-	path = ansi16
-	url = https://github.com/chtenb/ansi16
 [submodule "nu_scripts"]
 	path = nu_scripts
 	url = https://github.com/nushell/nu_scripts
+[submodule "neo-ansi"]
+	path = neo-ansi
+	url = https://github.com/chtenb/neo-ansi
