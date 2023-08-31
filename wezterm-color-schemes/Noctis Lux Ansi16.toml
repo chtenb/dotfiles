@@ -13,7 +13,7 @@ cursor_fg = "#ffffff"
 selection_bg = "#cfe7f0"
 selection_fg = "#005661"
 
-ansi = [ "#8ca6a6", "#e64100", "#00b368", "#fa8900", "#0095a8", "#ff5792", "#00bdd6", "#005661" ]
+ansi = [ "#8ca6a6", "#e64100", "#24a342", "#fa8900", "#0095a8", "#ff5792", "#00bdd6", "#005661" ]
 brights = [ "#8ca6a6", "#e5164a", "#00b368", "#b3694d", "#0094f0", "#ff5792", "#00bdd6", "#004d57" ]
 
 [colors.indexed] 
