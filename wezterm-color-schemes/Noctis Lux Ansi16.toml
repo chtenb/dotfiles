@@ -13,23 +13,8 @@ cursor_fg = "#ffffff"
 selection_bg = "#cfe7f0"
 selection_fg = "#005661"
 
-ansi = [ "#8ca6a6" ,"#e64100" ,"#00b368" ,"#fa8900" ,"#0095a8" ,"#ff5792" ,"#00bdd6" ,"#005661" ]
-brights = [ "#8ca6a6" ,"#e5164a" ,"#00b368" ,"#b3694d" ,"#0094f0" ,"#ff5792" ,"#00bdd6" ,"#004d57" ]
-
-# [colors.tab_bar]
-# background = "e8e8e8",
-
-# [colors.tab_bar.active_tab]
-# fg_color = "#101010",
-# bg_color = "#e8e8e8",
-
-# [colors.tab_bar.inactive_tab]
-# fg_color = "#808080",
-# bg_color = "#e8e8e8",
-
-# [colors.tab_bar.new_tab]
-# fg_color = "#101010",
-# bg_color = "#e8e8e8",
+ansi = [ "#8ca6a6", "#e64100", "#00b368", "#fa8900", "#0095a8", "#ff5792", "#00bdd6", "#005661" ]
+brights = [ "#8ca6a6", "#e5164a", "#00b368", "#b3694d", "#0094f0", "#ff5792", "#00bdd6", "#004d57" ]
 
 [colors.indexed] 
 # background colors for git diffs
@@ -58,61 +43,49 @@ brights = [ "#8ca6a6" ,"#e5164a" ,"#00b368" ,"#b3694d" ,"#0094f0" ,"#ff5792" ,"#
 242 = "#d6f3fa" # inactive primary selection
 243 = "#d6f3fa" # active primary selection
 # fg
-244 = "#707070" # rulers
-245 = "#606060" # divider level 2
-246 = "#585858" # divider level 1
-247 = "#505050" #
-248 = "#484848" # low intensity accent 2
-249 = "#404040" #
-250 = "#383838" # high intensity
-251 = "#303030" #
-252 = "#282828" # high intensity accent 1
-253 = "#202020" #
-254 = "#181818" # high intensity accent 2
-255 = "#101010" #
+244 = "#8CA6A6" # 
+245 = "#7F9E9F" # 
+246 = "#729698" # 
+247 = "#658E91" # 
+248 = "#58868A" # 
+249 = "#4B7E83" # 
+250 = "#3E767C" # 
+251 = "#316E75" # 
+252 = "#24666E" # 
+253 = "#175E67" # 
+254 = "#0A5660" # 
+255 = "#004D57" # 
 
 
 [colors.tab_bar]
-background = "#131a24"
-inactive_tab_edge = "#131a24"
-inactive_tab_edge_hover = "#212e3f"
+background = "#efe9d5"
+inactive_tab_edge = "#efe9d5"
+inactive_tab_edge_hover = "#efe9d5"
+italic = false
+strikethrough = false
+underline = "None"
 
 [colors.tab_bar.active_tab]
-bg_color = "#71839b"
-fg_color = "#192330"
+bg_color = "#fdf8eb"
+fg_color = "#3E767C"
 intensity = "Normal"
-italic = false
-strikethrough = false
-underline = "None"
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#212e3f"
-fg_color = "#aeafb0"
+bg_color = "#efe9d5"
+fg_color = "#8ca6a6"
 intensity = "Normal"
-italic = false
-strikethrough = false
-underline = "None"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#29394f"
-fg_color = "#cdcecf"
+bg_color = "#d6dfd0"
+fg_color = "#8ca6a6"
 intensity = "Normal"
-italic = false
-strikethrough = false
-underline = "None"
 
 [colors.tab_bar.new_tab]
-bg_color = "#192330"
-fg_color = "#aeafb0"
+bg_color = "#efe9d5"
+fg_color = "#8ca6a6"
 intensity = "Normal"
-italic = false
-strikethrough = false
-underline = "None"
 
 [colors.tab_bar.new_tab_hover]
-bg_color = "#29394f"
-fg_color = "#cdcecf"
+bg_color = "#efe9d5"
+fg_color = "#3299ae"
 intensity = "Normal"
-italic = false
-strikethrough = false
-underline = "None"

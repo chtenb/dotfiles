@@ -59,9 +59,9 @@ inherits = "ansi16-syntax"
 "hint" = { fg = "green" } # Diagnostics hint (gutter)
 "diagnostic" = { } # Diagnostics fallback style (editing area)
 "diagnostic.hint" = { underline = { color = "light-green", style = "curl" } } # Diagnostics hint (editing area)
-"diagnostic.info" = { bg = "17", underline = { color = "light-blue", style = "curl" } } # Diagnostics info (editing area)
-"diagnostic.warning" = { bg = "58", underline = { color = "light-yellow", style = "curl" } } # Diagnostics warning (editing area)
-"diagnostic.error" = { bg = "52", underline = { color = "light-red", style = "curl" } } # Diagnostics error (editing area)
+"diagnostic.info" = { underline = { color = "light-blue", style = "curl" } } # Diagnostics info (editing area)
+"diagnostic.warning" = { underline = { color = "light-yellow", style = "curl" } } # Diagnostics warning (editing area)
+"diagnostic.error" = { underline = { color = "light-red", style = "curl" } } # Diagnostics error (editing area)
 
 
 # Gutter line
