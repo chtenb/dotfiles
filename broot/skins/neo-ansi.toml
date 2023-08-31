@@ -1,4 +1,4 @@
-# A skin for a terminal with ansi16 compatible terminal palette
+# A skin for a terminal with neo-ansi compatible terminal palette
 syntax_theme = "SolarizedDark"
 
 [skin]

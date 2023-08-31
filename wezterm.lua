@@ -7,10 +7,10 @@ wezterm.on('gui-startup', function(cmd)
 end)
 
 wezterm.on('window-config-reloaded', function(window, pane)
-  local name = 'Noctis Lux'
+  local name = 'Noctis Lux (Neo Ansi)'
   local appearance = window:get_appearance()
   if appearance:find('Dark') then
-      name = 'Synthwave Material'
+      name = 'Synthwave Material (Neo Ansi)'
   end
 
   local overrides = window:get_config_overrides() or {}

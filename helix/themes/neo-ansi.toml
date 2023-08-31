@@ -1,5 +1,5 @@
 # Author: chtenb <ctenbrinke@gmail.com>
-inherits = "ansi16-syntax"
+inherits = "neo-ansi-syntax"
 
 # TODO: all background colors need to change to gray scale colors
 # when the next version of helix lands

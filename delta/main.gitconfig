@@ -3,7 +3,7 @@
     path = current.gitconfig
 
 [delta]
-    syntax-theme = terminal-ansi16
+    syntax-theme = terminal-neo-ansi
     features = decent-decorations current
     # features = plain-git-colors
 

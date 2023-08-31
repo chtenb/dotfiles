@@ -106,4 +106,4 @@ file = "verbs.toml"
 
 [[imports]]
 luma = ["dark", "unknown", "light"]
-file = "skins/ansi16.toml"
+file = "skins/neo-ansi.toml"
