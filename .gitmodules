@@ -1,12 +1,12 @@
 [submodule "interactive-git-checkout"]
 	path = interactive-git-checkout
-	url = https://github.com/Chiel92/interactive-git-checkout
+	url = https://github.com/chtenb/interactive-git-checkout
 [submodule "python-shellout"]
 	path = python-shellout
-	url = https://github.com/Chiel92/python-shellout
+	url = https://github.com/chtenb/python-shellout
 [submodule "replac"]
 	path = replac
-	url = https://github.com/Chiel92/replac
+	url = https://github.com/chtenb/replac
 [submodule "ansi16"]
 	path = ansi16
 	url = https://github.com/chtenb/ansi16
