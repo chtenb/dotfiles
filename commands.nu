@@ -27,7 +27,7 @@ def "git cb" [] {
     let branch = ($branches | get $index | str trim)
     ^git checkout $branch
   } else {
-    echo Aborting...
+    echo "Aborting..."
   }
 }
 
@@ -45,3 +45,4 @@ def anonymize [pattern] {
         $acc | str replace --all --string $it.item $it.new
     }
 }
+

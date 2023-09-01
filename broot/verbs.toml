@@ -15,14 +15,43 @@
 # execution = "touch {directory}/{new_file}"
 # leave_broot = false
 
+# TODO: use br like a file picker and have several wrapper commands that
+# "define" what the enter key does
+#[[verbs]]
+## A standard recommended command for editing files
+#invocation = "edit"
+#keys = ["enter"]
+#shortcut = "e"
+#execution = "$EDITOR {file}:{line}"
+#apply_to = "file"
+#leave_broot = false
+#
+#[[verbs]]
+## CD to a folder
+#invocation = "cd"
+#keys = ["ctrl-enter"]
+#shortcut = "ol"
+#apply_to = "directory"
+#leave_broot = true
+#internal = ":open_leave"
+#
+#[[verbs]]
+## open file and exit broot
+#invocation = "open_leave"
+#keys = ["ctrl-enter"]
+#shortcut = "ol"
+#apply_to = "file"
+#leave_broot = true
+#internal = ":open_leave"
+
 [[verbs]]
-# A standard recommended command for editing files
-invocation = "edit"
-keys = ["enter", "right"]
-shortcut = "e"
-execution = "$EDITOR {file}:{line}"
-apply_to = "file"
-leave_broot = false
+# print path and exit broot
+invocation = "print_path"
+keys = ["enter"]
+shortcut = "pp"
+apply_to = "any"
+leave_broot = true
+internal = ":print_path"
 
 [[verbs]]
 invocation = "create {subpath}"

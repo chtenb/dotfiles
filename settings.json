@@ -344,7 +344,7 @@
     "workbench.editor.closeOnFileDelete": true,
     "git.terminalAuthentication": false,
     "github.gitAuthentication": false,
-    "workbench.colorTheme": "Noctis Lux Ansi16",
+    "workbench.colorTheme": "Synthwave Material Ansi16",
     "editor.renderWhitespace": "all",
     "github.copilot.enable": {
         "*": false,

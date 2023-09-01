@@ -3,7 +3,6 @@ aliases = []
 author = 'chtenb'
 name = 'Noctis Lux (Neo Ansi)'
 
-# Noctis Lux Ansi16
 [colors]
 foreground = "#005661"
 background = "#fef8ec"
@@ -61,31 +60,28 @@ brights = [ "#8ca6a6", "#e5164a", "#00b368", "#b3694d", "#0094f0", "#ff5792", "#
 background = "#efe9d5"
 inactive_tab_edge = "#efe9d5"
 inactive_tab_edge_hover = "#efe9d5"
-italic = false
-strikethrough = false
-underline = "None"
 
 [colors.tab_bar.active_tab]
 bg_color = "#fdf8eb"
 fg_color = "#3E767C"
-intensity = "Normal"
+# italic = false
+# strikethrough = false
+# underline = "None"
+# intensity = "Normal"
 
 [colors.tab_bar.inactive_tab]
 bg_color = "#efe9d5"
 fg_color = "#8ca6a6"
-intensity = "Normal"
 
 [colors.tab_bar.inactive_tab_hover]
 bg_color = "#d6dfd0"
 fg_color = "#8ca6a6"
-intensity = "Normal"
 
 [colors.tab_bar.new_tab]
 bg_color = "#efe9d5"
 fg_color = "#8ca6a6"
-intensity = "Normal"
 
 [colors.tab_bar.new_tab_hover]
 bg_color = "#efe9d5"
 fg_color = "#3299ae"
-intensity = "Normal"
+intensity = "Bold"
