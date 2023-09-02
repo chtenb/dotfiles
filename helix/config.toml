@@ -7,6 +7,8 @@ shell = ["nu", "--stdin", "-c"]
 auto-pairs = false
 #mouse = false
 gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
+bufferline = "multiple"
+color-modes = true
 
 [editor.indent-guides]
 render = true
@@ -18,12 +20,6 @@ tab = "all"
 #space = "all"
 #newline = "all"
 
-#[editor.whitespace.render]
-#space = "none"
-#nbsp = "none"
-#tab = "none"
-#newline = "none"
-
 #[editor.whitespace.characters]
 #space = "·"
 #nbsp = "⍽"
@@ -31,13 +27,16 @@ tab = "all"
 #newline = "⏎"
 #tabpad = "·"
 
-#[editor.cursor-shape]
-#insert = "bar"
-#normal = "block"
-#select = "underline"
-
 [editor.file-picker]
 hidden = false
+
+[editor.lsp]
+"display-messages" = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+center = []
+right = ["diagnostics", "version-control", "register", "position", "file-type", "file-encoding", "file-line-ending"]
 
 [keys.normal]
 "," = "repeat_last_motion"
@@ -75,15 +74,7 @@ hidden = false
 
 [keys.normal.space]
 F = "file_picker_in_current_buffer_directory"
-
 e = """
 :sh echo `echo $':open (broot)\r' | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left); exit\r` 
   | wezterm cli send-text --pane-id (wezterm cli split-pane --right --percent 33) --no-paste
 """
-o = ":sh bash hx-wezterm.sh open"
-r = ":sh bash hx-wezterm.sh run"
-#b = ":sh bash hx-wezterm.sh blame"
-#f = ":sh bash hx-wezterm.sh fzf"
-#g = ":sh bash hx-wezterm.sh lazygit"
-#s = ":sh bash hx-wezterm.sh test_single"
-#t = ":sh bash hx-wezterm.sh test_all"

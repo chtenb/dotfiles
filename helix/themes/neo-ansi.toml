@@ -1,9 +1,6 @@
 # Author: chtenb <ctenbrinke@gmail.com>
 inherits = "neo-ansi-syntax"
 
-# TODO: all background colors need to change to gray scale colors
-# when the next version of helix lands
-
 "ui.background" = { } # 
 "ui.background.separator" = { fg = "244" } # Picker separator below input line
 "ui.cursor" = { fg = "default", bg = "default", modifiers = ["reversed"] } # 
@@ -24,10 +21,10 @@ inherits = "neo-ansi-syntax"
 "ui.linenr.selected" = { fg = "white" } # Line number for the line the cursor is on
 "ui.statusline" = { bg = "238", fg = "250", modifiers = ["reversed"] } # Statusline
 "ui.statusline.inactive" = { fg = "244", modifiers = ["reversed"] } # Statusline (unfocused document)
-#"ui.statusline.normal" = { } # Statusline mode during normal mode (only if editor.color-modes is enabled)
-#"ui.statusline.insert" = { } # Statusline mode during insert mode (only if editor.color-modes is enabled)
-#"ui.statusline.select" = { } # Statusline mode during select mode (only if editor.color-modes is enabled)
-"ui.statusline.separator" = { fg = "251" } # Separator character in statusline
+"ui.statusline.normal" = { fg = "250" } # Statusline mode during normal mode (only if editor.color-modes is enabled)
+"ui.statusline.insert" = { fg = "light-magenta" } # Statusline mode during insert mode (only if editor.color-modes is enabled)
+"ui.statusline.select" = { fg = "light-blue" } # Statusline mode during select mode (only if editor.color-modes is enabled)
+# "ui.statusline.separator" = { fg = "red" } # Separator character in statusline
 "ui.popup" = { fg = "default", bg = "234" } # Documentation popups (e.g. Space + k)
 "ui.popup.info" = { fg = "default", bg = "default" } # Prompt for multiple key options
 "ui.window" = { fg = "253" } # Borderlines separating splits
