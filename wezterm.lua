@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm';
-local mux = wezterm.mux
+local mux = wezterm.mux;
+local act = wezterm.action;
 
 wezterm.on('gui-startup', function(cmd)
   local tab, pane, window = mux.spawn_window(cmd or {})
@@ -10,7 +11,7 @@ wezterm.on('window-config-reloaded', function(window, pane)
   local name = 'Noctis Lux (Neo Ansi)'
   local appearance = window:get_appearance()
   if appearance:find('Dark') then
-      name = 'Synthwave Material (Neo Ansi)'
+    name = 'Synthwave Material (Neo Ansi)'
   end
 
   local overrides = window:get_config_overrides() or {}
@@ -42,77 +43,91 @@ return {
     {
       key = 'q',
       mods = 'CTRL|ALT',
-      action = wezterm.action.CloseCurrentTab { confirm = false },
+      action = act.CloseCurrentTab { confirm = false },
     },
     {
       key = 't',
       mods = 'CTRL|ALT',
-      action = wezterm.action.SpawnTab('CurrentPaneDomain'),
+      action = act.SpawnTab('CurrentPaneDomain'),
     },
     {
       key = 'h',
       mods = 'CTRL|ALT',
-      action = wezterm.action.ActivateTabRelative(-1),
+      action = act.ActivateTabRelative(-1),
     },
     {
       key = 'l',
       mods = 'CTRL|ALT',
-      action = wezterm.action.ActivateTabRelative(1),
+      action = act.ActivateTabRelative(1),
     },
     {
       key = 'q',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.CloseCurrentPane { confirm = false },
+      action = act.CloseCurrentPane { confirm = false },
     },
     {
       key = 'h',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.ActivatePaneDirection 'Left',
+      action = act.ActivatePaneDirection 'Left',
     },
     {
       key = 'l',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.ActivatePaneDirection 'Right',
+      action = act.ActivatePaneDirection 'Right',
     },
     {
       key = 'k',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.ActivatePaneDirection 'Up',
+      action = act.ActivatePaneDirection 'Up',
     },
     {
       key = 'j',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.ActivatePaneDirection 'Down',
+      action = act.ActivatePaneDirection 'Down',
     },
     {
       key = '%',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+      action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
     },
     {
       key = '"',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+      action = act.SplitVertical { domain = 'CurrentPaneDomain' },
     },
     {
       key = 'UpArrow',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.AdjustPaneSize { 'Up', 1 },
+      action = act.AdjustPaneSize { 'Up', 1 },
     },
     {
       key = 'DownArrow',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.AdjustPaneSize { 'Down', 1 },
+      action = act.AdjustPaneSize { 'Down', 1 },
     },
     {
       key = 'LeftArrow',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.AdjustPaneSize { 'Left', 1 },
+      action = act.AdjustPaneSize { 'Left', 1 },
     },
     {
       key = 'RightArrow',
       mods = 'SHIFT|ALT',
-      action = wezterm.action.AdjustPaneSize { 'Right', 1 },
+      action = act.AdjustPaneSize { 'Right', 1 },
+    },
+  },
+  mouse_bindings = {
+    -- Bind 'Up' event of CTRL-Click to open hyperlinks
+    {
+      event = { Up = { streak = 1, button = 'Left' } },
+      mods = 'CTRL',
+      action = act.OpenLinkAtMouseCursor,
+    },
+    -- Disable the 'Down' event of CTRL-Click to avoid weird program behaviors
+    {
+      event = { Down = { streak = 1, button = 'Left' } },
+      mods = 'CTRL',
+      action = act.Nop,
     },
   }
 }

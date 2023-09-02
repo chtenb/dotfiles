@@ -5,6 +5,8 @@ line-number = "relative"
 soft-wrap.enable = true
 shell = ["nu", "--stdin", "-c"]
 auto-pairs = false
+#mouse = false
+gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
 
 [editor.indent-guides]
 render = true
@@ -52,6 +54,8 @@ hidden = false
 "H" = ["collapse_selection", "select_mode", "goto_line_start", "exit_select_mode"]
 "L" = ["collapse_selection", "select_mode", "goto_line_end", "exit_select_mode"]
 
+"F2" = "rename_symbol"
+"F3" = ":format"
 "F12" = "goto_definition"
 "S-F12" = "goto_reference"
 

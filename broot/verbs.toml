@@ -2,56 +2,36 @@
 # This file contains the verb definitions for broot
 # Doc at https://dystroy.org/broot/verbs/
 
-# [[verbs]]
-# Example 1: launching `tail -n` on the selected file (leaving broot)
-# name = "tail_lines"
-# invocation = "tl {lines_count}"
-# execution = "tail -f -n {lines_count} {file}"
-
-# [[verbs]]
-# Example 2: creating a new file without leaving broot
-# name = "touch"
-# invocation = "touch {new_file}"
-# execution = "touch {directory}/{new_file}"
-# leave_broot = false
-
-# TODO: use br like a file picker and have several wrapper commands that
-# "define" what the enter key does
-#[[verbs]]
-## A standard recommended command for editing files
-#invocation = "edit"
+[[verbs]]
+# A standard recommended command for editing files
+invocation = "edit"
 #keys = ["enter"]
-#shortcut = "e"
-#execution = "$EDITOR {file}:{line}"
-#apply_to = "file"
-#leave_broot = false
-#
-#[[verbs]]
-## CD to a folder
-#invocation = "cd"
-#keys = ["ctrl-enter"]
-#shortcut = "ol"
-#apply_to = "directory"
-#leave_broot = true
-#internal = ":open_leave"
-#
-#[[verbs]]
-## open file and exit broot
-#invocation = "open_leave"
-#keys = ["ctrl-enter"]
-#shortcut = "ol"
-#apply_to = "file"
-#leave_broot = true
-#internal = ":open_leave"
+shortcut = "e"
+execution = "$EDITOR {file}:{line}"
+apply_to = "file"
+leave_broot = false
 
 [[verbs]]
 # print path and exit broot
 invocation = "print_path"
 keys = ["enter"]
 shortcut = "pp"
-apply_to = "any"
+apply_to = "file"
 leave_broot = true
 internal = ":print_path"
+
+[[verbs]]
+# Example 1: launching `tail -n` on the selected file (leaving broot)
+name = "tail_lines"
+invocation = "tl {lines_count}"
+execution = "tail -f -n {lines_count} {file}"
+
+[[verbs]]
+# Example 2: creating a new file without leaving broot
+name = "touch"
+invocation = "touch {new_file}"
+execution = "touch {directory}/{new_file}"
+leave_broot = false
 
 [[verbs]]
 invocation = "create {subpath}"
