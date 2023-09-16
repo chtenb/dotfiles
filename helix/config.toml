@@ -10,21 +10,21 @@ gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
 bufferline = "multiple"
 color-modes = true
 
-[editor.indent-guides]
-render = true
-skip-levels = 1
+# [editor.indent-guides]
+# render = false
+# skip-levels = 1
 
 [editor.whitespace.render]
 ndsp = "all"
 tab = "all"
-#space = "all"
-#newline = "all"
+space = "all"
+newline = "all"
 
-#[editor.whitespace.characters]
-#space = "·"
-#nbsp = "⍽"
-#tab = "→"
-#newline = "⏎"
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
 #tabpad = "·"
 
 [editor.file-picker]
@@ -49,6 +49,9 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "X" = "extend_to_line_bounds"
 "x" = ["extend_to_line_bounds", "trim_selections"]
 
+"A-;" = "collapse_selection"
+";" = "flip_selections"
+
 "ret" = ["open_below", "normal_mode"]
 "H" = ["collapse_selection", "select_mode", "goto_line_start", "exit_select_mode"]
 "L" = ["collapse_selection", "select_mode", "goto_line_end", "exit_select_mode"]
@@ -57,6 +60,10 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "F3" = ":format"
 "F12" = "goto_definition"
 "S-F12" = "goto_reference"
+
+
+"left" = "goto_previous_buffer"
+"right" = "goto_next_buffer"
 
 [keys.select]
 "," = "repeat_last_motion"
@@ -69,12 +76,19 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "X" = "extend_to_line_bounds"
 "x" = ["extend_to_line_bounds", "trim_selections"]
 
+"A-;" = "collapse_selection"
+";" = "flip_selections"
+
 "H" = ["goto_line_start"]
 "L" = ["goto_line_end"]
 
+"g" = { "e" = "goto_file_end" }
+
 [keys.normal.space]
+"q" = ":bc"
 F = "file_picker_in_current_buffer_directory"
 e = """
-:sh echo `echo $':open (broot)\r' | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left); exit\r` 
+:sh echo `echo $':open "(broot)"\r' | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left); exit\r` 
   | wezterm cli send-text --pane-id (wezterm cli split-pane --right --percent 33) --no-paste
 """
+z = ":toggle gutters.line-numbers.min-width 48 3"

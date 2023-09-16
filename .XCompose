@@ -848,6 +848,7 @@
 
 # block U+209x
 <Multi_key> <underscore> <a>	       : "ₐ"  U2090	  # LATIN SUBSCRIPT SMALL LETTER A
+<Multi_key> <underscore> <b>	       : "ₐ"  U2090	  # LATIN SUBSCRIPT SMALL LETTER A
 <Multi_key> <underscore> <e>	       : "ₑ"  U2091	  # LATIN SUBSCRIPT SMALL LETTER E
 <Multi_key> <underscore> <o>	       : "ₒ"  U2092	  # LATIN SUBSCRIPT SMALL LETTER O
 <Multi_key> <underscore> <x>	       : "ₓ"  U2093	  # LATIN SUBSCRIPT SMALL LETTER X
@@ -1118,6 +1119,7 @@
 # @ for dingbats?
 <Multi_key> <at> <slash>	:	"✓"	U2713	# CHECK MARK
 <Multi_key> <at> <at> <slash>	:	"✔"	U2714	# HEAVY CHECK MARK
+<Multi_key> <at> <at> <backslash>	:	"✅"	U2705	# FILLED HEAVY CHECK MARK
 <Multi_key> <at> <X>  		:	"✗"	U2717	# BALLOT X
 <Multi_key> <at> <at> <X>	:	"✘"	U2718	# HEAVY BALLOT X
 <Multi_key> <at> <parenleft>    :       "❨"     U2768   # MEDIUM LEFT PARENTHESIS ORNAMENT
@@ -2382,7 +2384,7 @@
 <Multi_key> <A> <diaeresis> 		: "Ä"   Adiaeresis # LATIN CAPITAL LETTER A WITH DIAERESIS
 <dead_abovering> <A>             	: "Å"   Aring # LATIN CAPITAL LETTER A WITH RING ABOVE
 <Multi_key> <o> <A>              	: "Å"   Aring # LATIN CAPITAL LETTER A WITH RING ABOVE
-<Multi_key> <asterisk> <A> 		: "Å"   Aring # LATIN CAPITAL LETTER A WITH RING ABOVE
+#<Multi_key> <asterisk> <A> 		: "Å"   Aring # LATIN CAPITAL LETTER A WITH RING ABOVE
 <Multi_key> <A> <asterisk> 		: "Å"   Aring # LATIN CAPITAL LETTER A WITH RING ABOVE
 <Multi_key> <A> <A> 			: "Å"   Aring # LATIN CAPITAL LETTER A WITH RING ABOVE
 <dead_cedilla> <C>               	: "Ç"   Ccedilla # LATIN CAPITAL LETTER C WITH CEDILLA
@@ -2507,7 +2509,7 @@
 <Multi_key> <a> <diaeresis> 		: "ä"   adiaeresis # LATIN SMALL LETTER A WITH DIAERESIS
 <dead_abovering> <a>             	: "å"   aring # LATIN SMALL LETTER A WITH RING ABOVE
 <Multi_key> <o> <a>              	: "å"   aring # LATIN SMALL LETTER A WITH RING ABOVE
-<Multi_key> <asterisk> <a> 		: "å"   aring # LATIN SMALL LETTER A WITH RING ABOVE
+#<Multi_key> <asterisk> <a> 		: "å"   aring # LATIN SMALL LETTER A WITH RING ABOVE
 <Multi_key> <a> <asterisk> 		: "å"   aring # LATIN SMALL LETTER A WITH RING ABOVE
 <Multi_key> <a> <a> 			: "å"   aring # LATIN SMALL LETTER A WITH RING ABOVE
 <dead_cedilla> <c>               	: "ç"   ccedilla # LATIN SMALL LETTER C WITH CEDILLA
@@ -3015,11 +3017,11 @@
 <Multi_key> <b> <u>              	: "ŭ"   U016D # LATIN SMALL LETTER U WITH BREVE
 <dead_abovering> <U>             	: "Ů"   U016E # LATIN CAPITAL LETTER U WITH RING ABOVE
 <Multi_key> <o> <U>              	: "Ů"   U016E # LATIN CAPITAL LETTER U WITH RING ABOVE
-<Multi_key> <asterisk> <U> 		: "Ů"   U016E # LATIN CAPITAL LETTER U WITH RING ABOVE
+#<Multi_key> <asterisk> <U> 		: "Ů"   U016E # LATIN CAPITAL LETTER U WITH RING ABOVE
 <Multi_key> <U> <asterisk> 		: "Ů"   U016E # LATIN CAPITAL LETTER U WITH RING ABOVE
 <dead_abovering> <u>             	: "ů"   U016F # LATIN SMALL LETTER U WITH RING ABOVE
 <Multi_key> <o> <u>              	: "ů"   U016F # LATIN SMALL LETTER U WITH RING ABOVE
-<Multi_key> <asterisk> <u> 		: "ů"   U016F # LATIN SMALL LETTER U WITH RING ABOVE
+#<Multi_key> <asterisk> <u> 		: "ů"   U016F # LATIN SMALL LETTER U WITH RING ABOVE
 <Multi_key> <u> <asterisk> 		: "ů"   U016F # LATIN SMALL LETTER U WITH RING ABOVE
 <dead_doubleacute> <U>           	: "Ű"   U0170 # LATIN CAPITAL LETTER U WITH DOUBLE ACUTE
 <Multi_key> <equal> <U>          	: "Ű"   U0170 # LATIN CAPITAL LETTER U WITH DOUBLE ACUTE
@@ -3279,7 +3281,7 @@
 <dead_acute> <Multi_key> <o> <A> 	: "Ǻ"   U01FA # LATIN CAPITAL LETTER A WITH RING ABOVE AND ACUTE
 <Multi_key> <acute> <dead_abovering> <A> 	: "Ǻ"   U01FA # LATIN CAPITAL LETTER A WITH RING ABOVE AND ACUTE
 <Multi_key> <apostrophe> <dead_abovering> <A> 	: "Ǻ"   U01FA # LATIN CAPITAL LETTER A WITH RING ABOVE AND ACUTE
-<Multi_key> <asterisk> <apostrophe> <A> 	: "Ǻ"   U01FA # LATIN CAPITAL LETTER A WITH RING ABOVE AND ACUTE
+#<Multi_key> <asterisk> <apostrophe> <A> 	: "Ǻ"   U01FA # LATIN CAPITAL LETTER A WITH RING ABOVE AND ACUTE
 <dead_acute> <aring>             	: "ǻ"   U01FB # LATIN SMALL LETTER A WITH RING ABOVE AND ACUTE
 <Multi_key> <acute> <aring>      	: "ǻ"   U01FB # LATIN SMALL LETTER A WITH RING ABOVE AND ACUTE
 <Multi_key> <apostrophe> <aring> 	: "ǻ"   U01FB # LATIN SMALL LETTER A WITH RING ABOVE AND ACUTE
@@ -3287,7 +3289,7 @@
 <dead_acute> <Multi_key> <o> <a> 	: "ǻ"   U01FB # LATIN SMALL LETTER A WITH RING ABOVE AND ACUTE
 <Multi_key> <acute> <dead_abovering> <a> 	: "ǻ"   U01FB # LATIN SMALL LETTER A WITH RING ABOVE AND ACUTE
 <Multi_key> <apostrophe> <dead_abovering> <a> 	: "ǻ"   U01FB # LATIN SMALL LETTER A WITH RING ABOVE AND ACUTE
-<Multi_key> <asterisk> <apostrophe> <a> 	: "ǻ"   U01FB # LATIN SMALL LETTER A WITH RING ABOVE AND ACUTE
+#<Multi_key> <asterisk> <apostrophe> <a> 	: "ǻ"   U01FB # LATIN SMALL LETTER A WITH RING ABOVE AND ACUTE
 <dead_acute> <AE>                	: "Ǽ"   U01FC # LATIN CAPITAL LETTER AE WITH ACUTE
 <Multi_key> <acute> <AE>         	: "Ǽ"   U01FC # LATIN CAPITAL LETTER AE WITH ACUTE
 <Multi_key> <apostrophe> <AE>    	: "Ǽ"   U01FC # LATIN CAPITAL LETTER AE WITH ACUTE

@@ -1,0 +1,16 @@
+[language-server]
+# relevant defaults:
+# csharp-ls = { command = "csharp-ls" }
+# omnisharp = { command = "OmniSharp", args = [ "--languageserver" ] }
+# omnisharp = { command = "OmniSharp", args = [ "--languageserver" ], timeout = 30 }
+omnisharp = { command = "dotnet", args = [ "C:/Program Files/OmniSharp/OmniSharp.dll", "--languageserver" ], timeout = 30 }
+
+[[language]]
+name = "c-sharp"
+auto-format = false
+language-servers = [ "omnisharp" ]
+
+[[language]]
+name = "markdown"
+text-width = 100
+soft-wrap = { enable = true, wrap-at-text-width = true }

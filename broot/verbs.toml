@@ -5,11 +5,16 @@
 [[verbs]]
 # A standard recommended command for editing files
 invocation = "edit"
-#keys = ["enter"]
+#keys = ["Right"]
 shortcut = "e"
 execution = "$EDITOR {file}:{line}"
 apply_to = "file"
 leave_broot = false
+
+[[verbs]]
+# Unbind annoying shortcut
+internal = ":close_panel_cancel"
+keys = []
 
 [[verbs]]
 # print path and exit broot

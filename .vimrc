@@ -81,20 +81,21 @@ call vundle#begin()
 " required!
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 if has("gui_running")
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'airblade/vim-gitgutter'
 "Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'SirVer/ultisnips'
-Plugin 'bling/vim-airline'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'bling/vim-airline'
 endif
 Plugin 'dylanaraps/fff.vim'
+"Plugin 'OmniSharp/omnisharp-vim'
 " Class browser
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'honza/vim-snippets'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'scrooloose/nerdtree'
+Plugin 'chtenb/vim-autoformat'
+"Plugin 'honza/vim-snippets'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'corntrace/bufexplorer'
 Plugin 'xolox/vim-misc'
@@ -112,7 +113,7 @@ Plugin 'drmikehenry/vim-fontsize'
 "Plugin 'xolox/vim-easytags'
 " Automatic detect tab indent settings
 "Plugin 'tpope/vim-sleuth'
-Plugin 'Chiel92/vim-visgo'
+Plugin 'chtenb/vim-visgo'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'tpope/vim-unimpaired'
 " Matchit
@@ -138,7 +139,7 @@ Plugin 'xolox/vim-reload'
 " Colors
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'chriskempson/base16-vim'
+"Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'ajh17/Spacegray.vim'
@@ -160,7 +161,7 @@ Plugin 'einars/js-beautify'
 Plugin 'sillyotter/t4-vim'
 Plugin 'adamclerk/vim-razor'
 Plugin 'lervag/vimtex'
-Plugin 'Chiel92/vim-tsv'
+Plugin 'chtenb/vim-tsv'
 Plugin 'vim-scripts/w3af.vim'
 
 call vundle#end()             " required
@@ -206,7 +207,7 @@ set smartcase       " Do smart case matching
 set hlsearch        " Incremental search
 set autowrite       " Automatically save before commands like :next and :make
 set hidden          " Hide buffers when they are abandoned
-set mouse=a         " Enable mouse usage (all modes)
+"set mouse=a         " Enable mouse usage (all modes)
 set lazyredraw      " Don't update the display while executing macros
 set gdefault        " auto g flag for substitution
 set autochdir       " Autochange working directory when opening new file
@@ -354,10 +355,10 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 
 
 " Color settings
-set background=dark
+"set background=light
 
-let g:spacegray_underline_search = 1
-let g:spacegray_use_italics = 1
+"let g:spacegray_underline_search = 1
+"let g:spacegray_use_italics = 1
 "let g:spacegray_low_contrast = 1
 
 "Some settings for the GUI
@@ -379,13 +380,13 @@ if has("gui_running")
         set guifont=mono\ 10
     endif
 else
-    colorscheme Tomorrow-Night
+    colorscheme default
 endif
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 
 "
@@ -455,3 +456,5 @@ augroup XML
     autocmd FileType xml setlocal foldmethod=indent foldlevelstart=3 foldminlines=3
 augroup END
 
+map <F4> :mapclear!<CR>:source ~/.vimrc<CR>
+source ~/dotfiles/helix.vim

@@ -29,6 +29,7 @@ return {
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
+  -- allow_win32_input_mode = false,
 
   -- For connecting to a unix pty
   -- https://wezfurlong.org/wezterm/multiplexing.html#unix-domains

@@ -46,3 +46,17 @@ def anonymize [pattern] {
     }
 }
 
+def repostat [] {
+  ls ~/prj/RMFMagic* | each {|it| cd $it.name; print (pwd | path basename); print (g st) } | ignore
+}
+
+def "g st" [] {
+  let lines =  git status -sb | lines
+  $lines.0 | print
+  $lines | skip 1 | wrap text | insert type {|it| ($it.text | ansi strip | str substring 0..2) } | insert order {|it| match $it.type { "??" => 0, "UU" => 1, $t if $t =~ ' \S'  => 2, "MM" => 3, _ => 4 } } | sort-by -r order | get text | str join "\n"
+}
+
+def logtail [file] {
+  tail -f $file | bat --paging=never -l log
+}
+

@@ -1,3 +1,5 @@
+[credential "https://github.com"]
+    username = chtenb
 [user]
     name = chtenb
     email = ctenbrinke@gmail.com
@@ -24,6 +26,25 @@
 
     l = "!f() { branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name ${branch}@{upstream} 2>/dev/null); git log -10 --notes --graph --abbrev-commit --decorate --left-right --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)' ${branch} ${upstream:+$upstream} ${@:2}; }; f"
     sup = submodule update --init --recursive
+    
+    #st = status
+    
+    st = "!f() { \
+        git status -sb | head -n 1; \
+        git status --porcelain | tail -n +1 | awk 'BEGIN { FS=\"[ ]+\" } { \
+            status = substr($0, 1, 2); \
+            path = substr($0, 4); \
+            if(status == \"??\") symbol = \"?\"; \
+            else if(status == \"A \") symbol = \"+\"; \
+            else if(status == \" M\") symbol = \"✏️\"; \
+            else if(status == \"M \") symbol = \"🖍\"; \
+            else if(status == \" D\") symbol = \"🗑️\"; \
+            else if(status == \" R\") symbol = \"🔀\"; \
+            else if(status == \"UU\") symbol = \"🔥\"; \
+            else symbol = status; \
+       }'; \
+    }; f"
+    
     last = log -1 --stat
 
     c = "!f() { ~/dotfiles/interactive-git-checkout/git_checkout.py; }; f"
@@ -38,7 +59,6 @@
     cp = cherry-pick
     co = checkout
     ci = commit
-    st = status
     br = branch
     rb = rebase
     
@@ -91,7 +111,7 @@
 
 
 [merge]
-    tool = meld
+    tool = kdiff3
     conflictstyle = diff3
 [mergetool]
     keeptemporaries = false
