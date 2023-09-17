@@ -31,10 +31,12 @@ xnoremap j vgjv
 xnoremap <Down> vgjv
 xnoremap k vgkv
 xnoremap <Up> vgkv
+" All commands using marks must make sure to overwrite a,b,c before usage.
+" Note that [` and ]` will break if any other lowercase marks are in use.
 xnoremap e vmaembviwovbviwvlmc`blmbhvl[`o
 xnoremap E vmaEmbviWovBviWvlmc`blmbhvl[`o
-xnoremap w v:echo "Not implemented"<CR>gsgv
-xnoremap W v:echo "Not implemented"<CR>gsgv
+xnoremap w vmalwhmb`aeviwovmc`blmbhvl[`o
+xnoremap W vmalWhmb`aEviWovmc`blmbhvl[`o
 xnoremap b vmabmbviwveviwovhmc`bhmblvh]`o
 xnoremap B vmaBmbviWovEviWvhmc`bhmblvh]`o
 xnoremap t vvt
@@ -136,7 +138,7 @@ xnoremap * v:echo "Not implemented"<CR>gsgv
 xnoremap gg vggv
 xnoremap ge vGv
 xnoremap gf vgfv
-xnoremap gl v$hv
+xnoremap gl v$v
 xnoremap gh v0v
 xnoremap gs v^v
 xnoremap gt vHv
