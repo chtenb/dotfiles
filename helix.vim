@@ -1,17 +1,20 @@
 """""""""""""""""""
 " Helix emulation "
 """""""""""""""""""
-
 set notimeout
 " Do not restrict movements to lines
 set whichwrap=<,>,h,l,[,]
 " Enter helix/visual mode by default
 au BufEnter <Esc>:normal! <Esc>v<CR>
 
+" nullify all existing visual keys
+source ~/dotfiles/unmap.vim
+
 " No range selections in command mode
-xmap : v:
+xnoremap : v:
 " Re-enter visual mode after command/insert mode
-cmap <CR> <CR>gsv
+cmap <CR> <CR>v
+cmap <Esc> <Esc>v
 inoremap <Esc> <Esc>v
 " F1 to exit helix/visual mode
 xnoremap <Esc> <nop>
@@ -33,6 +36,8 @@ xnoremap k vgkv
 xnoremap <Up> vgkv
 " All commands using marks must make sure to overwrite a,b,c before usage.
 " Note that [` and ]` will break if any other lowercase marks are in use.
+" TODO: the following keys do not behave the same as Helix around newlines
+" TODO: make sure movement near file start or end does not break out of helix mode
 xnoremap e vmaembviwovbviwvlmc`blmbhvl[`o
 xnoremap E vmaEmbviWovBviWvlmc`blmbhvl[`o
 xnoremap w vmalwhmb`aeviwovmc`blmbhvl[`o
@@ -57,10 +62,7 @@ xnoremap <C-i> v<C-i>v
 xnoremap <C-o> v<C-o>v
 
 " Changes
-"xnoremap r r TODO generate for all keys
-" Perhaps I can leverage omap to make sure nothing is cancelled
-" and reduce the amount of generations.
-" omap ... ...v
+source ~/dotfiles/replace.vim
 xnoremap R "0pv
 xnoremap ~ ~gv
 xnoremap ` ugv
@@ -128,11 +130,11 @@ xnoremap <A-p> v:echo "Not supported in VIM"<CR>gsgv
 xnoremap <A-n> v:echo "Not supported in VIM"<CR>gsgv
 
 " Search
-xnoremap / v:echo "Not implemented"<CR>gsgv
-xnoremap ? v:echo "Not implemented"<CR>gsgv
-xnoremap n v:echo "Not implemented"<CR>gsgv
-xnoremap N v:echo "Not implemented"<CR>gsgv
-xnoremap * v:echo "Not implemented"<CR>gsgv
+"xnoremap / v/
+xnoremap ? v?
+xnoremap n vnv
+xnoremap N vNv
+xnoremap * v*v
 
 " Goto
 xnoremap gg vggv
@@ -182,20 +184,24 @@ xnoremap <Space>R "*pv
 " TODO: generate for all movement keys
 xnoremap vv <nop>
 xnoremap v<Esc> <nop>
-xnoremap v_l l
-xnoremap v_h h
-xnoremap v_j gj
-xnoremap v_k gk
-xnoremap v_e e
-xnoremap v_w w
-xnoremap v_b b
-xmap vl v_lv
-xmap vh v_hv
-xmap vj v_jv
-xmap vk v_kv
-xmap ve v_ev
-xmap vw v_wv
-xmap vb v_bv
+
+xnoremap Zl l
+xnoremap Zh h
+xnoremap Zj gj
+xnoremap Zk gk
+xnoremap Ze e
+xnoremap Zw w
+xnoremap Zb b
+
+xmap vl Zlv
+xmap vl Zlv
+xmap vh Zhv
+xmap vj Zjv
+xmap vk Zkv
+xmap ve Zev
+xmap vw Zwv
+xmap vb Zbv
+
 
 " Character jumps
 " TODO: generate for each character

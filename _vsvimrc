@@ -22,7 +22,8 @@ set autoindent
 "Disable annoying record mode
 "nnoremap q <nop>
 " Decent save shortcut
-nnoremap <C-s> :w<CR>
+nmap <C-s> :w<CR>
+vmap <C-s> :w<CR>
 " Give Y a sane meaning
 nnoremap Y y$
 " Give U a sane meaning and avoid conflicts with resharper
@@ -35,7 +36,8 @@ nnoremap Q <C-v>
 " Visual Studio specific
 set backspace=start
 nmap <F3> :vsc Edit.FormatDocument<CR>
-nmap <F4> :mapclear!<CR>:source ~/_vsvimrc<CR>
+nmap <F4> :mapclear!<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>
+vmap <F4> :mapclear!<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>
 vmap <F3> :vsc Edit.FormatSelection<CR>
 nmap <C-O> :vsc View.NavigateBackward<CR>
 nmap <C-I> :vsc View.NavigateForward<CR>
@@ -46,3 +48,14 @@ nmap <C-]> :vsc Edit.GoToDefinition<CR>
 nmap s :vsc Tools.InvokeAceJumpCommand<CR>
 
 source ~/dotfiles/helix.vim
+" workarounds
+xnoremap / v:norm! /<CR>
+"xnoremap : v:
+xnoremap ? v?
+"xnoremap n vnv
+"xnoremap N vNv
+"xnoremap * v*v
+
+" TODO: add special cases for VsVim multiple selections
+" https://github.com/VsVim/VsVim/blob/master/Documentation/Multiple%20Selections.md
+

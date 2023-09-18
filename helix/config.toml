@@ -40,7 +40,7 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 
 [keys.normal]
 "," = "repeat_last_motion"
-"S-esc" = "keep_primary_selection"
+"S-esc" = ["normal_mode", "keep_primary_selection"]
 "C-s" = ["save_selection", ":w"]
 "A-s" = "save_selection"
 "C-q" = ":quit"

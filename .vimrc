@@ -263,10 +263,12 @@ let g:multi_cursor_exit_from_insert_mode=0
 
 
 " Decent quit shortcut
-nnoremap <C-q> :q<CR>
+nmap <C-q> :q<CR>
+vmap <C-q> :q<CR>
 " Decent save shortcut
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <esc>:w<CR>i
+nmap <C-s> :w<CR>
+vmap <C-s> :w<CR>
+imap <C-s> <esc>:w<CR>i
 " Disable ex mode, it's useless and annoying
 nnoremap Q <nop>
 " Give Y a sane meaning
