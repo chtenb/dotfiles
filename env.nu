@@ -56,6 +56,17 @@ $env.BAT_CONFIG_DIR = if (sys).host.name == "Windows" {
   '/home/chiel/dotfiles/bat'
 }
 
+# const WINDOWS_CONFIG = "my_windows_config.nu"
+# const UNIX_CONFIG = "my_unix_config.nu"
+
+# const ACTUAL_CONFIG = if $nu.os-info.name == "windows" {
+#     $WINDOWS_CONFIG
+# } else {
+#     $UNIX_CONFIG
+# }
+
+# source $ACTUAL_CONFIG
+
 $env.LC_ALL = "en_US.UTF-8"
 
 

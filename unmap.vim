@@ -1,62 +1,66 @@
 " Disable all visual mode keybindings that take you out of visual mode
-vunmap <Esc>
-vunmap v
-vunmap V
-vunmap <C-v>
-vunmap y
-vunmap Y
-vunmap d
-vunmap D
-vunmap c
-vunmap C
-vunmap x
-vunmap X
-vunmap s
-vunmap S
-vunmap >
-vunmap <
-vunmap ~
-vunmap J
-vunmap U
-vunmap r
-vunmap R
-vunmap o
-vunmap O
-vunmap :
-vunmap =
-vunmap gq
-vunmap !
-vunmap &
-vunmap A
-vunmap I
-vunmap p
-vunmap P
-vunmap _
-vunmap *
-vunmap #
-"vunmap $
-"vunmap ^
-vunmap n
-vunmap N
-vunmap `
-vunmap '
-vunmap /
-vunmap ?
-vunmap u
-vunmap <C-g>
-vunmap ]
-vunmap [
-vunmap <C-a>
-vunmap <C-x>
-vunmap <C-o>
-vunmap <C-u>
-vunmap <C-d>
-vunmap <C-b>
-vunmap <C-f>
-vunmap <C-y>
-vunmap <C-e>
-"vunmap <C-^>
-vunmap zz
-vunmap zt
-vunmap zb
-vunmap <C-w>
+" and destroy your selection
+vnoremap <Esc> <nop>
+vnoremap v <nop>
+vnoremap V <nop>
+vnoremap <C-v> <nop>
+vnoremap y <nop>
+vnoremap Y <nop>
+vnoremap d <nop>
+vnoremap D <nop>
+vnoremap c <nop>
+vnoremap C <nop>
+vnoremap x <nop>
+vnoremap X <nop>
+vnoremap s <nop>
+vnoremap S <nop>
+vnoremap > <nop>
+vnoremap < <nop>
+vnoremap ~ <nop>
+vnoremap J <nop>
+vnoremap U <nop>
+vnoremap r <nop>
+vnoremap R <nop>
+vnoremap o <nop>
+vnoremap O <nop>
+vnoremap : <nop>
+vnoremap = <nop>
+vnoremap gq <nop>
+vnoremap ! <nop>
+vnoremap & <nop>
+vnoremap A <nop>
+vnoremap I <nop>
+vnoremap p <nop>
+vnoremap P <nop>
+vnoremap _ <nop>
+vnoremap * <nop>
+vnoremap # <nop>
+"vnoremap $ <nop>
+"vnoremap ^ <nop>
+vnoremap n <nop>
+vnoremap N <nop>
+vnoremap ` <nop>
+vnoremap ' <nop>
+vnoremap / <nop>
+vnoremap ? <nop>
+vnoremap u <nop>
+vnoremap <C-g> <nop>
+vnoremap ] <nop>
+vnoremap [ <nop>
+vnoremap <C-a> <nop>
+vnoremap <C-x> <nop>
+vnoremap <C-o> <nop>
+vnoremap <C-u> <nop>
+vnoremap <C-d> <nop>
+vnoremap <C-b> <nop>
+vnoremap <C-f> <nop>
+vnoremap <C-y> <nop>
+vnoremap <C-e> <nop>
+"vnoremap <C-^> <nop>
+vnoremap zz <nop>
+vnoremap zt <nop>
+vnoremap zb <nop>
+vnoremap <C-w> <nop>
+" Disable all normal mode binding which leave Vim in operator mode
+nnoremap = <nop>
+

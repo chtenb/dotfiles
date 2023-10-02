@@ -15,10 +15,10 @@ color-modes = true
 # skip-levels = 1
 
 [editor.whitespace.render]
-ndsp = "all"
-tab = "all"
-space = "all"
-newline = "all"
+#ndsp = "all"
+#tab = "all"
+#space = "all"
+#newline = "all"
 
 [editor.whitespace.characters]
 space = "·"
@@ -38,21 +38,24 @@ left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modificatio
 center = []
 right = ["diagnostics", "version-control", "register", "position", "file-type", "file-encoding", "file-line-ending"]
 
+[keys.insert]
+"S-esc" = ["normal_mode", "keep_primary_selection"]
+
 [keys.normal]
 "," = "repeat_last_motion"
 "S-esc" = ["normal_mode", "keep_primary_selection"]
 "C-s" = ["save_selection", ":w"]
-"A-s" = "save_selection"
+#"A-s" = "save_selection"
 "C-q" = ":quit"
 "C-/" = "toggle_comments"
 "C-6" = "goto_last_accessed_file"
 "X" = "extend_to_line_bounds"
 "x" = ["extend_to_line_bounds", "trim_selections"]
 
-"A-;" = "collapse_selection"
-";" = "flip_selections"
+#"A-;" = "collapse_selection"
+#";" = "flip_selections"
 
-"ret" = ["open_below", "normal_mode"]
+#"ret" = ["open_below", "normal_mode"]
 "H" = ["collapse_selection", "select_mode", "goto_line_start", "exit_select_mode"]
 "L" = ["collapse_selection", "select_mode", "goto_line_end", "exit_select_mode"]
 
@@ -62,22 +65,22 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "S-F12" = "goto_reference"
 
 
-"left" = "goto_previous_buffer"
-"right" = "goto_next_buffer"
+#"left" = "goto_previous_buffer"
+#"right" = "goto_next_buffer"
 
 [keys.select]
 "," = "repeat_last_motion"
 "S-esc" = "keep_primary_selection"
 "C-s" = ["save_selection", ":w"]
-"A-s" = "save_selection"
+#"A-s" = "save_selection"
 "C-q" = ":quit"
 "C-/" = "toggle_comments"
 "C-6" = "goto_last_accessed_file"
 "X" = "extend_to_line_bounds"
 "x" = ["extend_to_line_bounds", "trim_selections"]
 
-"A-;" = "collapse_selection"
-";" = "flip_selections"
+#"A-;" = "collapse_selection"
+#";" = "flip_selections"
 
 "H" = ["goto_line_start"]
 "L" = ["goto_line_end"]
@@ -92,3 +95,4 @@ e = """
   | wezterm cli send-text --pane-id (wezterm cli split-pane --right --percent 33) --no-paste
 """
 z = ":toggle gutters.line-numbers.min-width 48 3"
+i = "hover"

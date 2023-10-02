@@ -42,7 +42,7 @@ def anonymize [pattern] {
         | insert new {|it| $"anon($it.index)"})
     
     $replacements | reduce --fold $input {|it, acc|
-        $acc | str replace --all --string $it.item $it.new
+        $acc | str replace --all $it.item $it.new
     }
 }
 

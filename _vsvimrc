@@ -36,8 +36,8 @@ nnoremap Q <C-v>
 " Visual Studio specific
 set backspace=start
 nmap <F3> :vsc Edit.FormatDocument<CR>
-nmap <F4> :mapclear!<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>
-vmap <F4> :mapclear!<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>
+nnoremap <F4> :mapclear!<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>
+vnoremap <F4> <Esc><Esc>:mapclear!<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>gv
 vmap <F3> :vsc Edit.FormatSelection<CR>
 nmap <C-O> :vsc View.NavigateBackward<CR>
 nmap <C-I> :vsc View.NavigateForward<CR>
@@ -45,16 +45,55 @@ nmap <C-]> :vsc Edit.GoToDefinition<CR>
 "nmap <C-L> :vsc Window.NextTab<CR>
 "nmap <C-H> :vsc Window.PreviousTab<CR>
 "nmap ? :vsc Edit.IncrementalSearch<CR>
-nmap s :vsc Tools.InvokeAceJumpCommand<CR>
+"nmap s :vsc Tools.InvokeAceJumpCommand<CR>
 
 source ~/dotfiles/helix.vim
-" workarounds
-xnoremap / v:norm! /<CR>
-"xnoremap : v:
-xnoremap ? v?
-"xnoremap n vnv
-"xnoremap N vNv
-"xnoremap * v*v
+
+" workarounds for bugs and limitations of VsVim
+set noincsearch
+" We can't properly remap /
+" https://github.com/VsVim/VsVim/issues/3068
+" Instead, we map the enter key to a suboptimal binding (loses selection)
+cnoremap <CR> <CR><Esc>v
+xnoremap / /
+xnoremap ? ?
+xnoremap n vgn
+xnoremap N vgN
+xnoremap * v*v
+
+noremap L <Esc>v$h
+noremap H <Esc>v0
+
+xnoremap a v`>ha
+xnoremap <A-:> v`<v`>h
+
+" Visual Studio support
+noremap gn :vsc Window.NextTab<CR>
+noremap gp :vsc Window.PreviousTab<CR>
+noremap gd :vsc Edit.GoToDefinition<CR>
+noremap <C-O> <Esc>:vsc View.NavigateBackward<CR>
+noremap <C-I> <Esc>:vsc View.NavigateForward<CR>
+nnoremap <A-O> :vsc Edit.ExpandSelection<CR>
+xnoremap <A-O> :vsc Edit.ExpandSelection<CR>
+noremap <A-I> :vsc Edit.ContractSelection<CR>
+"noremap <A-O> :vsc Edit.SubwordExpandSelection<CR>
+noremap <space>i <Esc>:vsc Edit.QuickInfo<CR>
+
+noremap ]f :vsc Edit.NextMethod<CR>
+noremap [f :vsc Edit.PreviousMethod<CR>
+noremap ms :vsc Edit.SurroundWith<CR>
+
+" Experiments
+nnoremap w wviwo
+xnoremap w vwviwo
+nnoremap W WviWo
+xnoremap W vWviWo
+" TODO: these alt keys do not work, though it seems they should:
+" https://github.com/VsVim/VsVim/issues/806
+nnoremap <A-w> bviwo
+xnoremap <A-w> vbviwo
+nnoremap <A-W> BviWo
+xnoremap <A-W> vBviWo
 
 " TODO: add special cases for VsVim multiple selections
 " https://github.com/VsVim/VsVim/blob/master/Documentation/Multiple%20Selections.md

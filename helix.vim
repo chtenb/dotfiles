@@ -1,11 +1,11 @@
 """""""""""""""""""
 " Helix emulation "
 """""""""""""""""""
+" TODO: checkout https://vimhelp.org/options.txt.html#%27selection%27
+" and https://vimhelp.org/options.txt.html#%27virtualedit%27
 set notimeout
 " Do not restrict movements to lines
 set whichwrap=<,>,h,l,[,]
-" Enter helix/visual mode by default
-au BufEnter <Esc>:normal! <Esc>v<CR>
 
 " nullify all existing visual keys
 source ~/dotfiles/unmap.vim
@@ -13,27 +13,27 @@ source ~/dotfiles/unmap.vim
 " No range selections in command mode
 xnoremap : v:
 " Re-enter visual mode after command/insert mode
-cmap <CR> <CR>v
-cmap <Esc> <Esc>v
-inoremap <Esc> <Esc>v
-" F1 to exit helix/visual mode
+cnoremap <CR> <CR>
+cnoremap <Esc> <Esc>
+inoremap <Esc> <Esc>
+" F1 to exit vim visual mode
 xnoremap <Esc> <nop>
 xnoremap <F1> <Esc>
-nnoremap <F1> v
+nmap v vv
 
 "nnoremap b :silent! normal! b<CR>
 "nnoremap l :silent! normal! l<CR>
 "nnoremap e :silent! normal! e<CR>
 
 " Movement
-xnoremap h vhv
-xnoremap <Left> vhv
-xnoremap l vlv
-xnoremap <Right> vlv
-xnoremap j vgjv
-xnoremap <Down> vgjv
-xnoremap k vgkv
-xnoremap <Up> vgkv
+xnoremap h vh
+xnoremap <Left> vh
+xnoremap l vl
+xnoremap <Right> vl
+xnoremap j vgj
+xnoremap <Down> vgj
+xnoremap k vgk
+xnoremap <Up> vgk
 " All commands using marks must make sure to overwrite a,b,c before usage.
 " Note that [` and ]` will break if any other lowercase marks are in use.
 " TODO: the following keys do not behave the same as Helix around newlines
@@ -60,6 +60,19 @@ xnoremap <C-u> v<C-u>v
 xnoremap <C-d> v<C-d>v
 xnoremap <C-i> v<C-i>v
 xnoremap <C-o> v<C-o>v
+nnoremap j gj
+nnoremap k gk
+nnoremap e maembviwovbviwvlmc`blmbhvl[`o
+nnoremap E maEmbviWovBviWvlmc`blmbhvl[`o
+nnoremap w malwhmb`aeviwovmc`blmbhvl[`o
+nnoremap W malWhmb`aEviWovmc`blmbhvl[`o
+nnoremap b mabmbviwveviwovhmc`bhmblvh]`o
+nnoremap B maBmbviWovEviWvhmc`bhmblvh]`o
+" TODO: make these motions work across lines
+nnoremap t vt
+nnoremap T vT
+nnoremap f vf
+nnoremap F vF
 
 " Changes
 source ~/dotfiles/replace.vim
@@ -81,6 +94,7 @@ xnoremap <A-u> vuv
 " TODO: not sure what this should do
 xnoremap <A-U> v<C-R>v
 xnoremap y ygv
+" TODO: helix has special behavior for linewise paste
 xnoremap p pgv
 xnoremap P Pgv
 xnoremap > >v
@@ -93,6 +107,14 @@ xnoremap <A-c> "_c
 xnoremap <C-a> v<C-a>v
 xnoremap <C-x> v<C-x>v
 " TODO: macros
+nnoremap R v"0pv
+nnoremap ~ v~
+nnoremap ` vgu
+nnoremap <A-`> vgU
+nnoremap y vy
+nnoremap d vd
+nnoremap c vc
+nnoremap <A-d> v"_d
 
 " Shell
 " TODO
@@ -103,9 +125,12 @@ xnoremap S v:echo "Not supported in VIM"<CR>gsgv
 xnoremap <A-s> v:echo "Not supported in VIM"<CR>gsgv
 xnoremap <A-_> v:echo "Not supported in VIM"<CR>gsgv
 xnoremap & v:echo "Not supported in VIM"<CR>gsgv
-xnoremap ; vv
+xnoremap ; v
+nnoremap ; <nop>
 xnoremap <A-;> o
+nnoremap <A-;> <nop>
 xnoremap <A-:> v`<v`>
+nnoremap <A-:> <nop>
 xnoremap , v:echo "Not supported in VIM"<CR>gsgv
 xnoremap <A-,> v:echo "Not supported in VIM"<CR>gsgv
 xnoremap C v:echo "Not implemented"<CR>gsgv
@@ -116,7 +141,7 @@ xnoremap <A-(> v:echo "Not supported in VIM"<CR>gsgv
 xnoremap <A-)> v:echo "Not supported in VIM"<CR>gsgv
 xnoremap % vgg0vG$
 xnoremap x v:echo "Not implemented"<CR>gsgv
-xnoremap X Vv
+xnoremap X V
 xnoremap <A-x> v:echo "Not implemented"<CR>gsgv
 xnoremap J Jgv
 xnoremap <A-J> v:echo "Not supported in VIM"<CR>gsgv
@@ -128,13 +153,19 @@ xnoremap <A-o> v:echo "Not implemented"<CR>gsgv
 xnoremap <A-i> v:echo "Not supported in VIM"<CR>gsgv 
 xnoremap <A-p> v:echo "Not supported in VIM"<CR>gsgv
 xnoremap <A-n> v:echo "Not supported in VIM"<CR>gsgv
+nnoremap % gg0vG$
+nnoremap x :echo "Not implemented"<CR>
+nnoremap X V
 
 " Search
-"xnoremap / v/
+xnoremap / v/
 xnoremap ? v?
-xnoremap n vnv
-xnoremap N vNv
-xnoremap * v*v
+xnoremap n vgngnvgn
+xnoremap N vgNgNvgN
+" This may not work in all emulators
+vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>Ngv
+nnoremap n gngnvgn
+nnoremap N gNgNvgN
 
 " Goto
 xnoremap gg vggv
@@ -157,6 +188,25 @@ xnoremap gp v:previous<CR>v
 xnoremap g. v`^v
 xnoremap gj vjv
 xnoremap gk vkv
+nnoremap ge G
+nnoremap gf gf
+nnoremap gl $
+nnoremap gh 0
+nnoremap gs ^
+nnoremap gt H
+nnoremap gc M
+nnoremap gb L
+nnoremap gd gD
+nnoremap gy :echo "Not implemented"<CR>
+nnoremap gr :echo "Not implemented"<CR>
+nnoremap gi :echo "Not implemented"<CR>
+nnoremap ga <C-^>
+nnoremap gm :echo "Not implemented"<CR>
+nnoremap gn :next<CR>
+nnoremap gp :previous<CR>
+nnoremap g. `^
+nnoremap gj j
+nnoremap gk k
 
 " Match
 xnoremap mm v%v
@@ -171,11 +221,17 @@ xnoremap mi v:echo "Not implemented"<CR>gsgv
 
 " Space
 " TODO: almost nothing is supported out of the box
+" TODO: investigate select pasted text?
 xnoremap <Space>p v"*pv
 xnoremap <Space>P v"*Pv
 xnoremap <Space>y "*ygv
 xnoremap <Space>Y "*ygv
 xnoremap <Space>R "*pv
+nnoremap <Space>p "*p
+nnoremap <Space>P "*P
+nnoremap <Space>y v"*y
+nnoremap <Space>Y v"*y
+nnoremap <Space>R v"*pv
 
 " Unimpaired
 " TODO
@@ -192,6 +248,9 @@ xnoremap Zk gk
 xnoremap Ze e
 xnoremap Zw w
 xnoremap Zb b
+xnoremap Zgl $
+xnoremap Zgh 0
+xnoremap Zgs ^
 
 xmap vl Zlv
 xmap vl Zlv
@@ -201,16 +260,14 @@ xmap vk Zkv
 xmap ve Zev
 xmap vw Zwv
 xmap vb Zbv
+xmap vgl Zglv
+xmap vgh Zghv
+xmap vgs Zgsv
 
 
 " Character jumps
 " TODO: generate for each character
 
 " Apocryphal
-"xmap Z; oZ
-"xmap Z<A-;> <Esc>vZ
-"xmap Z, ;Z
-"xmap Zx v^v$hZ
-"xmap ZX VZ
-"xmap Z vv^Z
-"xmap ZL vv$hZ
+map L vglv
+map H vghv
