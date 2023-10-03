@@ -268,6 +268,7 @@ xmap vgs Zgsv
 " Character jumps
 " TODO: generate for each character
 
-" Apocryphal
+" Apocryphal/Suggestions
 map L vglv
 map H vghv
+noremap <Space>q <Esc>:bd<CR>

@@ -78,16 +78,20 @@ xnoremap <A-O> :vsc Edit.ExpandSelection<CR>
 noremap <A-I> :vsc Edit.ContractSelection<CR>
 "noremap <A-O> :vsc Edit.SubwordExpandSelection<CR>
 noremap <space>i <Esc>:vsc Edit.QuickInfo<CR>
+noremap <space>a <Esc>:vsc View.QuickActions<CR>
+noremap <space>/ <Esc>:vsc Edit.FindInFiles<CR>
+noremap <space>q <Esc>:q<CR>
+" TODO: many IDE features/space mode
 
 noremap ]f :vsc Edit.NextMethod<CR>
 noremap [f :vsc Edit.PreviousMethod<CR>
 noremap ms :vsc Edit.SurroundWith<CR>
 
 " Experiments
-nnoremap w wviwo
-xnoremap w vwviwo
-nnoremap W WviWo
-xnoremap W vWviWo
+nnoremap w wviw
+xnoremap w vwviw
+nnoremap W WviW
+xnoremap W vWviW
 " TODO: these alt keys do not work, though it seems they should:
 " https://github.com/VsVim/VsVim/issues/806
 nnoremap <A-w> bviwo

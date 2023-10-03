@@ -67,6 +67,7 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 
 #"left" = "goto_previous_buffer"
 #"right" = "goto_next_buffer"
+"w" = ["move_next_word_end", "select_textobject_inner_word"]
 
 [keys.select]
 "," = "repeat_last_motion"

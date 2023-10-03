@@ -247,7 +247,7 @@ $env.config = {
     {
       name: completion_menu
       modifier: control
-      keycode: char_l
+      keycode: char_n
       mode: emacs # Options: emacs vi_normal vi_insert
       event: {
         until: [
@@ -259,7 +259,7 @@ $env.config = {
     {
       name: completion_previous
       modifier: control
-      keycode: char_h
+      keycode: char_p
       mode: [emacs, vi_normal, vi_insert] # Note: You can add the same keybinding to all modes by using a list
       event: { send: menuprevious }
     }

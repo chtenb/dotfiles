@@ -52,12 +52,12 @@ return {
       action = act.SpawnTab('CurrentPaneDomain'),
     },
     {
-      key = 'h',
+      key = 'p',
       mods = 'CTRL|ALT',
       action = act.ActivateTabRelative(-1),
     },
     {
-      key = 'l',
+      key = 'n',
       mods = 'CTRL|ALT',
       action = act.ActivateTabRelative(1),
     },

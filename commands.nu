@@ -18,7 +18,7 @@ def 256colors [] {
 }
 
 
-def "git cb" [] {
+def "g c" [] {
   let branches = (git branch --color=never | lines | where (($it | str starts-with "*") == false))
   echo $branches
   let input = (input "Type branch number to checkout and press enter to move on: " | str trim)
