@@ -24,7 +24,7 @@ def "g c" [] {
   let input = (input "Type branch number to checkout and press enter to move on: " | str trim)
   if (($input | str length) > 0) {
     let index = ($input | into int)
-    let branch = ($branches | get $index | str trim)
+    let branch = ($branches | get $index | str trim | ansi strip)
     ^git checkout $branch
   } else {
     echo "Aborting..."
@@ -53,7 +53,12 @@ def repostat [] {
 def "g st" [] {
   let lines =  git status -sb | lines
   $lines.0 | print
-  $lines | skip 1 | wrap text | insert type {|it| ($it.text | ansi strip | str substring 0..2) } | insert order {|it| match $it.type { "??" => 0, "UU" => 1, $t if $t =~ ' \S'  => 2, "MM" => 3, _ => 4 } } | sort-by -r order | get text | str join "\n"
+  $lines | skip 1 | wrap text | insert type {|it| ($it.text | ansi strip | str substring 0..2) } | insert order {|it| match $it.type { 
+      "??" => 0, "UU" => 1, "UD" => 2, 
+      $t if $t =~ ' \S'  => 3, 
+      $t if $t =~ '\S\S'  => 4,  
+      $t if $t =~ '\S ' => 5, _ => 6 } 
+    } | sort-by -r order | get text | str join "\n"
 }
 
 def logtail [file] {

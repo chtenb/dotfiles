@@ -459,4 +459,4 @@ augroup XML
 augroup END
 
 map <F4> :mapclear!<CR>:source ~/.vimrc<CR>
-source ~/dotfiles/helix.vim
+"source ~/dotfiles/helix.vim/helix.vim

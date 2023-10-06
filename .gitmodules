@@ -13,3 +13,6 @@
 [submodule "neo-ansi"]
 	path = neo-ansi
 	url = https://github.com/chtenb/neo-ansi
+[submodule "helix.vim"]
+	path = helix.vim
+	url = https://github.com/chtenb/helix.vim
