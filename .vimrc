@@ -458,5 +458,8 @@ augroup XML
     autocmd FileType xml setlocal foldmethod=indent foldlevelstart=3 foldminlines=3
 augroup END
 
-map <F4> :mapclear!<CR>:source ~/.vimrc<CR>
-"source ~/dotfiles/helix.vim/helix.vim
+map <F4> :mapclear<CR>:source ~/.vimrc<CR>
+"source ~/dotfiles/helix.vim/src/unmap.vim
+"source ~/dotfiles/helix.vim/src/helix.vim
+"source ~/dotfiles/helix.vim/src/replace.vim
+"source ~/dotfiles/helix.vim/src/find.vim

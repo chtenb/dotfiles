@@ -3,6 +3,7 @@ set smartcase       " Do smart case matching
 set hlsearch        " highlight search
 set incsearch       " Incremental search
 set gdefault        " auto g flag for substitution
+set relativenumber
 
 " Indentation stuff
 set softtabstop=4
@@ -24,10 +25,10 @@ nnoremap <Esc> :noh<CR><Esc>
 
 " Visual Studio specific
 set backspace=start
-nmap <F3> :vsc Edit.FormatDocument<CR>
-nnoremap <F4> :mapclear!<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>
+noremap <F3> <Esc>:vsc Edit.FormatDocument<CR>
+nnoremap <F4> :mapclear<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>
 vnoremap <F4> <Esc><Esc>:mapclear!<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>gv
-vmap <F3> :vsc Edit.FormatSelection<CR>
+"vmap <F3> :vsc Edit.FormatSelection<CR>
 
 source ~/dotfiles/helix.vim/src/unmap.vim
 source ~/dotfiles/helix.vim/src/helix.vim
