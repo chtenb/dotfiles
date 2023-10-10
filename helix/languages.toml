@@ -12,5 +12,6 @@ language-servers = [ "omnisharp" ]
 
 [[language]]
 name = "markdown"
-text-width = 100
-soft-wrap = { enable = true, wrap-at-text-width = true }
+# text-width = 100
+soft-wrap = { enable = true, wrap-at-text-width = false }
+#soft-wrap = { enable = true, wrap-at-text-width = true }

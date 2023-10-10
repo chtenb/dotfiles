@@ -41,94 +41,100 @@ return {
   -- font = wezterm.font('JetBrains Mono', {weight='Bold', italic=true})
   font_size = 10.0,
   keys = {
+   {
+      key = '?',
+      mods = 'CTRL|SHIFT',
+      action = act.ActivateCommandPalette,
+    },
     {
       key = 'q',
-      mods = 'CTRL|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.CloseCurrentTab { confirm = false },
     },
     {
       key = 't',
-      mods = 'CTRL|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.SpawnTab('CurrentPaneDomain'),
     },
     {
       key = 'p',
-      mods = 'CTRL|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.ActivateTabRelative(-1),
     },
     {
       key = 'n',
-      mods = 'CTRL|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.ActivateTabRelative(1),
     },
     {
       key = 'q',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.CloseCurrentPane { confirm = false },
     },
     {
       key = 'h',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.ActivatePaneDirection 'Left',
     },
     {
       key = 'l',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.ActivatePaneDirection 'Right',
     },
     {
       key = 'k',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.ActivatePaneDirection 'Up',
     },
     {
       key = 'j',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.ActivatePaneDirection 'Down',
     },
     {
       key = '%',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
     },
     {
       key = '"',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.SplitVertical { domain = 'CurrentPaneDomain' },
     },
     {
       key = 'UpArrow',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.AdjustPaneSize { 'Up', 1 },
     },
     {
       key = 'DownArrow',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.AdjustPaneSize { 'Down', 1 },
     },
     {
       key = 'LeftArrow',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.AdjustPaneSize { 'Left', 1 },
     },
     {
       key = 'RightArrow',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT',
       action = act.AdjustPaneSize { 'Right', 1 },
     },
+    {
+      key = 'E',
+      mods = 'CTRL|SHIFT',
+      action = act.PromptInputLine {
+        description = 'Enter new name for tab',
+        action = wezterm.action_callback(function(window, pane, line)
+          -- line will be `nil` if they hit escape without entering anything
+          -- An empty string if they just hit enter
+          -- Or the actual line of text they wrote
+          if line then
+            window:active_tab():set_title(line)
+          end
+        end),
+      },
+    },
   },
-  mouse_bindings = {
-    -- Bind 'Up' event of CTRL-Click to open hyperlinks
-    {
-      event = { Up = { streak = 1, button = 'Left' } },
-      mods = 'CTRL',
-      action = act.OpenLinkAtMouseCursor,
-    },
-    -- Disable the 'Down' event of CTRL-Click to avoid weird program behaviors
-    {
-      event = { Down = { streak = 1, button = 'Left' } },
-      mods = 'CTRL',
-      action = act.Nop,
-    },
-  }
 }

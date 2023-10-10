@@ -29,11 +29,11 @@ noremap <F3> <Esc>:vsc Edit.FormatDocument<CR>
 noremap <F4> <Esc><Esc>:mapclear<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>
 "vmap <F3> :vsc Edit.FormatSelection<CR>
 
-"source ~/dotfiles/helix.vim/src/unmap.vim
-"source ~/dotfiles/helix.vim/src/helix.vim
-"source ~/dotfiles/helix.vim/src/replace.vim
-"source ~/dotfiles/helix.vim/src/find.vim
-"source ~/dotfiles/helix.vim/src/helix.vs.vim
-"source ~/dotfiles/helix.vim/apocryphal.vs.vim
+source ~/dotfiles/helix.vim/src/unmap.vim
+source ~/dotfiles/helix.vim/src/helix.vim
+source ~/dotfiles/helix.vim/src/replace.vim
+source ~/dotfiles/helix.vim/src/find.vim
+source ~/dotfiles/helix.vim/src/helix.vs.vim
+source ~/dotfiles/helix.vim/apocryphal.vs.vim
 
 
