@@ -16,7 +16,7 @@ color-modes = true
 
 [editor.whitespace.render]
 #ndsp = "all"
-#tab = "all"
+tab = "all"
 #space = "all"
 #newline = "all"
 

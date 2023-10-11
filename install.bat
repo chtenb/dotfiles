@@ -46,4 +46,5 @@ REM echo winget install nushell, or place it in .local
 echo bat and git-delta must be installed manually using cargo
 echo Then manually run bat cache --build and the command ansicol
 echo Install helix and broot from the github releases by placing it in .local
+echo install ouch by running scoop install ouch
 pause

@@ -14,4 +14,15 @@ language-servers = [ "omnisharp" ]
 name = "markdown"
 # text-width = 100
 soft-wrap = { enable = true, wrap-at-text-width = false }
-#soft-wrap = { enable = true, wrap-at-text-width = true }
+
+# The indent to use. Has sub keys unit (the text inserted into the document when indenting; usually set to N spaces or "\t" for tabs) and tab-width (the number of spaces rendered for a tab)
+indent = { tab-width = 4, unit = "  " }
+
+[[language]]
+name = "tsv"
+scope = "source.tsv"
+file-types = ["tsv"]
+roots = []
+soft-wrap = { enable = false, wrap-at-text-width = false }
+indent = { tab-width = 16, unit = "\t" }
+

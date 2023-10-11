@@ -25,3 +25,5 @@ bat cache --build
 
 ln -sf ~/dotfiles/config.nu ~/.config/nushell/config.nu
 ln -sf ~/dotfiles/env.nu ~/.config/nushell/env.nu
+
+echo install ouch by installing from cargo
