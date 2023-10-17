@@ -336,5 +336,3 @@ def-env twrap [] {
 }
 
 source ~/dotfiles/commands.nu
-
-source C:\Users\chiel.tenbrinke\AppData\Roaming\dystroy\broot\config\launcher\nushell\br
