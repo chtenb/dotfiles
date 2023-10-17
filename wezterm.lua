@@ -40,6 +40,7 @@ return {
   -- for example, this selects a Bold, Italic font variant.
   -- font = wezterm.font('JetBrains Mono', {weight='Bold', italic=true})
   font_size = 10.0,
+  bypass_mouse_reporting_modifiers = 'CTRL',
   keys = {
    {
       key = '?',
