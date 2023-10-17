@@ -1,0 +1,39 @@
+[language-server]
+# relevant defaults:
+# csharp-ls = { command = "csharp-ls" }
+# omnisharp = { command = "OmniSharp", args = [ "--languageserver" ] }
+# omnisharp = { command = "OmniSharp", args = [ "--languageserver" ], timeout = 30 }
+omnisharp = { command = "dotnet", args = [ "C:/Program Files/OmniSharp/OmniSharp.dll", "--languageserver" ], timeout = 30 }
+
+[[language]]
+name = "c-sharp"
+auto-format = false
+language-servers = [ "omnisharp" ]
+
+[[language]]
+name = "markdown"
+# text-width = 100
+soft-wrap = { enable = true, wrap-at-text-width = false }
+
+# The indent to use. Has sub keys unit (the text inserted into the document when indenting; usually set to N spaces or "\t" for tabs) and tab-width (the number of spaces rendered for a tab)
+indent = { tab-width = 4, unit = "  " }
+
+[[language]]
+name = "tsv"
+scope = "source.tsv"
+file-types = ["tsv"]
+roots = []
+soft-wrap = { enable = false, wrap-at-text-width = false }
+indent = { tab-width = 16, unit = "\t" }
+
+[[language]]
+name = "unison"
+scope = "source.unison"
+injection-regex = "unison"
+file-types = ["u"]
+shebangs = []
+roots = []
+auto-format = false
+comment-token = "--"
+indent = { tab-width = 4, unit = "    " }
+language-server = { command = "ncat", args = ["localhost", "5757"] }

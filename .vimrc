@@ -81,21 +81,22 @@ call vundle#begin()
 " required!
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 if has("gui_running")
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'airblade/vim-gitgutter'
 "Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'SirVer/ultisnips'
-Plugin 'bling/vim-airline'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'bling/vim-airline'
 endif
 Plugin 'dylanaraps/fff.vim'
+"Plugin 'OmniSharp/omnisharp-vim'
 " Class browser
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'honza/vim-snippets'
-Plugin 'easymotion/vim-easymotion'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'scrooloose/nerdtree'
+Plugin 'chtenb/vim-autoformat'
+"Plugin 'honza/vim-snippets'
+"Plugin 'easymotion/vim-easymotion'
 Plugin 'corntrace/bufexplorer'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-sensible'
@@ -104,7 +105,7 @@ Plugin 'inkarkat/vim-visualrepeat'
 Plugin 'markwu/largefile'
 Plugin 'mg979/vim-visual-multi'
 Plugin 'wellle/targets.vim'
-Plugin 'unblevable/quick-scope'
+"Plugin 'unblevable/quick-scope'
 " Fuzzy File Finder
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'drmikehenry/vim-fontsize'
@@ -112,7 +113,7 @@ Plugin 'drmikehenry/vim-fontsize'
 "Plugin 'xolox/vim-easytags'
 " Automatic detect tab indent settings
 "Plugin 'tpope/vim-sleuth'
-Plugin 'Chiel92/vim-visgo'
+Plugin 'chtenb/vim-visgo'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'tpope/vim-unimpaired'
 " Matchit
@@ -128,19 +129,19 @@ Plugin 'scrooloose/nerdcommenter'
 " Tabularizing
 Plugin 'godlygeek/tabular'
 " Better f/t
-Plugin 'dahu/vim-fanfingtastic'
+"Plugin 'dahu/vim-fanfingtastic'
 " Be able to increment dates
 Plugin 'tpope/vim-speeddating'
 " Ascii drawings
 Plugin 'vim-scripts/DrawIt'
 " Automatic reload vim stuff
-Plugin 'xolox/vim-reload'
+"Plugin 'xolox/vim-reload'
 " Colors
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'chriskempson/base16-vim'
+"Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
-Plugin 'kien/rainbow_parentheses.vim'
+"Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'ajh17/Spacegray.vim'
 " Language support
 Plugin 'tshirtman/vim-cython'
@@ -149,18 +150,18 @@ Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'plasticboy/vim-markdown' " The tabular plugin must come before vim-markdown.
 " WARNING: org mode makes vim slow, regardless of filetype opened
 "Plugin 'jceb/vim-orgmode'
-Plugin 'derekwyatt/vim-fswitch'
+"Plugin 'derekwyatt/vim-fswitch'
 Plugin 'wilsaj/chuck.vim'
 Plugin 'othree/html5.vim'
 "Plugin 'chrisbra/csv.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'Konfekt/FastFold'
+"Plugin 'tmhedberg/SimpylFold'
+"Plugin 'Konfekt/FastFold'
 "Plugin 'kchmck/vim-coffee-script'
 Plugin 'einars/js-beautify'
 Plugin 'sillyotter/t4-vim'
 Plugin 'adamclerk/vim-razor'
 Plugin 'lervag/vimtex'
-Plugin 'Chiel92/vim-tsv'
+Plugin 'chtenb/vim-tsv'
 Plugin 'vim-scripts/w3af.vim'
 
 call vundle#end()             " required
@@ -206,7 +207,7 @@ set smartcase       " Do smart case matching
 set hlsearch        " Incremental search
 set autowrite       " Automatically save before commands like :next and :make
 set hidden          " Hide buffers when they are abandoned
-set mouse=a         " Enable mouse usage (all modes)
+"set mouse=a         " Enable mouse usage (all modes)
 set lazyredraw      " Don't update the display while executing macros
 set gdefault        " auto g flag for substitution
 set autochdir       " Autochange working directory when opening new file
@@ -262,10 +263,12 @@ let g:multi_cursor_exit_from_insert_mode=0
 
 
 " Decent quit shortcut
-nnoremap <C-q> :q<CR>
+nmap <C-q> :q<CR>
+vmap <C-q> :q<CR>
 " Decent save shortcut
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <esc>:w<CR>i
+nmap <C-s> :w<CR>
+vmap <C-s> :w<CR>
+imap <C-s> <esc>:w<CR>i
 " Disable ex mode, it's useless and annoying
 nnoremap Q <nop>
 " Give Y a sane meaning
@@ -354,10 +357,10 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 
 
 " Color settings
-set background=dark
+"set background=light
 
-let g:spacegray_underline_search = 1
-let g:spacegray_use_italics = 1
+"let g:spacegray_underline_search = 1
+"let g:spacegray_use_italics = 1
 "let g:spacegray_low_contrast = 1
 
 "Some settings for the GUI
@@ -379,13 +382,13 @@ if has("gui_running")
         set guifont=mono\ 10
     endif
 else
-    colorscheme Tomorrow-Night
+    colorscheme default
 endif
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 
 "
@@ -455,3 +458,8 @@ augroup XML
     autocmd FileType xml setlocal foldmethod=indent foldlevelstart=3 foldminlines=3
 augroup END
 
+map <F4> :mapclear<CR>:source ~/.vimrc<CR>
+"source ~/dotfiles/helix.vim/src/unmap.vim
+"source ~/dotfiles/helix.vim/src/helix.vim
+"source ~/dotfiles/helix.vim/src/replace.vim
+"source ~/dotfiles/helix.vim/src/find.vim

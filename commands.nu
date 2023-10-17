@@ -5,7 +5,7 @@ def colors [] {
       if $color != 8 { # 8 is not a color code
         1..9 | each { |$style|
           $"\e[($color + $color_offset);($style)m" + $'\e[($color + $color_offset)($style)m' + "\e[0m"
-        } | str collect
+        } | str join
       }
     } | flatten
   } | flatten
@@ -14,20 +14,20 @@ def colors [] {
 def 256colors [] {
   0..255 | each { |$color|
     $"\e[38;5;($color)m" + $'($color)' + "\e[0m"
-  } | str collect
+  } | str join
 }
 
 
-def "git cb" [] {
+def "g c" [] {
   let branches = (git branch --color=never | lines | where (($it | str starts-with "*") == false))
   echo $branches
   let input = (input "Type branch number to checkout and press enter to move on: " | str trim)
   if (($input | str length) > 0) {
     let index = ($input | into int)
-    let branch = ($branches | get $index | str trim)
+    let branch = ($branches | get $index | str trim | ansi strip)
     ^git checkout $branch
   } else {
-    echo Aborting...
+    echo "Aborting..."
   }
 }
 
@@ -42,6 +42,26 @@ def anonymize [pattern] {
         | insert new {|it| $"anon($it.index)"})
     
     $replacements | reduce --fold $input {|it, acc|
-        $acc | str replace --all --string $it.item $it.new
+        $acc | str replace --all $it.item $it.new
     }
 }
+
+def repostat [] {
+  ls ~/prj/RMFMagic* | each {|it| cd $it.name; print (pwd | path basename); print (g st) } | ignore
+}
+
+def "g st" [] {
+  let lines =  git status -sb | lines
+  $lines.0 | print
+  $lines | skip 1 | wrap text | insert type {|it| ($it.text | ansi strip | str substring 0..2) } | insert order {|it| match $it.type { 
+      "??" => 0, "UU" => 1, "UD" => 2, 
+      $t if $t =~ ' \S'  => 3, 
+      $t if $t =~ '\S\S'  => 4,  
+      $t if $t =~ '\S ' => 5, _ => 6 } 
+    } | sort-by -r order | get text | str join "\n"
+}
+
+def logtail [file] {
+  tail -f $file | bat --paging=never -l log
+}
+

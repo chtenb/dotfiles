@@ -1,15 +1,18 @@
 [submodule "interactive-git-checkout"]
 	path = interactive-git-checkout
-	url = https://github.com/Chiel92/interactive-git-checkout
+	url = https://github.com/chtenb/interactive-git-checkout
 [submodule "python-shellout"]
 	path = python-shellout
-	url = https://github.com/Chiel92/python-shellout
+	url = https://github.com/chtenb/python-shellout
 [submodule "replac"]
 	path = replac
-	url = https://github.com/Chiel92/replac
-[submodule "ansi16"]
-	path = ansi16
-	url = https://github.com/chtenb/ansi16
+	url = https://github.com/chtenb/replac
 [submodule "nu_scripts"]
 	path = nu_scripts
 	url = https://github.com/nushell/nu_scripts
+[submodule "neo-ansi"]
+	path = neo-ansi
+	url = https://github.com/chtenb/neo-ansi
+[submodule "helix.vim"]
+	path = helix.vim
+	url = https://github.com/chtenb/helix.vim

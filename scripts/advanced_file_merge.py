@@ -53,4 +53,3 @@ for filename in filenames:
         if confirm('Do you want to remove the merge artifacts?'):
             out('rm {filename}.common {filename}.ours {filename}.theirs {filename}.result',
                 filename=filename)
-

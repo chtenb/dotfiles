@@ -9,14 +9,25 @@
         "key": "shift-c",
         "command": "dance.run",
         "args": {
-          "commands": [
-            "dance.selections.expandToLines",
-            "dance.selections.trimWhitespace",
-          ],
+            "commands": [
+                "dance.selections.expandToLines",
+                "dance.selections.trimWhitespace",
+            ],
         },
         "when": "editorTextFocus && dance.mode == 'normal'"
-      },
+    },
     // DANCE
+    {
+        "key": "v",
+        "command": "dance.modes.set.select",
+        "when": "editorTextFocus && dance.mode == 'normal'",
+    },
+    // And to avoid conflicts:
+    {
+        "key": "v",
+        "command": "-dance.openMenu",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
     {
         "key": "ctrl+o",
         "command": "workbench.action.navigateBack"
