@@ -7,8 +7,6 @@ ln -sf ~/dotfiles/linux.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore
 ln -sf ~/dotfiles/.jjconfig ~/.jjconfig
 
-ln -sf ~/dotfiles/delta-themes/base16-dark.gitconfig ~/dotfiles/current-delta-theme.gitconfig
-
 mkdir -p ~/.vim/backup/
 mkdir -p ~/.vim/swap/
 mkdir -p ~/.vim/undo/
@@ -32,4 +30,5 @@ echo "nushell must be installed manually, e.g. using cargo install nu"
 echo "install hx using apt (see website)"
 echo "install broot by downloading from github adn placing it in ~/.local/bin"
 echo "install ouch by installing from cargo"
+echo "to fix delta colors run the nu command ansicol"
 

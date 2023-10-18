@@ -1,16 +1,3 @@
-[language-server]
-# relevant defaults:
-# csharp-ls = { command = "csharp-ls" }
-# omnisharp = { command = "OmniSharp", args = [ "--languageserver" ] }
-# omnisharp = { command = "OmniSharp", args = [ "--languageserver" ], timeout = 30 }
-omnisharp = { command = "dotnet", args = [ "C:/Program Files/OmniSharp/OmniSharp.dll", "--languageserver" ], timeout = 30 }
-unison = { command = "ncat", args = ["localhost", "5757"] }
-
-[[language]]
-name = "c-sharp"
-auto-format = false
-language-servers = [ "omnisharp" ]
-
 [[language]]
 name = "markdown"
 # text-width = 100
@@ -37,4 +24,23 @@ roots = []
 auto-format = false
 comment-token = "--"
 indent = { tab-width = 4, unit = "    " }
-language-servers = [ "unison" ]
+language-servers = ["ucm"]
+
+[language-server.ucm]
+command = "nc"
+args = ["localhost", "5757"]
+
+[[language]]
+name = "c-sharp"
+auto-format = false
+language-servers = [ "omnisharp" ]
+
+[language-server.omnisharp]
+# relevant defaults:
+# csharp-ls = { command = "csharp-ls" }
+# omnisharp = { command = "OmniSharp", args = [ "--languageserver" ] }
+# omnisharp = { command = "OmniSharp", args = [ "--languageserver" ], timeout = 30 }
+command = "dotnet"
+args = [ "C:/Program Files/OmniSharp/OmniSharp.dll", "--languageserver" ]
+timeout = 30
+

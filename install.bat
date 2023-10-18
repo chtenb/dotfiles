@@ -47,4 +47,5 @@ echo bat and git-delta must be installed manually using cargo
 echo Then manually run bat cache --build and the command ansicol
 echo Install helix and broot from the github releases by placing it in .local
 echo install ouch by running scoop install ouch
+echo to fix delta colors run the nu command "ansicol"
 pause
