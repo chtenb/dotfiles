@@ -40,9 +40,28 @@ return {
   -- for example, this selects a Bold, Italic font variant.
   -- font = wezterm.font('JetBrains Mono', {weight='Bold', italic=true})
   font_size = 10.0,
+  inactive_pane_hsb = {
+    saturation = 0.9,
+    brightness = 0.9,
+  },
   bypass_mouse_reporting_modifiers = 'CTRL',
+  mouse_bindings = {
+    -- Change the default click behavior so that it only selects
+    -- text and doesn't open hyperlinks
+    {
+      event = { Up = { streak = 1, button = 'Left' } },
+      mods = 'NONE',
+      action = act.CompleteSelection 'ClipboardAndPrimarySelection',
+    },
+    -- and make CTRL-Click open hyperlinks
+    {
+      event = { Up = { streak = 1, button = 'Left' } },
+      mods = 'CTRL',
+      action = act.OpenLinkAtMouseCursor,
+    },
+  },
   keys = {
-   {
+    {
       key = '?',
       mods = 'CTRL|SHIFT',
       action = act.ActivateCommandPalette,
