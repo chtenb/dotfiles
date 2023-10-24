@@ -22,7 +22,7 @@ wezterm.on('window-config-reloaded', function(window, pane)
 end)
 
 
-return {
+local config = {
   color_scheme_dirs = { 'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm-color-schemes' },
   default_prog = { 'nu' },
   window_close_confirmation = 'NeverPrompt',
@@ -31,17 +31,13 @@ return {
   tab_bar_at_bottom = true,
   -- allow_win32_input_mode = false,
 
-  -- For connecting to a unix pty
-  -- https://wezfurlong.org/wezterm/multiplexing.html#unix-domains
-  unix_domains = { { name = 'unix', local_echo_threshold_ms = 10, }, },
-
   font = wezterm.font_with_fallback({ 'Cascadia Code', 'Cascadia Code,CaskaydiaCove NF' }),
   -- You can specify some parameters to influence the font selection;
   -- for example, this selects a Bold, Italic font variant.
   -- font = wezterm.font('JetBrains Mono', {weight='Bold', italic=true})
   font_size = 10.0,
   inactive_pane_hsb = {
-    saturation = 0.9,
+    saturation = 0.8,
     brightness = 0.9,
   },
   bypass_mouse_reporting_modifiers = 'CTRL',
@@ -158,3 +154,20 @@ return {
     },
   },
 }
+
+config.unix_domains = {
+  {
+    name = 'wsl',
+    serve_command = { 'wsl', 'wezterm-mux-server', '--daemonize' },
+  },
+}
+
+  -- -- For connecting to a unix pty
+  -- -- https://wezfurlong.org/wezterm/multiplexing.html#unix-domains
+  -- unix_domains = { { name = 'unix', local_echo_threshold_ms = 10, }, },
+
+
+-- Run
+--   wezterm connect wsl
+-- to connect to wsl
+return config

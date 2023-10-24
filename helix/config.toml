@@ -97,3 +97,26 @@ e = """
 """
 z = ":toggle gutters.line-numbers.min-width 48 3"
 i = "hover"
+v = """
+:pipe-to | lines | str join ' ' | parse "{names}" | format "view {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+"""
+l = """
+:pipe-to | lines | str join ' ' | parse "{names}" | format "ls {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+"""
+
+[keys.select.space]
+"q" = ":bc"
+F = "file_picker_in_current_buffer_directory"
+e = """
+:sh echo `echo $':open "(broot)"\r' | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left); exit\r` 
+  | wezterm cli send-text --pane-id (wezterm cli split-pane --right --percent 33) --no-paste
+"""
+z = ":toggle gutters.line-numbers.min-width 48 3"
+i = "hover"
+v = """
+:pipe-to | lines | str join ' ' | parse "{names}" | format "view {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+"""
+l = """
+:pipe-to | lines | str join ' ' | parse "{names}" | format "ls {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+"""
+
