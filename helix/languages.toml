@@ -4,7 +4,7 @@
 # omnisharp = { command = "OmniSharp", args = [ "--languageserver" ] }
 # omnisharp = { command = "OmniSharp", args = [ "--languageserver" ], timeout = 30 }
 omnisharp = { command = "dotnet", args = [ "C:/Program Files/OmniSharp/OmniSharp.dll", "--languageserver" ], timeout = 30 }
-unison = { command = "ncat", args = ["localhost", "5757"] }
+ucm = { command = "ncat", args = ["localhost", "5757"] }
 
 [[language]]
 name = "c-sharp"
@@ -37,4 +37,4 @@ roots = []
 auto-format = false
 comment-token = "--"
 indent = { tab-width = 4, unit = "    " }
-language-servers = [ "unison" ]
+language-servers = [ "ucm" ]

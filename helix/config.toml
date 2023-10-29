@@ -50,6 +50,8 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "C-6" = "goto_last_accessed_file"
 "X" = "extend_to_line_bounds"
 "x" = ["extend_to_line_bounds", "trim_selections"]
+"G" = ["goto_last_line"]
+"g" = { "e" = "goto_file_end" }
 
 #"A-;" = "collapse_selection"
 #";" = "flip_selections"
@@ -64,10 +66,10 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "S-F12" = "goto_reference"
 "F4" = [":reload", ":config-reload"]
 
-"w" = ["ensure_selections_foward", "move_next_word_end", "select_textobject_inner_word"]
-"W" = ["ensure_selections_foward", "move_next_long_word_end", "select_textobject_inner_long_word"]
-"A-w" = ["ensure_selections_foward", "flip_selections", "move_prev_word_start", "select_textobject_inner_word"]
-"A-W" = ["ensure_selections_foward", "flip_selections", "move_prev_long_word_start", "select_textobject_inner_long_word"]
+"w" = ["move_next_word_end", "select_textobject_inner_word"]
+"W" = ["move_next_long_word_end", "select_textobject_inner_long_word"]
+"A-w" = ["ensure_selections_forward", "flip_selections", "move_prev_word_start", "select_textobject_inner_word"]
+"A-W" = ["ensure_selections_forward", "flip_selections", "move_prev_long_word_start", "select_textobject_inner_long_word"]
 
 [keys.select]
 "," = "repeat_last_motion"
@@ -79,6 +81,8 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "C-6" = "goto_last_accessed_file"
 "X" = "extend_to_line_bounds"
 "x" = ["extend_to_line_bounds", "trim_selections"]
+"G" = ["goto_last_line"]
+"g" = { "e" = "goto_file_end" }
 
 #"A-;" = "collapse_selection"
 #";" = "flip_selections"
@@ -86,12 +90,10 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "H" = ["goto_line_start"]
 "L" = ["goto_line_end"]
 
-"g" = { "e" = "goto_file_end" }
-
-"w" = ["ensure_selections_foward", "move_next_word_end", "select_textobject_inner_word"]
-"W" = ["ensure_selections_foward", "move_next_long_word_end", "select_textobject_inner_long_word"]
-"A-w" = ["ensure_selections_foward", "flip_selections", "move_prev_word_start", "select_textobject_inner_word"]
-"A-W" = ["ensure_selections_foward", "flip_selections", "move_prev_long_word_start", "select_textobject_inner_long_word"]
+"w" = ["extend_next_word_end"]
+"W" = ["extend_next_long_word_end"]
+"A-w" = ["extend_prev_word_start"]
+"A-W" = ["extend_prev_long_word_start"]
 
 [keys.normal.space]
 "q" = ":bc"
