@@ -36,5 +36,5 @@ shebangs = []
 roots = []
 auto-format = false
 comment-token = "--"
-indent = { tab-width = 4, unit = "    " }
+indent = { tab-width = 2, unit = "  " }
 language-servers = [ "ucm" ]
