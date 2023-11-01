@@ -1120,6 +1120,7 @@
 <Multi_key> <at> <slash>	:	"✓"	U2713	# CHECK MARK
 <Multi_key> <at> <at> <slash>	:	"✔"	U2714	# HEAVY CHECK MARK
 <Multi_key> <at> <at> <backslash>	:	"✅"	U2705	# FILLED HEAVY CHECK MARK
+<Multi_key> <at> <at> <x>	:	"❎"	U274E	# FILLED HEAVY CROSS MARK
 <Multi_key> <at> <X>  		:	"✗"	U2717	# BALLOT X
 <Multi_key> <at> <at> <X>	:	"✘"	U2718	# HEAVY BALLOT X
 <Multi_key> <at> <parenleft>    :       "❨"     U2768   # MEDIUM LEFT PARENTHESIS ORNAMENT
