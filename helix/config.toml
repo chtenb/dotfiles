@@ -69,8 +69,15 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "A-w" = ["ensure_selections_forward", "flip_selections", "move_prev_word_start", "select_textobject_inner_word"]
 "A-W" = ["ensure_selections_forward", "flip_selections", "move_prev_long_word_start", "select_textobject_inner_long_word"]
 
-x = ["extend_to_line_bounds", "select_mode"]
-X = ["extend_to_line_bounds", "select_mode", "flip_selections"]
+J = ["extend_to_line_bounds", "select_mode"]
+K = ["extend_to_line_bounds", "select_mode", "flip_selections"]
+
+"A-j" = "join_selections"
+"A-J" = "join_selections_space"
+
+X = "remove_primary_selection"
+x = "keep_selections"
+"A-x" = "remove_selections"
 
 [keys.select]
 "," = "repeat_last_motion"
@@ -90,10 +97,19 @@ X = ["extend_to_line_bounds", "select_mode", "flip_selections"]
 "A-w" = ["extend_prev_word_start"]
 "A-W" = ["extend_prev_long_word_start"]
 
-x = "extend_line"
-X = "extend_line"
 ">" = ["indent", "normal_mode"]
 "<" = ["unindent", "normal_mode"]
+
+J = ["extend_line_down", "extend_to_line_bounds"]
+K = ["extend_line_up", "extend_to_line_bounds"]
+
+"A-j" = "join_selections"
+"A-J" = "join_selections_space"
+
+X = "remove_primary_selection"
+x = "keep_selections"
+"A-x" = "remove_selections"
+
 
 [keys.normal.space]
 "q" = ":bc"

@@ -34,5 +34,6 @@ source ~/dotfiles/helix.vim/src/helix.vim
 source ~/dotfiles/helix.vim/src/replace.vim
 source ~/dotfiles/helix.vim/src/find.vim
 source ~/dotfiles/helix.vim/src/helix.vs.vim
+source ~/dotfiles/helix.vim/apocryphal.vim
 source ~/dotfiles/helix.vim/apocryphal.vs.vim
 
