@@ -15,10 +15,10 @@ color-modes = true
 # skip-levels = 1
 
 [editor.whitespace.render]
-#ndsp = "all"
+ndsp = "all"
 tab = "all"
-#space = "all"
-#newline = "all"
+space = "all"
+newline = "all"
 
 [editor.whitespace.characters]
 space = "·"

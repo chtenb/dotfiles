@@ -1,0 +1,103 @@
+[metadata]
+aliases = []
+author = 'chtenb'
+name = 'Noctis Lux 2 (Neo Ansi)'
+
+[colors]
+foreground = "#005661"
+background = "#fefaf2" # rgb(254.99, 249.55, 238.67)
+cursor_bg = "#005661"
+cursor_border = "#005661"
+cursor_fg = "#ffffff"
+selection_bg = "#cfe7f0"
+selection_fg = "#005661"
+
+ansi = [
+  "#8ca6a6", # black
+  "#e64100", # red
+  "#24a342", # green
+  "#e47d00", # yellow
+  "#0095a8", # blue
+  "#ff5792", # magenta
+  "#00bdd6", # cyan
+  "#005661"] # white
+brights =  [ 
+  "#8ca6a6", # bright black
+  "#e5164a", # bright red
+  "#00b368", # bright green
+  "#b3694d", # bright yellow
+  "#0094f0", # bright blue
+  "#ff5792", # bright magenta
+  "#00bdd6", # bright cyan
+  "#004d57"] # bright white
+
+[colors.indexed] 
+# background colors for git diffs
+52 = "#fbdada" # red
+88 = "#f6b6b6" # red emph
+22 = "#d6ffd6" # green
+28 = "#adffad" # green emph
+53 = "#feecf7" # purple
+17 = "#e5dff6" # blue
+23 = "#d8fdf6" # cyan
+58 = "#f4ffe0" # yellow
+
+# Colors 232-255 are UX colors
+
+# bg
+232 = "#f8f1e0" # inactive background
+233 = "#f1e7c9" # inactive overlay background
+234 = "#efe9d5" # overlay background
+235 = "#f1e7c9" # inactive overlay title bar
+236 = "#e3ded3" # overlay title bar
+237 = "#efebdf" # inactive main title bar
+238 = "#efe9d5" # main title bar
+239 = "#d8eef1" # special highlight
+240 = "#daedeb" # inactive selection
+241 = "#daedeb" # active selection
+242 = "#d6f3fa" # inactive primary selection
+243 = "#d6f3fa" # active primary selection
+# fg
+244 = "#8CA6A6" # 
+245 = "#7F9E9F" # 
+246 = "#729698" # 
+247 = "#658E91" # 
+248 = "#58868A" # 
+249 = "#4B7E83" # 
+250 = "#3E767C" # 
+251 = "#316E75" # 
+252 = "#24666E" # 
+253 = "#175E67" # 
+254 = "#0A5660" # 
+255 = "#004D57" # 
+
+
+[colors.tab_bar]
+background = "#efe9d5"
+inactive_tab_edge = "#efe9d5"
+inactive_tab_edge_hover = "#efe9d5"
+
+[colors.tab_bar.active_tab]
+bg_color = "#fdf8eb"
+fg_color = "#3E767C"
+# italic = false
+# strikethrough = false
+# underline = "None"
+# intensity = "Normal"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#efe9d5"
+fg_color = "#8ca6a6"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#d6dfd0"
+fg_color = "#8ca6a6"
+
+[colors.tab_bar.new_tab]
+bg_color = "#efe9d5"
+fg_color = "#8ca6a6"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#efe9d5"
+fg_color = "#3299ae"
+intensity = "Bold"

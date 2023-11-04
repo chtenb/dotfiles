@@ -338,18 +338,18 @@
     },
     "editor.unusualLineTerminators": "off",
     "editor.inlineSuggest.enabled": true,
-    "workbench.activityBar.visible": false,
     "FSharp.suggestGitignore": false,
     "workbench.editor.closeEmptyGroups": false,
     "workbench.editor.closeOnFileDelete": true,
     "git.terminalAuthentication": false,
     "github.gitAuthentication": false,
-    "workbench.colorTheme": "Synthwave Material Ansi16",
+    "workbench.colorTheme": "Noctis Lux Ansi16",
     "editor.renderWhitespace": "all",
     "github.copilot.enable": {
         "*": false,
         "plaintext": false,
         "markdown": false,
         "scminput": false
-    }
+    },
+    "workbench.activityBar.location": "hidden"
 }
