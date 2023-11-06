@@ -17,8 +17,8 @@ color-modes = true
 [editor.whitespace.render]
 ndsp = "all"
 tab = "all"
-space = "all"
-newline = "all"
+# space = "all"
+# newline = "all"
 
 [editor.whitespace.characters]
 space = "·"
@@ -66,8 +66,10 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 
 "w" = ["move_next_word_end", "select_textobject_inner_word"]
 "W" = ["move_next_long_word_end", "select_textobject_inner_long_word"]
-"A-w" = ["ensure_selections_forward", "flip_selections", "move_prev_word_start", "select_textobject_inner_word"]
-"A-W" = ["ensure_selections_forward", "flip_selections", "move_prev_long_word_start", "select_textobject_inner_long_word"]
+"b" = ["ensure_selections_forward", "flip_selections", "move_prev_word_start", "select_textobject_inner_word"]
+"B" = ["ensure_selections_forward", "flip_selections", "move_prev_long_word_start", "select_textobject_inner_long_word"]
+"A-e" = "move_prev_word_start"
+"A-E" = "move_prev_long_word_start"
 
 J = ["extend_to_line_bounds", "select_mode"]
 K = ["extend_to_line_bounds", "select_mode", "flip_selections"]
@@ -94,8 +96,10 @@ x = "keep_selections"
 
 "w" = ["extend_next_word_end"]
 "W" = ["extend_next_long_word_end"]
-"A-w" = ["extend_prev_word_start"]
-"A-W" = ["extend_prev_long_word_start"]
+"b" = ["extend_prev_word_start"]
+"B" = ["extend_prev_long_word_start"]
+"A-e" = "extend_prev_word_start"
+"A-E" = "extend_prev_long_word_start"
 
 ">" = ["indent", "normal_mode"]
 "<" = ["unindent", "normal_mode"]

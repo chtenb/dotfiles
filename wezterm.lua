@@ -40,7 +40,7 @@ local config = {
     saturation = 0.8,
     brightness = 0.9,
   },
-  bypass_mouse_reporting_modifiers = 'CTRL',
+  bypass_mouse_reporting_modifiers = 'SHIFT',
   mouse_bindings = {
     -- Change the default click behavior so that it only selects
     -- text and doesn't open hyperlinks

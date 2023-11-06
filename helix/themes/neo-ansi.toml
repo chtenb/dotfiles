@@ -7,8 +7,8 @@ inherits = "neo-ansi-syntax"
 #"ui.cursor.normal" = { } # 
 #"ui.cursor.insert" = { } # 
 #"ui.cursor.select" = { } # 
-"ui.cursor.match" = { fg = "232", bg = "244" } # Matching bracket etc.
-"ui.cursor.primary" = { fg = "default", bg = "default", modifiers = ["reversed"] } # Cursor with primary selection
+"ui.cursor.match" = { bg = "black" } # Matching bracket etc.
+"ui.cursor.primary" = { fg = "white", bg = "default", modifiers = ["reversed"] } # Cursor with primary selection
 #"ui.cursor.primary.normal" = { } # 
 #"ui.cursor.primary.insert" = { } # 
 #"ui.cursor.primary.select" = { } # 
@@ -34,7 +34,7 @@ inherits = "neo-ansi-syntax"
 "ui.text.inactive" = { fg = "gray" } # Same as ui.text but when the text is inactive (e.g. suggestions)
 "ui.text.info" = { fg = "default", bg = "default" } # The key: command text in ui.popup.info boxes. chtenb: text inside minor mode popups
 "ui.virtual.ruler" = { fg = "245" } # Ruler columns (see the editor.rulers config)
-"ui.virtual.whitespace" = { fg = "black", modifiers = ["hidden"] } # Visible whitespace characters
+"ui.virtual.whitespace" = { fg = "black", modifiers = [] } # Visible whitespace characters
 "ui.virtual.indent-guide" = { fg = "gray" } # Vertical indent width guides
 "ui.virtual.inlay-hint" = { bg = "22" } # Default style for inlay hints of all kinds
 "ui.virtual.inlay-hint.parameter" = { bg = "52" } # Style for inlay hints of kind parameter (LSPs are not required to set a kind)
@@ -43,7 +43,7 @@ inherits = "neo-ansi-syntax"
 "ui.menu" = { bg = "234" } # Code and command completion menus
 "ui.menu.selected" = { bg = "243" } # Selected autocomplete item
 "ui.menu.scroll" = { fg = "245", bg = "232" } # fg sets thumb color, bg sets track color of scrollbar
-"ui.selection" = { bg = "241", modifiers = [] } # For selections in the editing area
+"ui.selection" = { bg = "241", modifiers = ["italic"] } # For selections in the editing area
 "ui.selection.primary" = { bg = "243", modifiers = [] } # 
 "ui.highlight" = { bg = "240" } # Highlighted lines in the picker preview
 "ui.cursorline.primary" = { bg = "240" } # The line of the primary cursor (if cursorline is enabled)
