@@ -25,7 +25,7 @@ scope = "source.tsv"
 file-types = ["tsv"]
 roots = []
 soft-wrap = { enable = false, wrap-at-text-width = false }
-indent = { tab-width = 16, unit = "\t" }
+indent = { tab-width = 64, unit = "\t" }
 
 [[language]]
 name = "unison"
