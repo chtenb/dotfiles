@@ -3,6 +3,7 @@ set smartcase       " Do smart case matching
 set hlsearch        " highlight search
 set incsearch       " Incremental search
 set gdefault        " auto g flag for substitution
+set number
 set relativenumber
 
 " Indentation stuff

@@ -21,6 +21,7 @@ wezterm.on('window-config-reloaded', function(window, pane)
   end
 end)
 
+local monaspace_features = { 'ss01=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'calt=1', 'dlig=0', 'ss02=0', }
 
 local config = {
   color_scheme_dirs = { 'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm-color-schemes' },
@@ -31,11 +32,55 @@ local config = {
   tab_bar_at_bottom = true,
   -- allow_win32_input_mode = false,
 
-  font = wezterm.font_with_fallback({ 'Cascadia Code', 'Cascadia Code,CaskaydiaCove NF' }),
-  -- You can specify some parameters to influence the font selection;
-  -- for example, this selects a Bold, Italic font variant.
-  -- font = wezterm.font('JetBrains Mono', {weight='Bold', italic=true})
+  -- font = wezterm.font_with_fallback({ 'Cascadia Code', 'Cascadia Code,CaskaydiaCove NF' }),
   font_size = 10.0,
+
+  font = wezterm.font {
+    family = 'Monaspace Neon',
+    weight = 'Medium',
+    harfbuzz_features = monaspace_features,
+  },
+  font_rules = {
+    {
+      intensity = 'Bold',
+      italic = false,
+      font = wezterm.font {
+        family = 'Monaspace Neon',
+        weight = 'Bold',
+        harfbuzz_features = monaspace_features,
+      }
+    },
+    {
+      intensity = 'Normal',
+      italic = true,
+      font = wezterm.font {
+        family = 'Monaspace Neon',
+        weight = 'Regular',
+        style = 'Italic',
+        harfbuzz_features = monaspace_features,
+      }
+    },
+    {
+      intensity = 'Bold',
+      italic = true,
+      font = wezterm.font {
+        family = 'Monaspace Krypton',
+        weight = 'Bold',
+        style = 'Normal',
+        harfbuzz_features = monaspace_features,
+      }
+    },
+    {
+      intensity = 'Half',
+      font = wezterm.font {
+        family = 'Monaspace Krypton',
+        weight = 'Regular',
+        style = 'Normal',
+        harfbuzz_features = monaspace_features,
+      }
+    },
+  },
+
   inactive_pane_hsb = {
     saturation = 0.8,
     brightness = 0.9,
