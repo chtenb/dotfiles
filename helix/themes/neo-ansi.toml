@@ -19,11 +19,11 @@ inherits = "neo-ansi-syntax"
 "ui.highlight.frameline" = { bg = "239" } # Line at which debugging execution is paused at
 "ui.linenr" = { fg = "gray" } # Line numbers
 "ui.linenr.selected" = { fg = "white" } # Line number for the line the cursor is on
-"ui.statusline" = { bg = "238", fg = "250", modifiers = ["reversed"] } # Statusline
-"ui.statusline.inactive" = { fg = "244", modifiers = ["reversed"] } # Statusline (unfocused document)
-"ui.statusline.normal" = { fg = "250" } # Statusline mode during normal mode (only if editor.color-modes is enabled)
-"ui.statusline.insert" = { fg = "light-magenta" } # Statusline mode during insert mode (only if editor.color-modes is enabled)
-"ui.statusline.select" = { fg = "light-blue" } # Statusline mode during select mode (only if editor.color-modes is enabled)
+"ui.statusline" = { bg = "250", fg = "238", modifiers = [] } # Statusline and buffer line
+"ui.statusline.inactive" = { bg = "250", fg = "239", modifiers = ["dim"] } # Statusline (unfocused document) and buffer line (inactive buffers)
+"ui.statusline.normal" = { modifiers = ["reversed"] } # Statusline mode during normal mode (only if editor.color-modes is enabled)
+"ui.statusline.insert" = { bg = "light-magenta" } # Statusline mode during insert mode (only if editor.color-modes is enabled)
+"ui.statusline.select" = { bg = "light-blue" } # Statusline mode during select mode (only if editor.color-modes is enabled)
 # "ui.statusline.separator" = { fg = "red" } # Separator character in statusline
 "ui.popup" = { fg = "default", bg = "234" } # Documentation popups (e.g. Space + k)
 "ui.popup.info" = { fg = "default", bg = "default" } # Prompt for multiple key options
