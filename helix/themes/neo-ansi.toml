@@ -19,8 +19,8 @@ inherits = "neo-ansi-syntax"
 "ui.highlight.frameline" = { bg = "239" } # Line at which debugging execution is paused at
 "ui.linenr" = { fg = "gray" } # Line numbers
 "ui.linenr.selected" = { fg = "white" } # Line number for the line the cursor is on
-"ui.statusline" = { bg = "250", fg = "238", modifiers = [] } # Statusline and buffer line
-"ui.statusline.inactive" = { bg = "250", fg = "239", modifiers = ["dim"] } # Statusline (unfocused document) and buffer line (inactive buffers)
+"ui.statusline" = { bg = "250", fg = "232", modifiers = [] } # Statusline and buffer line
+"ui.statusline.inactive" = { bg = "250", fg = "white", modifiers = [] } # Statusline (unfocused document) and buffer line (inactive buffers)
 "ui.statusline.normal" = { modifiers = ["reversed"] } # Statusline mode during normal mode (only if editor.color-modes is enabled)
 "ui.statusline.insert" = { bg = "light-magenta" } # Statusline mode during insert mode (only if editor.color-modes is enabled)
 "ui.statusline.select" = { bg = "light-blue" } # Statusline mode during select mode (only if editor.color-modes is enabled)
@@ -43,14 +43,14 @@ inherits = "neo-ansi-syntax"
 "ui.menu" = { bg = "234" } # Code and command completion menus
 "ui.menu.selected" = { bg = "243" } # Selected autocomplete item
 "ui.menu.scroll" = { fg = "245", bg = "232" } # fg sets thumb color, bg sets track color of scrollbar
-"ui.selection" = { bg = "241", modifiers = ["italic"] } # For selections in the editing area
+"ui.selection" = { bg = "241", modifiers = [] } # For selections in the editing area
 "ui.selection.primary" = { bg = "243", modifiers = [] } # 
 "ui.highlight" = { bg = "240" } # Highlighted lines in the picker preview
 "ui.cursorline.primary" = { bg = "240" } # The line of the primary cursor (if cursorline is enabled)
 "ui.cursorline.secondary" = { bg = "240" } # The lines of any other cursors (if cursorline is enabled)
 "ui.cursorcolumn.primary" = { bg = "240" } # The column of the primary cursor (if cursorcolumn is enabled)
 "ui.cursorcolumn.secondary" = { bg = "240" } # The columns of any other cursors (if cursorcolumn is enabled)
-"warning" = { fg = "yellow" } # Diagnostics warning (gutter)
+"warning" = { fg = "226" } # Diagnostics warning (gutter)
 "error" = { fg = "red" } # Diagnostics error (gutter)
 "info" = { fg = "blue" } # Diagnostics info (gutter)
 "hint" = { fg = "green" } # Diagnostics hint (gutter)
@@ -65,7 +65,7 @@ inherits = "neo-ansi-syntax"
 #"diff" = "white"
 "diff.plus" = "green" # line added
 "diff.minus" = "red" # removed lines
-"diff.delta" = "yellow" # line modified
+"diff.delta" = "226" # line modified
 "diff.delta.moved" = "magenta" # line moved
 
 "markup.normal.completion" = { } # for completion doc popup UI

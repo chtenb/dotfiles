@@ -42,35 +42,41 @@ brights =  [
 23 = "#d8fdf6" # cyan
 58 = "#f4ffe0" # yellow
 
-# Colors 232-255 are UX colors
+# Colors 232-255 are UI colors
 
-# bg
-232 = "#f8f1e0" # inactive background
-233 = "#f1e7c9" # inactive overlay background
-234 = "#efe9d5" # overlay background
-235 = "#f1e7c9" # inactive overlay title bar
-236 = "#e3ded3" # overlay title bar
-237 = "#efebdf" # inactive main title bar
-238 = "#efe9d5" # main title bar
-239 = "#d8eef1" # special highlight
-240 = "#daedeb" # inactive selection
-241 = "#daedeb" # active selection
-242 = "#d6f3fa" # inactive primary selection
-243 = "#d6f3fa" # active primary selection
+# bg - all base colors must be readable against these
+232 = "#f8f1e0" # bg 01: inactive background
+233 = "#f1e7c9" # bg 02: inactive overlay background
+234 = "#efe9d5" # bg 03: overlay background
+235 = "#f1e7c9" # bg 04: inactive overlay title bar
+236 = "#e3ded3" # bg 05: overlay title bar
+237 = "#efebdf" # bg 06: inactive main title bar
+238 = "#efe9d5" # bg 07: main title bar
+239 = "#d8eef1" # bg 08: special highlight
+240 = "#daedeb" # bg 09: inactive selection
+241 = "#daedeb" # bg 10: active selection
+242 = "#d6f3fa" # bg 11: inactive primary selection
+243 = "#d6f3fa" # bg 12: active primary selection
 # fg
-244 = "#8CA6A6" # 
-245 = "#7F9E9F" # 
-246 = "#729698" # 
-247 = "#658E91" # 
-248 = "#58868A" # 
-249 = "#4B7E83" # 
-250 = "#3E767C" # 
-251 = "#316E75" # 
-252 = "#24666E" # 
-253 = "#175E67" # 
-254 = "#0A5660" # 
-255 = "#004D57" # 
+244 = "#8CA6A6" #  fg 01: inactive background
+245 = "#7F9E9F" #  fg 02: inactive overlay background
+246 = "#729698" #  fg 03: overlay background
+247 = "#658E91" #  fg 04: inactive overlay title bar
+248 = "#58868A" #  fg 05: overlay title bar
+249 = "#4B7E83" #  fg 06: inactive main title bar
+250 = "#3E767C" #  fg 07: main title bar
+251 = "#316E75" #  fg 08: special highlight
+252 = "#24666E" #  fg 09: inactive selection
+253 = "#175E67" #  fg 10: active selection
+254 = "#0A5660" #  fg 11: inactive primary selection
+255 = "#004D57" #  fg 12: active primary selection
 
+# UI variants of base colors
+226 = "#fa8900" # Yellow; warning
+
+# f8f1e0 f1e7c9 efe9d5 f1e7c9 e3ded3 efebdf efe9d5 d8eef1 daedeb daedeb d6f3fa d6f3fa
+
+# 8CA6A6 7F9E9F 729698 658E91 58868A 4B7E83 3E767C 316E75 24666E 175E67 0A5660 004D57
 
 [colors.tab_bar]
 background = "#efe9d5"

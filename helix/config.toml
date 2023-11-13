@@ -74,6 +74,7 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "S-F12" = "goto_reference"
 "F4" = [":reload", ":config-reload"]
 
+# TODO: this should work like before, after having b assigned, w should not select the current word when the cursor is on the final character of the word
 "w" = "select_next_word"
 "W" = "select_next_long_word"
 "b" = "select_prev_word"
