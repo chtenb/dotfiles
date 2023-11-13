@@ -78,7 +78,7 @@ $env.SHELL = "nu"
 $env.HELIX_RUNTIME = if (sys).host.name == "Windows" {
   'c:\users\chiel.tenbrinke\prj\helix\runtime'
 } else {
-  ''
+  '/home/chiel/prj/helix/runtime'
 }
 
 source ~/dotfiles/broot/launcher/nushell/br
