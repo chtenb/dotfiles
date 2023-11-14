@@ -63,4 +63,14 @@ execution = "$SHELL"
 set_working_dir = true
 leave_broot = false
 
+[[verbs]]
+invocation = "line_up"
+key = "ctrl-p"
+internal = ":line_up"
+
+[[verbs]]
+invocation = "line_down"
+key = "ctrl-n"
+internal = ":line_down"
+
 # ... Continue for other verb definitions ...

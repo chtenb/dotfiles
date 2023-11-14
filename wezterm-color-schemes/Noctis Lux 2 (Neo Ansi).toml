@@ -58,18 +58,18 @@ brights =  [
 242 = "#d6f3fa" # bg 11: inactive primary selection
 243 = "#d6f3fa" # bg 12: active primary selection
 # fg
-244 = "#8CA6A6" #  fg 01: inactive background
-245 = "#7F9E9F" #  fg 02: inactive overlay background
-246 = "#729698" #  fg 03: overlay background
-247 = "#658E91" #  fg 04: inactive overlay title bar
-248 = "#58868A" #  fg 05: overlay title bar
-249 = "#4B7E83" #  fg 06: inactive main title bar
-250 = "#3E767C" #  fg 07: main title bar
-251 = "#316E75" #  fg 08: special highlight
-252 = "#24666E" #  fg 09: inactive selection
-253 = "#175E67" #  fg 10: active selection
-254 = "#0A5660" #  fg 11: inactive primary selection
-255 = "#004D57" #  fg 12: active primary selection
+244 = "#8CA6A6" #  fg 01: inactive text
+245 = "#7F9E9F" #  fg 02:
+246 = "#729698" #  fg 03:
+247 = "#658E91" #  fg 04:
+248 = "#58868A" #  fg 05:
+249 = "#4B7E83" #  fg 06:
+250 = "#3E767C" #  fg 07:
+251 = "#316E75" #  fg 08:
+252 = "#24666E" #  fg 09:
+253 = "#175E67" #  fg 10:
+254 = "#0A5660" #  fg 11:
+255 = "#004D57" #  fg 12: active text
 
 # UI variants of base colors
 226 = "#fa8900" # Yellow; warning
