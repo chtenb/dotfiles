@@ -19,8 +19,8 @@ inherits = "neo-ansi-syntax"
 "ui.highlight.frameline" = { bg = "239" } # Line at which debugging execution is paused at
 "ui.linenr" = { fg = "gray" } # Line numbers
 "ui.linenr.selected" = { fg = "white" } # Line number for the line the cursor is on
-"ui.statusline" = { bg = "250", fg = "232", modifiers = [] } # Statusline and buffer line
-"ui.statusline.inactive" = { bg = "250", fg = "236", modifiers = [] } # Statusline (unfocused document) and buffer line (inactive buffers)
+"ui.statusline" = { bg = "250", fg = "245", modifiers = [] } # Statusline and buffer line
+"ui.statusline.inactive" = { bg = "250", fg = "244", modifiers = [] } # Statusline (unfocused document) and buffer line (inactive buffers)
 "ui.statusline.normal" = { modifiers = ["reversed"] } # Statusline mode during normal mode (only if editor.color-modes is enabled)
 "ui.statusline.insert" = { bg = "light-magenta" } # Statusline mode during insert mode (only if editor.color-modes is enabled)
 "ui.statusline.select" = { bg = "light-blue" } # Statusline mode during select mode (only if editor.color-modes is enabled)

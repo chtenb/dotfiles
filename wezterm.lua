@@ -8,7 +8,7 @@ wezterm.on('gui-startup', function(cmd)
 end)
 
 wezterm.on('window-config-reloaded', function(window, pane)
-  local name = 'Noctis Lux 2 (Neo Ansi)'
+  local name = 'Noctis Lux (Neo Ansi)'
   local appearance = window:get_appearance()
   if appearance:find('Dark') then
     name = 'Synthwave Material (Neo Ansi)'
@@ -73,7 +73,7 @@ local config = {
     {
       intensity = 'Half',
       font = wezterm.font {
-        family = 'Monaspace Krypton',
+        family = 'Monaspace Argon',
         weight = 'Regular',
         style = 'Normal',
         harfbuzz_features = monaspace_features,
