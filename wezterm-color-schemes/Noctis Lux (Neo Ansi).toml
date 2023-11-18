@@ -58,10 +58,10 @@ brights =  [
 242 = "#d6f3fa" # bg 11: inactive primary selection
 243 = "#d6f3fa" # bg 12: active primary selection
 # fg
-244 = "#8CA6A6" #  fg 01: inactive text
-245 = "#7F9E9F" #  fg 02:
-246 = "#729698" #  fg 03:
-247 = "#658E91" #  fg 04:
+244 = "#8CA6A6" # Inactive inverse fg
+245 = "#efe9d5" # Soft inverse fg
+246 = "#fefaf2" # Regular inverse fg
+247 = "#ffffff" # Highlighted inverse fg 
 248 = "#58868A" #  fg 05:
 249 = "#4B7E83" #  fg 06:
 250 = "#3E767C" #  fg 07:

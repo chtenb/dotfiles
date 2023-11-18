@@ -40,9 +40,9 @@ brights = ['#676e95' ,'#ff5370' ,'#87de97' ,'#f78c6c' ,'#b9dedf' ,'#c792ea' ,'#9
 243 = "#4a3a48" # active primary selection
 # fg
 244 = "#444444" # Inactive inverse fg
-245 = "#262335" # Regular inverse fg
-246 = "#000000" # Highlighted inverse fg 
-247 = "#808080" # 
+245 = "#262335" # Soft inverse fg
+246 = "#262335" # Regular inverse fg
+247 = "#000000" # Highlighted inverse fg 
 248 = "#909090" # 
 249 = "#909090" # 
 250 = "#7D83A4" # 
