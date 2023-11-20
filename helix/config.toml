@@ -135,14 +135,21 @@ e = """
 """
 z = ":toggle gutters.line-numbers.min-width 48 3"
 i = "hover"
-v = """
-:pipe-to | lines | str join ' ' | parse "{names}" | format "view {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
-"""
-l = """
-:pipe-to | lines | str join ' ' | parse "{names}" | format "ls {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
-"""
+
+# Unison
+# v = """
+# :pipe-to | lines | str join ' ' | parse "{names}" | format "view {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+# """
+# l = """
+# :pipe-to | lines | str join ' ' | parse "{names}" | format "ls {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+# """
+# r = """
+# :pipe-to | lines | str join ' ' | parse "{names}" | format "run {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+# """
+
+# Koka
 r = """
-:pipe-to | lines | str join ' ' | parse "{names}" | format "run {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+:sh ":r\r" | wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
 """
 
 [keys.select.space]
@@ -154,13 +161,15 @@ e = """
 """
 z = ":toggle gutters.line-numbers.min-width 48 3"
 i = "hover"
-v = """
-:pipe-to | lines | str join ' ' | parse "{names}" | format "view {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
-"""
-l = """
-:pipe-to | lines | str join ' ' | parse "{names}" | format "ls {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
-"""
-r = """
-:pipe-to | lines | str join ' ' | parse "{names}" | format "run {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
-"""
+
+# Unison
+# v = """
+# :pipe-to | lines | str join ' ' | parse "{names}" | format "view {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+# """
+# l = """
+# :pipe-to | lines | str join ' ' | parse "{names}" | format "ls {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+# """
+# r = """
+# :pipe-to | lines | str join ' ' | parse "{names}" | format "run {names}\r" | get 0 |  wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+# """
 

@@ -20,11 +20,14 @@ inherits = "neo-ansi-syntax"
 "ui.linenr" = { fg = "gray" } # Line numbers
 "ui.linenr.selected" = { fg = "white" } # Line number for the line the cursor is on
 "ui.statusline" = { bg = "250", fg = "245", modifiers = [] } # Statusline and buffer line
-"ui.statusline.inactive" = { bg = "250", fg = "244", modifiers = ["italic"] } # Statusline (unfocused document) and buffer line (inactive buffers)
+"ui.statusline.inactive" = { bg = "250", fg = "244", modifiers = [] } # Statusline (unfocused document) and buffer line (inactive buffers)
 "ui.statusline.normal" = { modifiers = ["reversed"] } # Statusline mode during normal mode (only if editor.color-modes is enabled)
 "ui.statusline.insert" = { bg = "light-magenta" } # Statusline mode during insert mode (only if editor.color-modes is enabled)
 "ui.statusline.select" = { bg = "light-blue" } # Statusline mode during select mode (only if editor.color-modes is enabled)
 # "ui.statusline.separator" = { fg = "red" } # Separator character in statusline
+"ui.bufferline" = { bg = "250", fg = "244", modifiers = ["italic"] }
+"ui.bufferline.active" = { bg = "250", fg = "245", modifiers = [] }
+"ui.bufferline.background" = { bg = "250", fg = "244", modifiers = [] }
 "ui.popup" = { fg = "default", bg = "234" } # Documentation popups (e.g. Space + k)
 "ui.popup.info" = { fg = "default", bg = "default" } # Prompt for multiple key options
 "ui.window" = { fg = "253" } # Borderlines separating splits
