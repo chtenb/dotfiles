@@ -27,23 +27,7 @@
     l = "!f() { branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name ${branch}@{upstream} 2>/dev/null); git log -10 --notes --graph --abbrev-commit --decorate --left-right --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)' ${branch} ${upstream:+$upstream} ${@:2}; }; f"
     sup = submodule update --init --recursive
     
-    #st = status
-    
-    st = "!f() { \
-        git status -sb | head -n 1; \
-        git status --porcelain | tail -n +1 | awk 'BEGIN { FS=\"[ ]+\" } { \
-            status = substr($0, 1, 2); \
-            path = substr($0, 4); \
-            if(status == \"??\") symbol = \"?\"; \
-            else if(status == \"A \") symbol = \"+\"; \
-            else if(status == \" M\") symbol = \"✏️\"; \
-            else if(status == \"M \") symbol = \"🖍\"; \
-            else if(status == \" D\") symbol = \"🗑️\"; \
-            else if(status == \" R\") symbol = \"🔀\"; \
-            else if(status == \"UU\") symbol = \"🔥\"; \
-            else symbol = status; \
-       }'; \
-    }; f"
+    st = status
     
     last = log -1 --stat
 
@@ -76,6 +60,11 @@
     retrack = "!f() { : git checkout ; if [ $# -eq 0 ] ; then git reset --hard @{u}; else git fetch . "origin/$1:$1" --recurse-submodules=no; fi }; f"
     # Remove stuck lock file
     unlock = "!f() { root=$(git rev-parse --show-toplevel); rm "$root/.git/index.lock"; }; f"
+
+    # Commands to view the diff of one side while merging
+    remote-diff = "!f() { git diff $(git merge-base ORIG_HEAD MERGE_HEAD) MERGE_HEAD \"$@\"; }; f"
+    local-diff = "!f() { git diff $(git merge-base ORIG_HEAD MERGE_HEAD) ORIG_HEAD \"$@\"; }; f"
+    
 
     patch = --no-pager diff --no-color
 [advice]

@@ -18,19 +18,6 @@ def 256colors [] {
 }
 
 
-def "g c" [] {
-  let branches = (git branch --color=never | lines | where (($it | str starts-with "*") == false))
-  echo $branches
-  let input = (input "Type branch number to checkout and press enter to move on: " | str trim)
-  if (($input | str length) > 0) {
-    let index = ($input | into int)
-    let branch = ($branches | get $index | str trim | ansi strip)
-    ^git checkout $branch
-  } else {
-    echo "Aborting..."
-  }
-}
-
 def anonymize [pattern] {
     let input = $in
 
@@ -44,6 +31,19 @@ def anonymize [pattern] {
     $replacements | reduce --fold $input {|it, acc|
         $acc | str replace --all $it.item $it.new
     }
+}
+
+def "g c" [] {
+  let branches = (git branch --color=never | lines | where (($it | str starts-with "*") == false))
+  echo $branches
+  let input = (input "Type branch number to checkout and press enter to move on: " | str trim)
+  if (($input | str length) > 0) {
+    let index = ($input | into int)
+    let branch = ($branches | get $index | str trim | ansi strip)
+    ^git checkout $branch
+  } else {
+    echo "Aborting..."
+  }
 }
 
 def repostat [] {
@@ -61,7 +61,8 @@ def "g st" [] {
     } | sort-by -r order | get text | str join "\n"
 }
 
+
 def logtail [file] {
-  tail -f $file | bat --paging=never -l log
+  tail -n100 -f $file | bat --paging=never -l log
 }
 
