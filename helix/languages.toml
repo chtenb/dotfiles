@@ -1,4 +1,3 @@
-ucm = { command = "ncat", args = ["localhost", "5757"] }
 [[language]]
 name = "markdown"
 # text-width = 100
@@ -45,3 +44,6 @@ command = "dotnet"
 args = [ "C:/Program Files/OmniSharp/OmniSharp.dll", "--languageserver" ]
 timeout = 30
 
+[language-server.ucm]
+command = "ncat"
+args = ["localhost", "5757"]
