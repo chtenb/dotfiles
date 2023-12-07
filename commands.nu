@@ -61,6 +61,10 @@ def "g st" [] {
     } | sort-by -r order | get text | str join "\n"
 }
 
+def "g nk" [] {
+  g co -- (git diff --name-only | lines)
+}
+
 
 def logtail [file] {
   tail -n100 -f $file | bat --paging=never -l log
