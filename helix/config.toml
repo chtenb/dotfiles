@@ -84,8 +84,8 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 
 # J = ["extend_to_line_bounds", "select_mode"]
 # K = ["extend_to_line_bounds", "select_mode", "flip_selections"]
-J = ["select_line_down"]
-K = ["select_line_up"]
+J = ["select_line_below"]
+K = ["select_line_above"]
 
 "A-j" = "join_selections"
 "A-J" = "join_selections_space"
@@ -121,8 +121,8 @@ x = "keep_selections"
 # K = ["extend_line_up", "extend_to_line_bounds"]
 # J = ["extend_line_down"]
 # K = ["extend_line_up"]
-J = ["select_line_down"]
-K = ["select_line_up"]
+J = ["select_line_below"]
+K = ["select_line_above"]
 
 "A-j" = "join_selections"
 "A-J" = "join_selections_space"
