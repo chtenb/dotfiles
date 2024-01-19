@@ -71,3 +71,4 @@ def logtail [file] {
 }
 
 alias koka-dev = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\d123c6a0\bin\koka.exe
+alias kk = koka -iC:\Users\chiel.tenbrinke\prj
