@@ -34,7 +34,7 @@ def anonymize [pattern] {
 }
 
 def "g c" [] {
-  let branches = (git branch --color=never | lines | where (($it | str starts-with "*") == false))
+  let branches = (^git branch --color=never | lines | where (($it | str starts-with "*") == false))
   echo $branches
   let input = (input "Type branch number to checkout and press enter to move on: " | str trim)
   if (($input | str length) > 0) {
@@ -62,7 +62,7 @@ def "g st" [] {
 }
 
 def "g nk" [] {
-  g co -- (git diff --name-only | lines)
+  g co -- (^git diff --name-only | lines)
 }
 
 
@@ -70,5 +70,5 @@ def logtail [file] {
   tail -n100 -f $file | bat --paging=never -l log
 }
 
-alias koka-dev = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\d123c6a0\bin\koka.exe
+# alias koka-dev = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\d123c6a0\bin\koka.exe
 alias kk = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\27da0db2\bin\koka.exe -iC:\Users\chiel.tenbrinke\prj

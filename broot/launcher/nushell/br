@@ -1,4 +1,3 @@
-
 # Launch broot
 #
 # Examples:
@@ -8,7 +7,7 @@
 #   > br -hi -c "vacheblan.svg;:open_preview" ..
 #
 # See https://dystroy.org/broot/install-br/
-def-env br [
+def --env br [
     --cmd(-c): string               # Semicolon separated commands to execute
     --color: string = "auto"        # Whether to have styles and colors (auto is default and usually OK) [possible values: auto, yes, no]
     --conf: string                  # Semicolon separated paths to specific config files"),
@@ -88,9 +87,9 @@ def-env br [
     let cmd_file = ([ $nu.temp-path, $"broot-(random chars).tmp" ] | path join)
     touch $cmd_file
     if ($file == null) {
-        ^broot --outcmd $cmd_file $args
+        ^broot --outcmd $cmd_file ...$args
     } else {
-        ^broot --outcmd $cmd_file $args $file
+        ^broot --outcmd $cmd_file ...$args $file
     }
     let $cmd = (open $cmd_file)
     rm -p -f $cmd_file

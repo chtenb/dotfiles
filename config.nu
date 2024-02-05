@@ -311,7 +311,7 @@ alias replac = perl ~/dotfiles/replac/replac.pl
 
 alias t = task
 
-def-env c [path] {
+def --env c [...path] {
   cd $path
   ls -sa
 }
@@ -323,7 +323,7 @@ def tsw [task] {
   tstop
   task $task start
 }
-def-env twrap [] {
+def --env twrap [] {
   tstop
   cd ~/.task
   git add .
