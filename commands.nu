@@ -1,3 +1,49 @@
+###### ALIAS ######
+
+alias g = git
+# alias ex = start /B files .
+alias ex = explorer .
+alias gg = git grep -IPn --color=always --recurse-submodules
+alias ggn = git grep -IPn --color=always
+alias gr = git grep --no-index -IPn --color=always
+alias rcname = python -c "for i,c in enumerate(f'{input():<12}'[:12]): print(f'\t<C{i+1:>02}>{ord(c)}</C{i+1:>02}>')"
+
+alias darkcol = cp ~/dotfiles/delta/dark.gitconfig ~/dotfiles/delta/current.gitconfig
+alias lightcol = cp ~/dotfiles/delta/light.gitconfig ~/dotfiles/delta/current.gitconfig
+alias ansicol = cp ~/dotfiles/delta/ansi.gitconfig ~/dotfiles/delta/current.gitconfig
+
+alias l = ls -a
+alias ll = ls -alf
+# On windows the npm.cmd gives strange errors, but the bash script does not.
+# alias npm = if (sys).host.name == "Windows" { bash 'C:\Program Files\nodejs\npm' } else { npm }
+alias wnpm = bash 'C:\Program Files\nodejs\npm'
+alias npr = npm run -- 
+alias npe = npm exec -- 
+alias replac = perl ~/dotfiles/replac/replac.pl
+
+alias t = task
+
+def --env c [...path] {
+  cd $path
+  ls -sa
+}
+
+def tstop [] {
+  task rc.confirmation=off rc.bulk:0 status:pending +ACTIVE ids | xargs -i task {} stop
+}
+def tsw [task] {
+  tstop
+  task $task start
+}
+def --env twrap [] {
+  tstop
+  cd ~/.task
+  git add .
+  git commit -m "Wrap up"
+  git push
+  cd
+}
+
 
 def colors [] {
   [30 40 90 100] | each { |$color_offset| 
@@ -62,7 +108,7 @@ def "g st" [] {
 }
 
 def "g nk" [] {
-  g co -- (^git diff --name-only | lines)
+  g co -- ...(^git diff --name-only | lines)
 }
 
 

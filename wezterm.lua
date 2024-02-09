@@ -30,6 +30,7 @@ local config = {
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
+  enable_kitty_graphics=true,
   -- allow_win32_input_mode = false,
 
   -- font = wezterm.font_with_fallback({ 'Cascadia Code', 'Cascadia Code,CaskaydiaCove NF' }),
