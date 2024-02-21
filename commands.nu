@@ -101,8 +101,8 @@ def "g st" [] {
   $lines.0 | print
   $lines | skip 1 | wrap text | insert type {|it| ($it.text | ansi strip | str substring 0..2) } | insert order {|it| match $it.type { 
       "??" => 0, "UU" => 1, "UD" => 2, 
-      $t if $t =~ ' \S'  => 3, 
-      $t if $t =~ '\S\S'  => 4,  
+      $t if $t =~ ' \S' => 3, 
+      $t if $t =~ '\S\S' => 4,  
       $t if $t =~ '\S ' => 5, _ => 6 } 
     } | sort-by -r order | get text | str join "\n"
 }
@@ -118,3 +118,36 @@ def logtail [file] {
 
 # alias koka-dev = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\d123c6a0\bin\koka.exe
 alias kk = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\27da0db2\bin\koka.exe -iC:\Users\chiel.tenbrinke\prj
+
+def confirm [message: string] {
+  mut response = (input $"($message) \(Y/n\) ")
+  while $response !~ "(?i)^(n|no|y|yes)$" {
+    $response = (input "Please answer yes or no")
+  }
+  $response =~ "(?i)^(y|yes)$"
+}
+
+# Delete local branches that are merged into the current branch.
+# Before each operation, the user is asked for confirmation.
+def rm-br [master_branch_name = "master"] {
+
+  # Get merged branches
+  let merged_branches = (^git branch --merged
+    | split row "\n"
+    | str trim
+    | ansi strip
+    | where {|b| $b != $master_branch_name and ($b !~ "[*|+]")})
+  
+  print "Merged local branches:"
+  print ($merged_branches | str join "\n    ")
+
+  $merged_branches | each {|it| 
+      if (confirm $"Do you want to delete branch ($it)?") {
+        print $"Deleting ($it)"
+        (^git branch -D $it)
+      } else {
+        print $"Skipping ($it)"
+      }
+    } 
+}
+
