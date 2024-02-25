@@ -17,6 +17,14 @@ internal = ":close_panel_cancel"
 keys = []
 
 [[verbs]]
+internal = ":input_del_word_left"
+keys = ["ctrl-w"]
+
+[[verbs]]
+internal = ":back"
+keys = ["ctrl-o"]
+
+[[verbs]]
 # print path and exit broot
 invocation = "print_path"
 keys = ["enter"]
