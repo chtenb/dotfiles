@@ -36,7 +36,7 @@ inherits = "neo-ansi-syntax"
 "ui.text.focus" = { fg = "default", bg = "243" } # chtenb: Selected line in command picker?
 "ui.text.inactive" = { fg = "gray" } # Same as ui.text but when the text is inactive (e.g. suggestions)
 "ui.text.info" = { fg = "default", bg = "default" } # The key: command text in ui.popup.info boxes. chtenb: text inside minor mode popups
-"ui.virtual.ruler" = { fg = "245" } # Ruler columns (see the editor.rulers config)
+"ui.virtual.ruler" = { bg = "232" } # Ruler columns (see the editor.rulers config)
 "ui.virtual.whitespace" = { fg = "black", modifiers = [] } # Visible whitespace characters
 "ui.virtual.indent-guide" = { fg = "gray" } # Vertical indent width guides
 "ui.virtual.inlay-hint" = { bg = "22" } # Default style for inlay hints of all kinds
