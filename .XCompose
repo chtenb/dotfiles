@@ -2356,6 +2356,7 @@
 <Multi_key> <1> <asciicircum> 		: "¹"   onesuperior # SUPERSCRIPT ONE
 <dead_circumflex> <KP_1>         	: "¹"   onesuperior # SUPERSCRIPT ONE
 <Multi_key> <asciicircum> <KP_1> 	: "¹"   onesuperior # SUPERSCRIPT ONE
+<Multi_key> <Multi_key> <asciicircum> <minus> <1>      : "⁻¹"   U207B 00B9          # SUPERSCRIPT MINUS ONE
 <dead_circumflex> <Multi_key> <underscore> <o> 	: "º"   masculine # MASCULINE ORDINAL INDICATOR
 <Multi_key> <asciicircum> <underscore> <o> 	: "º"   masculine # MASCULINE ORDINAL INDICATOR
 <dead_circumflex> <Multi_key> <underbar> <o> 	: "º"   masculine # MASCULINE ORDINAL INDICATOR
