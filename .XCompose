@@ -1284,7 +1284,7 @@
 <Multi_key> <asterisk> <parenleft>      : "﴾"   UFD3E           # ORNATE LEFT PARENTHESIS
 <Multi_key> <asterisk> <parenright>     : "﴿"   UFD3F           # ORNATE RIGHT PARENTHESIS
 <Multi_key> <k> <s>                     : "ʘ"   U0298           # LATIN LETTER BILABIAL CLICK (kiss sound)
-<Multi_key> <bar> <greater>             : "‣"   U2023           # TRIANGULAR BULLET
+<Multi_key> <bar> <greater>             : "▹"   U2023           # TRIANGULAR BULLET
 #SUPERSCRIPTS:
 #To avoid namespace clashes, <asciicircum> is doubled (will I regret that?)
 <Multi_key> <asciicircum> <asciicircum> <h>       : "ʰ"   U02B0           # SUPERSCRIPT H
