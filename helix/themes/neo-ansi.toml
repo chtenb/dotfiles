@@ -43,6 +43,7 @@ inherits = "neo-ansi-syntax"
 "ui.virtual.inlay-hint.parameter" = { bg = "52" } # Style for inlay hints of kind parameter (LSPs are not required to set a kind)
 "ui.virtual.inlay-hint.type" = { bg = "58" } # Style for inlay hints of kind type (LSPs are not required to set a kind)
 "ui.virtual.wrap" = { fg = "gray" } # Soft-wrap indicator (see the editor.soft-wrap config)
+"ui.virtual.jump-label" = { fg = "red", modifiers = ["bold"] }
 "ui.menu" = { bg = "234" } # Code and command completion menus
 "ui.menu.selected" = { bg = "243" } # Selected autocomplete item
 "ui.menu.scroll" = { fg = "245", bg = "232" } # fg sets thumb color, bg sets track color of scrollbar
