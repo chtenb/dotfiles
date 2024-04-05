@@ -20,6 +20,7 @@ alias wnpm = bash 'C:\Program Files\nodejs\npm'
 alias npr = npm run -- 
 alias npe = npm exec -- 
 alias replac = perl ~/dotfiles/replac/replac.pl
+alias lnx = wsl.exe --cd '~' /home/chiel/.cargo/bin/nu -e "echo $'Entered WSL at (pwd)'"
 
 alias t = task
 
