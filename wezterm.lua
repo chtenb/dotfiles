@@ -33,13 +33,15 @@ local config = {
   enable_kitty_graphics=true,
   allow_win32_input_mode = true,
 
-  -- font = wezterm.font_with_fallback({ 'Cascadia Code', 'Cascadia Code,CaskaydiaCove NF' }),
+  -- font = wezterm.font_with_fallback({ 'Cascadia Code', 'Cascadia Code,CaskaydiaCove NF'}),
   font_size = 10.0,
 
-  font = wezterm.font {
-    family = 'Monaspace Neon',
-    weight = 'Medium',
-    harfbuzz_features = monaspace_features,
+  font = wezterm.font_with_fallback {
+    {
+      family = 'Monaspace Neon',
+      weight = 'Medium',
+      harfbuzz_features = monaspace_features,
+    }
   },
   font_rules = {
     {
