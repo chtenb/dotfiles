@@ -41,7 +41,17 @@ local config = {
       family = 'Monaspace Neon',
       weight = 'Medium',
       harfbuzz_features = monaspace_features,
-    }
+    },
+    {
+      family = 'Cambria Math',
+      weight = 'Medium',
+      harfbuzz_features = monaspace_features,
+    },
+    {
+      family = 'Segoe UI Symbol',
+      weight = 'Medium',
+      harfbuzz_features = monaspace_features,
+    },
   },
   font_rules = {
     {

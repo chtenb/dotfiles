@@ -64,6 +64,13 @@ def 256colors [] {
   } | str join
 }
 
+def underlines [] {
+  printf "\e[4:3m\e[58:5:1mhello\e[0m"
+}
+
+def unicode [] {
+  printf "𝓒-🎉-✅"
+}
 
 def anonymize [pattern] {
     let input = $in

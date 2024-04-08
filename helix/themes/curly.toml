@@ -1,0 +1,5 @@
+"ui.text" = { underline = { color = "light-green", style = "curl" } }
+"ui.cursor.primary" = { fg = "white", bg = "default", modifiers = ["reversed"] } # Cursor with primary selection
+"ui.cursor" = { fg = "default", bg = "default", modifiers = ["reversed"] } # 
+"ui.background" = { } # 
+"ui.selection" = { bg = "241", modifiers = [] } # For selections in the editing area
