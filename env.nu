@@ -94,7 +94,12 @@ let new_paths = if (sys).host.name == "Windows" {
   'c:\users\chiel.tenbrinke\.local\share\helix'
   ]
 } else {
-  ['/home/chiel/.cabal/bin', '/home/chiel/.ghcup/bin']
+  [ '/home/chiel/.cabal/bin'
+  , '/home/chiel/.ghcup/bin'
+  , '/home/chiel/.cargo/bin'
+  , '/home/chiel/.local/bin'
+  , '/home/chiel/bin'
+  ]
 }
 
 let existing_path = if (sys).host.name == "Windows" {
