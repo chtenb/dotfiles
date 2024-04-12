@@ -613,7 +613,11 @@
 <Multi_key> <exclam> <equal>		: "≠"	U2260		# NOT EQUAL TO
 <Multi_key> <slash> <equal>		: "≠"	U2260		# NOT EQUAL TO
 <Multi_key> <less> <equal>		: "≤"	U2264		# LESS-THAN OR EQUAL TO
+<Multi_key> <slash> <less> <equal> 	: "≰"   U2270 # NEITHER LESS-THAN NOR EQUAL TO
+<Multi_key> <slash> <less> <space>  	: "≮"   U226E # NOT LESS-THAN
 <Multi_key> <greater> <equal>		: "≥"	U2265		# GREATER-THAN OR EQUAL TO
+<Multi_key> <slash> <greater> <space> 	: "≯"   U226F # NOT GREATER-THAN
+<Multi_key> <slash> <greater> <equal> 	: "≱"   U2271 # NEITHER GREATER-THAN NOR EQUAL TO
 <Multi_key> <exclam> <less> <greater>   : "≸"	U2278		# NEITHER LESS-THAN NOR GREATER-THAN
 # MUCH is usually enough for me.  No need for VERY.
 <Multi_key> <plus> <less>        	: "≪"	U226A		# MUCH LESS-THAN
@@ -1866,46 +1870,9 @@
 
 # ASCII characters that may be difficult to access
 # on some keyboards.
-<Multi_key> <plus> <plus>        	: "#"   numbersign # NUMBER SIGN
-<Multi_key> <apostrophe> <space> 	: "'"   apostrophe # APOSTROPHE
-<Multi_key> <space> <apostrophe> 	: "'"   apostrophe # APOSTROPHE
-<Multi_key> <A> <T>              	: "@"   at # COMMERCIAL AT
-<Multi_key> <parenleft> <parenleft> 	: "["   bracketleft # LEFT SQUARE BRACKET
-<Multi_key> <slash> <slash>      	: "\\"   backslash # REVERSE SOLIDUS
-<Multi_key> <slash> <less>       	: "\\"   backslash # REVERSE SOLIDUS
-<Multi_key> <less> <slash>       	: "\\"   backslash # REVERSE SOLIDUS
-<Multi_key> <parenright> <parenright> 	: "]"   bracketright # RIGHT SQUARE BRACKET
-
-<Multi_key> <asciicircum> <space> 	: "^"   asciicircum # CIRCUMFLEX ACCENT
-<Multi_key> <space> <asciicircum> 	: "^"   asciicircum # CIRCUMFLEX ACCENT
-<Multi_key> <greater> <space>    	: "^"   asciicircum # CIRCUMFLEX ACCENT
-<Multi_key> <space> <greater>    	: "^"   asciicircum # CIRCUMFLEX ACCENT
-
-<Multi_key> <grave> <space>      	: "`"   grave # GRAVE ACCENT
-<Multi_key> <space> <grave>      	: "`"   grave # GRAVE ACCENT
-
 <Multi_key> <comma> <space>      	: "¸"   cedilla # CEDILLA
 <Multi_key> <space> <comma>      	: "¸"   cedilla # CEDILLA
 <Multi_key> <comma> <comma> 		: "¸"   cedilla # CEDILLA
-
-<Multi_key> <parenleft> <minus>  	: "{"   braceleft # LEFT CURLY BRACKET
-<Multi_key> <minus> <parenleft>  	: "{"   braceleft # LEFT CURLY BRACKET
-
-<Multi_key> <slash> <asciicircum> 	: "|"   bar # VERTICAL LINE
-<Multi_key> <asciicircum> <slash> 	: "|"   bar # VERTICAL LINE
-<Multi_key> <V> <L>              	: "|"   bar # VERTICAL LINE
-<Multi_key> <L> <V>              	: "|"   bar # VERTICAL LINE
-<Multi_key> <v> <l>              	: "|"   bar # VERTICAL LINE
-<Multi_key> <l> <v>              	: "|"   bar # VERTICAL LINE
-
-<Multi_key> <parenright> <minus> 	: "}"   braceright # RIGHT CURLY BRACKET
-<Multi_key> <minus> <parenright> 	: "}"   braceright # RIGHT CURLY BRACKET
-
-<Multi_key> <asciitilde> <space> 	: "~"   asciitilde # TILDE
-<Multi_key> <space> <asciitilde> 	: "~"   asciitilde # TILDE
-<Multi_key> <minus> <space>      	: "~"   asciitilde # TILDE
-<Multi_key> <space> <minus>      	: "~"   asciitilde # TILDE
-
 # Spaces
 <Multi_key> <space> <space>      	: " "   nobreakspace # NO-BREAK SPACE
 <Multi_key> <space> <period>     	: " "   U2008 # PUNCTUATION SPACE
