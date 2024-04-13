@@ -143,3 +143,11 @@ $env.HELIX_RUNTIME = if (sys).host.name == "Windows" {
 }
 
 source ~/dotfiles/broot/launcher/nushell/br
+
+
+# Initialize nvm on linux so we can use npm
+if $nu.os-info.name != "windows" {
+  let NVM_SCRIPT: glob = '~/.nvm/nvm.sh'
+  $env.PATH = (bash -c $'source ($NVM_SCRIPT) && echo $PATH')
+}
+
