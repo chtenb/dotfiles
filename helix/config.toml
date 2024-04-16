@@ -29,7 +29,7 @@ skip-levels = 1
 [editor.whitespace.render]
 ndsp = "all"
 tab = "all"
-# space = "all"
+space = "trailing"
 # newline = "all"
 
 [editor.whitespace.characters]
@@ -67,8 +67,8 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 #";" = "flip_selections"
 
 #"ret" = ["open_below", "normal_mode"]
-"H" = ["select_mode", "goto_line_start", "exit_select_mode"]
-"L" = ["select_mode", "goto_line_end", "exit_select_mode"]
+"H" = ["ensure_selections_forward", "collapse_selection", "select_mode", "goto_line_start", "exit_select_mode"]
+"L" = ["ensure_selections_forward", "flip_selections", "collapse_selection", "select_mode", "goto_line_end", "exit_select_mode"]
 
 "F2" = "rename_symbol"
 "F3" = ":format"
