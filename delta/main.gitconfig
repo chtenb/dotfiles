@@ -1,10 +1,10 @@
 [include]
     path = features.gitconfig
-    path = current.gitconfig
+    path = neo-ansi.gitconfig
 
 [delta]
     syntax-theme = terminal-neo-ansi
-    features = decent-decorations current
+    features = decent-decorations zebra-neo-ansi
     # features = plain-git-colors
 
     navigate = true
@@ -34,4 +34,4 @@
 
 [delta "interactive"]
     keep-plus-minus-markers = false
-    features = current
+    features = zebra-neo-ansi

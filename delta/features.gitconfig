@@ -26,21 +26,6 @@
 # 4. Feel free to include a comment line indicating who is the author of the
 #    theme. E.g. a link to your github user page.
 
-[delta "zebra-ansi"]
-    minus-style = syntax 52
-    minus-emph-style = syntax 88
-    plus-style = syntax 22
-    plus-emph-style = syntax 28
-
-    map-styles = \
-       bold purple => syntax 53, \
-       bold blue => syntax 17, \
-       bold cyan => syntax 23, \
-       bold yellow => syntax 58
-
-    zero-style = syntax
-    whitespace-error-style = "#aaaaaa"
-
 [delta "zebra-dark"]
     minus-style = syntax "#330f0f"
     minus-emph-style = syntax "#4f1917"
