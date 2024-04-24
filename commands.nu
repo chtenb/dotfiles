@@ -20,7 +20,7 @@ alias wnpm = bash 'C:\Program Files\nodejs\npm'
 alias npr = npm run -- 
 alias npe = npm exec -- 
 alias replac = perl ~/dotfiles/replac/replac.pl
-alias lnx = wsl.exe --cd '~' /home/chiel/.cargo/bin/nu -e "echo $'Entered WSL at (pwd)'"
+alias lnx = wsl.exe --cd '~' /home/chiel/.cargo/bin/nu -e "print $'Entered WSL at (pwd)'"
 
 alias t = task
 
@@ -89,14 +89,14 @@ def anonymize [pattern] {
 
 def "g c" [] {
   let branches = (^git branch --color=never | lines | where (($it | str starts-with "*") == false))
-  echo $branches
+  print $branches
   let input = (input "Type branch number to checkout and press enter to move on: " | str trim)
   if (($input | str length) > 0) {
     let index = ($input | into int)
     let branch = ($branches | get $index | str trim | ansi strip)
     ^git checkout $branch
   } else {
-    echo "Aborting..."
+    print "Aborting..."
   }
 }
 
