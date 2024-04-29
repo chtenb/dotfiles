@@ -30,8 +30,8 @@ del /q %UserProfile%\AppData\Roaming\nushell\config.nu
 mklink %UserProfile%\AppData\Roaming\nushell\config.nu %UserProfile%\dotfiles\config.nu
 del /q %UserProfile%\AppData\Roaming\nushell\env.nu
 mklink %UserProfile%\AppData\Roaming\nushell\env.nu %UserProfile%\dotfiles\env.nu
-del /q %UserProfile%\.wezterm.lua
-mklink %UserProfile%\.wezterm.lua %UserProfile%\dotfiles\wezterm.lua
+rmdir %UserProfile%\.config\wezterm
+mklink /d %UserProfile%\.config\wezterm %UserProfile%\dotfiles\wezterm
 
 rmdir /s /q %UserProfile%\AppData\Roaming\dystroy\broot\config
 mklink /d %UserProfile%\AppData\Roaming\dystroy\broot\config %UserProfile%\dotfiles\broot

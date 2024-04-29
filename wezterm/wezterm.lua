@@ -7,24 +7,12 @@ wezterm.on('gui-startup', function(cmd)
   window:gui_window():maximize()
 end)
 
-wezterm.on('window-config-reloaded', function(window, pane)
-  local name = 'Noctis Lux (Neo Ansi)'
-  local appearance = window:get_appearance()
-  if appearance:find('Dark') then
-    name = 'Synthwave Material (Neo Ansi)'
-  end
-
-  local overrides = window:get_config_overrides() or {}
-  if overrides.color_scheme ~= name then
-    overrides.color_scheme = name;
-    window:set_config_overrides(overrides)
-  end
-end)
+require 'autodark'
 
 local monaspace_features = { 'ss01=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'calt=1', 'dlig=0', 'ss02=0', }
 
 local config = {
-  color_scheme_dirs = { 'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm-color-schemes' },
+  color_scheme_dirs = { 'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm\\wezterm-color-schemes' },
   default_prog = { 'nu' },
   window_close_confirmation = 'NeverPrompt',
   hide_tab_bar_if_only_one_tab = true,
