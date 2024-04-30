@@ -12,10 +12,22 @@ require 'autodark'
 local monaspace_features = { 'ss01=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'calt=1', 'dlig=0', 'ss02=0', }
 
 local config = {
-  color_scheme_dirs = { 'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm\\wezterm-color-schemes' },
+  color_scheme_dirs = { 'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm\\color-schemes' },
   default_prog = { 'nu' },
-  window_close_confirmation = 'NeverPrompt',
-  hide_tab_bar_if_only_one_tab = true,
+  window_close_confirmation = 'AlwaysPrompt',
+  skip_close_confirmation_for_processes_named = {
+    "bash.exe",
+    "nu.exe",
+    "cmd.exe",
+    "pwsh.exe",
+    "powershell.exe",
+    "broot.exe",
+  },
+  clean_exit_codes = { 130 },
+  exit_behavior_messaging = "Verbose",
+  exit_behavior = "CloseOnCleanExit",
+
+  hide_tab_bar_if_only_one_tab = false,
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
   enable_kitty_graphics=true,
