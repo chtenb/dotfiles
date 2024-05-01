@@ -42,41 +42,47 @@ brights =  [
 23 = "#d8fdf6" # cyan
 58 = "#f4ffe0" # yellow
 
-# Colors 232-255 are UI colors
+# Colors 232-255 are general UI colors
+
+# Background color idea:
+#f8f1e0
+#f9efdc
+#faedd8
+#faebd4
+#fbe8d0
+#fce6cc
+#fce4c8
+#fde2c4
 
 # bg - all base colors must be readable against these
-232 = "#f8f1e0" # bg 01: inactive background
-233 = "#f1e7c9" # bg 02: inactive overlay background
-234 = "#efe9d5" # bg 03: overlay background
-235 = "#f1e7c9" # bg 04: inactive overlay title bar
-236 = "#e3ded3" # bg 05: overlay title bar
-237 = "#efebdf" # bg 06: inactive main title bar
-238 = "#efe9d5" # bg 07: main title bar
-239 = "#d8eef1" # bg 08: special highlight
-240 = "#daedeb" # bg 09: inactive selection
-241 = "#daedeb" # bg 10: active selection
-242 = "#d6f3fa" # bg 11: inactive primary selection
-243 = "#d6f3fa" # bg 12: active primary selection
-# fg
-244 = "#8CA6A6" # Inactive inverse fg
-245 = "#efe9d5" # Soft inverse fg
-246 = "#fefaf2" # Regular inverse fg
-247 = "#ffffff" # Highlighted inverse fg 
-248 = "#58868A" #  fg 05:
-249 = "#4B7E83" #  fg 06:
-250 = "#3E767C" #  fg 07:
-251 = "#316E75" #  fg 08:
-252 = "#24666E" #  fg 09:
-253 = "#175E67" #  fg 10:
-254 = "#0A5660" #  fg 11:
-255 = "#004D57" #  fg 12: active text
+232 = "#f8f1e0" # e8 bg 01: background #1 inactive background
+233 = "#f1e7c9" # e9 bg 02: background #2 inactive overlay background
+234 = "#efe9d5" # ea bg 03: background #3 overlay background
+235 = "#f1e7c9" # eb bg 04: background #4 inactive overlay title bar
+236 = "#e3ded3" # ec bg 05: alt background #1 overlay title bar
+237 = "#efebdf" # ed bg 06: alt background #2 inactive main title bar
+238 = "#efe9d5" # ee bg 07: alt background #3 main title bar
+239 = "#d8eef1" # ef bg 08: alt background #4 special highlight
+240 = "#daedeb" # f0 bg 09: selection #1 inactive selection
+241 = "#d8eef1" # f1 bg 10: selection #2 active selection
+242 = "#d6f3fa" # f2 bg 11: selection #3 inactive primary selection
+243 = "#d6f3fa" # f3 bg 12: selection #4 active primary selection
+# fg - the default foreground color must be readable against these in inverse mode
+244 = "#8ca6a6" # f4 fg 01: Inactive inverse fg
+245 = "#efe9d5" # f5 fg 02: Soft inverse fg
+246 = "#fefaf2" # f6 fg 03: Regular inverse fg
+247 = "#ffffff" # f7 fg 04: Highlighted inverse fg 
+248 = "#58868a" # f8 fg 05:
+249 = "#4b7e83" # f9 fg 06:
+250 = "#3e767c" # fa fg 07:
+251 = "#316e75" # fb fg 08:
+252 = "#24666e" # fc fg 09:
+253 = "#175e67" # fd fg 10:
+254 = "#0a5660" # fe fg 11:
+255 = "#004d57" # ff fg 12: active text
 
-# UI variants of base colors
+# UI variants of base text colors (No readability requirement, optimize for looks)
 226 = "#fa8900" # Yellow; warning
-
-# f8f1e0 f1e7c9 efe9d5 f1e7c9 e3ded3 efebdf efe9d5 d8eef1 daedeb daedeb d6f3fa d6f3fa
-
-# 8CA6A6 7F9E9F 729698 658E91 58868A 4B7E83 3E767C 316E75 24666E 175E67 0A5660 004D57
 
 [colors.tab_bar]
 background = "#efe9d5"

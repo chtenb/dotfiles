@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm';
 
 wezterm.on('window-config-reloaded', function(window, pane)
-  local name = 'Noctis Lux (Neo Ansi)'
+  local name = 'Lux (neo-ansi)'
   local appearance = window:get_appearance()
   if appearance:find('Dark') then
     name = 'Synthwave Material (Neo Ansi)'
