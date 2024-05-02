@@ -127,20 +127,20 @@ Plugin 'tpope/vim-fugitive'
 " NERDCommenter
 Plugin 'scrooloose/nerdcommenter'
 " Tabularizing
-Plugin 'godlygeek/tabular'
+"Plugin 'godlygeek/tabular'
 " Better f/t
 "Plugin 'dahu/vim-fanfingtastic'
 " Be able to increment dates
-Plugin 'tpope/vim-speeddating'
+"Plugin 'tpope/vim-speeddating'
 " Ascii drawings
-Plugin 'vim-scripts/DrawIt'
+"Plugin 'vim-scripts/DrawIt'
 " Automatic reload vim stuff
 "Plugin 'xolox/vim-reload'
 " Colors
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
 "Plugin 'chriskempson/base16-vim'
-Plugin 'tomasr/molokai'
+"Plugin 'tomasr/molokai'
 "Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'ajh17/Spacegray.vim'
 " Language support
@@ -158,9 +158,9 @@ Plugin 'othree/html5.vim'
 "Plugin 'Konfekt/FastFold'
 "Plugin 'kchmck/vim-coffee-script'
 Plugin 'einars/js-beautify'
-Plugin 'sillyotter/t4-vim'
-Plugin 'adamclerk/vim-razor'
-Plugin 'lervag/vimtex'
+"Plugin 'sillyotter/t4-vim'
+"Plugin 'adamclerk/vim-razor'
+"Plugin 'lervag/vimtex'
 Plugin 'chtenb/vim-tsv'
 Plugin 'vim-scripts/w3af.vim'
 
