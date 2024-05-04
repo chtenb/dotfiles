@@ -37,7 +37,7 @@ local config = {
   allow_win32_input_mode = true,
 
   -- font = wezterm.font_with_fallback({ 'Cascadia Code', 'Cascadia Code,CaskaydiaCove NF'}),
-  font_size = 10.0,
+  font_size = 9.0,
 
   font = wezterm.font_with_fallback {
     {
