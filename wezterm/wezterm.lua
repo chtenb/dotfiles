@@ -9,7 +9,8 @@ end)
 
 require 'autodark'
 
-local monaspace_features = { 'ss01=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'calt=1', 'dlig=0', 'ss02=0', }
+-- === <= |> =>
+local monaspace_features = { 'calt=1', 'ss01=1', 'ss02=0', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'liga=1', 'cv60=1' }
 
 local config = {
   color_scheme_dirs = {
@@ -37,7 +38,7 @@ local config = {
   allow_win32_input_mode = true,
 
   -- font = wezterm.font_with_fallback({ 'Cascadia Code', 'Cascadia Code,CaskaydiaCove NF'}),
-  font_size = 9.0,
+  font_size = 10.0,
 
   font = wezterm.font_with_fallback {
     {
@@ -101,7 +102,7 @@ local config = {
     saturation = 0.8,
     brightness = 0.9,
   },
-  bypass_mouse_reporting_modifiers = 'SHIFT',
+  -- bypass_mouse_reporting_modifiers = 'SHIFT',
   mouse_bindings = {
     -- Change the default click behavior so that it only selects
     -- text and doesn't open hyperlinks
