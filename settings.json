@@ -214,8 +214,9 @@
         "[SynthWave '84]": {},
     },
     // GENERAL
-    "editor.fontFamily": "Cascadia Code,CaskaydiaCove NF",
-    "editor.fontLigatures": true,
+    // === <= |> =>
+    "editor.fontFamily": "Monaspace Neon",
+    "editor.fontLigatures": "'ss02', 'ss03', 'cv60'",
     "editor.codeLensFontFamily": "Cascadia Code",
     // "editor.renderWhitespace": "boundary",
     "editor.renderControlCharacters": true,

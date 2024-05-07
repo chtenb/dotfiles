@@ -25,7 +25,7 @@ alias lnx = wsl.exe --cd '~' /home/chiel/.cargo/bin/nu -e "print $'Entered WSL a
 alias t = task
 
 def --env c [...path] {
-  cd $path
+  cd $path.0
   ls -sa
 }
 

@@ -9,12 +9,14 @@ end)
 
 require 'autodark'
 
+-- local monaspace_features = { 'calt=1', 'ss01=1', 'ss02=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'liga=1', 'cv60=1' }
 -- === <= |> =>
-local monaspace_features = { 'calt=1', 'ss01=1', 'ss02=0', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'liga=1', 'cv60=1' }
+local monaspace_features = { 'ss02=1', 'ss03=1', 'cv60=1' }
 
 local config = {
+  debug_key_events = true,
   color_scheme_dirs = {
-    'C:\\users\\chiel.tenbrinke\\dotfiles\\neo-ansi\\terms\\wezterm',
+    'C:\\users\\chiel.tenbrinke\\dotfiles\\neo-ansi\\terms\\wezterm\\generated',
     'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm\\color-schemes',
    },
   default_prog = { 'nu' },
