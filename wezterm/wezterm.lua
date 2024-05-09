@@ -9,9 +9,8 @@ end)
 
 require 'autodark'
 
--- local monaspace_features = { 'calt=1', 'ss01=1', 'ss02=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'liga=1', 'cv60=1' }
 -- === <= |> =>
-local monaspace_features = { 'ss02=1', 'ss03=1', 'cv60=1' }
+local monaspace_features = { 'calt=1', 'ss01=1', 'ss02=1', 'ss03=1', 'ss04=1', 'ss05=1', 'ss06=1', 'ss07=1', 'ss08=1', 'liga=1', 'cv60=1' }
 
 local config = {
   debug_key_events = true,
@@ -39,12 +38,12 @@ local config = {
   enable_kitty_graphics=true,
   allow_win32_input_mode = true,
 
-  -- font = wezterm.font_with_fallback({ 'Cascadia Code', 'Cascadia Code,CaskaydiaCove NF'}),
   font_size = 10.0,
 
   font = wezterm.font_with_fallback {
     {
-      family = 'Monaspace Neon',
+      -- family = 'Monaspace Neon Var',
+      family = 'Cascadia Code',
       weight = 'Medium',
       harfbuzz_features = monaspace_features,
     },
@@ -59,46 +58,46 @@ local config = {
       harfbuzz_features = monaspace_features,
     },
   },
-  font_rules = {
-    {
-      intensity = 'Bold',
-      italic = false,
-      font = wezterm.font {
-        family = 'Monaspace Neon',
-        weight = 'Bold',
-        harfbuzz_features = monaspace_features,
-      }
-    },
-    {
-      intensity = 'Normal',
-      italic = true,
-      font = wezterm.font {
-        family = 'Monaspace Neon',
-        weight = 'Regular',
-        style = 'Italic',
-        harfbuzz_features = monaspace_features,
-      }
-    },
-    {
-      intensity = 'Bold',
-      italic = true,
-      font = wezterm.font {
-        family = 'Monaspace Krypton',
-        weight = 'Bold',
-        style = 'Normal',
-        harfbuzz_features = monaspace_features,
-      }
-    },
-    {
-      intensity = 'Half',
-      font = wezterm.font {
-        family = 'Monaspace Argon',
-        weight = 'Regular',
-        style = 'Normal',
-        harfbuzz_features = monaspace_features,
-      }
-    },
-  },
+  -- font_rules = {
+  --   {
+  --     intensity = 'Bold',
+  --     italic = false,
+  --     font = wezterm.font {
+  --       family = 'Monaspace Neon Var',
+  --       weight = 'Bold',
+  --       harfbuzz_features = monaspace_features,
+  --     }
+  --   },
+  --   {
+  --     intensity = 'Normal',
+  --     italic = true,
+  --     font = wezterm.font {
+  --       family = 'Monaspace Neon Var',
+  --       weight = 'Regular',
+  --       style = 'Italic',
+  --       harfbuzz_features = monaspace_features,
+  --     }
+  --   },
+  --   {
+  --     intensity = 'Bold',
+  --     italic = true,
+  --     font = wezterm.font {
+  --       family = 'Monaspace Krypton Var',
+  --       weight = 'Bold',
+  --       style = 'Normal',
+  --       harfbuzz_features = monaspace_features,
+  --     }
+  --   },
+  --   {
+  --     intensity = 'Half',
+  --     font = wezterm.font {
+  --       family = 'Monaspace Argon Var',
+  --       weight = 'Regular',
+  --       style = 'Normal',
+  --       harfbuzz_features = monaspace_features,
+  --     }
+  --   },
+  -- },
 
   inactive_pane_hsb = {
     saturation = 0.8,
