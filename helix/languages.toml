@@ -50,3 +50,7 @@ timeout = 30
 [language-server.ucm]
 command = "ncat"
 args = ["localhost", "5757"]
+
+[[language]]
+name = "xml"
+formatter = { command = "tidy", args = ["-q", "-xml", "--show-errors", "0", "--show-warnings", "0", "--force-output", "--indent", "auto",  "--vertical-space", "yes", "--tidy-mark", "no", "-wrap", "120"] }
