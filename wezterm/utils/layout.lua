@@ -34,8 +34,8 @@ end
 function Layout:push(background, foreground, text, attributes)
   self = self or {}
   local insert = table.insert
-  insert(self, { Background = { AnsiColor = background } })
-  insert(self, { Foreground = { AnsiColor = foreground } })
+  insert(self, { Background = { Color = background } })
+  insert(self, { Foreground = { Color = foreground } })
 
   local attribute_mappings = {
     NoUnderline = { Underline = "None" },

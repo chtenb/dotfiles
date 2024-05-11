@@ -117,11 +117,11 @@ M.get_cwd_hostname = function(pane, search_git_root_instead)
     hostname = hostname:gsub("^%l", string.upper)
   end
 
-  if M.is_windows then
+  -- if M.is_windows then
     cwd = cwd:gsub("/" .. M.home .. "(.-)$", "~%1")
-  else
-    cwd = cwd:gsub(M.home .. "(.-)$", "~%1")
-  end
+  -- else
+  --   cwd = cwd:gsub(M.home .. "(.-)$", "~%1")
+  -- end
 
   ---search for the git root of the project if specified
   if search_git_root_instead then
