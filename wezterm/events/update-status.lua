@@ -9,6 +9,9 @@ local strwidth = fun.strwidth
 
 -- luacheck: push ignore 561
 wez.on("update-status", function(window, pane)
+  local conf = window:effective_config()
+  local color = conf.resolved_palette.indexed
+  wez.log_info (color[232])
   local theme = require("colors")[fun.get_scheme()]
   local modes = {
     copy_mode = { text = " 󰆏 COPY ", bg = theme.brights[3] },
@@ -18,7 +21,7 @@ wez.on("update-status", function(window, pane)
     lock_mode = { text = "  LOCK ", bg = theme.ansi[8] },
   }
 
-  local bg = theme.ansi[5]
+  local bg = "6"
   local mode_indicator_width = 0
 
   -- {{{1 LEFT STATUS
@@ -36,8 +39,9 @@ wez.on("update-status", function(window, pane)
   -- {{{1 RIGHT STATUS
   local RightStatus = StatusBar:new() ---@class Layout
 
-  bg = wez.color.parse(bg)
-  local colors = { bg:darken(0.15), bg, bg:lighten(0.15), bg:lighten(0.25) }
+  -- bg = wez.color.parse(bg)
+  -- local colors = { bg:darken(0.15), bg, bg:lighten(0.15), bg:lighten(0.25) }
+  local colors = { "252", "248", "244" }
 
   local datetime = wez.strftime "%a %b %-d %H:%M"
   local cwd, hostname = fun.get_cwd_hostname(pane, true)
@@ -58,23 +62,21 @@ wez.on("update-status", function(window, pane)
   --~ }}}
 
   local usable_width = pane:get_dimensions().cols - tab_bar_width - 4 ---padding
-  local fancy_bg = Config.window_frame.active_titlebar_bg
-  local last_fg = Config.use_fancy_tab_bar and fancy_bg or theme.tab_bar.background
 
   ---push each cell and the cells separator
   for i, cell in ipairs { cwd, hostname, datetime } do
     local cell_bg = colors[i]
-    local cell_fg = i == 1 and last_fg or colors[i - 1]
+    local prev_bg = i == 1 and "0" or colors[i - 1]
     local sep = icons.Separators.StatusBar.right
 
     ---add each cell separator
-    RightStatus:push(cell_fg, cell_bg, sep)
+    RightStatus:push(prev_bg, cell_bg, sep)
 
     usable_width = usable_width - strwidth(cell) - strwidth(sep)
 
     ---add cell or empty string
     cell = usable_width <= 0 and " " or " " .. cell .. " "
-    RightStatus:push(colors[i], theme.tab_bar.background, cell, { "Bold" })
+    RightStatus:push(cell_bg, color[3], cell, { "Bold" })
   end
 
   window:set_right_status(wez.format(RightStatus))

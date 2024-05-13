@@ -103,6 +103,11 @@ Config.keys = {
       end),
     },
   },
+  {
+    key = 'r',
+    mods = 'CTRL|SHIFT',
+    action = act.ShowDebugOverlay,
+  },
 }
 
 -- bypass_mouse_reporting_modifiers = 'SHIFT',

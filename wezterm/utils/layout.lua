@@ -34,8 +34,16 @@ end
 function Layout:push(background, foreground, text, attributes)
   self = self or {}
   local insert = table.insert
-  insert(self, { Background = { Color = background } })
-  insert(self, { Foreground = { Color = foreground } })
+  if background:match("^#") then
+    insert(self, { Background = { Color = background } })
+  else
+    insert(self, { Text = '\x1b[48:5:'..background..':0:0m' })
+  end
+  if foreground:match("^#") then
+    insert(self, { Foreground = { Color = foreground } })
+  else
+    insert(self, { Text = '\x1b[38:5:'..foreground..':0:0m' })
+  end
 
   local attribute_mappings = {
     NoUnderline = { Underline = "None" },
@@ -65,4 +73,3 @@ function Layout:push(background, foreground, text, attributes)
 end
 
 return Layout
-
