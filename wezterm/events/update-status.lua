@@ -76,10 +76,12 @@ wez.on("update-status", function(window, pane)
 
     ---add cell or empty string
     cell = usable_width <= 0 and " " or " " .. cell .. " "
-    RightStatus:push(cell_bg, color[3], cell, { "Bold" })
+    RightStatus:push(cell_bg, "4", cell, { "Bold" })
   end
 
-  window:set_right_status(wez.format(RightStatus))
+  -- window:set_right_status(wez.format(RightStatus))
+  window:set_right_status(wez.format({{ Text = '\x1b[48:5:232:0mhello' }}))
+  -- window:set_right_status(wez.format({{Background = {AnsiColor = 'Yellow'}},{ Text = 'hello' }}))
   -- }}}
 end)
 -- luacheck: pop

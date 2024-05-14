@@ -10,10 +10,6 @@ local Config = {}
 -- if fun.is_windows then
   Config.allow_win32_input_mode = true
   Config.debug_key_events = true
-  Config.color_scheme_dirs = {
-    'C:\\users\\chiel.tenbrinke\\dotfiles\\neo-ansi\\terms\\wezterm\\generated',
-    'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm\\color-schemes',
-   }
   Config.window_close_confirmation = 'AlwaysPrompt'
   Config.skip_close_confirmation_for_processes_named = {
     "bash.exe",

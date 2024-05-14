@@ -7,4 +7,10 @@ require 'events.autodark'
 require 'events.automax'
 
 local Config = require("utils.config"):new():add("config"):add "mappings"
+
+-- Config.colors = {
+--   indexed = {
+--     [232] = 'red',
+--   }
+-- }
 return Config

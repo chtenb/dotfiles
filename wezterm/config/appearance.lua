@@ -2,6 +2,11 @@
 ---@class Config
 local Config = {}
 
+Config.color_scheme_dirs = {
+  'C:\\users\\chiel.tenbrinke\\dotfiles\\neo-ansi\\terms\\wezterm\\generated',
+  -- 'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm\\color-schemes',
+}
+
 -- local scheme = require("utils.fun").get_scheme()
 -- local theme = require("colors")[scheme]
 -- Config.color_schemes = require "colors"
@@ -59,12 +64,12 @@ Config.text_blink_rate_rapid = 250
 
 ---visual bell
 Config.audible_bell = "SystemBeep"
-Config.visual_bell = {
-  fade_in_function = "EaseOut",
-  fade_in_duration_ms = 200,
-  fade_out_function = "EaseIn",
-  fade_out_duration_ms = 200,
-}
+-- Config.visual_bell = {
+--   fade_in_function = "EaseOut",
+--   fade_in_duration_ms = 200,
+--   fade_out_function = "EaseIn",
+--   fade_out_duration_ms = 200,
+-- }
 
 ---window appearance
 Config.window_padding = { left = 2, right = 2, top = 2, bottom = 1 }
