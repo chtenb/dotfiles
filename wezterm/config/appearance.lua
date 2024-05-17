@@ -63,7 +63,7 @@ Config.text_blink_rate = 500
 Config.text_blink_rate_rapid = 250
 
 ---visual bell
-Config.audible_bell = "SystemBeep"
+Config.audible_bell = "Disabled"
 -- Config.visual_bell = {
 --   fade_in_function = "EaseOut",
 --   fade_in_duration_ms = 200,
