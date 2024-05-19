@@ -9,7 +9,7 @@ local Config = {}
 
 -- if fun.is_windows then
   Config.allow_win32_input_mode = true
-  Config.debug_key_events = true
+  -- Config.debug_key_events = true
   Config.window_close_confirmation = 'AlwaysPrompt'
   Config.skip_close_confirmation_for_processes_named = {
     "bash.exe",

@@ -6,6 +6,38 @@ local insert = table.insert
 ---@class Fun
 local M = {}
 
+---Checks on which target triple wezterm was built on.
+---@return boolean is_windows
+M.is_windows = function()
+  local target_triple = wez.target_triple
+  ---check for the most common windows target triple first
+  if target_triple == "x86_64-pc-windows-msvc" then
+    return true
+  end
+  local windows_triples = {
+    ["aarch64-pc-windows-gnullvm"] = {},
+    ["aarch64-pc-windows-msvc"] = {},
+    ["aarch64-uwp-windows-msvc"] = {},
+    ["arm64ec-pc-windows-msvc"] = {},
+    ["i586-pc-windows-msvc"] = {},
+    ["i686-pc-windows-gnu"] = {},
+    ["i686-pc-windows-gnullvm"] = {},
+    ["i686-pc-windows-msvc"] = {},
+    ["i686-uwp-windows-gnu"] = {},
+    ["i686-uwp-windows-msvc"] = {},
+    ["i686-win7-windows-msvc"] = {},
+    ["thumbv7a-pc-windows-msvc"] = {},
+    ["thumbv7a-uwp-windows-msvc"] = {},
+    ["x86_64-pc-windows-gnu"] = {},
+    ["x86_64-pc-windows-gnullvm"] = {},
+    ["x86_64-pc-windows-msvc"] = {},
+    ["x86_64-uwp-windows-gnu"] = {},
+    ["x86_64-uwp-windows-msvc"] = {},
+    ["x86_64-win7-windows-msvc"] = {},
+  }
+  return windows_triples[target_triple] and true or false
+end
+
 ---User home directory
 ---@return string home path to the suer home directory.
 M.home = (os.getenv "USERPROFILE" or os.getenv "HOME" or wez.home_dir or ""):gsub(
@@ -52,7 +84,7 @@ end
 ---Will search the git project root directory of the given directory path.
 ---NOTE: this functions exits purely because calling the following function
 ---`wezterm.run_child_process({ "git", "rev-parse", "--show-toplevel" })` would cause
----the status bar to blinck every `config.status_update_interval` milliseconds. Moreover
+---the status bar to blink every `config.status_update_interval` milliseconds. Moreover
 ---when changing tab, the status bar wouldn't be drawn.
 ---
 ---@param directory string The directory path.
@@ -117,11 +149,11 @@ M.get_cwd_hostname = function(pane, search_git_root_instead)
     hostname = hostname:gsub("^%l", string.upper)
   end
 
-  -- if M.is_windows then
+  if M.is_windows() then
     cwd = cwd:gsub("/" .. M.home .. "(.-)$", "~%1")
-  -- else
-  --   cwd = cwd:gsub(M.home .. "(.-)$", "~%1")
-  -- end
+  else
+    cwd = cwd:gsub(M.home .. "(.-)$", "~%1")
+  end
 
   ---search for the git root of the project if specified
   if search_git_root_instead then
@@ -338,5 +370,23 @@ M.strwidth = function(str, num)
   return cells
 end
 
-return M
+---comment
+---@param path string
+---@param len any
+M.pathshortener = function(path, len)
+  local path_separator = M.is_windows() and "\\" or "/"
+  local splitted_path = M.split(path, path_separator)
+  local short_path = ""
+  for _, dir in ipairs(splitted_path) do
+    local short_dir = dir:sub(1, len)
+    if short_dir == "" then
+      break
+    end
+    short_path = short_path
+      .. (short_dir == "." and dir:sub(1, len + 1) or short_dir)
+      .. path_separator
+  end
+  wez.log_info(short_path)
+end
 
+return M

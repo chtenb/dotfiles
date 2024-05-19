@@ -8,9 +8,8 @@ wez.on("format-tab-title", function(tab, _, _, config, hover, max_width)
     return
   end
 
-  local theme = require("colors")[fun.get_scheme()]
-  local bg = theme.tab_bar.background
-  local fg
+  local fg = "7"
+  local bg = nil
 
   local TabTitle = require("utils.layout"):new() ---@class Layout
 
@@ -19,12 +18,12 @@ wez.on("format-tab-title", function(tab, _, _, config, hover, max_width)
 
   ---set colors based on states
   if tab.is_active then
-    fg = theme.ansi[5]
+    bg = "4"
     attributes = { "Bold" }
   elseif hover then
-    fg = theme.selection_bg
+    bg = "13"
   else
-    fg = theme.brights[1]
+    bg = "240"
   end
 
   ---Check if any pane has unseen output
@@ -75,23 +74,23 @@ wez.on("format-tab-title", function(tab, _, _, config, hover, max_width)
   end
 
   ---add the either the leftmost element or the normal left separator. This is done to
-  ---esure a bit of space from the left margin.
-  TabTitle:push(bg, fg, tab_idx == 0 and tabicons.leftmost or tabicons.left, attributes)
+  ---ensure a bit of space from the left margin.
+  TabTitle:push(fg, bg, tab_idx == 0 and tabicons.leftmost or tabicons.left, attributes)
 
   ---add the tab number. can be substituted by the `has_unseen_output` notification
   TabTitle:push(
-    fg,
     bg,
+    fg,
     (unseen_output and icons.UnseenNotification or icons.Numbers[tab_idx + 1] or "")
       .. " ",
     attributes
   )
 
   ---the formatted tab title
-  TabTitle:push(fg, bg, title, attributes)
+  TabTitle:push(bg, fg, title, attributes)
 
   ---the right tab bar separator
-  TabTitle:push(bg, fg, icons.Separators.FullBlock .. tabicons.right, attributes)
+  TabTitle:push(fg, bg, icons.Separators.FullBlock .. tabicons.right, attributes)
 
   return TabTitle
 end)

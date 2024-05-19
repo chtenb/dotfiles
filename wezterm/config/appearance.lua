@@ -30,7 +30,8 @@ Config.inactive_pane_hsb = {
 --   },
 -- }
 
-Config.bold_brightens_ansi_colors = "BrightAndBold"
+-- Config.bold_brightens_ansi_colors = "BrightAndBold"
+Config.bold_brightens_ansi_colors = "No"
 
 ---char select and command palette
 -- Config.char_select_bg_color = theme.brights[6]
@@ -82,6 +83,9 @@ Config.integrated_title_buttons = { "Hide", "Maximize", "Close" }
 Config.tab_bar_style = {}
 for _, tab_button in ipairs { "new_tab", "new_tab_hover" } do
   Config.tab_bar_style[tab_button] = require("wezterm").format {
+    { Text = "\x1b[7m" },
+    { Text = "\x1b[48:5:252:0m" },
+    { Text = "\x1b[38:5:240:0m" },
     { Text = require("utils.icons").Separators.TabBar.right },
     { Text = " + " },
     { Text = require("utils.icons").Separators.TabBar.left },
