@@ -4,7 +4,7 @@ wezterm.on('window-config-reloaded', function(window, pane)
   local name = 'Lux (neo-ansi)'
   local appearance = window:get_appearance()
   if appearance:find('Dark') then
-    name = 'Synthwave Material (Neo Ansi)'
+    name = 'Synthwave Material (neo-ansi)'
   end
 
   local overrides = window:get_config_overrides() or {}
