@@ -88,7 +88,7 @@ $env.NU_PLUGIN_DIRS = [
 # $env.PATH = ($env.PATH | prepend '/some/path')
 
 ###### PATH ######
-let new_paths = if (sys).host.name == "Windows" {
+let new_paths = if (sys host).name == "Windows" {
   ['C:\Program Files\Git\usr\bin', 
   'C:\Program Files\Microsoft Visual Studio\2022\Professional\Msbuild\Current\Bin',
   'c:\users\chiel.tenbrinke\.local\share\helix'
@@ -102,7 +102,7 @@ let new_paths = if (sys).host.name == "Windows" {
   ]
 }
 
-let existing_path = if (sys).host.name == "Windows" {
+let existing_path = if (sys host).name == "Windows" {
   $env.Path
 } else {
   $env.PATH
@@ -110,7 +110,7 @@ let existing_path = if (sys).host.name == "Windows" {
 
 $env.Path = ($existing_path | prepend $new_paths)
 $env.PATH = ($existing_path | prepend $new_paths)
-$env.BAT_CONFIG_DIR = if (sys).host.name == "Windows" {
+$env.BAT_CONFIG_DIR = if (sys host).name == "Windows" {
   'c:\users\chiel.tenbrinke\dotfiles\bat'
 } else {
   '/home/chiel/dotfiles/bat'
@@ -136,7 +136,7 @@ $env.EDITOR = "hx"
 $env.SHELL = "nu"
 $env.koka_editor = "hx"
 
-$env.HELIX_RUNTIME = if (sys).host.name == "Windows" {
+$env.HELIX_RUNTIME = if (sys host).name == "Windows" {
   'c:\users\chiel.tenbrinke\prj\helix\runtime'
 } else {
   '/home/chiel/prj/helix/runtime'
