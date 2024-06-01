@@ -26,9 +26,10 @@
 
     l = "!f() { branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name ${branch}@{upstream} 2>/dev/null); git log -10 --notes --graph --abbrev-commit --decorate --left-right --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)' ${branch} ${upstream:+$upstream} ${@:2}; }; f"
     sup = submodule update --init --recursive
-    
+
     st = status
-    
+    showstate = "!f() { cd $(git rev-parse --show-toplevel) && { test -f .git/BISECT_LOG && echo BISECTING && exit 0; test -f .git/MERGE_HEAD && echo MERGING && exit 0; test -d .git/rebase-merge || test -d .git/rebase-apply && echo REBASING && exit 0; test -f .git/CHERRY_PICK_HEAD && echo CHERRY-PICKING && exit 0; test -f .git/REVERT_HEAD && echo REVERTING && exit 0; echo NORMAL; }; }; f"
+
     last = log -1 --stat
 
     c = "!f() { ~/dotfiles/interactive-git-checkout/git_checkout.py; }; f"

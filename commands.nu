@@ -105,6 +105,10 @@ def repostat [] {
 }
 
 def "g st" [] {
+  let state = (git showstate)
+  if $state !~ "NORMAL" {
+    print $'(ansi magenta)($state)(ansi reset)'
+  }
   let lines =  git status -sb | lines
   $lines.0 | print
   $lines | skip 1 | wrap text | insert type {|it| ($it.text | ansi strip | str substring 0..2) } | insert order {|it| match $it.type { 
@@ -116,7 +120,13 @@ def "g st" [] {
 }
 
 def "g nk" [] {
+  cd (git rev-parse --show-toplevel)
   g co -- ...(^git diff --name-only | lines)
+}
+
+def "g bisect clean" [] {
+  cd (git rev-parse --show-toplevel)
+  rm .git/BISECT_*
 }
 
 
@@ -125,7 +135,7 @@ def logtail [file] {
 }
 
 # alias koka-dev = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\d123c6a0\bin\koka.exe
-alias kk = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\27da0db2\bin\koka.exe -iC:\Users\chiel.tenbrinke\prj
+# alias kk = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\27da0db2\bin\koka.exe -iC:\Users\chiel.tenbrinke\prj
 
 def confirm [message: string] {
   mut response = (input $"($message) \(Y/n\) ")
