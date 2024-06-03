@@ -1,4 +1,8 @@
 [[language]]
+name = "koka"
+language-servers = []
+
+[[language]]
 name = "markdown"
 # text-width = 100
 soft-wrap = { enable = true, wrap-at-text-width = false }

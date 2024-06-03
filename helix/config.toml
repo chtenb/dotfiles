@@ -29,7 +29,7 @@ skip-levels = 1
 [editor.whitespace.render]
 ndsp = "all"
 tab = "all"
-space = "trailing"
+#space = "trailing"
 # newline = "all"
 
 [editor.whitespace.characters]
