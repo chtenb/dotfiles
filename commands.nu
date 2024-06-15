@@ -21,6 +21,7 @@ alias npr = npm run --
 alias npe = npm exec -- 
 alias replac = perl ~/dotfiles/replac/replac.pl
 alias lnx = wsl.exe --cd '~' /home/chiel/.cargo/bin/nu -e "print $'Entered WSL at (pwd)'"
+alias plantuml = java -jar ~/.local/bin/plantuml.jar
 
 alias t = task
 
