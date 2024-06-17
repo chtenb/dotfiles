@@ -91,7 +91,8 @@ $env.NU_PLUGIN_DIRS = [
 let new_paths = if (sys host).name == "Windows" {
   ['C:\Program Files\Git\usr\bin', 
   'C:\Program Files\Microsoft Visual Studio\2022\Professional\Msbuild\Current\Bin',
-  'c:\users\chiel.tenbrinke\.local\share\helix'
+  'c:\users\chiel.tenbrinke\.local\share\helix',
+  'C:\Users\chiel.tenbrinke\Programs\ImageMagick'
   ]
 } else {
   [ '/home/chiel/.cabal/bin'

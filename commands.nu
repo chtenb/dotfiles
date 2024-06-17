@@ -170,3 +170,13 @@ def rm-br [master_branch_name = "master"] {
     } 
 }
 
+def pumlwatch [file] {
+  watch $file { |op, path| if ($op == "Write") { 
+      let size = wezterm cli list --format=json | from json 
+        | where pane_id == ($env.WEZTERM_PANE | into int) | get 0.size
+      cat $path | plantuml -p -tsvg | tee {save -f $"($path).svg"}
+        | magick.exe svg:- -resize $"($size.pixel_width)x($size.pixel_height)" png:- | wezterm imgcat
+      return
+    }
+  }
+}
