@@ -137,6 +137,10 @@ $env.EDITOR = "hx"
 $env.SHELL = "nu"
 $env.koka_editor = "hx"
 
+# Our Helix config directory is dotfiles/helix, so the default runtime directory is dotfiles/helix/runtime.
+# But we keep that directory non-existent and set the HELIX_RUNTIME variable to prj/helix/runtime, such that the grammars and queries are automatically up-to-date.
+# Also, we must never run hx --grammar fetch manually, because that will create %APPDATA%/helix/runtime, which takes precedence over HELIX_RUNTIME
+# This will immediately break highlighting, because --grammar fetch does not fetch queries, and %APPDATA%/helix/runtime will now take precedence over prj/helix/runtime where our queries are.
 $env.HELIX_RUNTIME = if (sys host).name == "Windows" {
   'c:\users\chiel.tenbrinke\prj\helix\runtime'
 } else {

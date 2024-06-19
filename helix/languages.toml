@@ -1,3 +1,14 @@
+[language-server.scls]
+command = "simple-completion-language-server"
+
+[language-server.scls.config]
+max_completion_items = 20     # set max completion results len for each group: words, snippets, unicode-input
+snippets_first = true         # completions will return before snippets by default
+feature_words = true          # enable completion by word
+feature_snippets = true       # enable snippets
+feature_unicode_input = true  # enable "unicode input"
+feature_paths = true          # enable path completion
+
 [[language]]
 name = "koka"
 language-servers = []
@@ -11,27 +22,17 @@ soft-wrap = { enable = true, wrap-at-text-width = false }
 indent = { tab-width = 4, unit = "  " }
 
 formatter = { command = 'sed', args = ['-b', 's/[ \t]*(\r?)$/\1/'] }
+language-servers = ["scls"]
 
 
 [[language]]
 name = "tsv"
 scope = "source.tsv"
+injection-regex = "tsv"
 file-types = ["tsv"]
 roots = []
 soft-wrap = { enable = false, wrap-at-text-width = false }
 indent = { tab-width = 28, unit = "\t" }
-
-[[language]]
-name = "unison"
-scope = "source.unison"
-injection-regex = "unison"
-file-types = ["u"]
-shebangs = []
-roots = []
-auto-format = false
-comment-token = "--"
-indent = { tab-width = 2, unit = "  " }
-language-servers = [ "ucm" ]
 
 [[language]]
 name = "sql"

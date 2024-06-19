@@ -1,0 +1,7 @@
+[[sources]] # list of sources to load
+name = "friendly-snippets"  # optional name shown on snippet description
+git = "https://github.com/rafamadriz/friendly-snippets.git" # git repo with snippets collections
+
+# define another path inside this repor (whole dir)
+[[sources.paths]]
+path = "snippets/"
