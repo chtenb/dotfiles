@@ -11,6 +11,7 @@ wez.on('window-config-reloaded', function(window, pane)
 
 
   local overrides = window:get_config_overrides() or {}
+  overrides.color_scheme = name
 
   overrides.colors = {
     indexed = {
