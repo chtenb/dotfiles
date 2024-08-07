@@ -14,6 +14,7 @@ local strwidth = fun.is_windows() and string.len or fun.strwidth
 
 -- luacheck: push ignore 561
 wez.on("update-status", function(window, pane)
+  wez.log_info("Handling update-status")
   local modes = {
     copy_mode = { text = " 󰆏 COPY ", bg = "3" },
     search_mode = { text = " 󰍉 SEARCH ", bg = "4" },

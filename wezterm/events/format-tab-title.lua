@@ -4,6 +4,7 @@ local icons = require "utils.icons" ---@class Icons
 local tabicons = icons.Separators.TabBar ---@class TabBarIcons
 
 wez.on("format-tab-title", function(tab, _, _, config, hover, max_width)
+  wez.log_info("Handling format-tab-title")
   if config.use_fancy_tab_bar or not config.enable_tab_bar then
     return
   end
