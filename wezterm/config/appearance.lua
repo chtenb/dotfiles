@@ -1,16 +1,19 @@
+local wez = require "wezterm" ---@class WezTerm
 
 ---@class Config
 local Config = {}
 
 Config.color_scheme_dirs = {
-  'C:\\users\\chiel.tenbrinke\\dotfiles\\neo-ansi\\terms\\wezterm\\generated',
+  -- 'C:\\users\\chiel.tenbrinke\\dotfiles\\neo-ansi\\terms\\wezterm\\generated',
   -- 'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm\\color-schemes',
 }
 
--- local scheme = require("utils.fun").get_scheme()
--- local theme = require("colors")[scheme]
--- Config.color_schemes = require "colors"
--- Config.color_scheme = scheme
+local scheme = require("utils.fun").get_scheme()
+local theme = require("colors")[scheme]
+Config.color_schemes = require "colors"
+Config.color_scheme = scheme
+
+wez.log_info(scheme)
 
 Config.hide_tab_bar_if_only_one_tab = false
 Config.use_fancy_tab_bar = false
