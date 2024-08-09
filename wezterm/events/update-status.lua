@@ -43,6 +43,7 @@ wez.on("update-status", function(window, pane)
 
   -- bg = wez.color.parse(bg)
   -- local colors = { bg:darken(0.15), bg, bg:lighten(0.15), bg:lighten(0.25) }
+  -- From left to right, as appearing in the status bar:
   local colors = { "252", "248", "244" }
 
   -- local battery = wez.battery_info()[1]
@@ -104,7 +105,7 @@ wez.on("update-status", function(window, pane)
     cell_to_use = not used_cell and "" or " " .. cell_to_use .. " "
 
     ---push the cell
-    RightStatus:push(colors[i], "0", cell_to_use, { "Bold" })
+    RightStatus:push(colors[i], "235", cell_to_use, { "Bold" })
 
     ---update the usable width
     usable_width = usable_width - strwidth(cell_to_use) - strwidth(sep) - 2

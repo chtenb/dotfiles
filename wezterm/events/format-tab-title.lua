@@ -9,7 +9,7 @@ wez.on("format-tab-title", function(tab, _, _, config, hover, max_width)
     return
   end
 
-  local fg = "7"
+  local fg = "235"
   local bg = nil
 
   local TabTitle = require("utils.layout"):new() ---@class Layout
@@ -19,12 +19,12 @@ wez.on("format-tab-title", function(tab, _, _, config, hover, max_width)
 
   ---set colors based on states
   if tab.is_active then
-    bg = "4"
+    bg = "244"
     attributes = { "Bold" }
-  elseif hover then
-    bg = "13"
+  -- elseif hover then
+  --   bg = "13"
   else
-    bg = "240"
+    bg = "252"
   end
 
   ---Check if any pane has unseen output

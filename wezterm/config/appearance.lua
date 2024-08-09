@@ -87,8 +87,8 @@ Config.tab_bar_style = {}
 for _, tab_button in ipairs { "new_tab", "new_tab_hover" } do
   Config.tab_bar_style[tab_button] = require("wezterm").format {
     { Text = "\x1b[7m" },
-    { Text = "\x1b[48:5:252:0m" },
-    { Text = "\x1b[38:5:240:0m" },
+    { Text = "\x1b[48:5:235:0m" },
+    { Text = "\x1b[38:5:252:0m" },
     { Text = require("utils.icons").Separators.TabBar.right },
     { Text = " + " },
     { Text = require("utils.icons").Separators.TabBar.left },
