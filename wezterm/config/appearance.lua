@@ -8,7 +8,11 @@ Config.color_scheme_dirs = {
   -- 'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm\\color-schemes',
 }
 
-local scheme = require("utils.fun").get_scheme()
+
+local scheme = "lux-neo-ansi"
+if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then
+  scheme = "synthwave-material-neo-ansi"
+end
 local theme = require("colors")[scheme]
 Config.color_schemes = require "colors"
 Config.color_scheme = scheme

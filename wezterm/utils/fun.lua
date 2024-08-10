@@ -188,14 +188,6 @@ M.tbl_merge = function(t1, ...)
   return t1
 end
 
----Returns the colorscheme name based on the system appearance
-M.get_scheme = function()
-  if (wez.gui and wez.gui.get_appearance() or "Dark"):find "Dark" then
-    return "lux-neo-ansi"
-  end
-  return "lux-neo-ansi"
-end
-
 M.gsplit = function(s, sep, opts)
   local plain
   local trimempty = false
