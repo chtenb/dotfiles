@@ -88,8 +88,8 @@ def anonymize [pattern] {
     }
 }
 
-def "to hex" [] {
-  each { |it| $it | into int | fmt | get lowerhex | str substring 2.. }
+def "tohex" [] {
+  into int | fmt | get lowerhex | str substring 2..
 }
 
 def "g c" [] {

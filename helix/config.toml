@@ -3,7 +3,7 @@ theme = "neo-ansi"
 [editor]
 auto-pairs = false
 line-number = "relative"
-shell = ["nu", "--stdin", "-c"]
+shell = ["nu", "-l", "--stdin", "-c"]
 #mouse = false
 gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
 bufferline = "multiple"
