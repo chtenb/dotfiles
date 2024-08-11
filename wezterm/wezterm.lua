@@ -8,6 +8,9 @@ require 'events.window-config-reloaded'
 require 'events.automax'
 
 local Config = require("utils.config"):new():add("config"):add "mappings"
+local wez = require "wezterm" ---@class WezTerm
+wez.log_info("get_appearance (from wezterm):")
+wez.log_info(wez.gui.get_appearance())
 
 -- Config.colors = {
 --   indexed = {

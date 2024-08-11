@@ -6,6 +6,15 @@ local insert = table.insert
 ---@class Fun
 local M = {}
 
+-- wezterm.gui is not available to the mux server, so take care to
+-- do something reasonable when this config is evaluated by the mux
+M.get_appearance = function()
+  if wez.gui then
+    return wez.gui.get_appearance()
+  end
+  return 'Dark'
+end
+
 ---Checks on which target triple wezterm was built on.
 ---@return boolean is_windows
 M.is_windows = function()
@@ -377,7 +386,6 @@ M.pathshortener = function(path, len)
       .. (short_dir == "." and dir:sub(1, len + 1) or short_dir)
       .. path_separator
   end
-  wez.log_info(short_path)
 end
 
 return M

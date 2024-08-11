@@ -88,6 +88,10 @@ def anonymize [pattern] {
     }
 }
 
+def "to hex" [] {
+  each { |it| $it | into int | fmt | get lowerhex | str substring 2.. }
+}
+
 def "g c" [] {
   let branches = (^git branch --color=never | lines | where (($it | str starts-with "*") == false))
   print $branches

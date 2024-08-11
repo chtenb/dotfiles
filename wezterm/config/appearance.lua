@@ -1,4 +1,5 @@
 local wez = require "wezterm" ---@class WezTerm
+local fun = require "utils.fun" ---@class Fun
 
 ---@class Config
 local Config = {}
@@ -8,6 +9,8 @@ Config.color_scheme_dirs = {
   -- 'C:\\users\\chiel.tenbrinke\\dotfiles\\wezterm\\color-schemes',
 }
 
+wez.log_info("get_appearance (from appearance):")
+wez.log_info(wez.gui.get_appearance())
 
 local scheme = "lux-neo-ansi"
 if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then

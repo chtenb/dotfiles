@@ -14,7 +14,7 @@ local strwidth = fun.is_windows() and string.len or fun.strwidth
 
 -- luacheck: push ignore 561
 wez.on("update-status", function(window, pane)
-  wez.log_info("Handling update-status")
+  -- wez.log_info("Handling update-status")
   local modes = {
     copy_mode = { text = " 󰆏 COPY ", bg = "3" },
     search_mode = { text = " 󰍉 SEARCH ", bg = "4" },
@@ -66,7 +66,6 @@ wez.on("update-status", function(window, pane)
   local has_button = Config.show_new_tab_button_in_tab_bar
   local new_tab_button = has_button and Config.tab_bar_style.new_tab or ""
   tab_bar_width = tab_bar_width + mode_indicator_width + strwidth(new_tab_button)
-  wez.log_info(tab_bar_width, pane:get_dimensions().cols)
   --~ }}}
 
   local status_bar_cells = {
