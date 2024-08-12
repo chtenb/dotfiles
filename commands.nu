@@ -65,6 +65,18 @@ def 256colors [] {
   } | str join
 }
 
+def neo-ansi [] {
+  print "default color"
+  0..15 | each { |$color|
+    print -n $"\e[38;5;($color)mbase($color) \e[0m"
+  }
+  print ""
+  244..255 | each { |$color|
+    print -n $"\e[38;5;($color)mac($color) \e[0m"
+  }
+  null
+}
+
 def underlines [] {
   printf "\e[4:3m\e[58:5:1mhello\e[0m"
 }

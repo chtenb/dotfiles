@@ -8,6 +8,7 @@ local Config = {}
 -- Config.disable_default_key_bindings = true
 
 Config.keys = {
+  { key = 'R', mods = 'SHIFT|CTRL', action = act.ReloadConfiguration },
   { key = 'C', mods = 'SHIFT|CTRL', action = act.CopyTo 'Clipboard' },
   { key = 'V', mods = 'SHIFT|CTRL', action = act.PasteFrom 'Clipboard' },
   { key = 'Insert', mods = 'CTRL', action = act.CopyTo 'PrimarySelection' },

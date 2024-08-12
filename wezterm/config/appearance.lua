@@ -12,11 +12,11 @@ Config.color_scheme_dirs = {
 wez.log_info("get_appearance (from appearance):")
 wez.log_info(wez.gui.get_appearance())
 
--- local scheme = "lux-neo-ansi"
 local scheme = "classic-neo-ansi"
-if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then
-  scheme = "synthwave-material-neo-ansi"
-end
+-- local scheme = "lux-neo-ansi"
+-- if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then
+--   scheme = "synthwave-material-neo-ansi"
+-- end
 local theme = require("colors")[scheme]
 Config.color_schemes = require "colors"
 Config.color_scheme = scheme

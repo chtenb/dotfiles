@@ -7,6 +7,9 @@ local fun = require "utils.fun" ---@class Fun
 ---@class Config
 local Config = {}
 
+-- Auto reloading gives problems when generating modules and also does not reload colors properly
+Config.automatically_reload_config = false
+
 -- if fun.is_windows then
   Config.allow_win32_input_mode = true
   -- Config.debug_key_events = true
