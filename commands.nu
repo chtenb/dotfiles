@@ -65,15 +65,59 @@ def 256colors [] {
   } | str join
 }
 
-def neo-ansi [] {
-  print "default color"
-  0..15 | each { |$color|
-    print -n $"\e[38;5;($color)mbase($color) \e[0m"
+def repro [] {
+  print "\e[48;5;1mfoo\e[Km\e[49m"
+  print "bar"
+  print "\e[49mfoo"
+  print "bar"
+  print "\e[49mfoo"
+  print "bar"
+}
+
+def repro-lf [] {
+  print -n "\e[48;5;1mfoo\n"
+  print -n "bar\n"
+  print -n "\e[49mfoo\n"
+  print -n "bar\n"
+  print -n "\e[49mfoo\n"
+  print -n "bar\n"
+}
+
+def neo [--inverse(-i)] {
+  def pad [] { fill -a right -w 2 -c 0 }
+
+
+  let eol = "\e[Km\e[0m"
+  let params = if $inverse { "7;" } else { "" }
+  
+  1..12 | each { |bg|
+    let bg_code = $"48;5;($bg + 231)"
+    let bg_name = $"bg($bg | pad)"
+    print -n $"\e[($params)($bg_code)m($bg_name) normal "
+    0..7 | each { |color|
+      print -n $"\e[38;5;($color)mbase($color | pad) ($eol)"
+    }
+    print ""
+    print -n $"\e[($params)($bg_code)m($bg_name) bright "
+    8..15 | each { |color|
+      print -n $"\e[38;5;($color)mbase($color | pad) ($eol)"
+    }
+    print ""
+    print -n $"\e[($params)($bg_code);1m($bg_name) bold   "
+    8..15 | each { |color|
+      print -n $"\e[38;5;($color)mbase($color | pad) ($eol)"
+    }
+    print ""
+    print -n "\e[49m"
+  }
+  
+  print -n $"\e[($params)maccent "
+  12..1 | each { |color|
+    print -n $"\e[38;5;(256 - $color)mac($color | pad) ($eol)"
   }
   print ""
-  244..255 | each { |$color|
-    print -n $"\e[38;5;($color)mac($color) \e[0m"
-  }
+  print -n "\e[0m"
+  
   null
 }
 

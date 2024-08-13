@@ -29,8 +29,8 @@ Config.tab_bar_at_bottom = true
 Config.enable_kitty_graphics=true
 
 Config.inactive_pane_hsb = {
-  saturation = 0.8,
-  brightness = 0.9,
+  saturation = 0.6,
+  brightness = 1.0,
 }
 
 -- Config.background = {
