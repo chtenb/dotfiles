@@ -1,5 +1,6 @@
 local wez = require "wezterm" ---@class WezTerm
 local fun = require "utils.fun" ---@class Fun
+local icons = require "utils.icons" ---@class Icons
 
 ---@class Config
 local Config = {}
@@ -12,25 +13,27 @@ Config.color_scheme_dirs = {
 wez.log_info("get_appearance (from appearance):")
 wez.log_info(wez.gui.get_appearance())
 
-local scheme = "classic-neo-ansi"
+-- local scheme = "classic-neo-ansi"
 -- local scheme = "lux-neo-ansi"
+local scheme = "synthwave-material-neo-ansi"
 -- if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then
 --   scheme = "synthwave-material-neo-ansi"
 -- end
-local theme = require("colors")[scheme]
-Config.color_schemes = require "colors"
-Config.color_scheme = scheme
+-- Config.color_schemes = require "colors"
+-- Config.color_scheme = scheme
+
+Config.colors = require("colors")[scheme]
+Config.colors.tab_bar = {
+  background = Config.colors.background,
+}
 
 wez.log_info(scheme)
 
-Config.hide_tab_bar_if_only_one_tab = false
-Config.use_fancy_tab_bar = false
-Config.tab_bar_at_bottom = true
 Config.enable_kitty_graphics=true
 
 Config.inactive_pane_hsb = {
-  saturation = 0.6,
-  brightness = 1.0,
+  saturation = 1.0,
+  brightness = 0.8,
 }
 
 -- Config.background = {
@@ -90,18 +93,33 @@ Config.integrated_title_button_alignment = "Right"
 Config.integrated_title_button_style = "Windows"
 Config.integrated_title_buttons = { "Hide", "Maximize", "Close" }
 
+
+Config.enable_tab_bar = true
+Config.hide_tab_bar_if_only_one_tab = false
+Config.show_new_tab_button_in_tab_bar = true
+Config.show_tab_index_in_tab_bar = false
+Config.show_tabs_in_tab_bar = true
+Config.switch_to_last_active_tab_when_closing_tab = false
+Config.tab_and_split_indices_are_zero_based = false
+Config.tab_bar_at_bottom = true
+Config.tab_max_width = 25
+Config.use_fancy_tab_bar = false
+
+
 ---new tab button
 Config.tab_bar_style = {}
 for _, tab_button in ipairs { "new_tab", "new_tab_hover" } do
-  Config.tab_bar_style[tab_button] = require("wezterm").format {
+  Config.tab_bar_style[tab_button] = wez.format {
     { Text = "\x1b[7m" },
-    { Text = "\x1b[48:5:235:0m" },
-    { Text = "\x1b[38:5:252:0m" },
-    { Text = require("utils.icons").Separators.TabBar.right },
+    { Text = "\x1b[48:5:232:0m" },
+    { Text = tab_button == "new_tab_hover" and "\x1b[38:5:251:0m" or "\x1b[38:5:245:0m" },
+    { Text = icons.Separators.TabBar.right },
     { Text = " + " },
-    { Text = require("utils.icons").Separators.TabBar.left },
+    { Text = icons.Separators.TabBar.left },
   }
 end
+
+-- The remainder of the tab bar text is done in the format-tab-title event
 
 return Config
 
