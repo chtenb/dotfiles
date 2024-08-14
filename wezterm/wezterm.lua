@@ -7,8 +7,11 @@ require "events.augment-command-palette"
 require 'events.window-config-reloaded'
 require 'events.automax'
 
-local Config = require("utils.config"):new():add("config"):add "mappings"
-local wez = require "wezterm" ---@class WezTerm
+-- local Config = require("utils.config"):new():add("config"):add "mappings"
+
+local Config = require("config").get_config().tbl_merge((require "mappings"))
+
+-- local wez = require "wezterm" ---@class WezTerm
 -- wez.log_info("get_appearance (from wezterm):")
 -- wez.log_info(wez.gui.get_appearance())
 
