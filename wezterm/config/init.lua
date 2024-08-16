@@ -1,7 +1,9 @@
+local fun = require "utils.fun"
+
 local module = {}
 
 function module.get_config()
-  return require("utils.fun").tbl_merge(
+  return fun.tbl_merge(
     (require "config.gpu"),
     (require "config.appearance").get_config(),
     (require "config.font"),

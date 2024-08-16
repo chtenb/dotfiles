@@ -1,3 +1,6 @@
+local wez = require "wezterm" ---@class WezTerm
+local fun = require "utils.fun"
+
 require "events.update-status"
 require "events.format-tab-title"
 require "events.new-tab-button-click"
@@ -7,17 +10,13 @@ require "events.augment-command-palette"
 require 'events.window-config-reloaded'
 require 'events.automax'
 
--- local Config = require("utils.config"):new():add("config"):add "mappings"
+wez.log_info("get_appearance (from wezterm):")
+wez.log_info(wez.gui.get_appearance())
 
-local Config = require("config").get_config().tbl_merge((require "mappings"))
+local Config = fun.tbl_merge(
+  (require "config").get_config(),
+  (require "mappings")
+)
 
--- local wez = require "wezterm" ---@class WezTerm
--- wez.log_info("get_appearance (from wezterm):")
--- wez.log_info(wez.gui.get_appearance())
-
--- Config.colors = {
---   indexed = {
---     [232] = 'red',
---   }
--- }
 return Config
+

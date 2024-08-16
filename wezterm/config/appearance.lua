@@ -1,6 +1,7 @@
 local wez = require "wezterm" ---@class WezTerm
 local fun = require "utils.fun" ---@class Fun
 local icons = require "utils.icons" ---@class Icons
+local palettes = require "colors"
 
 local module = {}
 
@@ -17,15 +18,16 @@ function module.get_config()
   wez.log_info(wez.gui.get_appearance())
 
   -- local scheme = "classic-neo-ansi"
-  -- local scheme = "lux-neo-ansi"
-  local scheme = "synthwave-material-neo-ansi"
+  local scheme = "lux-neo-ansi"
+  -- local scheme = "tropical-neo-ansi"
+  -- local scheme = "synthwave-material-neo-ansi"
   -- if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then
   --   scheme = "synthwave-material-neo-ansi"
   -- end
   -- Config.color_schemes = require "colors"
   -- Config.color_scheme = scheme
 
-  Config.colors = require("colors")[scheme]
+  Config.colors = palettes[scheme]
   Config.colors.tab_bar = {
     background = Config.colors.background,
   }

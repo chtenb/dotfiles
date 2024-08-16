@@ -70,6 +70,8 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "H" = ["ensure_selections_forward", "collapse_selection", "select_mode", "goto_line_start", "exit_select_mode"]
 "L" = ["ensure_selections_forward", "flip_selections", "collapse_selection", "select_mode", "goto_line_end", "exit_select_mode"]
 
+"t" = ["ensure_selections_forward", "flip_selections", "find_till_char"]
+
 "F2" = "rename_symbol"
 "F3" = ":format"
 "F12" = "goto_definition"
@@ -169,3 +171,9 @@ e = """
 z = ":toggle gutters.line-numbers.min-width 48 3"
 i = "hover"
 
+# Sub mode for hex color modification
+[keys.normal."+"]
+d = ":pipe pastel darken 0.05 | pastel format hex | str substring 1.."
+l = ":pipe pastel lighten 0.05 | pastel format hex | str substring 1.."
+g = ":pipe pastel desaturate 0.05 | pastel format hex | str substring 1.."
+s = ":pipe pastel saturate 0.05 | pastel format hex | str substring 1.."
