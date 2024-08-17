@@ -104,7 +104,7 @@ wez.on("update-status", function(window, pane)
     cell_to_use = not used_cell and "" or " " .. cell_to_use .. " "
 
     ---push the cell
-    RightStatus:push(colors[i], "235", cell_to_use, { "Bold" })
+    RightStatus:push(colors[i], "232", cell_to_use, { "Bold" })
 
     ---update the usable width
     usable_width = usable_width - strwidth(cell_to_use) - strwidth(sep) - 2

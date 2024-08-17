@@ -63,14 +63,15 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "G" = ["goto_last_line"]
 "g" = { "e" = "goto_file_end" }
 
-#"A-;" = "collapse_selection"
-#";" = "flip_selections"
-
 #"ret" = ["open_below", "normal_mode"]
 "H" = ["ensure_selections_forward", "collapse_selection", "select_mode", "goto_line_start", "exit_select_mode"]
 "L" = ["ensure_selections_forward", "flip_selections", "collapse_selection", "select_mode", "goto_line_end", "exit_select_mode"]
 
-"t" = ["ensure_selections_forward", "flip_selections", "find_till_char"]
+# Make char search independent of the orientation of the selection
+"t" = ["ensure_selections_forward", "extend_till_char"]
+"T" = ["ensure_selections_forward", "flip_selections", "extend_till_prev_char"]
+"f" = ["ensure_selections_forward", "extend_next_char"]
+"F" = ["ensure_selections_forward", "flip_selections", "extend_prev_char"]
 
 "F2" = "rename_symbol"
 "F3" = ":format"
@@ -78,7 +79,6 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "S-F12" = "goto_reference"
 "F4" = [":reload", ":config-reload"]
 
-# TODO: this should work like before, after having b assigned, w should not select the current word when the cursor is on the final character of the word
 "w" = "select_next_word"
 "W" = "select_next_long_word"
 "b" = "select_prev_word"
@@ -86,8 +86,6 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "A-e" = "move_prev_word_start"
 "A-E" = "move_prev_long_word_start"
 
-# J = ["extend_to_line_bounds", "select_mode"]
-# K = ["extend_to_line_bounds", "select_mode", "flip_selections"]
 J = ["select_line_below"]
 K = ["select_line_above"]
 
