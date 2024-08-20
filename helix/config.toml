@@ -155,9 +155,9 @@ i = "hover"
 # """
 
 # Koka
-r = """
-:sh ":r\r" | wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
-"""
+# r = """
+# :sh ":r\r" | wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+# """
 
 [keys.select.space]
 "q" = ":bc"
