@@ -21,9 +21,9 @@ function module.get_config()
   local scheme = "lux-neo-ansi"
   -- local scheme = "tropical-neo-ansi"
   -- local scheme = "synthwave-material-neo-ansi"
-  -- if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then
-  --   scheme = "synthwave-material-neo-ansi"
-  -- end
+  if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then
+    scheme = "synthwave-material-neo-ansi"
+  end
   -- Config.color_schemes = require "colors"
   -- Config.color_scheme = scheme
 

@@ -14,7 +14,7 @@ local strwidth = fun.is_windows() and string.len or fun.strwidth
 
 -- luacheck: push ignore 561
 wez.on("update-status", function(window, pane)
-  -- wez.log_info("Handling update-status")
+  wez.log_info("Handling update-status")
   local modes = {
     copy_mode = { text = " 󰆏 COPY ", bg = "3" },
     search_mode = { text = " 󰍉 SEARCH ", bg = "4" },
@@ -75,6 +75,9 @@ wez.on("update-status", function(window, pane)
     -- { battery.full, battery.lvl .. "%", battery.ico },
   }
   local usable_width = pane:get_dimensions().cols - tab_bar_width - 4 ---padding
+  -- wez.log_info(window:get_dimensions())
+  -- wez.log_info(pane:get_dimensions())
+  -- wez.log_info(usable_width)
 
 
   local last_fg = nil
@@ -108,9 +111,11 @@ wez.on("update-status", function(window, pane)
 
     ---update the usable width
     usable_width = usable_width - strwidth(cell_to_use) - strwidth(sep) - 2
+    wez.log_info(usable_width)
   end
 
   window:set_right_status(wez.format(RightStatus))
+  wez.log_info("Finished update-status")
 end)
 -- luacheck: pop
 

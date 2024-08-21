@@ -54,6 +54,7 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "S-esc" = ["normal_mode", "keep_primary_selection"]
 
 [keys.normal]
+"A-k" = ":tree-sitter-subtree"
 "," = "repeat_last_motion"
 "S-esc" = ["normal_mode", "keep_primary_selection"]
 "C-s" = ["save_selection", ":w"]
