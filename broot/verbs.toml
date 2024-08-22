@@ -12,6 +12,22 @@ apply_to = "file"
 leave_broot = false
 
 [[verbs]]
+internal = ":stage"
+keys = ["ctrl-s"]
+
+[[verbs]]
+internal = ":total_search"
+keys = []
+
+[[verbs]]
+internal = ":panel_right"
+keys = ["ctrl-l"]
+
+[[verbs]]
+internal = ":panel_left_no_open"
+keys = ["ctrl-h"]
+
+[[verbs]]
 # Unbind annoying shortcut
 internal = ":close_panel_cancel"
 keys = []
