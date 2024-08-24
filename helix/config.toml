@@ -39,6 +39,10 @@ space = "·"
 newline = "⏎"
 #tabpad = "·"
 
+[editor.inline-diagnostics]
+cursor-line = "hint"
+# other-lines = "error"
+
 [editor.file-picker]
 hidden = false
 
@@ -96,6 +100,7 @@ K = ["select_line_above"]
 X = "remove_primary_selection"
 x = "keep_selections"
 "A-x" = "remove_selections"
+"_" = ["extend_to_line_bounds", "trim_selections"]
 
 [keys.select]
 "*" = [ "search_selection", "normal_mode" ]
