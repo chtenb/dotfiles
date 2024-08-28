@@ -1,6 +1,6 @@
 [include]
     path = features.gitconfig
-    path = neo-ansi.gitconfig
+    path = ../neo-ansi/apps/delta/neo-ansi.gitconfig
 
 [delta]
     syntax-theme = terminal-neo-ansi

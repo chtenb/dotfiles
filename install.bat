@@ -30,9 +30,12 @@ del /q %UserProfile%\AppData\Roaming\nushell\config.nu
 mklink %UserProfile%\AppData\Roaming\nushell\config.nu %UserProfile%\dotfiles\config.nu
 del /q %UserProfile%\AppData\Roaming\nushell\env.nu
 mklink %UserProfile%\AppData\Roaming\nushell\env.nu %UserProfile%\dotfiles\env.nu
+
+mkdir %UserProfile%\.config
 rmdir %UserProfile%\.config\wezterm
 mklink /d %UserProfile%\.config\wezterm %UserProfile%\dotfiles\wezterm
 
+mkdir %UserProfile%\AppData\Roaming\dystroy\broot
 rmdir /s /q %UserProfile%\AppData\Roaming\dystroy\broot\config
 mklink /d %UserProfile%\AppData\Roaming\dystroy\broot\config %UserProfile%\dotfiles\broot
 
@@ -42,10 +45,15 @@ mklink /d %UserProfile%\AppData\Roaming\helix %UserProfile%\dotfiles\helix
 echo MANUALLY
 echo install nu by running:
 echo cargo install nu --features=extra
-REM echo winget install nushell, or place it in .local
 echo bat and git-delta must be installed manually using cargo
-echo Then manually run bat cache --build and the command ansicol
-echo Install helix and broot from the github releases by placing it in .local
-echo install ouch by running scoop install ouch
-echo to fix delta colors run the nu command "ansicol"
+echo Then manually run neo-ansi/apps/bat/deploy-to-bat.py
+
+del /q %UserProfile%\dotfiles\helix\themes\neo-ansi.toml
+mklink %UserProfile%\dotfiles\helix\themes\neo-ansi.toml %UserProfile%\dotfiles\neo-ansi\apps\helix\neo-ansi.toml
+del /q %UserProfile%\dotfiles\helix\themes\neo-ansi-syntax.toml
+mklink %UserProfile%\dotfiles\helix\themes\neo-ansi-syntax.toml %UserProfile%\dotfiles\neo-ansi\apps\helix\neo-ansi-syntax.toml
+
+del /q %UserProfile%\dotfiles\broot\skins\neo-ansi.toml
+mklink %UserProfile%\dotfiles\broot\skins\neo-ansi.toml %UserProfile%\dotfiles\neo-ansi\apps\broot\neo-ansi.toml
+
 pause

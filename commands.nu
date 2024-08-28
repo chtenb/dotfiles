@@ -23,6 +23,8 @@ alias replac = perl ~/dotfiles/replac/replac.pl
 alias lnx = wsl.exe --cd '~' /home/chiel/.cargo/bin/nu -e "print $'Entered WSL at (pwd)'"
 alias plantuml = java -jar ~/.local/bin/plantuml.jar
 
+alias admin = powershell -Command "Start-Process nu -Verb RunAs"
+
 alias t = task
 
 def --env c [...path] {
@@ -238,84 +240,4 @@ def pumlwatch [file: string] {
   }
 }
 
-# Wrapper for cross platform symlinks, this uses soft links on all platforms.
-export def link [src:path, target:path, --dry, --verbose(-v), --absolute(-a) , --force(-f)] {
 
-  def _log [msg: string] {
-  print $"(ansi yellow)($msg)(ansi reset)"
-  }
-
-  # safe checks
-  let dir = ($src | path type | $in == dir)
-  let src_exist = ($src | path exists)
-
-  let target_exist = ($target | path exists)
-  let fam = $nu.os-info.family
-
-  if ($verbose) {
-  _log $"Family: ($fam) | Source is a directory: ($dir) | Target exist: ($target_exist)"
-  _log $"Will symlink ($src | path expand) in ($target | path expand)"
-  }
-  if $src_exist == false {
-  error "Source does not exists, aborting"
-  return
-  }
-  if $target_exist {
-  if not $force {
-  error "Target exists, aborting."
-  return
-  } else {
-  error "DANGER"
-  }
-
-  warn $"You are about to force overwrite ($target)"
-  let res = input " Are you sure? If so type Y (uppercase) "
-
-  if not $res == "Y" {
-  error "Input was not 'Y', aborting overwrite"
-  return
-  }
-
-  rm -r $target
-  }
-
-  let src = if $absolute {
-  ($src | path expand | str replace -a '\' '/' )
-  } else {
-  $src
-  }
-  let target = if $absolute {
-  ($target | path expand | str replace -a '\' '/' )
-  } else {
-  $target
-  }
-  if $dry {
-  print $"Would run:"
-  }
-  if $nu.os-info.family == windows {
-  let src = ($src | str replace -a '/' '\')
-  let target = ($target | str replace -a '/' '\')
-  if $dir {
-  if $dry or $verbose {
-  print $"mklink /D \"($target)\" \"($src)\""
-  }
-  if not $dry {
-  mklink /D $target $src
-  }
-  } else {
-  if $dry or $verbose {
-  print $"mklink \"($target)\" \"($src)\""
-  }
-  if not $dry {
-  mklink $"($target)" $"($src)"
-  }
-  }
-  } else  {
-  if $dry or $verbose {
-  print $"ln -s \"($src)\" \"($target)\""
-  }
-  if not $dry {
-  ln -s $"($src)" $"($target)"
-  }
-  }
-}
