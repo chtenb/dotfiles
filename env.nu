@@ -142,7 +142,7 @@ $env.koka_editor = "hx"
 # Also, we must never run hx --grammar fetch manually, because that will create %APPDATA%/helix/runtime, which takes precedence over HELIX_RUNTIME
 # This will immediately break highlighting, because --grammar fetch does not fetch queries, and %APPDATA%/helix/runtime will now take precedence over prj/helix/runtime where our queries are.
 $env.HELIX_RUNTIME = if (sys host).name == "Windows" {
-  'c:\users\chiel.tenbrinke\prj\helix\runtime'
+  'c:\users\chieltenbrinke\prj\helix\runtime'
 } else {
   '/home/chiel/prj/helix/runtime'
 }

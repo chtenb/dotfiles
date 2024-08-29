@@ -42,10 +42,11 @@
     fe = fetch
     cl = clean
     cp = cherry-pick
-    co = checkout
     ci = commit
     br = branch
     rb = rebase
+    co = switch
+    nuke = checkout --
     
     di = "diff --ignore-all-space --color-moved-ws=ignore-all-space"
     ds = diff --staged

@@ -19,7 +19,7 @@ mklink %UserProfile%\.gitconfig %UserProfile%\dotfiles\intellimagic.gitconfig
 del /q %UserProfile%\.xcompose
 mklink %UserProfile%\.xcompose %UserProfile%\dotfiles\.xcompose
 
-copy %UserProfile%\dotfiles\git_bash_here.ahk "%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+REM copy %UserProfile%\dotfiles\git_bash_here.ahk "%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 
 mkdir %UserProfile%\.vim\backup\
 mkdir %UserProfile%\.vim\swap\
