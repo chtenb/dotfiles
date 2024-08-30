@@ -10,12 +10,19 @@ def "nu-complete g branches" [] {
             | insert description "remote branch")
 }
 
-def "gst" [
-  --verbose(-v)                                       # be verbose
-  --short(-s)                                         # show status concisely
-  --branch(-b)                                        # show branch information
-  --show-stash                                        # show stash information
+# def "gst" [
+#   --verbose(-v)                                       # be verbose
+#   --short(-s)                                         # show status concisely
+#   --branch(-b)                                        # show branch information
+#   --show-stash                                        # show stash information
+# ] {
+#   git status --verbose=$verbose --short=$short --branch=$branch --show-stash=$show_stash
+# }
+
+def --wrapped "g co" [
+  ...args
+  target?: string@"nu-complete g branches"   # name of the branch or files to checkout
 ] {
-  git status --verbose=$verbose --short=$short --branch=$branch --show-stash=$show_stash
+  ^git checkout ...$args $target
 }
 

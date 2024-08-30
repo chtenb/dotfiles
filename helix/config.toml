@@ -78,7 +78,7 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "F3" = ":format"
 "F12" = "goto_definition"
 "S-F12" = "goto_reference"
-"F4" = [":reload", ":config-reload"]
+"F4" = [":reload", ":config-reload", ":redraw"]
 
 "w" = "select_next_word"
 "W" = "select_next_long_word"
@@ -113,6 +113,8 @@ x = "keep_selections"
 
 "H" = ["goto_line_start"]
 "L" = ["goto_line_end"]
+
+"F4" = [":reload", ":config-reload", ":redraw"]
 
 "w" = "extend_next_word_end"
 "W" = "extend_next_long_word_end"
