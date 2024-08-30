@@ -1,7 +1,7 @@
 # Nushell Config File
 
 # use ~/dotfiles/nu_scripts/custom-completions/cargo/cargo-completions.nu *
-use ~/dotfiles/nu_scripts/custom-completions/git/git-completions.nu *
+source ~/dotfiles/custom-completions/git-completions.nu
 use ~/dotfiles/nu_scripts/custom-completions/npm/npm-completions.nu *
 
 

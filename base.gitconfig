@@ -45,7 +45,7 @@
     ci = commit
     br = branch
     rb = rebase
-    co = switch
+    co = checkout
     nuke = checkout --
     
     di = "diff --ignore-all-space --color-moved-ws=ignore-all-space"

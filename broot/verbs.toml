@@ -3,6 +3,10 @@
 # Doc at https://dystroy.org/broot/verbs/
 
 [[verbs]]
+# Unbind annoying shortcuts, only possible when key will not be used at all
+keys = []
+
+[[verbs]]
 # A standard recommended command for editing files
 invocation = "edit"
 #keys = ["Right"]
@@ -28,9 +32,12 @@ internal = ":panel_left_no_open"
 keys = ["ctrl-h"]
 
 [[verbs]]
-# Unbind annoying shortcut
+internal = ":quit"
+key = "alt-q"
+
+[[verbs]]
 internal = ":close_panel_cancel"
-keys = []
+key = "ctrl-q"
 
 [[verbs]]
 internal = ":input_del_word_left"
