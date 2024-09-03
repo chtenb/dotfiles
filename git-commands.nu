@@ -43,7 +43,7 @@ def "git bisect clean" [] {
 
 
 def "repostat" [] {
-  ls ~/prj/RMFMagic* | each {|it| cd $it.name; print (pwd | path basename); print (gst) } | ignore
+  ls ~/prj/RMFMagic* | each {|it| cd $it.name; print (pwd | path basename); print (g st) } | ignore
 }
 
 # Delete local branches that are merged into the current branch.
