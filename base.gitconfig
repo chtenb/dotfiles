@@ -46,7 +46,7 @@
     br = branch
     rb = rebase
     co = checkout
-    nuke = checkout --
+    nuke = checkout -- .
     
     di = "diff --ignore-all-space --color-moved-ws=ignore-all-space"
     ds = diff --staged
