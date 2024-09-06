@@ -45,7 +45,9 @@ mklink /d %UserProfile%\AppData\Roaming\helix %UserProfile%\dotfiles\helix
 echo MANUALLY
 echo install nu by running:
 echo cargo install nu --features=extra
-echo bat and git-delta must be installed manually using cargo
+echo cargo install broot --features=clipboard
+echo cargo install bat
+echo cargo install git-delta
 echo Then manually run neo-ansi/apps/bat/deploy-to-bat.py
 
 del /q %UserProfile%\dotfiles\helix\themes\neo-ansi.toml
