@@ -1,3 +1,6 @@
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
 [language-server.scls]
 command = "simple-completion-language-server"
 
