@@ -26,6 +26,13 @@ def --wrapped "g co" [
   ^git checkout ...$args $target
 }
 
+def --wrapped "g lg" [
+  ...args
+  target?: string@"nu-complete g branches"   # name of the branch or files to checkout
+] {
+  ^git lg ...$args $target
+}
+
 def --wrapped "g me" [
   ...args
   target?: string@"nu-complete g branches"   # name of the branch or files to checkout
