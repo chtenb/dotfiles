@@ -23,20 +23,32 @@ def --wrapped "g co" [
   ...args
   target?: string@"nu-complete g branches"   # name of the branch or files to checkout
 ] {
-  ^git checkout ...$args $target
+  if $target != null {
+    ^git checkout ...$args $target
+  } else {
+    ^git checkout ...$args
+  }
 }
 
 def --wrapped "g lg" [
   ...args
   target?: string@"nu-complete g branches"   # name of the branch or files to checkout
 ] {
-  ^git lg ...$args $target
+  if $target != null {
+    ^git lg ...$args $target
+  } else {
+    ^git lg ...$args
+  }
 }
 
 def --wrapped "g me" [
   ...args
   target?: string@"nu-complete g branches"   # name of the branch or files to checkout
 ] {
-  ^git merge ...$args $target
+  if $target != null {
+    ^git merge ...$args $target
+  } else {
+    ^git merge ...$args
+  }
 }
 
