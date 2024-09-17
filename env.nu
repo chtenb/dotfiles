@@ -157,3 +157,7 @@ if $nu.os-info.name != "windows" {
   $env.PATH = (bash -c $'source ($NVM_SCRIPT) && echo $PATH')
 }
 
+
+# Disable some dotnet repl stuff
+$env.DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT = 1
+$env.DOTNET_INTERACTIVE_SKIP_FIRST_TIME_EXPERIENCE = 1
