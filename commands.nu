@@ -135,9 +135,6 @@ def logtail [file] {
   tail -n100 -f $file | bat --paging=never -l log
 }
 
-# alias koka-dev = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\d123c6a0\bin\koka.exe
-# alias kk = C:\Users\chiel.tenbrinke\prj\koka\.stack-work\install\27da0db2\bin\koka.exe -iC:\Users\chiel.tenbrinke\prj
-
 def confirm [message: string] {
   mut response = (input $"($message) \(Y/n\) ")
   while $response !~ "(?i)^(n|no|y|yes)$" {

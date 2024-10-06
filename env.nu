@@ -135,7 +135,10 @@ $env.LS_COLORS = "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 
 $env.EDITOR = "hx"
 $env.SHELL = "nu"
+
 $env.koka_editor = "hx"
+alias koka = C:\Users\ChieltenBrinke\prj\koka\.stack-work\install\dada82f2\bin\koka.exe
+alias kk = C:\Users\ChieltenBrinke\prj\koka\.stack-work\install\dada82f2\bin\koka.exe -iC:\Users\chiel.tenbrinke\prj
 
 # Our Helix config directory is dotfiles/helix, so the default runtime directory is dotfiles/helix/runtime.
 # But we keep that directory non-existent and set the HELIX_RUNTIME variable to prj/helix/runtime, such that the grammars and queries are automatically up-to-date.
