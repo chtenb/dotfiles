@@ -14,7 +14,8 @@ feature_paths = true          # enable path completion
 
 [[language]]
 name = "koka"
-language-servers = []
+language-servers = ["scls"]
+indent = { tab-width = 2, unit = "  " }
 
 [[language]]
 name = "markdown"
