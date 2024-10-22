@@ -95,7 +95,7 @@
     path = delta/main.gitconfig
 
 [difftool "kdiff3"]
-    path = C:/Program Files/KDiff3/kdiff3.exe
+    path = C:/Program Files/KDiff3/bin/kdiff3.exe
 
 [difftool "vscode"]
     cmd = code --wait --diff $LOCAL $REMOTE
@@ -112,7 +112,7 @@
 #     trustexitcode = false
 
 [mergetool "kdiff3"]
-    path = c:/Program Files/KDiff3/kdiff3.exe
+    path = C:/Program Files/KDiff3/bin/kdiff3.exe
 [mergetool "vscode"]
     cmd = code --wait $MERGED
 [mergetool "meld"]
