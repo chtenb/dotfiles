@@ -42,3 +42,5 @@
 	sslbackend = schannel
 [credential "https://devhub.intellimagic.local"]
 	provider = generic
+[credential "https://devhub.intellimagic.ibm.com"]
+	provider = generic
