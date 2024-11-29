@@ -1,7 +1,7 @@
 alias g = git
-alias gg = git grep -IPn --color=always --recurse-submodules
-alias ggn = git grep -IPn --color=always
-alias gr = git grep --no-index -IPn --color=always
+alias gg = ^git grep -IPn --color=always --recurse-submodules
+alias ggn = ^git grep -IPn --color=always
+alias gr = ^git grep --no-index -IPn --color=always
 
 def "g c" [] {
   let branches = (^git branch --color=never | lines | where (($it | str starts-with "*") == false))
