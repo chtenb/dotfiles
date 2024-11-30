@@ -24,6 +24,7 @@ alias delft-vpn = `C:\Program Files\Google\Chrome\Application\chrome.exe` 'https
 def vpn [] {
   ibm-vpn
   delft-vpn
+  ping -t w3.ibm.com
 }
 
 alias t = task
