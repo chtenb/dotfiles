@@ -6,6 +6,7 @@ line-number = "relative"
 shell = ["nu", "-l", "--stdin", "-c"]
 #mouse = false
 gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
+# gutters = []
 bufferline = "multiple"
 color-modes = true
 undercurl = true
