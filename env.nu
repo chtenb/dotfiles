@@ -152,12 +152,17 @@ $env.HELIX_RUNTIME = if (sys host).name == "Windows" {
 
 source ~/dotfiles/broot/launcher/nushell/br
 
-$env.PLANTUML = (glob "~/.local/bin/plantuml.jar" | get 0)
+let plantuml_files = (glob "~/.local/bin/plantuml.jar")
+if ($plantuml_files | length) > 0 {
+  $env.PLANTUML = ($plantuml_files | get 0)
+}
 
 # Initialize nvm on linux so we can use npm
 if $nu.os-info.name != "windows" {
-  let NVM_SCRIPT: glob = '~/.nvm/nvm.sh'
-  $env.PATH = (bash -c $'source ($NVM_SCRIPT) && echo $PATH')
+  let NVM_SCRIPT = glob '~/.nvm/nvm.sh'
+  if ($NVM_SCRIPT | length) == 1 {
+    $env.PATH = (bash -c $'source ($NVM_SCRIPT) && echo $PATH')
+  }
 }
 
 
