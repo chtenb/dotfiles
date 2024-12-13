@@ -42,6 +42,11 @@ mklink /d %UserProfile%\AppData\Roaming\dystroy\broot\config %UserProfile%\dotfi
 rmdir /s /q %UserProfile%\AppData\Roaming\helix
 mklink /d %UserProfile%\AppData\Roaming\helix %UserProfile%\dotfiles\helix
 
+rmdir /s /q %UserProfile%\AppData\Roaming\yazi\config
+rmdir /s /q %UserProfile%\AppData\Roaming\yazi
+mkdir %UserProfile%\AppData\Roaming\yazi
+mklink /d %UserProfile%\AppData\Roaming\yazi\config %UserProfile%\dotfiles\yazi
+
 echo MANUALLY
 echo install nu by running:
 echo cargo install nu --features=extra
@@ -54,6 +59,9 @@ del /q %UserProfile%\dotfiles\helix\themes\neo-ansi.toml
 mklink %UserProfile%\dotfiles\helix\themes\neo-ansi.toml %UserProfile%\dotfiles\neo-ansi\apps\helix\neo-ansi.toml
 del /q %UserProfile%\dotfiles\helix\themes\neo-ansi-syntax.toml
 mklink %UserProfile%\dotfiles\helix\themes\neo-ansi-syntax.toml %UserProfile%\dotfiles\neo-ansi\apps\helix\neo-ansi-syntax.toml
+
+del /q %UserProfile%\dotfiles\yazi\theme.toml
+mklink %UserProfile%\dotfiles\yazi\theme.toml %UserProfile%\dotfiles\neo-ansi\apps\yazi\theme.toml
 
 del /q %UserProfile%\dotfiles\broot\skins\neo-ansi.toml
 mklink %UserProfile%\dotfiles\broot\skins\neo-ansi.toml %UserProfile%\dotfiles\neo-ansi\apps\broot\neo-ansi.toml

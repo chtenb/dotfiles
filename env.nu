@@ -152,6 +152,16 @@ $env.HELIX_RUNTIME = if (sys host).name == "Windows" {
 
 source ~/dotfiles/broot/launcher/nushell/br
 
+def --env y [...args] {
+  let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+  yazi ...$args --cwd-file $tmp
+  let cwd = (open $tmp)
+  if $cwd != "" and $cwd != $env.PWD {
+    cd $cwd
+  }
+  rm -fp $tmp
+}
+
 let plantuml_files = (glob "~/.local/bin/plantuml.jar")
 if ($plantuml_files | length) > 0 {
   $env.PLANTUML = ($plantuml_files | get 0)
