@@ -1,0 +1,5 @@
+[opener]
+edit = [
+	{ run = '$EDITOR "$@"', desc = "$EDITOR", block = true, for = "unix" },
+	{ run = "%EDITOR% %*",  block = true, for = "windows" },
+]
