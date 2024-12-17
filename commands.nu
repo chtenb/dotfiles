@@ -18,7 +18,9 @@ alias plantuml = java -jar ~/.local/bin/plantuml.jar
 
 alias admin = powershell -Command "Start-Process nu -Verb RunAs"
 
+alias vpn-cli = `C:\Program Files (x86)\Cisco\Cisco Secure Client\vpncli.exe`
 alias ibm-vpn = `C:\Program Files (x86)\Cisco\Cisco Secure Client\vpncli.exe` connect "EUROPE-MEA (windows)"
+alias no-vpn = `C:\Program Files (x86)\Cisco\Cisco Secure Client\vpncli.exe` disconnect
 alias delft-vpn = `C:\Program Files\Google\Chrome\Application\chrome.exe` 'https://bmfw-052p-e4d-e101.delft.nl.ibm.com:6081/php/uid.php?vsys=1&rule=0'
 
 def vpn [] {
