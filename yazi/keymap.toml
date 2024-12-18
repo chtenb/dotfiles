@@ -1,6 +1,4 @@
 [manager]
-show_hidden = true
-
 prepend_keymap = [
 	{ on = '<A-q>', run = 'quit' },
 	{ on = '<C-q>', run = 'close' },
