@@ -179,3 +179,5 @@ if $nu.os-info.name != "windows" {
 # Disable some dotnet repl stuff
 $env.DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT = 1
 $env.DOTNET_INTERACTIVE_SKIP_FIRST_TIME_EXPERIENCE = 1
+
+zoxide init nushell | save -f ~/.zoxide.nu

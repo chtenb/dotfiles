@@ -1,14 +1,12 @@
 [manager]
 prepend_keymap = [
-	{ on = '<A-q>', run = 'quit' },
+	{ on = '<A-q>', run = 'quit --no-cwd-file' },
 	{ on = '<C-q>', run = 'close' },
     
 	{ on = '<C-o>', run = 'back', desc = 'Go back to the previous directory' },
 	{ on = '<C-i>', run = 'forward', desc = 'Go forward to the next directory' },
 	{ on = '<C-c>', run = 'escape --search', desc = 'Cancel the ongoing search' },
   
-	{ on = 'q', run = 'nop' },
-	{ on = 'Q', run = 'nop' },
 	{ on = '<C-c>', run = 'nop' },
 	{ on = 'H', run = 'nop' },
 	{ on = 'L', run = 'nop' },

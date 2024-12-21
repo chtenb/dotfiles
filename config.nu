@@ -156,3 +156,4 @@ $env.config = {
 
 
 source ~/dotfiles/commands.nu
+source ~/.zoxide.nu
