@@ -69,6 +69,12 @@ let default_theme = {
     shape_variable: purple
 }
 $env.config = {
+  history: {
+      file_format: 'sqlite'
+      max_size: 5_000_000    # because, why not?  We beat other shells' default history size into the ground and take their lunch money ... ;-)
+      isolation: true        # I believe most SQLite-backed users use this setting?
+      sync_on_enter: true
+  }
   show_banner: false
   color_config: $default_theme
   cursor_shape: {
