@@ -11,6 +11,7 @@ bufferline = "multiple"
 color-modes = true
 undercurl = true
 true-color = true
+text-width = 88
 
 [editor.soft-wrap]
 enable = true
@@ -59,6 +60,7 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "S-esc" = ["normal_mode", "keep_primary_selection"]
 
 [keys.normal]
+"esc" = [":redraw"]
 "C-q" = ":bc"
 "A-q" = ":quit"
 "C-s" = ["save_selection", ":w"]
@@ -160,6 +162,7 @@ e = """
 """
 z = ":toggle gutters.line-numbers.min-width 48 3"
 i = "hover"
+"\\" = ":reflow"
 
 # # Unison
 # v = """

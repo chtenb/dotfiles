@@ -74,7 +74,10 @@ wez.on("update-status", function(window, pane)
     { wez.strftime "%a %b %-d %H:%M", wez.strftime "%d/%m %R", wez.strftime "%R" },
     -- { battery.full, battery.lvl .. "%", battery.ico },
   }
-  local usable_width = pane:get_dimensions().cols - tab_bar_width - 4 ---padding
+  local pane_dimensions = pane:get_dimensions()
+  local win_width = window:get_dimensions().pixel_width
+  -- local usable_width = pane:get_dimensions().cols - tab_bar_width - 4 ---padding
+  local usable_width = math.floor((win_width * pane_dimensions.cols) / pane_dimensions.pixel_width)
   -- wez.log_info(window:get_dimensions())
   -- wez.log_info(pane:get_dimensions())
   -- wez.log_info(usable_width)
