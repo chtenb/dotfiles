@@ -40,7 +40,7 @@ ln -s ~/dotfiles/neo-ansi/apps/helix/neo-ansi-syntax.toml ~/dotfiles/helix/theme
 rm -f ~/dotfiles/broot/skins/neo-ansi.toml
 ln -s ~/dotfiles/neo-ansi/apps/broot/neo-ansi.toml ~/dotfiles/broot/skins/neo-ansi.toml
 rm -f ~/dotfiles/yazi/theme.toml
-ln -s ~/dotfiles/neo-ansi/apps/yazi/neo-ansi.toml ~/dotfiles/yazi/theme.toml
+ln -s ~/dotfiles/neo-ansi/apps/yazi/theme.toml ~/dotfiles/yazi/theme.toml
 
 
 echo "nushell must be installed manually, e.g. using cargo install nu"
