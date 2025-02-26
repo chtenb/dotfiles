@@ -19,16 +19,16 @@ def "nu-complete g branches" [] {
 #   git status --verbose=$verbose --short=$short --branch=$branch --show-stash=$show_stash
 # }
 
-def --wrapped "g co" [
-  ...args
-  target?: string@"nu-complete g branches"   # name of the branch or files to checkout
-] {
-  if $target != null {
-    ^git checkout ...$args $target
-  } else {
-    ^git checkout ...$args
-  }
-}
+# def --wrapped "g co" [
+#   ...args
+#   target?: string@"nu-complete g branches"   # name of the branch or files to checkout
+# ] {
+#   if $target != null {
+#     ^git checkout ...$args $target
+#   } else {
+#     ^git checkout ...$args
+#   }
+# }
 
 def --wrapped "g lg" [
   ...args
