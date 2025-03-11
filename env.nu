@@ -4,8 +4,8 @@
 let new_paths = if (sys host).name == "Windows" {
   ['C:\Program Files\Git\usr\bin', 
   'C:\Program Files\Microsoft Visual Studio\2022\Professional\Msbuild\Current\Bin',
-  'c:\users\chiel.tenbrinke\.local\share\helix',
-  'C:\Users\chiel.tenbrinke\Programs\ImageMagick'
+  'c:\users\chieltenbrinke\.local\share\helix',
+  'C:\Users\chieltenbrinke\Programs\ImageMagick'
   ]
 } else {
   [ '/home/chiel/.cabal/bin'
@@ -25,7 +25,7 @@ let existing_path = if (sys host).name == "Windows" {
 $env.Path = ($existing_path | prepend $new_paths)
 $env.PATH = ($existing_path | prepend $new_paths)
 $env.BAT_CONFIG_DIR = if (sys host).name == "Windows" {
-  'c:\users\chiel.tenbrinke\dotfiles\bat'
+  'c:\users\chieltenbrinke\dotfiles\bat'
 } else {
   '/home/chiel/dotfiles/bat'
 }
@@ -51,7 +51,7 @@ $env.SHELL = "nu"
 
 $env.koka_editor = "hx"
 alias koka = C:\Users\ChieltenBrinke\prj\koka\.stack-work\install\cf020dd0\bin\koka.exe
-alias kk = C:\Users\ChieltenBrinke\prj\koka\.stack-work\install\cf020dd0\bin\koka.exe -iC:\Users\chiel.tenbrinke\prj
+alias kk = C:\Users\ChieltenBrinke\prj\koka\.stack-work\install\cf020dd0\bin\koka.exe -iC:\Users\chieltenbrinke\prj
 
 # Our Helix config directory is dotfiles/helix, so the default runtime directory is dotfiles/helix/runtime.
 # But we keep that directory non-existent and set the HELIX_RUNTIME variable to prj/helix/runtime, such that the grammars and queries are automatically up-to-date.
@@ -94,3 +94,6 @@ $env.DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT = 1
 $env.DOTNET_INTERACTIVE_SKIP_FIRST_TIME_EXPERIENCE = 1
 
 zoxide init nushell | save -f ~/.zoxide.nu
+
+# Make some programs not assume CP 1252, but default to UTF8
+chcp 65001 | save NUL 
