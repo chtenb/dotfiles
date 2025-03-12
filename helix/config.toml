@@ -105,7 +105,7 @@ x = "keep_selections"
 
 # Koka
 "F5" = """
-:sh ":r\rmain()\r" | wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
+:sh "main()\r" | wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
 """
 "F6" = """
 :sh ":r\r" | wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)

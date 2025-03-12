@@ -50,8 +50,8 @@ $env.EDITOR = "hx"
 $env.SHELL = "nu"
 
 $env.koka_editor = "hx"
-alias koka = C:\Users\ChieltenBrinke\prj\koka\.stack-work\install\cf020dd0\bin\koka.exe
-alias kk = C:\Users\ChieltenBrinke\prj\koka\.stack-work\install\cf020dd0\bin\koka.exe -iC:\Users\chieltenbrinke\prj
+alias koka = C:\Users\ChieltenBrinke\prj\koka\.stack-work\install\80fdb312\bin\koka.exe
+alias kk = C:\Users\ChieltenBrinke\prj\koka\.stack-work\install\80fdb312\bin\koka.exe -iC:\Users\chieltenbrinke\prj
 
 # Our Helix config directory is dotfiles/helix, so the default runtime directory is dotfiles/helix/runtime.
 # But we keep that directory non-existent and set the HELIX_RUNTIME variable to prj/helix/runtime, such that the grammars and queries are automatically up-to-date.
