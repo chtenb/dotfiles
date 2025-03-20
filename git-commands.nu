@@ -41,11 +41,6 @@ def "git bisect clean" [] {
   rm .git/BISECT_*
 }
 
-
-def "repostat" [] {
-  ls ~/prj/RMFMagic* | each {|it| cd $it.name; print (pwd | path basename); print (g st) } | ignore
-}
-
 # Delete local branches that are merged into the current branch.
 # Before each operation, the user is asked for confirmation.
 def "rm-br" [master_branch_name = "master"] {

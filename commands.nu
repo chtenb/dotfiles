@@ -18,6 +18,11 @@ alias plantuml = java -jar ~/.local/bin/plantuml.jar
 
 alias admin = powershell -Command "Start-Process nu -Verb RunAs"
 
+
+def "repostat" [] {
+  ls ~/prj/Vision* | each {|it| cd $it.name; print (pwd | path basename); print (g st) } | ignore
+}
+
 alias vpn-cli = `C:\Program Files (x86)\Cisco\Cisco Secure Client\vpncli.exe`
 alias ibm-vpn = `C:\Program Files (x86)\Cisco\Cisco Secure Client\vpncli.exe` connect "EUROPE-MEA (windows)"
 alias no-vpn = `C:\Program Files (x86)\Cisco\Cisco Secure Client\vpncli.exe` disconnect
