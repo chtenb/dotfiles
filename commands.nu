@@ -28,6 +28,16 @@ alias ibm-vpn = `C:\Program Files (x86)\Cisco\Cisco Secure Client\vpncli.exe` co
 alias no-vpn = `C:\Program Files (x86)\Cisco\Cisco Secure Client\vpncli.exe` disconnect
 alias delft-vpn = `C:\Program Files\Google\Chrome\Application\chrome.exe` 'https://bmfw-052p-e4d-e101.delft.nl.ibm.com:6081/php/uid.php?vsys=1&rule=0'
 
+# curl -s "https://bmfw-052p-e4d-e101.delft.nl.ibm.com:6081/php/uid.php?vsys=1&rule=0"^
+# --data-urlencode "inputStr="^
+# --data-urlencode "escapeUser=tom.koelman@ibm.com"^
+# --data-urlencode "preauthid="^
+# --data-urlencode "user=tom.koelman@ibm.com"^
+# --data-urlencode "passwd@%PASSWDFILE%"^
+# --data-urlencode "ok=Login"^
+# --insecure^
+# --output output > NUL
+
 def vpn [] {
   ibm-vpn
   delft-vpn
