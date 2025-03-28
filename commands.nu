@@ -17,7 +17,12 @@ alias lnx = wsl.exe --cd '~' /home/chiel/.cargo/bin/nu -e "print $'Entered WSL a
 alias plantuml = java -jar ~/.local/bin/plantuml.jar
 
 alias admin = powershell -Command "Start-Process nu -Verb RunAs"
+alias vi = vim -v
 
+def eval [] {
+  let input = $in
+  $input | lines | each {|it| nu -c $it} | str join "\n"
+}
 
 def "repostat" [] {
   ls ~/prj/Vision* | each {|it| cd $it.name; print (pwd | path basename); print (g st) } | ignore
