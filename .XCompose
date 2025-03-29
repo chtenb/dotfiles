@@ -6216,6 +6216,8 @@
 <Multi_key> <asciicircum> <underscore> <n> 	: "ⁿ"   U207F # SUPERSCRIPT LATIN SMALL LETTER N
 <dead_circumflex> <Multi_key> <underbar> <n> 	: "ⁿ"   U207F # SUPERSCRIPT LATIN SMALL LETTER N
 <Multi_key> <asciicircum> <underbar> <n> 	: "ⁿ"   U207F # SUPERSCRIPT LATIN SMALL LETTER N
+<Multi_key> <asciicircum> <T> 	: "ᵀ"   U1D40 # (U+1D40, MODIFIER LETTER CAPITAL T)
+
 <Multi_key> <underscore> <0>     	: "₀"   U2080 # SUBSCRIPT ZERO
 <Multi_key> <underscore> <KP_0>  	: "₀"   U2080 # SUBSCRIPT ZERO
 <Multi_key> <underbar> <0>       	: "₀"   U2080 # SUBSCRIPT ZERO
