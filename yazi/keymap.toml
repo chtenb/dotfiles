@@ -13,4 +13,5 @@ prepend_keymap = [
 	{ on = '<C-s>', run = 'nop' },
 
 	{ on = "s", run = "search fd --args -p", desc = "Search files by name using fd" },
+	{ on = "v", run = "plugin visual", desc = "Toggle visual mode" },
 ]
