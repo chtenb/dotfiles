@@ -30,11 +30,11 @@
     sup = submodule update --init --recursive
 
     st = status
-    showstate = "!f() { cd $(git rev-parse --show-toplevel) && { test -f .git/BISECT_LOG && echo BISECTING && exit 0; test -f .git/MERGE_HEAD && echo MERGING && exit 0; test -d .git/rebase-merge || test -d .git/rebase-apply && echo REBASING && exit 0; test -f .git/CHERRY_PICK_HEAD && echo CHERRY-PICKING && exit 0; test -f .git/REVERT_HEAD && echo REVERTING && exit 0; echo NORMAL; }; }; f"
+    showstate = "!bash -c 'f() { cd $(git rev-parse --show-toplevel) && { test -f .git/BISECT_LOG && echo BISECTING && exit 0; test -f .git/MERGE_HEAD && echo MERGING && exit 0; test -d .git/rebase-merge || test -d .git/rebase-apply && echo REBASING && exit 0; test -f .git/CHERRY_PICK_HEAD && echo CHERRY-PICKING && exit 0; test -f .git/REVERT_HEAD && echo REVERTING && exit 0; echo NORMAL; }; }; f'"
 
     last = log -1 --stat
 
-    c = "!f() { ~/dotfiles/interactive-git-checkout/git_checkout.py; }; f"
+    c = "!bash -c 'f() { python3 ~/dotfiles/interactive-git-checkout/git_checkout.py; }; f'"
     bs = bisect
     mt = mergetool
     me = merge
@@ -56,19 +56,21 @@
     sho = "show --ignore-all-space --color-moved-ws=ignore-all-space"
     dst = "diff --stat=150,100 --stat-graph-width=50"
 
-    nonum = "!f() { git -c delta.line-numbers=false "$@"; }; f"
+    nonum = "!bash -c 'f() { git -c delta.line-numbers=false \"$@\"; }; f \"$@\"' --"
+
 
     # Fetch a branch x from origin to origin/x, and set it up to track it.
-    add-tracking-branch = "!f() { git remote set-branches --add origin "$1"; }; f"
-    # Update current branch to tracking branch, or update given branch x to origin/x.
-    retrack = "!f() { : git checkout ; if [ $# -eq 0 ] ; then git reset --hard @{u}; else git fetch . "origin/$1:$1" --recurse-submodules=no; fi }; f"
-    # Remove stuck lock file
-    unlock = "!f() { root=$(git rev-parse --show-toplevel); rm "$root/.git/index.lock"; }; f"
+    add-tracking-branch = "!bash -c 'f() { git remote set-branches --add origin \"$1\"; }; f \"$@\"' --"
 
-    # Commands to view the diff of one side while merging
-    remote-diff = "!f() { git diff $(git merge-base ORIG_HEAD MERGE_HEAD) MERGE_HEAD \"$@\"; }; f"
-    local-diff = "!f() { git diff $(git merge-base ORIG_HEAD MERGE_HEAD) ORIG_HEAD \"$@\"; }; f"
-    
+    # Update current branch to tracking branch, or update given branch x to origin/x.
+    retrack = "!bash -c 'f() { if [ $# -eq 0 ]; then git reset --hard @{u}; else git fetch . \"origin/$1:$1\" --recurse-submodules=no; fi; }; f \"$@\"' --"
+
+    # Remove stuck lock file.
+    unlock = "!bash -c 'f() { root=$(git rev-parse --show-toplevel); rm \"$root/.git/index.lock\"; }; f' --"
+
+    # Commands to view the diff of one side while merging.
+    remote-diff = "!bash -c 'f() { git diff $(git merge-base ORIG_HEAD MERGE_HEAD) MERGE_HEAD \"$@\"; }; f \"$@\"' --"
+    local-diff = "!bash -c 'f() { git diff $(git merge-base ORIG_HEAD MERGE_HEAD) ORIG_HEAD \"$@\"; }; f \"$@\"' --"
 
     patch = --no-pager diff --no-color
 [advice]

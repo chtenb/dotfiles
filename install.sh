@@ -30,6 +30,7 @@ ln -sf ~/dotfiles/env.nu ~/.config/nushell/env.nu
 
 ln -sfT ~/dotfiles/broot ~/.config/broot
 ln -sfT ~/dotfiles/helix ~/.config/helix
+ln -sfT ~/dotfiles/yazi ~/.config/yazi
 
 
 rm -f ~/dotfiles/helix/themes/neo-ansi.toml
@@ -38,6 +39,8 @@ rm -f ~/dotfiles/helix/themes/neo-ansi-syntax.toml
 ln -s ~/dotfiles/neo-ansi/apps/helix/neo-ansi-syntax.toml ~/dotfiles/helix/themes/neo-ansi-syntax.toml
 rm -f ~/dotfiles/broot/skins/neo-ansi.toml
 ln -s ~/dotfiles/neo-ansi/apps/broot/neo-ansi.toml ~/dotfiles/broot/skins/neo-ansi.toml
+rm -f ~/dotfiles/yazi/theme.toml
+ln -s ~/dotfiles/neo-ansi/apps/yazi/theme.toml ~/dotfiles/yazi/theme.toml
 
 
 echo "nushell must be installed manually, e.g. using cargo install nu"
