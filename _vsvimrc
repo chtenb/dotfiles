@@ -16,20 +16,6 @@ set textwidth=100
 
 set autoindent
 
-
-" Save shortcut
-nmap <C-s> :w<CR>
-vmap <C-s> :w<CR>
-" Hide highlighting
-nnoremap <Esc> :noh<CR><Esc>
-
-
-" Visual Studio specific
-set backspace=start
-noremap <F3> <Esc>:vsc Edit.FormatDocument<CR>
-noremap <F4> <Esc><Esc>:mapclear<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>
-"vmap <F3> :vsc Edit.FormatSelection<CR>
-
 source ~/dotfiles/helix.vim/src/unmap.vim
 source ~/dotfiles/helix.vim/src/helix.vim
 source ~/dotfiles/helix.vim/src/replace.vim
@@ -38,3 +24,21 @@ source ~/dotfiles/helix.vim/src/helix.vs.vim
 source ~/dotfiles/helix.vim/apocryphal.vim
 source ~/dotfiles/helix.vim/apocryphal.vs.vim
 
+
+" Save shortcut
+nmap <C-s> :w<CR>
+vmap <C-s> :w<CR>
+" Hide highlighting
+nnoremap <Esc> :noh<CR><Esc>
+
+" Visual Studios comment commands are complicated
+" Some file types don't support toggling
+noremap <C-_> :vsc Edit.ToggleLineComment<CR>
+noremap <Bslash>c :vsc Edit.CommentSelection<CR>
+noremap <Bslash>u :vsc Edit.UncommentSelection<CR>
+
+" Visual Studio specific
+set backspace=start
+noremap <F3> <Esc>:vsc Edit.FormatDocument<CR>
+noremap <F4> <Esc><Esc>:mapclear<CR>:source ~/_vsvimrc<CR>:echo "reloaded!"<CR>
+"vmap <F3> :vsc Edit.FormatSelection<CR>

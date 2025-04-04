@@ -72,7 +72,7 @@
     remote-diff = "!bash -c 'f() { git diff $(git merge-base ORIG_HEAD MERGE_HEAD) MERGE_HEAD \"$@\"; }; f \"$@\"' --"
     local-diff = "!bash -c 'f() { git diff $(git merge-base ORIG_HEAD MERGE_HEAD) ORIG_HEAD \"$@\"; }; f \"$@\"' --"
 
-    patch = --no-pager diff --no-color
+    patch = !git --no-pager diff --no-color
 [advice]
     detachedHead = false
 [gc]

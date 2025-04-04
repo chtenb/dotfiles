@@ -160,6 +160,7 @@ x = "keep_selections"
 
 [keys.normal.space]
 "A-f" = "file_picker_in_current_buffer_directory"
+"A-e" = "file_explorer_in_current_buffer_directory"
 E = """
 :sh echo `echo $':open "(broot)"\r' | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left); exit\r`
   | wezterm cli send-text --pane-id (wezterm cli split-pane --right --percent 33) --no-paste
