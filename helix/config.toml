@@ -35,7 +35,6 @@ tab = "all"
 # newline = "all"
 
 [editor.whitespace.characters]
-nbsp = "⍽"
 tab = "→"
 space = "·"
 newline = "⏎"
