@@ -152,10 +152,10 @@ x = "keep_selections"
 "A-x" = "remove_selections"
 
 # Make char search independent of the orientation of the selection
-"t" = ["ensure_selections_forward", "extend_till_char"]
-"T" = ["ensure_selections_forward", "flip_selections", "extend_till_prev_char"]
-"f" = ["ensure_selections_forward", "extend_next_char"]
-"F" = ["ensure_selections_forward", "flip_selections", "extend_prev_char"]
+#"t" = ["ensure_selections_forward", "extend_till_char"]
+#"T" = ["ensure_selections_forward", "flip_selections", "extend_till_prev_char"]
+#"f" = ["ensure_selections_forward", "extend_next_char"]
+#"F" = ["ensure_selections_forward", "flip_selections", "extend_prev_char"]
 
 [keys.normal.space]
 "A-f" = "file_picker_in_current_buffer_directory"
