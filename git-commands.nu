@@ -1,4 +1,4 @@
-alias g = git
+alias g = ^git
 alias gg = ^git grep -IPn --color=always --recurse-submodules
 alias ggn = ^git grep -IPn --color=always
 alias gr = ^git grep --no-index -IPn --color=always
