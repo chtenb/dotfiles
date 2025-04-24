@@ -31,6 +31,10 @@ mklink %UserProfile%\AppData\Roaming\nushell\config.nu %UserProfile%\dotfiles\co
 del /q %UserProfile%\AppData\Roaming\nushell\env.nu
 mklink %UserProfile%\AppData\Roaming\nushell\env.nu %UserProfile%\dotfiles\env.nu
 
+mkdir %UserProfile%\AppData\Roaming\elvish\
+del /q %UserProfile%\AppData\Roaming\elvish\rc.elv
+mklink %UserProfile%\AppData\Roaming\elvish\rc.elv %UserProfile%\dotfiles\rc.elv
+
 mkdir %UserProfile%\.config
 rmdir %UserProfile%\.config\wezterm
 mklink /d %UserProfile%\.config\wezterm %UserProfile%\dotfiles\wezterm

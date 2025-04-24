@@ -16,6 +16,7 @@ Config.automatically_reload_config = false
   Config.window_close_confirmation = 'AlwaysPrompt'
   Config.skip_close_confirmation_for_processes_named = {
     "bash.exe",
+    "elvish.exe",
     "nu.exe",
     "cmd.exe",
     "pwsh.exe",
@@ -26,10 +27,11 @@ Config.automatically_reload_config = false
   Config.exit_behavior_messaging = "Verbose"
   Config.exit_behavior = "CloseOnCleanExit"
 
-  Config.default_prog = { 'nu' }
+  Config.default_prog = { 'elvish' }
 
   Config.launch_menu = {
     { label = "Nu", args = { "nu" }, cwd = "~" },
+    { label = "Elvish", args = { "elvish" }, cwd = "~" },
     {
       label = icons.Pwsh .. " PowerShell V7",
       args = {
