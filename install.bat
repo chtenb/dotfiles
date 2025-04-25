@@ -57,7 +57,8 @@ echo cargo install nu --features=extra
 echo cargo install broot --features=clipboard
 echo cargo install bat
 echo cargo install git-delta
-echo Then manually run neo-ansi/apps/bat/deploy-to-bat.py
+
+python neo-ansi/apps/bat/deploy-to-bat.py
 
 del /q %UserProfile%\dotfiles\helix\themes\neo-ansi.toml
 mklink %UserProfile%\dotfiles\helix\themes\neo-ansi.toml %UserProfile%\dotfiles\neo-ansi\apps\helix\neo-ansi.toml
