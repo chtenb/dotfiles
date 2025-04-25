@@ -27,7 +27,7 @@ Config.automatically_reload_config = false
   Config.exit_behavior_messaging = "Verbose"
   Config.exit_behavior = "CloseOnCleanExit"
 
-  Config.default_prog = { 'elvish' }
+  Config.default_prog = { 'nu' }
 
   Config.launch_menu = {
     { label = "Nu", args = { "nu" }, cwd = "~" },
@@ -49,21 +49,21 @@ Config.automatically_reload_config = false
   }
 
   -- ref: https://wezfurlong.org/wezterm/config/lua/WslDomain.html
-  Config.wsl_domains = {
-    {
-      name = "WSL:Ubuntu",
-      distribution = "Ubuntu",
-      username = "sravioli",
-      default_cwd = "/home/sRavioli",
-      default_prog = { "bash" },
-    },
-    {
-      name = "WSL:Alpine",
-      distribution = "Alpine",
-      username = "sravioli",
-      default_cwd = "/home/sravioli",
-    },
-  }
+  -- Config.wsl_domains = {
+  --   {
+  --     name = "WSL:Ubuntu",
+  --     distribution = "Ubuntu",
+  --     username = "sravioli",
+  --     default_cwd = "/home/sRavioli",
+  --     default_prog = { "bash" },
+  --   },
+  --   {
+  --     name = "WSL:Alpine",
+  --     distribution = "Alpine",
+  --     username = "sravioli",
+  --     default_cwd = "/home/sravioli",
+  --   },
+  -- }
 -- end
 
 Config.default_cwd = fun.home
