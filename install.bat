@@ -31,6 +31,10 @@ mklink %UserProfile%\AppData\Roaming\nushell\config.nu %UserProfile%\dotfiles\co
 del /q %UserProfile%\AppData\Roaming\nushell\env.nu
 mklink %UserProfile%\AppData\Roaming\nushell\env.nu %UserProfile%\dotfiles\env.nu
 
+mkdir %UserProfile%\AppData\Roaming\elvish\
+del /q %UserProfile%\AppData\Roaming\elvish\rc.elv
+mklink %UserProfile%\AppData\Roaming\elvish\rc.elv %UserProfile%\dotfiles\rc.elv
+
 mkdir %UserProfile%\.config
 rmdir %UserProfile%\.config\wezterm
 mklink /d %UserProfile%\.config\wezterm %UserProfile%\dotfiles\wezterm
@@ -53,7 +57,8 @@ echo cargo install nu --features=extra
 echo cargo install broot --features=clipboard
 echo cargo install bat
 echo cargo install git-delta
-echo Then manually run neo-ansi/apps/bat/deploy-to-bat.py
+
+python neo-ansi/apps/bat/deploy-to-bat.py
 
 del /q %UserProfile%\dotfiles\helix\themes\neo-ansi.toml
 mklink %UserProfile%\dotfiles\helix\themes\neo-ansi.toml %UserProfile%\dotfiles\neo-ansi\apps\helix\neo-ansi.toml

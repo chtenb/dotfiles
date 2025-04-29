@@ -1,4 +1,4 @@
-alias g = git
+alias g = ^git
 alias gg = ^git grep -IPn --color=always --recurse-submodules
 alias ggn = ^git grep -IPn --color=always
 alias gr = ^git grep --no-index -IPn --color=always
@@ -23,11 +23,16 @@ def "g st" [] {
   }
   let lines =  git status -sb | lines
   $lines.0 | print
-  $lines | skip 1 | wrap text | insert type {|it| ($it.text | ansi strip | str substring 0..2) } | insert order {|it| match $it.type { 
-      "??" => 0, "UU" => 1, "UD" => 2, 
+  $lines | skip 1 | wrap text
+    | insert type {|it| ($it.text | ansi strip | str substring 0..2) }
+    | insert order {|it| match $it.type { 
+      "??" => 0,
+      "UU" => 1,
+      "UD" => 2, 
       $t if $t =~ ' \S' => 3, 
       $t if $t =~ '\S\S' => 4,  
-      $t if $t =~ '\S ' => 5, _ => 6 } 
+      $t if $t =~ '\S ' => 5,
+      _ => 6 } 
     } | sort-by -r order | get text | str join "\n"
 }
 
