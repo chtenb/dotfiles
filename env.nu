@@ -95,5 +95,7 @@ $env.DOTNET_INTERACTIVE_SKIP_FIRST_TIME_EXPERIENCE = 1
 
 zoxide init nushell | save -f ~/.zoxide.nu
 
-# Make some programs not assume CP 1252, but default to UTF8
-chcp 65001 | save NUL 
+if $nu.os-info.name == "windows" {
+  # Make some programs not assume CP 1252, but default to UTF8
+  chcp 65001 | save NUL 
+}

@@ -16,4 +16,6 @@ prepend_keymap = [
 	{ on = "v", run = "plugin visual", desc = "Toggle visual mode" },
 
 	{ on = "<A-o>", run = "shell --orphan %1", desc = "OS open" },
+	{ on = "<A-s>", run = 'search --via=fd --args="--no-ignore"', desc = "Search without honoring gitignore files" },
 ]
+
