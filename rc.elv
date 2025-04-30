@@ -2,6 +2,8 @@ use str
 use re
 use os
 
+set edit:insert:binding[Down] = { }
+
 fn g {|@a| git $@a }
 fn gg {|@a| git grep -IPn --color=always --recurse-submodules $@a }
 fn ggn {|@a| git grep -IPn --color=always $@a }
@@ -65,4 +67,12 @@ fn gst {|@a|
     } |
     order &reverse &key={|i| put $i[priority]} |
     each {|i| echo $i[text]}
+}
+
+fn gco {|@a|
+  var branches = [(git branch --color=never | keep-if {|b| not (str:has-prefix $b '*') })]
+  $branches | each {|b| echo $b }
+  var input = (num (read-line))
+  var target = (put $branches[$input] | str:trim-space (one))
+  git checkout $target
 }
