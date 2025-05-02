@@ -200,3 +200,8 @@ fn neo-ansi {|&inverse=$false|
   print "\e[0m"
 }
 
+# fn anonymize {|pattern|
+#   var input = (slurp)
+  
+# }
+
