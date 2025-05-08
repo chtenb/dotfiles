@@ -644,6 +644,7 @@
 <Multi_key> <equal> <equal>		: "≡"	U2261		# IDENTICAL TO
 <Multi_key> <colon> <equal> 		: "≔"  U2254		# COLON EQUALS
 <Multi_key> <equal> <colon> 		: "≕"  U2255		# EQUALS COLON
+<Multi_key> <d> <equal> 		: "≜"  U225C		# DELTA EQUALS
 <Multi_key> <2> <equal>                 : "⩵"  U2A75            # TWO CONSECUTIVE EQUALS SIGNS
 <Multi_key> <equal> <ampersand> <equal> : "⩵"  U2A75            # TWO CONSECUTIVE EQUALS SIGNS
 <Multi_key> <3> <equal>                 : "⩶"  U2A76            # THREE CONSECUTIVE EQUALS SIGNS
