@@ -817,7 +817,7 @@
 <Multi_key> <L> <parenleft>         : "⌞"     U231E   # BOTTOM LEFT CORNER
 <Multi_key> <L> <parenright>        : "⌟"     U231F   # BOTTOM RIGHT CORNER
 <Multi_key> <parenleft> <ampersand> <parenright> :  "≬"	U226C	# BETWEEN
-<Multi_key> <l> <l>		: "ℓ" U2113	# SCRIPT SMALL L
+<Multi_key> <l> <l>		: "λ" U03BB		# GREEK SMALL LETTER LAMBDA
 <Multi_key> <bracketleft> <bracketleft> : "⊏"   U228F           # SQUARE IMAGE OF
 <Multi_key> <bracketleft> <equal>       : "⊑"   U2291           # SQUARE IMAGE OF OR EQUAL TO
 <Multi_key> <bracketleft> <underscore>  : "⊑"   U2291           # SQUARE IMAGE OF OR EQUAL TO

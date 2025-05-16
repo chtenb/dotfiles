@@ -99,3 +99,18 @@ formatter = { command = 'prettier', args = ["--parser", "css"] }
 [[language]]
 name = "javascript"
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+
+[language-server.racket]
+command = "racket"
+args = ["-l", "racket-langserver"]
+
+[[language]]
+name = "racket"
+scope = "source.racket"
+file-types = ["rkt", "rktd", "rktl", "scrbl"]
+shebangs = ["racket"]
+comment-token = ";"
+indent = { tab-width = 2, unit = "  " }
+block-comment-tokens = { start = "#|", end = "|#" }
+language-servers = [ "racket" ]
+grammar = "scheme"
