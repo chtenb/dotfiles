@@ -12,6 +12,7 @@ color-modes = true
 undercurl = true
 true-color = true
 text-width = 88
+rainbow-brackets = true
 
 [editor.soft-wrap]
 enable = true

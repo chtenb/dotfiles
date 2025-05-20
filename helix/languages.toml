@@ -46,7 +46,7 @@ scope = "source.tsv"
 injection-regex = "tsv"
 file-types = ["tsv"]
 roots = []
-soft-wrap = { enable = false, wrap-at-text-width = false }
+soft-wrap = { enable = true, wrap-at-text-width = true }
 indent = { tab-width = 28, unit = "\t" }
 
 [[language]]
