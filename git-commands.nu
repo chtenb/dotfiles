@@ -1,6 +1,6 @@
 alias g = ^git
 alias gg = ^git grep -IPn --color=always --recurse-submodules
-alias ggn = ^git grep -IPn --color=always
+alias ggn = ^git grep -IPn --color=always --no-recurse-submodules
 alias gr = ^git grep --no-index -IPn --color=always
 
 def "g c" [] {

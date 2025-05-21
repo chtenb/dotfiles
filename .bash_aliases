@@ -36,11 +36,6 @@ f() {
 wpy() {
     winpty -Xallow-non-tty python.exe "$@"
 }
-# Make git grep search submodules as well
-gsg() {
-    git --no-pager grep "$@"
-    git --no-pager submodule foreach --recursive "git --no-pager grep $@ ; true"
-}
 
 # tail the latest created file in the directory
 taillatest() {

@@ -4,6 +4,7 @@
 let new_paths = if (sys host).name == "Windows" {
   ['C:\Program Files\Git\usr\bin', 
   'C:\Program Files\Microsoft Visual Studio\2022\Professional\Msbuild\Current\Bin',
+  'C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin',
   'c:\users\chieltenbrinke\.local\share\helix',
   'C:\Users\chieltenbrinke\Programs\ImageMagick',
   'C:\Program Files\Chez Scheme 10.1.0\bin\a6nt',
