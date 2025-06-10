@@ -34,7 +34,7 @@ name = "markdown"
 soft-wrap = { wrap-at-text-width = false }
 
 # The indent to use. Has sub keys unit (the text inserted into the document when indenting; usually set to N spaces or "\t" for tabs) and tab-width (the number of spaces rendered for a tab)
-indent = { tab-width = 4, unit = "\t" }
+indent = { tab-width = 8, unit = "\t" }
 
 formatter = { command = 'sed', args = ['-b', 's/[ \t]*(\r?)$/\1/'] }
 language-servers = ["scls"]
