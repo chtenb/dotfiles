@@ -167,6 +167,7 @@
 <Multi_key> <b> <o> <x> : "□" # latex ?
 <Multi_key> <f> <l> <a> <t> : "♭" # latex ?
 <Multi_key> <s> <h> <a> <r> <p> : "♯" # latex ?
+<Multi_key> <j> <o> <i> <n> : "⋈" # bowtie
 
 # Greek alphabet
 <Multi_key> <a> <l> <p> <h> <a> : "α"  # latex \alpha
