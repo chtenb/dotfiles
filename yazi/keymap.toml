@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 prepend_keymap = [
 	{ on = '<A-q>', run = 'quit --no-cwd-file' },
 	{ on = '<C-q>', run = 'close' },
