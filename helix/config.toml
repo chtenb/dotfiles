@@ -3,7 +3,8 @@ theme = "neo-ansi"
 [editor]
 auto-pairs = false
 line-number = "relative"
-shell = ["nu", "-l", "--stdin", "-c"]
+shell = ["sh", "-c"]
+# shell = ["nu", "-l", "--stdin", "-c"]
 #mouse = false
 gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
 # gutters = []
@@ -161,13 +162,20 @@ x = "keep_selections"
 [keys.normal.space]
 "A-f" = "file_picker_in_current_buffer_directory"
 "e" = "file_explorer_in_current_buffer_directory"
-E = """
-:sh echo `echo $':open "(broot)"\r' | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left); exit\r`
-  | wezterm cli send-text --pane-id (wezterm cli split-pane --right --percent 33) --no-paste
-"""
+# E = """
+# :sh echo `echo $':open "(broot)"\r' | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left); exit\r`
+#   | wezterm cli send-text --pane-id (wezterm cli split-pane --right --percent 33) --no-paste
+# """
 z = ":toggle gutters.line-numbers.min-width 48 3"
 i = "hover"
 "\\" = ":reflow"
+E = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
 
 # # Unison
 # v = """
@@ -182,10 +190,6 @@ i = "hover"
 
 [keys.select.space]
 F = "file_picker_in_current_buffer_directory"
-E = """
-:sh echo `echo $':open "(broot)"\r' | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left); exit\r`
-  | wezterm cli send-text --pane-id (wezterm cli split-pane --right --percent 33) --no-paste
-"""
 z = ":toggle gutters.line-numbers.min-width 48 3"
 i = "hover"
 
