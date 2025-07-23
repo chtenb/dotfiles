@@ -1,3 +1,5 @@
+use-grammars = { only = [ "koka" ] }
+
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
@@ -28,6 +30,12 @@ name = "koka"
 language-servers = ["scls"]
 indent = { tab-width = 2, unit = "  " }
 
+[[grammar]]
+name = "koka"
+# source = { git = "https://github.com/HeikoRibberink/tree-sitter-koka/", rev = "ba082f1d60b0d2754a7b13425486f3d93b1fd79e" }
+source = { git = "https://github.com/HeikoRibberink/tree-sitter-koka/", rev = "99a5e5b8f0baa15bbc3df1892b6c8bcf534ec36c" }
+
+
 [[language]]
 name = "markdown"
 # text-width = 100
@@ -35,6 +43,7 @@ soft-wrap = { wrap-at-text-width = false }
 
 # The indent to use. Has sub keys unit (the text inserted into the document when indenting; usually set to N spaces or "\t" for tabs) and tab-width (the number of spaces rendered for a tab)
 indent = { tab-width = 8, unit = "\t" }
+# indent = { tab-width = 2, unit = " " }
 
 formatter = { command = 'sed', args = ['-b', 's/[ \t]*(\r?)$/\1/'] }
 language-servers = ["scls"]

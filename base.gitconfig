@@ -81,11 +81,6 @@
 [color]
     ui=always
 
-[diff]
-    colorMoved = default
-    colorMovedWS = ignore-space-at-eol
-    guitool = vscode
-
 [pager]
     diff = delta
     log = delta
@@ -98,28 +93,33 @@
 [include]
     path = delta/main.gitconfig
 
-[difftool "kdiff3"]
-    path = C:/Program Files/KDiff3/bin/kdiff3.exe
 
-[difftool "vscode"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+
+[diff]
+    colorMoved = default
+    colorMovedWS = ignore-space-at-eol
+    guitool = vscode
 
 
 [merge]
-    tool = bc4
-    # tool = kdiff3
+    # tool = bc4
+    tool = kdiff3
     conflictstyle = diff3
 [mergetool]
     keeptemporaries = false
     keepbackup = false
     hideresolved = true
-#     prompt = false
-#     trustexitcode = false
+
+
+[difftool "kdiff3"]
+    path = C:/Users/ChieltenBrinke/AppData/Local/Programs/KDiff3/bin/kdiff3.exe
+
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
 
 [mergetool "kdiff3"]
-    path = C:/Program Files/KDiff3/bin/kdiff3.exe
-[mergetool "kdiff3"]
-    path = C:/Program Files/KDiff3/bin/kdiff3.exe
+    path = C:/Users/ChieltenBrinke/AppData/Local/Programs/KDiff3/bin/kdiff3.exe
 [mergetool "vscode"]
     cmd = code --wait $MERGED
 [mergetool "meld"]
