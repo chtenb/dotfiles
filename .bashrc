@@ -7,7 +7,4 @@ set -o igncr
 
 PROMPT_COMMAND='history -a'
 
-PATH=$PATH:$HOME/.local/bin
-PATH=$PATH:$HOME/dotfiles/bin
-
 export PATH

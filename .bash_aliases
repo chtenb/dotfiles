@@ -2,6 +2,7 @@ PROMPT_COMMAND='history -a'
 
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$HOME/dotfiles/bin
+PATH=$PATH:/mnt/d/git/usr/bin # Loads all unix utils and zsh from my windows git installation
 
 export PATH
 

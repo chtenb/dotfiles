@@ -6,6 +6,7 @@
     autocrlf=false
     whitespace = cr-at-eol
     fsmonitor = true
+    symlinks=true
 [web]
     browser = "chrome"
 [browser "chrome"]
