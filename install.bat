@@ -12,6 +12,8 @@ del /q %UserProfile%\.bash_aliases
 mklink %UserProfile%\.bash_aliases %UserProfile%\dotfiles\.bash_aliases
 del /q %UserProfile%\.bash_profile
 mklink %UserProfile%\.bash_profile %UserProfile%\dotfiles\.bash_profile
+del /q %UserProfile%\.profile
+mklink %UserProfile%\.profile %UserProfile%\dotfiles\.profile
 del /q %UserProfile%\.bashrc
 mklink %UserProfile%\.bashrc %UserProfile%\dotfiles\.bashrc
 del /q %UserProfile%\.zshrc

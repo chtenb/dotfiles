@@ -1,4 +1,5 @@
 ln -sf ~/dotfiles/.bash_aliases ~/
+ln -sf ~/dotfiles/.zshrc ~/
 ln -sf ~/dotfiles/.vimrc ~/
 ln -sf ~/dotfiles/.vimrc.bare ~/
 ln -sf ~/dotfiles/.taskrc ~/

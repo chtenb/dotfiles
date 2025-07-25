@@ -1,15 +1,3 @@
-PROMPT_COMMAND='history -a'
-
-PATH=$PATH:$HOME/.local/bin
-PATH=$PATH:$HOME/dotfiles/bin
-PATH=$PATH:/mnt/d/git/usr/bin # Loads all unix utils and zsh from my windows git installation
-
-export PATH
-
-# Setup node via NVM
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
 # Setup Nix
 if [ -e /home/chiel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chiel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
@@ -140,6 +128,4 @@ vim()
     stty "$STTYOPTS"
 }
 
-alias dark="cp -f ~/dotfiles/delta/dark.gitconfig ~/dotfiles/delta/current.gitconfig"
-alias light="cp -f ~/dotfiles/delta/light.gitconfig ~/dotfiles/delta/current.gitconfig"
 

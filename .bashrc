@@ -1,3 +1,5 @@
+echo hello from .bashrc
+
 [ -f "/c/ghcup/env" ] && . "/c/ghcup/env" # ghcup-env
 
 export SHELLOPTS
