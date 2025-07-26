@@ -1292,19 +1292,17 @@
 <Multi_key> <k> <s>                     : "ʘ"   U0298           # LATIN LETTER BILABIAL CLICK (kiss sound)
 <Multi_key> <bar> <greater>             : "▹"   U2023           # TRIANGULAR BULLET
 #SUPERSCRIPTS:
-#To avoid namespace clashes, <asciicircum> is doubled (will I regret that?)
-<Multi_key> <asciicircum> <asciicircum> <h>       : "ʰ"   U02B0           # SUPERSCRIPT H
-<Multi_key> <asciicircum> <asciicircum> <i>       : "ⁱ"   U2071           # SUPERSCRIPT I
-<Multi_key> <asciicircum> <asciicircum> <j>       : "ʲ"   U02B2           # SUPERSCRIPT J
-<Multi_key> <asciicircum> <asciicircum> <n>       : "ⁿ"   U207F           # SUPERSCRIPT N
-<Multi_key> <asciicircum> <asciicircum> <r>       : "ʳ"   U02B3           # SUPERSCRIPT R
-<Multi_key> <asciicircum> <asciicircum> <w>       : "ʷ"   U02B7           # SUPERSCRIPT W
-<Multi_key> <asciicircum> <asciicircum> <y>       : "ʸ"   U02B8           # SUPERSCRIPT Y
-# How could I have gone so long without being able to type "10ˣ" for "thanks"?
-<Multi_key> <asciicircum> <asciicircum> <x>       : "ˣ"   U02E3           # SUPERSCRIPT X
+<Multi_key> <asciicircum> <h>       : "ʰ"   U02B0           # SUPERSCRIPT H
+<Multi_key> <asciicircum> <i>       : "ⁱ"   U2071           # SUPERSCRIPT I
+<Multi_key> <asciicircum> <j>       : "ʲ"   U02B2           # SUPERSCRIPT J
+<Multi_key> <asciicircum> <n>       : "ⁿ"   U207F           # SUPERSCRIPT N
+<Multi_key> <asciicircum> <r>       : "ʳ"   U02B3           # SUPERSCRIPT R
+<Multi_key> <asciicircum> <w>       : "ʷ"   U02B7           # SUPERSCRIPT W
+<Multi_key> <asciicircum> <y>       : "ʸ"   U02B8           # SUPERSCRIPT Y
+<Multi_key> <asciicircum> <x>       : "ˣ"   U02E3           # SUPERSCRIPT X
 # So I can use yᵗ/þᵗ and yᵉ/þᵉ
-<Multi_key> <asciicircum> <asciicircum> <e>	  : "ᵉ"	  U1D49		  # MODIFIER LETTER SMALL E
-<Multi_key> <asciicircum> <asciicircum> <t>	  : "ᵗ"	  U1D57		  # MODIFIER LETTER SMALL T
+<Multi_key> <asciicircum> <e>	  : "ᵉ"	  U1D49		  # MODIFIER LETTER SMALL E
+<Multi_key> <asciicircum> <t>	  : "ᵗ"	  U1D57		  # MODIFIER LETTER SMALL T
 # Abbreviation for "that":
 <Multi_key> <U00FE> <t>	  			  : "ꝥ"	  UA765		  # LATIN SMALL LETTER THORN WITH STROKE
 #Maybe add: ˃˂  Need to be able to talk about ʔˁ...
