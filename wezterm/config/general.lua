@@ -16,6 +16,7 @@ Config.automatically_reload_config = false
   Config.window_close_confirmation = 'AlwaysPrompt'
   Config.skip_close_confirmation_for_processes_named = {
     "bash.exe",
+    "zsh.exe",
     "elvish.exe",
     "nu.exe",
     "cmd.exe",
@@ -27,9 +28,11 @@ Config.automatically_reload_config = false
   Config.exit_behavior_messaging = "Verbose"
   Config.exit_behavior = "CloseOnCleanExit"
 
-  Config.default_prog = { 'nu' }
+  -- Config.default_prog = { 'nu' }
+  Config.default_prog = { 'bash', '-l' }
 
   Config.launch_menu = {
+    { label = icons.Git .. " Git bash", args = { "sh", "-l" }, cwd = "~" },
     { label = "Nu", args = { "nu" }, cwd = "~" },
     { label = "Elvish", args = { "elvish" }, cwd = "~" },
     {
@@ -45,7 +48,6 @@ Config.automatically_reload_config = false
     },
     { label = icons.Pwsh .. " PowerShell V5", args = { "powershell" }, cwd = "~" },
     { label = "Command Prompt", args = { "cmd.exe" }, cwd = "~" },
-    { label = icons.Git .. " Git bash", args = { "sh", "-l" }, cwd = "~" },
   }
 
   -- ref: https://wezfurlong.org/wezterm/config/lua/WslDomain.html

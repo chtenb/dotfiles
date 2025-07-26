@@ -170,12 +170,26 @@ x = "keep_selections"
 z = ":toggle gutters.line-numbers.min-width 48 3"
 i = "hover"
 "\\" = ":reflow"
+# E = [
+#   ':sh rm -f /tmp/unique-file',
+#   ':insert-output yazi --chooser-file=/tmp/unique-file',
+#   ':pipe-to sh -c "stty raw -echo -ixon < /dev/tty"',
+#   ':open %sh{test -s /tmp/unique-file && cat /tmp/unique-file || echo}',
+#   ':redraw',
+# ]
 E = [
-  ':sh rm -f /tmp/unique-file',
-  ':insert-output yazi --chooser-file=/tmp/unique-file',
-  ':pipe-to sh -c "stty raw -echo -ixon < /dev/tty"',
-  ':open %sh{test -s /tmp/unique-file && cat /tmp/unique-file || echo}',
+  ':sh rm -f $TMP_UNIX/files2open',
+  ':set mouse false',
+  # This doesn't work, because sh uses /tmp to refer to c:\windows\temp, but windows programs such as helix interpret this as c:\tmp
+  ':insert-output yazi "%{buffer_name}" --chooser-file=$TMP_UNIX/files2open',
   ':redraw',
+  ':set mouse true',
+  ':echo %sh{echo $TMP_WIN/files2open}',
+  ':open %sh{echo $TMP_WIN/files2open}',
+  # 'select_all',
+  # 'split_selection_on_newline',
+  # 'goto_file',
+  # ':buffer-close! $TMP/files2open',
 ]
 
 # # Unison

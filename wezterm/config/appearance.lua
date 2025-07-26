@@ -63,12 +63,7 @@ function module.get_config()
   -- Config.command_palette_rows = 20
 
   ---cursor
-  Config.cursor_blink_ease_in = "EaseIn"
-  Config.cursor_blink_ease_out = "EaseOut"
-  Config.cursor_blink_rate = 500
-  Config.default_cursor_style = "BlinkingUnderline"
-  Config.cursor_thickness = 1
-  Config.force_reverse_video_cursor = true
+  Config.default_cursor_style = "SteadyBlock"
 
   Config.enable_scroll_bar = true
 

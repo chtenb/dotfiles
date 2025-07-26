@@ -2,7 +2,7 @@
 
 ###### PATH ######
 let new_paths = if (sys host).name == "Windows" {
-  ['C:\Program Files\Git\usr\bin', 
+  ['D:\git\usr\bin', 
   'C:\Program Files\Microsoft Visual Studio\2022\Professional\Msbuild\Current\Bin',
   'C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin',
   'c:\users\chieltenbrinke\.local\share\helix',

@@ -1,13 +1,31 @@
+echo Executing .zshrc
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/c/Users/ChieltenBrinke/.zshrc'
+source ~/.bash_aliases
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-bindkey -v
-# End of lines configured by zsh-newuser-install
+# Editor + History
+export EDITOR="hx"
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt inc_append_history share_history
+
+# Completion system
+autoload -Uz compinit && compinit
+autoload -Uz promptinit && promptinit
+
+# Readline-style keybindings
+bindkey -e
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[5C' forward-word
+bindkey '^[[5D' backward-word
+
+# Completion colors and behavior
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Source plugins
+source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh/fzf-tab/fzf-tab.plugin.zsh
+fpath+=(~/dotfiles/zsh/zsh-completions/src)

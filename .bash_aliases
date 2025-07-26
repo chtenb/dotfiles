@@ -1,29 +1,10 @@
-# Setup Nix
-if [ -e /home/chiel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chiel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-# Enable ** globbing
-shopt -s globstar
-
 export PAGER="less --tabs=4 -RF"
 alias lesser="less --tabs=4 -RF"
-
-# jj completion
-# source <(jj debug completion)
 
 # Fast dir crawling
 c() {
     cd "$1"
     ls -a --color --classify
-}
-
-# Filemanager
-f() {
-    fff "$@"
-    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
-}
-
-wpy() {
-    winpty -Xallow-non-tty python.exe "$@"
 }
 
 # tail the latest created file in the directory
@@ -32,7 +13,17 @@ taillatest() {
 }
 
 # Print stderr in red. Usage: $ color command.
-color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
+color() {
+  # Detect shell and skip pipefail if unsupported
+  if (set -o pipefail 2>/dev/null); then
+    set -o pipefail
+  fi
+
+  # Run the command, capture stderr only, and color it
+  "$@" 2> >(while IFS= read -r line; do printf '\033[31m%s\033[0m\n' "$line"; done)
+}
+
+# color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
 printcolors(){
     echo "foreground"
@@ -78,6 +69,14 @@ tmail() {
     tsw add54de8-e569-4ad1-aa82-2ab278bfde35;
 }
 
+function y() {
+ local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+ yazi "$@" --cwd-file="$tmp"
+ IFS= read -r -d '' cwd < "$tmp"
+ [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+ rm -f -- "$tmp"
+}
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -96,27 +95,39 @@ alias sl="selectlines"
 alias t="task"
 
 alias g="git"
-if [ "$(command -v __git_complete)" ]; then
-    __git_complete g __git_main
-else
-    source /usr/share/bash-completion/completions/git
-    __git_complete g __git_main
+if [ -n "$BASH_VERSION" ]; then
+    # Bash
+    if command -v __git_complete >/dev/null 2>&1; then
+        __git_complete g __git_main
+    elif [ -f /usr/share/bash-completion/completions/git ]; then
+        source /usr/share/bash-completion/completions/git
+        __git_complete g __git_main
+    fi
+
+elif [ -n "$ZSH_VERSION" ]; then
+    # Zsh
+    autoload -Uz compinit && compinit
+    autoload -Uz bashcompinit && bashcompinit
+
+    if command -v __git_complete >/dev/null 2>&1; then
+        __git_complete g __git_main
+    elif [ -f /usr/share/bash-completion/completions/git ]; then
+        source /usr/share/bash-completion/completions/git
+        __git_complete g __git_main
+    fi
 fi
 
 alias ex="explorer ."
 alias gg="git grep -IPn --color=always --recurse-submodules"
 alias ggn="git grep -IPn --color=always"
 alias gr="git grep --no-index -IPn --color=always"
+alias grec="grep --color"
 alias rcname="python -c \"for i,c in enumerate(f'{input():<12}'[:12]): print(f'\t<C{i+1:>02}>{ord(c)}</C{i+1:>02}>')\""
 #alias die="sudo shutdown -h now"
-alias open="gnome-open"
 alias tmux="TERM=screen-256color-bce tmux"
 
 # Ping google server
 alias pingg="ping google.nl"
-
-# Prevent gvim from print annoying error message
-alias gvim="gvim 2> /dev/null"
 
 # No ttyctl, so we need to save and then restore terminal settings
 vim()
@@ -128,4 +139,6 @@ vim()
     stty "$STTYOPTS"
 }
 
+alias koka="C:\\Users\\ChieltenBrinke\\prj\\koka\\.stack-work\\install\\80fdb312\\bin\\koka.exe"
+alias kk="C:\\Users\\ChieltenBrinke\\prj\\koka\\.stack-work\\install\\80fdb312\\bin\\koka.exe -iC:\\Users\\chieltenbrinke\\prj"
 
