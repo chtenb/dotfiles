@@ -1,3 +1,4 @@
+ln -sf ~/dotfiles/.bash_profile ~/
 ln -sf ~/dotfiles/.bash_aliases ~/
 ln -sf ~/dotfiles/.zshrc ~/
 ln -sf ~/dotfiles/.vimrc ~/
