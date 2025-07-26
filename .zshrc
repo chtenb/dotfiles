@@ -29,3 +29,5 @@ source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/fzf-tab/fzf-tab.plugin.zsh
 fpath+=(~/dotfiles/zsh/zsh-completions/src)
+
+eval "$(starship init zsh)"
