@@ -103,18 +103,6 @@ if [ -n "$BASH_VERSION" ]; then
         source /usr/share/bash-completion/completions/git
         __git_complete g __git_main
     fi
-
-elif [ -n "$ZSH_VERSION" ]; then
-    # Zsh
-    autoload -Uz compinit && compinit
-    autoload -Uz bashcompinit && bashcompinit
-
-    if command -v __git_complete >/dev/null 2>&1; then
-        __git_complete g __git_main
-    elif [ -f /usr/share/bash-completion/completions/git ]; then
-        source /usr/share/bash-completion/completions/git
-        __git_complete g __git_main
-    fi
 fi
 
 alias ex="explorer ."
