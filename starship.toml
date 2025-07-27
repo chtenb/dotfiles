@@ -1,0 +1,4 @@
+[cmake]
+disabled = true
+[git_status]
+stashed = ""
