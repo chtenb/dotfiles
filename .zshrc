@@ -1,4 +1,5 @@
 echo Executing .zshrc
+
 # export STARSHIP_LOG=trace
 
 source ~/.bash_aliases
@@ -10,21 +11,28 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt inc_append_history share_history
 
-# Completion system
-autoload -Uz compinit && compinit
-autoload -Uz promptinit && promptinit
-
 # Readline-style keybindings
 bindkey -e
 
-# Completion colors and behavior
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# Add custom completions *before* compinit
+fpath+=(~/prj/dotfiles/zsh/zsh-completions/src)
+
+# Completion system
+autoload -Uz compinit && compinit
+# Prompt theming system
+autoload -Uz promptinit && promptinit
+
+# 1) Partial accept with Ctrl-L
+ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-word)
+bindkey '^L' forward-word
+
+# 2) Accept & execute with Ctrl+O
+ZSH_AUTOSUGGEST_EXECUTE_WIDGETS+=(autosuggest-execute)
+bindkey '^O' autosuggest-execute
 
 # Source plugins
 source ~/prj/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/prj/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/prj/dotfiles/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/prj/dotfiles/zsh/fzf-tab/fzf-tab.plugin.zsh
-fpath+=(~/prj/dotfiles/zsh/zsh-completions/src)
 
 eval "$(starship init zsh)"
