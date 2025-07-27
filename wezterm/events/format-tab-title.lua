@@ -66,7 +66,7 @@ wez.on("format-tab-title", function(tab, _, _, config, hover, max_width)
 
     title = ("%s ( %s)"):format(icons.Vim, cwd)
   end
-  title = title:gsub(fun.basename(fun.home), "󰋜 ")
+  title = title:gsub(fun.basename(wez.home_dir), "󰋜 ")
 
   ---truncate the tab title when it overflows the maximum available space, then concatenate
   ---some dots to indicate the occurred truncation

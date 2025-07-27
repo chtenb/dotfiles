@@ -67,8 +67,7 @@ Config.automatically_reload_config = false
   --   },
   -- }
 -- end
-
-Config.default_cwd = fun.home
+Config.default_cwd = fun.prj
 
 -- ref: https://wezfurlong.org/wezterm/config/lua/SshDomain.html
 Config.ssh_domains = {}

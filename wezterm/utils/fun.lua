@@ -48,11 +48,16 @@ M.is_windows = function()
 end
 
 ---User home directory
----@return string home path to the suer home directory.
+---@return string home path to the user home directory.
 M.home = (os.getenv "USERPROFILE" or os.getenv "HOME" or wez.home_dir or ""):gsub(
   "\\",
   "/"
 )
+
+---Project directory under home.
+---@return string Path to the user's project directory.
+M.prj = wez.home_dir .. "/prj"
+
 
 ---Equivalent to POSIX `basename(3)`
 ---@param path string Any string representing a path.
