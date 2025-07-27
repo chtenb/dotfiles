@@ -2,7 +2,7 @@ local home = os.getenv("USERPROFILE")  -- Windows
 if not home then
     home = os.getenv("HOME")  -- Unix-like systems
 end
-local scriptPath = home .. "/dotfiles/neo-ansi/terms/wezterm/generated/"
+local scriptPath = home .. "/prj/dotfiles/neo-ansi/terms/wezterm/generated/"
 package.path = package.path .. ";" .. scriptPath .. "?.lua"
 
 return {

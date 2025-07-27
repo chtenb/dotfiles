@@ -88,9 +88,9 @@ venv() {
 }
 
 replac() {
-    perl ~/dotfiles/replac/replac.pl "$@"
+    perl ~/prj/dotfiles/replac/replac.pl "$@"
 }
-alias selectlines="python ~/dotfiles/scripts/selectlines.py"
+alias selectlines="python ~/prj/dotfiles/scripts/selectlines.py"
 alias sl="selectlines"
 alias t="task"
 

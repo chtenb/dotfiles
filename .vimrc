@@ -459,8 +459,8 @@ augroup XML
 augroup END
 
 map <F4> :mapclear<CR>:source ~/.vimrc<CR>
-source ~/dotfiles/helix.vim/src/unmap.vim
-source ~/dotfiles/helix.vim/src/helix.vim
-source ~/dotfiles/helix.vim/src/replace.vim
-source ~/dotfiles/helix.vim/src/find.vim
-source ~/dotfiles/helix.vim/apocryphal.vim
+source ~/prj/dotfiles/helix.vim/src/unmap.vim
+source ~/prj/dotfiles/helix.vim/src/helix.vim
+source ~/prj/dotfiles/helix.vim/src/replace.vim
+source ~/prj/dotfiles/helix.vim/src/find.vim
+source ~/prj/dotfiles/helix.vim/apocryphal.vim

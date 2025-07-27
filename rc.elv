@@ -38,7 +38,7 @@ fn l { ls -a }
 fn ll { ls -alf }
 fn npr { npm run --  }
 fn npe { npm exec --  }
-fn replac { perl ~/dotfiles/replac/replac.pl }
+fn replac { perl ~/prj/dotfiles/replac/replac.pl }
 fn lnx { wsl.exe --cd '~' /home/chiel/.cargo/bin/nu -e "print $'Entered WSL at (pwd)'" }
 fn plantuml { java -jar ~/.local/bin/plantuml.jar }
 fn logtail {|file| tail -n100 -f $file | bat --paging=never -l log }

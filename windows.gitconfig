@@ -1,7 +1,7 @@
 [credential]
     helper = wincred
 [include]
-    path = ~/dotfiles/base.gitconfig
+    path = ~/prj/dotfiles/base.gitconfig
 [core]
     autocrlf=false
     whitespace = cr-at-eol

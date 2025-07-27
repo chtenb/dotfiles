@@ -9,8 +9,8 @@
     default = simple
     recurseSubmodules = false
 [core]
-    excludesfile = ~/dotfiles/.gitignore_global
-    hooksPath = ~/dotfiles/githooks
+    excludesfile = ~/prj/dotfiles/.gitignore_global
+    hooksPath = ~/prj/dotfiles/githooks
     fscache = true
     preloadindex = true
     editor = hx # vim -u ~/.vimrc.bare
@@ -34,7 +34,7 @@
 
     last = log -1 --stat
 
-    c = "!bash -c 'f() { python3 ~/dotfiles/interactive-git-checkout/git_checkout.py; }; f'"
+    c = "!bash -c 'f() { python3 ~/prj/dotfiles/interactive-git-checkout/git_checkout.py; }; f'"
     bs = bisect
     mt = mergetool
     me = merge

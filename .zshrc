@@ -1,4 +1,5 @@
 echo Executing .zshrc
+# export STARSHIP_LOG=trace
 
 source ~/.bash_aliases
 
@@ -21,9 +22,9 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Source plugins
-source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/zsh/fzf-tab/fzf-tab.plugin.zsh
-fpath+=(~/dotfiles/zsh/zsh-completions/src)
+source ~/prj/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/prj/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/prj/dotfiles/zsh/fzf-tab/fzf-tab.plugin.zsh
+fpath+=(~/prj/dotfiles/zsh/zsh-completions/src)
 
 eval "$(starship init zsh)"

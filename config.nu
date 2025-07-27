@@ -1,8 +1,8 @@
 # Nushell Config File
 
-# use ~/dotfiles/nu_scripts/custom-completions/cargo/cargo-completions.nu *
-source ~/dotfiles/custom-completions/git-completions.nu
-use ~/dotfiles/nu_scripts/custom-completions/npm/npm-completions.nu *
+# use ~/prj/dotfiles/nu_scripts/custom-completions/cargo/cargo-completions.nu *
+source ~/prj/dotfiles/custom-completions/git-completions.nu
+use ~/prj/dotfiles/nu_scripts/custom-completions/npm/npm-completions.nu *
 
 
 # for more information on themes see
@@ -161,5 +161,5 @@ $env.config = {
 }
 
 
-source ~/dotfiles/commands.nu
+source ~/prj/dotfiles/commands.nu
 source ~/.zoxide.nu

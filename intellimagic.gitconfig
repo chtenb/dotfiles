@@ -24,7 +24,7 @@
     iclone = !sh -c 'git clone --recurse git@github.ibm.com:IntelliMagic/$0.git && installhooks.sh $0/.git'
     getmodules = !sh -c 'git submodule update --init --recursive && installhooks.sh ./.git'
 [include]
-    path = ~/dotfiles/windows.gitconfig
+    path = ~/prj/dotfiles/windows.gitconfig
 [push]
     default = simple
 [core]

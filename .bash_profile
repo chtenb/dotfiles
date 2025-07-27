@@ -7,7 +7,7 @@ case "$(uname -s)" in
 esac
 
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/dotfiles/bin
+export PATH=$PATH:$HOME/prj/dotfiles/bin
 
 # Define cross-platform temp variables
 export TMP_UNIX="/tmp"
@@ -32,7 +32,7 @@ if [ "$is_windows" = true ]; then
     export PATH='C:\Program Files\Chez Scheme 10.1.0\bin\a6nt':"$PATH"
     export PATH='C:\Program Files\Racket':"$PATH"
 else
-    export BAT_CONFIG_DIR="$HOME/dotfiles/bat"
+    export BAT_CONFIG_DIR="$HOME/prj/dotfiles/bat"
     export HELIX_RUNTIME="$HOME/prj/helix/runtime"
 
     # Stupid & repetitive PATH prepends for Unix
