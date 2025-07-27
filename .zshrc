@@ -15,10 +15,6 @@ autoload -Uz promptinit && promptinit
 
 # Readline-style keybindings
 bindkey -e
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
-bindkey '^[[5C' forward-word
-bindkey '^[[5D' backward-word
 
 # Completion colors and behavior
 zstyle ':completion:*' menu select
