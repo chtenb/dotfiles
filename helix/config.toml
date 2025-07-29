@@ -177,20 +177,22 @@ i = "hover"
 #   ':open %sh{test -s /tmp/unique-file && cat /tmp/unique-file || echo}',
 #   ':redraw',
 # ]
-E = [
-  ':sh rm -f $TMP_UNIX/files2open',
-  ':set mouse false',
-  # This doesn't work, because sh uses /tmp to refer to c:\windows\temp, but windows programs such as helix interpret this as c:\tmp
-  ':insert-output yazi "%{buffer_name}" --chooser-file=$TMP_UNIX/files2open',
-  ':redraw',
-  ':set mouse true',
-  ':echo %sh{echo $TMP_WIN/files2open}',
-  ':open %sh{echo $TMP_WIN/files2open}',
-  # 'select_all',
-  # 'split_selection_on_newline',
-  # 'goto_file',
-  # ':buffer-close! $TMP/files2open',
-]
+# E = [
+#   ':sh rm -f $TMP_UNIX/files2open',
+#   ':sh echo "my command" | wezterm cli send-text --pane-id $(wezterm cli split-pane --left --percent 90) --no-paste',
+#   ':insert-output yazi "%{buffer_name}" --chooser-file=$TMP_UNIX/files2open',
+#   ':redraw',
+#   ':echo %sh{echo $TMP_WIN/files2open}',
+#   ':open %sh{echo $TMP_WIN/files2open}',
+#   # 'select_all',
+#   # 'split_selection_on_newline',
+#   # 'goto_file',
+#   # ':buffer-close! $TMP/files2open',
+# ]
+# E = """
+# :sh echo `echo $':open "(broot)"\r' | wezterm cli send-text --pane-id (wezterm cli get-pane-direction left); exit\r`
+#   | wezterm cli send-text --pane-id (wezterm cli split-pane --right --percent 33) --no-paste
+# """
 
 # # Unison
 # v = """

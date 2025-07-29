@@ -130,3 +130,19 @@ vim()
 alias koka="C:\\Users\\ChieltenBrinke\\prj\\koka\\.stack-work\\install\\80fdb312\\bin\\koka.exe"
 alias kk="C:\\Users\\ChieltenBrinke\\prj\\koka\\.stack-work\\install\\80fdb312\\bin\\koka.exe -iC:\\Users\\chieltenbrinke\\prj"
 
+
+vpncli='"/c/Program Files (x86)/Cisco/Cisco Secure Client/vpncli.exe"'
+alias vpn-cli="$vpncli"                                   # open CLI
+alias ibm-vpn="$vpncli connect \"EUROPE-MEA (windows)\""  # connect to IBM
+alias no-vpn="$vpncli disconnect"                         # disconnect
+alias delft-vpn='"/c/Program Files/Google/Chrome/Application/chrome.exe" \
+"https://bmfw-052p-e4d-e101.delft.nl.ibm.com:6081/php/uid.php?vsys=1&rule=0"'
+vpn() {
+  ibm-vpn
+  delft-vpn
+  ping -t w3.ibm.com
+}
+
+
+alias admin='powershell -Command "Start-Process nu -Verb RunAs"'
+alias prj='cd ~/prj'

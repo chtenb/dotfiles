@@ -3,10 +3,13 @@ disabled = true
 [git_status]
 stashed = ""
 
-[username]            # shows only when root/SSH/etc.
+# [username]            # shows only when root/SSH/etc.
 # style_user = 'bold cyan'   # was 'bold yellow'
 # style_root stays red unless you change it:
 # style_root = 'bold red'
 
-[directory]
+# [directory]
 # style = 'bold yellow'      # was 'bold cyan'
+
+
+
