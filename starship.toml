@@ -1,3 +1,7 @@
+command_timeout = 1000
+
+[nodejs]
+detect_extensions = []
 [cmake]
 disabled = true
 [git_status]
