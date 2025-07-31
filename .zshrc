@@ -29,6 +29,8 @@ bindkey '^L' forward-word
 ZSH_AUTOSUGGEST_EXECUTE_WIDGETS+=(autosuggest-execute)
 bindkey '^O' autosuggest-execute
 
+bindkey '^[u' undo
+
 # TODO: make neo-ansi version
 export FZF_DEFAULT_OPTS='--color=16'
 
@@ -51,7 +53,9 @@ zstyle ':completion:*' menu no
 # NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fzf-tab#455.
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
-source ~/prj/dotfiles/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# The "fast" highlighting plugin is extremely slow sometimes, especially with git commands
+# source ~/prj/dotfiles/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/prj/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 echo Initializing starship
 
