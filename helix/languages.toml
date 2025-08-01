@@ -33,7 +33,7 @@ indent = { tab-width = 2, unit = "  " }
 [[grammar]]
 name = "koka"
 # source = { git = "https://github.com/HeikoRibberink/tree-sitter-koka/", rev = "ba082f1d60b0d2754a7b13425486f3d93b1fd79e" }
-source = { git = "https://github.com/HeikoRibberink/tree-sitter-koka/", rev = "99a5e5b8f0baa15bbc3df1892b6c8bcf534ec36c" }
+source = { git = "https://github.com/HeikoRibberink/tree-sitter-koka/", rev = "330ce79660eabb6506d2d1d68177ba598c0d0595" }
 
 
 [[language]]
