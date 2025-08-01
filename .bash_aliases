@@ -145,4 +145,7 @@ vpn() {
 
 
 alias admin='powershell -Command "Start-Process nu -Verb RunAs"'
-alias prj='cd ~/prj'
+prj() {
+    cd ~/prj
+    cd $@
+}

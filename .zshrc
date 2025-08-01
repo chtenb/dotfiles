@@ -34,6 +34,9 @@ bindkey '^[u' undo
 # TODO: make neo-ansi version
 export FZF_DEFAULT_OPTS='--color=16'
 
+bindkey '^[p' history-beginning-search-backward
+bindkey '^[n' history-beginning-search-forward
+
 # Source plugins
 source ~/prj/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/prj/dotfiles/zsh/fzf-tab/fzf-tab.plugin.zsh
@@ -44,14 +47,11 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
-# preview directory's content with eza when completing cd
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-# custom fzf flags
-# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
-# zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
 # To make fzf-tab follow FZF_DEFAULT_OPTS.
 # NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fzf-tab#455.
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
+# The windows start command just needs file completion, it's not the job control related linux thing
+compdef _files start
 
 # The "fast" highlighting plugin is extremely slow sometimes, especially with git commands
 # source ~/prj/dotfiles/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
