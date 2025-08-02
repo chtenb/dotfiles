@@ -9,6 +9,7 @@ local monaspace_features = { 'calt=1', 'ss01=1', 'ss02=0', 'ss03=1', 'ss04=1', '
   , 'cv60=0' -- forces the <= pair to render in a fashion that matches => instead of swapping for ≤.
   }
 
+---@class Config
 local MonaspaceConfig = {
   font_size = 10.0,
 
@@ -16,50 +17,41 @@ local MonaspaceConfig = {
   -- Only installing Italic and Regular seems to work
   font = wezterm.font_with_fallback {
     {
-      family = 'monaspace neon',
+      family = 'Monaspace Neon',
       -- weight = 600,
-      weight = 'regular',
+      weight = 'Regular',
       harfbuzz_features = monaspace_features,
     },
-    {
-      family = 'cambria math',
-      -- weight = 'medium',
-      harfbuzz_features = monaspace_features,
-    },
-    {
-      family = 'segoe ui symbol',
-      -- weight = 'medium',
-      harfbuzz_features = monaspace_features,
-    },
+    { family = 'Cambria Math', },
+    { family = 'Segoe UI Symbol', },
   },
-  font = wezterm.font 'Iosevka Term Slab',
   font_rules = {
     {
-      intensity = 'bold',
+      intensity = 'Bold',
       italic = false,
       font = wezterm.font {
-        family = 'monaspace neon',
-        weight = 'bold',
+        family = 'Monaspace Neon',
+        weight = 'Bold',
         harfbuzz_features = monaspace_features,
       }
     },
     {
-      intensity = 'normal',
+      intensity = 'Normal',
       italic = true,
       font = wezterm.font {
-        family = 'monaspace neon',
-        weight = 'regular',
-        style = 'italic',
+        family = 'Monaspace Neon',
+        weight = 'Regular',
+        style = 'Italic',
         harfbuzz_features = monaspace_features,
       }
     },
     {
-      intensity = 'bold',
+      intensity = 'Bold',
       italic = true,
       font = wezterm.font {
-        family = 'monaspace krypton',
-        weight = 'bold',
-        style = 'normal',
+        family = 'Monaspace Krypton',
+        weight = 'Bold',
+        style = 'Normal',
         harfbuzz_features = monaspace_features,
       }
     },
@@ -80,7 +72,7 @@ local IosevkaConfig = {
   -- font = wezterm.font 'Iosevka',
   -- font = wezterm.font 'Iosevka Term',
   -- font = wezterm.font 'Iosevka Slab',
-  font = wezterm.font 'Iosevka Term Slab',
+  font = wezterm.font_with_fallback { 'Iosevka Term Slab', 'Cambria Math', 'Segoe UI Symbol' },
   font_rules = {
     {
       intensity = 'Half',
@@ -94,3 +86,4 @@ local IosevkaConfig = {
 }
 
 return IosevkaConfig
+-- return MonaspaceConfig
