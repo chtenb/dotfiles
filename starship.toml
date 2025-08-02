@@ -2,18 +2,20 @@ command_timeout = 1000
 
 [nodejs]
 detect_extensions = []
+
 [cmake]
 disabled = true
+
 [git_status]
 stashed = ""
 
-# [username]            # shows only when root/SSH/etc.
-# style_user = 'bold cyan'   # was 'bold yellow'
-# style_root stays red unless you change it:
-# style_root = 'bold red'
-
-# [directory]
-# style = 'bold yellow'      # was 'bold cyan'
+[directory]
+use_logical_path = false
+truncate_to_repo = false
+truncation_length = 10
+before_repo_root_style = 'cyan'
+repo_root_style = 'bold cyan'
+style = 'bold cyan'
 
 
 
