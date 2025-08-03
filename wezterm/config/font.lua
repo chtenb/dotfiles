@@ -69,9 +69,7 @@ local MonaspaceConfig = {
 
 local IosevkaConfig = {
   font_size = 10.0,
-  -- font = wezterm.font 'Iosevka',
-  -- font = wezterm.font 'Iosevka Term',
-  -- font = wezterm.font 'Iosevka Slab',
+  -- font = wezterm.font_with_fallback { 'Iosevka Term', 'Cambria Math', 'Segoe UI Symbol' },
   font = wezterm.font_with_fallback { 'Iosevka Term Slab', 'Cambria Math', 'Segoe UI Symbol' },
   font_rules = {
     {
@@ -79,7 +77,7 @@ local IosevkaConfig = {
       font = wezterm.font {
         family = 'Iosevka Term Slab',
         weight = 'Medium',
-        style = 'Italic',
+        -- style = 'Italic',
       }
     },
   },
