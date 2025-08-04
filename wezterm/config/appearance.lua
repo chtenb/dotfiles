@@ -2,12 +2,16 @@ local wez = require "wezterm" ---@class WezTerm
 local fun = require "utils.fun" ---@class Fun
 local icons = require "utils.icons" ---@class Icons
 local palettes = require "colors"
+local fonts = require "config.fonts"
 
 local module = {}
 
 function module.get_config()
   ---@class Config
   local Config = {}
+  local Font = {}
+
+  Font = fonts.cozette
 
   Config.color_scheme_dirs = {
     -- 'C:\\users\\chiel.tenbrinke\\dotfiles\\neo-ansi\\terms\\wezterm\\generated',
@@ -17,12 +21,14 @@ function module.get_config()
   wez.log_info("get_appearance (in config):")
   wez.log_info(wez.gui.get_appearance())
 
+  
   local scheme = "pastel-neo-ansi"
   -- local scheme = "classic-neo-ansi"
   -- local scheme = "lux-neo-ansi"
   -- local scheme = "tropical-neo-ansi"
   -- local scheme = "synthwave-material-neo-ansi"
   if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then
+    Font = fonts.monaspace
     scheme = "synthwave-material-neo-ansi"
   end
   -- Config.color_schemes = require "colors"
@@ -122,7 +128,7 @@ function module.get_config()
 
   -- The remainder of the tab bar text is done in the format-tab-title event
 
-  return Config
+  return fun.tbl_merge(Config, Font)
 end
 
 return module

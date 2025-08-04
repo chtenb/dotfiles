@@ -96,6 +96,8 @@ local CozetteConfig = {
   },
 }
 
--- return IosevkaConfig
--- return MonaspaceConfig
-return CozetteConfig
+return {
+  ["monaspace"] = MonaspaceConfig,
+  ["iosevka"] = IosevkaConfig,
+  ["cozette"] = CozetteConfig
+}
