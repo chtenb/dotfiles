@@ -69,8 +69,8 @@ local MonaspaceConfig = {
 
 local IosevkaConfig = {
   font_size = 10.0,
-  -- font = wezterm.font_with_fallback { 'Iosevka Term', 'Cambria Math', 'Segoe UI Symbol' },
-  font = wezterm.font_with_fallback { 'Iosevka Term Slab', 'Cambria Math', 'Segoe UI Symbol' },
+  font = wezterm.font_with_fallback { 'Iosevka Term', 'Cambria Math', 'Segoe UI Symbol' },
+  -- font = wezterm.font_with_fallback { 'Iosevka Term Slab', 'Cambria Math', 'Segoe UI Symbol' },
   font_rules = {
     {
       intensity = 'Half',
@@ -83,5 +83,19 @@ local IosevkaConfig = {
   },
 }
 
-return IosevkaConfig
+local CozetteConfig = {
+  font_size = 14.0,
+  font = wezterm.font_with_fallback { 'CozetteVector', 'Cambria Math', 'Segoe UI Symbol' },
+  font_rules = {
+    {
+      intensity = 'Half',
+      font = wezterm.font {
+        family = 'CozetteVector',
+      }
+    },
+  },
+}
+
+-- return IosevkaConfig
 -- return MonaspaceConfig
+return CozetteConfig

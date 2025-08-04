@@ -23,6 +23,8 @@ fpath+=(~/prj/dotfiles/zsh/zsh-completions/src)
 autoload -Uz compinit && compinit -C
 autoload -Uz promptinit && promptinit # Prompt theming system
 
+eval "$(zoxide init zsh)"
+
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-word)
 bindkey '^L' forward-word
 

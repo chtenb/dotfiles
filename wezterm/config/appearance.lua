@@ -17,8 +17,9 @@ function module.get_config()
   wez.log_info("get_appearance (in config):")
   wez.log_info(wez.gui.get_appearance())
 
+  local scheme = "pastel-neo-ansi"
   -- local scheme = "classic-neo-ansi"
-  local scheme = "lux-neo-ansi"
+  -- local scheme = "lux-neo-ansi"
   -- local scheme = "tropical-neo-ansi"
   -- local scheme = "synthwave-material-neo-ansi"
   if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then

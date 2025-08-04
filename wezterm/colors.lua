@@ -10,5 +10,6 @@ return {
   ["synthwave-material-neo-ansi"] = require "synthwave-material-neo-ansi",
   ["classic-neo-ansi"] = require "classic-neo-ansi",
   ["tropical-neo-ansi"] = require "tropical-neo-ansi",
+  ["pastel-neo-ansi"] = require "pastel-neo-ansi",
 }
 

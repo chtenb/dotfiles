@@ -48,6 +48,91 @@ printcolors(){
     done;
 }
 
+# neo-ansi: show 256-color samples (like the Nushell version)
+# Usage: neo-ansi [-i|--inverse]
+neo-ansi() {
+  inverse=0
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      -i|--inverse) inverse=1 ;;
+      *) printf '%s\n' "Usage: neo-ansi [-i|--inverse]" >&2; return 2 ;;
+    esac
+    shift
+  done
+
+  pad2() { # print $1 as 2 digits with leading zero
+    printf '%02d' "$1"
+  }
+
+  # header
+  printf '%s\n' "BG   CLASS  COLORS"
+
+  eol='\033[K\033[39;49m' # clear to EOL; reset fg/bg
+
+  # initial mode (inverse or reset)
+  if [ "$inverse" -eq 1 ]; then
+    printf '\033[7m'
+  else
+    printf '\033[m'
+  fi
+
+  bg=0
+  while [ "$bg" -le 12 ]; do
+    if [ "$bg" -eq 0 ]; then
+      bg_code='49'
+      bg_name='dflt'
+    else
+      bg_code="48;5;$((bg + 231))"
+      bg_name="bg$(pad2 "$bg")"
+    fi
+
+    # normal 0..7
+    printf '\033[%sm%s normal ' "$bg_code" "$bg_name"
+    color=0
+    while [ "$color" -le 7 ]; do
+      printf '\033[38;5;%smbase%02d ' "$color" "$color"
+      color=$((color + 1))
+    done
+    printf '%b\n' "$eol"
+
+    # bright 8..15
+    printf '\033[%sm%s bright ' "$bg_code" "$bg_name"
+    color=8
+    while [ "$color" -le 15 ]; do
+      printf '\033[38;5;%smbase%02d ' "$color" "$color"
+      color=$((color + 1))
+    done
+    printf '%b\n' "$eol"
+
+    # bold 8..15
+    printf '\033[%s;1m%s bold   ' "$bg_code" "$bg_name"
+    color=8
+    while [ "$color" -le 15 ]; do
+      printf '\033[38;5;%smbase%02d ' "$color" "$color"
+      color=$((color + 1))
+    done
+    printf '\033[22m%b\n' "$eol"
+    printf '\033[49m' # clear background so the next line starts clean
+
+    # accent line for default bg and first gray bg
+    if [ "$bg" -eq 0 ] || [ "$bg" -eq 1 ]; then
+      printf '%s accent ' "$bg_name"
+      color=12
+      while [ "$color" -ge 1 ]; do
+        idx=$((256 - color)) # 244..255
+        printf '\033[38;5;%smac%02d ' "$idx" "$color"
+        color=$((color - 1))
+      done
+      printf '%b\n' "$eol"
+    fi
+
+    bg=$((bg + 1))
+  done
+
+  # full reset
+  printf '\033[0m'
+}
+
 tstop() {
     task rc.confirmation=off rc.bulk:0 status:pending +ACTIVE ids | xargs -i task {} stop;
 }
