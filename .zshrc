@@ -25,6 +25,8 @@ autoload -Uz promptinit && promptinit # Prompt theming system
 
 eval "$(zoxide init zsh)"
 
+bindkey -v
+
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-word)
 bindkey '^L' forward-word
 

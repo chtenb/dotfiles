@@ -99,6 +99,8 @@ file-types = [
 [[language]]
 name = "html"
 formatter = { command = 'prettier', args = ["--parser", "html"] }
+grammar = "xml"
+file-types = [ { glob = "*html" } ]
 
 [[language]]
 name = "json"

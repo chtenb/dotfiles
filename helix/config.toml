@@ -78,8 +78,6 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 "g" = { "e" = "goto_file_end" }
 
 #"ret" = ["open_below", "normal_mode"]
-"H" = ["ensure_selections_forward", "collapse_selection", "select_mode", "goto_line_start", "exit_select_mode"]
-"L" = ["ensure_selections_forward", "flip_selections", "collapse_selection", "select_mode", "goto_line_end", "exit_select_mode"]
 
 "F2" = "rename_symbol"
 "F3" = ":format"
@@ -96,6 +94,8 @@ right = ["diagnostics", "version-control", "register", "position", "file-type", 
 
 J = ["select_line_below"]
 K = ["select_line_above"]
+"H" = ["ensure_selections_forward", "collapse_selection", "select_mode", "goto_line_start", "exit_select_mode"]
+"L" = ["ensure_selections_forward", "flip_selections", "collapse_selection", "select_mode", "goto_line_end", "exit_select_mode"]
 
 "A-j" = "join_selections"
 "A-J" = "join_selections_space"
