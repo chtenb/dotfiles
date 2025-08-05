@@ -11,7 +11,8 @@ function module.get_config()
   local Config = {}
   local Font = {}
 
-  Font = fonts.cozette
+  -- Font = fonts.cozette
+  Font = fonts.monaspace
 
   Config.color_scheme_dirs = {
     -- 'C:\\users\\chiel.tenbrinke\\dotfiles\\neo-ansi\\terms\\wezterm\\generated',
@@ -22,9 +23,9 @@ function module.get_config()
   wez.log_info(wez.gui.get_appearance())
 
   
-  local scheme = "pastel-neo-ansi"
+  -- local scheme = "pastel-neo-ansi"
   -- local scheme = "classic-neo-ansi"
-  -- local scheme = "lux-neo-ansi"
+  local scheme = "lux-neo-ansi"
   -- local scheme = "tropical-neo-ansi"
   -- local scheme = "synthwave-material-neo-ansi"
   if ((wez.gui and wez.gui.get_appearance()) or "Dark"):find "Dark" then
