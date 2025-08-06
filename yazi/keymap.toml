@@ -7,15 +7,16 @@ prepend_keymap = [
 	{ on = '<C-i>', run = 'forward', desc = 'Go forward to the next directory' },
 	{ on = '<C-c>', run = 'escape --search', desc = 'Cancel the ongoing search' },
   
-	{ on = '<C-c>', run = 'nop' },
 	{ on = 'H', run = 'nop' },
 	{ on = 'L', run = 'nop' },
 	{ on = '<C-s>', run = 'nop' },
 
-	{ on = "s", run = "search fd --args -p", desc = "Search files by name using fd" },
+	{ on = "s", run = "search --via=fd --args='-p --no-ignore'", desc = "Search files by pattern using fd (also gitignored files)" },
+	{ on = "<A-s>", run = 'search --via=fd', desc = "Search(tracked) files" },
 	{ on = "v", run = "plugin visual", desc = "Toggle visual mode" },
 
 	{ on = "<A-o>", run = "shell --orphan %1", desc = "OS open" },
-	{ on = "<A-s>", run = 'search --via=fd --args="--no-ignore"', desc = "Search without honoring gitignore files" },
+
+	{ on = [ "g", "d" ],       run = "cd ~/Desktop",   desc = "Go ~/Desktop" },
 ]
 

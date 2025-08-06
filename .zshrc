@@ -27,6 +27,33 @@ eval "$(zoxide init zsh)"
 
 bindkey -v
 
+# Emacs-style bindings in vi insert mode
+bindkey -M viins '^A' beginning-of-line      # Ctrl-A → move to start of line
+bindkey -M viins '^E' end-of-line            # Ctrl-E → move to end of line
+bindkey -M viins '^K' kill-line              # Ctrl-K → kill to end of line
+bindkey -M viins '^Y' yank                   # Ctrl-Y → yank (paste) last kill
+bindkey -M viins '^D' delete-char            # Ctrl-D → delete char under cursor
+
+# Delete under cursor
+bindkey -M viins '\e[3~' delete-char
+
+# Ctrl-Delete → kill next word
+bindkey -M viins '\e[3;5~' kill-word
+
+# Ctrl-Left/Right → move by word
+bindkey -M viins '\e[1;5D' backward-word
+bindkey -M viins '\e[1;5C' forward-word
+# some terminals use 5D/5C without the “1;”
+bindkey -M viins '\e[5D'   backward-word
+bindkey -M viins '\e[5C'   forward-word
+
+# Home/End → go to start/end of line
+bindkey -M viins '\e[1~' beginning-of-line
+bindkey -M viins '\e[4~' end-of-line
+# alternate codes sometimes emitted:
+bindkey -M viins '\e[H'   beginning-of-line
+bindkey -M viins '\e[F'   end-of-line
+
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-word)
 bindkey '^L' forward-word
 
