@@ -6,15 +6,17 @@ detect_extensions = []
 [cmake]
 disabled = true
 
+# With warnings disabled, this trick still shows the difference between if the git status is clean, or the module timed out
+# A time out shows nothing, while a clean slate shows the branch symbol
 [git_branch]
 symbol = ''
 [git_status]
 stashed = ''
-up_to_date = ' '
-ahead = '⇡ '
-behind = '⇣ '
-diverged = '⇕ '
-format = '([$ahead_behind$all_status]($style) )'
+up_to_date = '[](bold purple) '
+ahead = '[](bold purple) [(\($count ahead\) )](bold red)'
+behind = '[](bold purple) [(\($count behind\) )](bold red)'
+diverged = '[](bold purple) [(\($ahead_count ahead , $behind_count behind\) )](bold red)'
+format = '($ahead_behind[$all_status](bold red) )'
 
 
 [directory]

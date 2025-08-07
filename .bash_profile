@@ -1,5 +1,8 @@
 echo Executing .bash_profile
 
+# Don't emit annoying timeout warnings for modules
+export STARSHIP_LOG=error
+
 # Determine if running on Windows (Git Bash, WSL, Cygwin)
 is_windows=false
 case "$(uname -s)" in
