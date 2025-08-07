@@ -11,6 +11,9 @@ symbol = ''
 [git_status]
 stashed = ''
 up_to_date = ' '
+ahead = '⇡ '
+behind = '⇣ '
+diverged = '⇕ '
 format = '([$ahead_behind$all_status]($style) )'
 
 
