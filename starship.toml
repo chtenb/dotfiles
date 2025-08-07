@@ -6,10 +6,12 @@ detect_extensions = []
 [cmake]
 disabled = true
 
+[git_branch]
+symbol = ''
 [git_status]
 stashed = ''
-up_to_date = '⋮'
-format = '([$all_status$ahead_behind]($style) )'
+up_to_date = ' '
+format = '([$ahead_behind$all_status]($style) )'
 
 
 [directory]
