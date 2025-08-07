@@ -7,7 +7,10 @@ detect_extensions = []
 disabled = true
 
 [git_status]
-stashed = ""
+stashed = ''
+up_to_date = '⋮'
+format = '([$all_status$ahead_behind]($style) )'
+
 
 [directory]
 use_logical_path = false

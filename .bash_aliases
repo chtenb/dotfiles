@@ -189,6 +189,7 @@ if [ -n "$BASH_VERSION" ]; then
         __git_complete g __git_main
     fi
 fi
+alias gnp="git --no-pager"
 
 alias ex="explorer ."
 alias gg="git grep -IPn --color=always --recurse-submodules"
@@ -230,7 +231,14 @@ vpn() {
 
 
 alias admin='powershell -Command "Start-Process nu -Verb RunAs"'
-prj() {
-    cd ~/prj
-    cd $@
+
+repostat() {
+  for dir in ~/prj/Vision*; do
+    [ -d "$dir" ] || continue
+    (
+      cd "$dir" || exit
+      basename "$(pwd)"
+      git status
+    )
+  done
 }
