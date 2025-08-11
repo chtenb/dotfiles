@@ -12,11 +12,11 @@ disabled = true
 symbol = ''
 [git_status]
 stashed = ''
-up_to_date = '[](bold purple) '
-ahead = '[](bold purple) [(\($count ahead\) )](bold red)'
-behind = '[](bold purple) [(\($count behind\) )](bold red)'
-diverged = '[](bold purple) [(\($ahead_count ahead , $behind_count behind\) )](bold red)'
-format = '($ahead_behind[$all_status](bold red) )'
+up_to_date = '[](bold purple)'
+ahead = '[](bold purple)[( \($count ahead\))](bold red)'
+behind = '[](bold purple)[( \($count behind\))](bold red)'
+diverged = '[](bold purple)[( \($ahead_count ahead, $behind_count behind\))](bold red)'
+format = '($ahead_behind( [$all_status](bold red)) )'
 
 
 [directory]

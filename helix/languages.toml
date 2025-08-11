@@ -1,4 +1,4 @@
-use-grammars = { only = [ "koka" ] }
+# use-grammars = { only = [ "koka" ] }
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
