@@ -8,6 +8,8 @@ del /q %UserProfile%\.vimrc
 mklink %UserProfile%\.vimrc %UserProfile%\prj\dotfiles\.vimrc
 del /q %UserProfile%\.vimrc.bare
 mklink %UserProfile%\.vimrc.bare %UserProfile%\prj\dotfiles\.vimrc.bare
+del /q %UserProfile%\.vimrc.helix
+mklink %UserProfile%\.vimrc.helix %UserProfile%\prj\dotfiles\.vimrc.helix
 del /q %UserProfile%\.bash_aliases
 mklink %UserProfile%\.bash_aliases %UserProfile%\prj\dotfiles\.bash_aliases
 del /q %UserProfile%\.bash_profile

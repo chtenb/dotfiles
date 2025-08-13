@@ -1,18 +1,11 @@
-set shell=/usr/bin/bash
-
-set nocompatible               " be iMproved
+set nocompatible
+set encoding=utf-8
 filetype off                   " required!
 filetype plugin indent on     " required
-
-
-"
-" *** OTHER CONFIGURATION ***
-"
-
-
 set autoindent
 set nocindent
 set nosmartindent
+
 
 set number          " Absolute line numbering on current line
 set undofile        " Remember undo history
@@ -34,36 +27,9 @@ set shiftwidth=4
 set expandtab
 set list
 
-let mapleader = ","
-
-
-" Decent quit shortcut
-nnoremap <C-q> :q<CR>
-" Decent save shortcut
-nnoremap <C-s> :w<CR>
-" Disable ex mode, it's useless and annoying
-nnoremap Q <nop>
-" Give Y a sane meaning
-nnoremap Y y$
-" Give U a sane meaning
-nnoremap U <C-r>
-
-"Disable annoying help
-nnoremap <F1> <Esc>
-inoremap <F1> <Esc>
-vnoremap <F1> <Esc>
-
-" Let's make it easy to edit this file
-nmap <silent> ,ev :e $MYVIMRC<cr>
-" And to source this file as well
-nmap <silent> ,sv :so $MYVIMRC<cr>
-
-
-" Color settings
-set background=dark
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
+map <F4> :mapclear<CR>:source ~/.vimrc<CR>
+source ~/prj/dotfiles/helix.vim/src/unmap.vim
+source ~/prj/dotfiles/helix.vim/src/helix.vim
+source ~/prj/dotfiles/helix.vim/src/replace.vim
+source ~/prj/dotfiles/helix.vim/src/find.vim
+source ~/prj/dotfiles/helix.vim/apocryphal.vim

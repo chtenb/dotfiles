@@ -203,6 +203,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 # Ping google server
 alias pingg="ping google.nl"
 
+alias vi="vim -u ~/.vimrc.bare"
+alias vix="vim -u ~/.vimrc.helix"
 # No ttyctl, so we need to save and then restore terminal settings
 vim()
 {
