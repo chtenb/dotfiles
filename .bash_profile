@@ -23,7 +23,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 
 if [ "$is_windows" = true ]; then
-    export BAT_CONFIG_DIR='c:\users\chieltenbrinke\dotfiles\bat'
+    export BAT_CONFIG_DIR='c:\users\chieltenbrinke\prj\dotfiles\bat'
     export HELIX_RUNTIME='c:\users\chieltenbrinke\prj\helix\runtime'
 
     # Stupid & repetitive PATH prepends for Windows
