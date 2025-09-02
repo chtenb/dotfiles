@@ -25,15 +25,23 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 if [ "$is_windows" = true ]; then
     export BAT_CONFIG_DIR='c:\users\chieltenbrinke\prj\dotfiles\bat'
     export HELIX_RUNTIME='c:\users\chieltenbrinke\prj\helix\runtime'
+    export PLANTUML='c:\users\chieltenbrinke\.local\bin\plantuml.jar'
 
     # Stupid & repetitive PATH prepends for Windows
-    export PATH='D:\git\usr\bin':"$PATH"
-    export PATH='C:\Program Files\Microsoft Visual Studio\2022\Professional\Msbuild\Current\Bin':"$PATH"
-    export PATH='C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin':"$PATH"
-    export PATH='c:\users\chieltenbrinke\.local\share\helix':"$PATH"
-    export PATH='C:\Users\chieltenbrinke\Programs\ImageMagick':"$PATH"
-    export PATH='C:\Program Files\Chez Scheme 10.1.0\bin\a6nt':"$PATH"
-    export PATH='C:\Program Files\Racket':"$PATH"
+    # export PATH='D:\git\usr\bin':"$PATH"
+    # export PATH='C:\Program Files\Microsoft Visual Studio\2022\Professional\Msbuild\Current\Bin':"$PATH"
+    # export PATH='C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin':"$PATH"
+    # export PATH='c:\users\chieltenbrinke\.local\share\helix':"$PATH"
+    # export PATH='C:\Users\chieltenbrinke\Programs\ImageMagick':"$PATH"
+    # export PATH='C:\Program Files\Chez Scheme 10.1.0\bin\a6nt':"$PATH"
+    # export PATH='C:\Program Files\Racket':"$PATH"
+    export PATH="$PATH:/d/git/usr/bin"
+    export PATH="$PATH:/c/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin"
+    export PATH="$PATH:/c/Program Files/Microsoft Visual Studio/2022/Enterprise/MSBuild/Current/Bin"
+    export PATH="$PATH:/c/Users/chieltenbrinke/.local/share/helix"
+    export PATH="$PATH:/c/Users/chieltenbrinke/Programs/ImageMagick"
+    export PATH="$PATH:/c/Program Files/Chez Scheme 10.1.0/bin/a6nt"
+    export PATH="$PATH:/c/Program Files/Racket"
 else
     export BAT_CONFIG_DIR="$HOME/prj/dotfiles/bat"
     export HELIX_RUNTIME="$HOME/prj/helix/runtime"
