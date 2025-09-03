@@ -48,6 +48,7 @@ cursor-line = "hint"
 
 [editor.file-picker]
 hidden = false
+git-ignore = false
 
 [editor.lsp]
 "display-messages" = true
