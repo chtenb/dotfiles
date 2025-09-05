@@ -21,7 +21,6 @@
 [fetch]
     prune = true
 [alias]
-[alias]
     l = "!bash -c 'branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name ${branch}@{upstream} 2>/dev/null); git log -10 --notes --graph --abbrev-commit --decorate --left-right --format=format:\"%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)\" ${branch} ${upstream:+$upstream} ${@:2}' -"
     lg = "!bash -c 'branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name ${branch}@{upstream} 2>/dev/null); git log --notes --graph --abbrev-commit --decorate --left-right --format=format:\"%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)\" ${branch} ${upstream:+$upstream} ${@:2}' -"
 
