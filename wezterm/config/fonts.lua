@@ -17,7 +17,7 @@ local MonaspaceConfig = {
   -- Only installing Italic and Regular seems to work
   font = wezterm.font_with_fallback {
     {
-      family = 'Monaspace Neon',
+      family = 'Monaspace Neon NF',
       -- weight = 600,
       weight = 'Regular',
       harfbuzz_features = monaspace_features,
@@ -30,7 +30,7 @@ local MonaspaceConfig = {
       intensity = 'Bold',
       italic = false,
       font = wezterm.font {
-        family = 'Monaspace Neon',
+        family = 'Monaspace Neon NF',
         weight = 'Bold',
         harfbuzz_features = monaspace_features,
       }
@@ -39,7 +39,7 @@ local MonaspaceConfig = {
       intensity = 'Normal',
       italic = true,
       font = wezterm.font {
-        family = 'Monaspace Neon',
+        family = 'Monaspace Neon NF',
         weight = 'Regular',
         style = 'Italic',
         harfbuzz_features = monaspace_features,
@@ -49,7 +49,7 @@ local MonaspaceConfig = {
       intensity = 'Bold',
       italic = true,
       font = wezterm.font {
-        family = 'Monaspace Krypton',
+        family = 'Monaspace Krypton NF',
         weight = 'Bold',
         style = 'Normal',
         harfbuzz_features = monaspace_features,
@@ -58,7 +58,7 @@ local MonaspaceConfig = {
     {
       intensity = 'Half',
       font = wezterm.font {
-        family = 'Monaspace Argon',
+        family = 'Monaspace Argon NF',
         weight = 'Medium',
         style = 'Normal',
         harfbuzz_features = monaspace_features,
