@@ -231,6 +231,33 @@
 <Multi_key> <j> <o> <i> <n> <r> : "⟖" # right outer join
 <Multi_key> <j> <o> <i> <n> <f> : "⟗" # full outer join
 
+<Multi_key> <l> <e> <q>                 : "≤"   U2264 # LESS-THAN OR EQUAL TO
+<Multi_key> <g> <e> <q>                 : "≥"   U2265 # GREATER-THAN OR EQUAL TO
+<Multi_key> <l> <e> <s> <s> <s> <i> <m> : "≲"   U2272 # LESS-THAN OR EQUIVALENT TO
+<Multi_key> <g> <t> <r> <s> <i> <m>     : "≳"   U2273 # GREATER-THAN OR EQUIVALENT TO
+<Multi_key> <l> <e> <s> <s> <g> <t> <r> : "≶"   U2276 # LESS-THAN OR GREATER-THAN
+<Multi_key> <g> <t> <r> <l> <e> <s> <s> : "≷"   U2277 # GREATER-THAN OR LESS-THAN
+<Multi_key> <p> <r> <e> <c>             : "≺"   U227A # PRECEDES
+<Multi_key> <s> <u> <c> <c>             : "≻"   U227B # SUCCEEDS
+<Multi_key> <s> <u> <b> <s> <e> <t>     : "⊂"   U2282 # SUBSET OF
+<Multi_key> <l> <e> <f> <t> <s> <h> <o> <e> : "⊂"   U2282 # SUBSET OF
+<Multi_key> <s> <u> <p> <s> <e> <t>     : "⊃"   U2283 # SUPERSET OF
+<Multi_key> <r> <i> <g> <h> <t> <s> <h> <o> <e> : "⊃"   U2283 # SUPERSET OF
+<Multi_key> <s> <u> <b> <s> <e> <t> <e> <q> : "⊆"   U2286 # SUBSET OF OR EQUAL TO
+<Multi_key> <s> <u> <p> <s> <e> <t> <e> <q> : "⊇"   U2287 # SUPERSET OF OR EQUAL TO
+<Multi_key> <v> <d> <a> <s> <h>         : "⊢"   U22A2 # PROVES
+<Multi_key> <m> <o> <d> <e> <l> <s>     : "⊨"   U22A8 # TRUE
+<Multi_key> <f> <o> <r> <c> <e> <s>     : "⊩"   U22A9 # FORCES
+<Multi_key> <V> <d> <a> <s> <h>         : "⊫"   U22AB # DOUBLE VERTICAL BAR DOUBLE RIGHT TURNSTILE
+<Multi_key> <p> <r> <e> <c> <e> <q>     : "≼"   U227C # PRECEDES OR EQUAL TO
+<Multi_key> <s> <u> <c> <c> <e> <q>     : "≽"   U227D # SUCCEEDS OR EQUAL TO
+<Multi_key> <s> <q> <s> <u> <b> <s> <e> <t> <e> <q> : "⊑"   U2291 # SQUARE IMAGE OF OR EQUAL TO
+<Multi_key> <s> <q> <s> <u> <p> <s> <e> <t> <e> <q> : "⊒"   U2292 # SQUARE ORIGINAL OF OR EQUAL TO
+<Multi_key> <t> <r> <i> <a> <n> <g> <l> <e> <l> <e> <f> <t>  : "⊲"   U22B2 # NORMAL SUBGROUP OF
+<Multi_key> <t> <r> <i> <a> <n> <g> <l> <e> <r> <i> <g> <h> <t> : "⊳"   U22B3 # CONTAINS AS NORMAL SUBGROUP
+<Multi_key> <u> <n> <l> <h> <d>         : "⊴"   U22B4 # NORMAL SUBGROUP OF OR EQUAL TO
+<Multi_key> <u> <n> <r> <h> <d>         : "⊵"   U22B5 # CONTAINS AS NORMAL SUBGROUP OR EQUAL TO
+
 # Greek alphabet
 <Multi_key> <a> <l> <p> <h> <a> : "α"  # latex \alpha
 <Multi_key> <b> <e> <t> <a> : "β"  # latex \beta
