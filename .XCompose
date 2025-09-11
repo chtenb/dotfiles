@@ -168,6 +168,8 @@
 <Multi_key> <s> <e> <t> <m> <i> <n> <u> <s> : "∖"  # latex \setminus
 <Multi_key> <c> <a> <p> : "∩"  # latex \cap
 <Multi_key> <c> <u> <p> : "∪"  # latex \cup
+<Multi_key> <b> <i> <g> <c> <a> <p> : "⋂"  # latex \bigcap
+<Multi_key> <b> <i> <g> <c> <u> <p> : "⋃"  # latex \bigcup
 <Multi_key> <s> <q> <c> <u> <p> : "⊔" # latex \sqcup
 <Multi_key> <s> <q> <c> <a> <p> : "⊓" # latex \sqcap
 <Multi_key> <u> <p> <l> <u> <s> : "⊎" # latex \uplus
