@@ -14,16 +14,12 @@ if (@ARGV > 1)
 }
 
 my $current_branch_name = `git rev-parse --abbrev-ref HEAD`;
-if ($current_branch_name =~ /^((DR|B|FR)-[0-9]{6})/)
+if ($current_branch_name =~ m!(.*/)*((IMDEV)-[0-9]+)!)
 {
-	 my $salesforce_id = $1;
+	 my $jira_id = $2;
 	 open(my $msg_file, "+<", $ARGV[0]) or die "Can't open commit message file: $!";
 	 my $msg = do { local $/; <$msg_file> };
-	 if ($msg =~ /#/)
-	 {
-		  $msg = "\n\n$msg";
-	 }
 	 seek($msg_file, 0, 0);
-	 print($msg_file "$salesforce_id: $msg");
+	 print($msg_file "$jira_id $msg");
 	 close($msg_file);
 }
