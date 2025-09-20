@@ -106,14 +106,8 @@ x = "keep_selections"
 "A-x" = "remove_selections"
 "_" = ["extend_to_line_bounds", "trim_selections"]
 
-# Koka
-# "F5" = """
-# :sh "main()\r" | wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
-# """
-# "F6" = """
-# :sh ":r\r" | wezterm cli send-text --pane-id (wezterm cli get-pane-direction Right)
-# """
 "F5" = [ ":w", ":sh just" ]
+"S-F5" = [ ":w",  ":sh echo just | wezterm cli send-text --pane-id $(wezterm cli get-pane-direction Right)" ]
 
 [keys.select]
 "C-q" = ":bc"
