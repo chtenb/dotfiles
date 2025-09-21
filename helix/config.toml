@@ -107,7 +107,7 @@ x = "keep_selections"
 "_" = ["extend_to_line_bounds", "trim_selections"]
 
 "F5" = [ ":w", ":sh just" ]
-"S-F5" = [ ":w",  ":sh echo just | wezterm cli send-text --pane-id $(wezterm cli get-pane-direction Right)" ]
+"S-F5" = [ ":w",  ":sh printf 'just\\\\r' | wezterm cli send-text --no-paste --pane-id $(wezterm cli get-pane-direction Right)" ]
 
 [keys.select]
 "C-q" = ":bc"
