@@ -215,7 +215,7 @@ vim()
     stty "$STTYOPTS"
 }
 
-alias koka="C:\\Users\\ChieltenBrinke\\prj\\koka\\.stack-work\\install\\80fdb312\\bin\\koka.exe"
+alias koka="C:/Users/ChieltenBrinke/prj/koka/.stack-work/install/80fdb312/bin/koka.exe"
 alias kk="C:\\Users\\ChieltenBrinke\\prj\\koka\\.stack-work\\install\\80fdb312\\bin\\koka.exe -iC:\\Users\\chieltenbrinke\\prj"
 
 
