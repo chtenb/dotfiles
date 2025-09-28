@@ -14,6 +14,7 @@ undercurl = true
 true-color = true
 text-width = 88
 rainbow-brackets = true
+atomic-save = false
 
 [editor.soft-wrap]
 enable = true

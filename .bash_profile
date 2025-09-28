@@ -42,6 +42,8 @@ if [ "$is_windows" = true ]; then
     export PATH="$PATH:/c/Users/chieltenbrinke/Programs/ImageMagick"
     export PATH="$PATH:/c/Program Files/Chez Scheme 10.1.0/bin/a6nt"
     export PATH="$PATH:/c/Program Files/Racket"
+    export PATH="$PATH:/c/Users/ChieltenBrinke/prj/koka/.stack-work/install/80fdb312/bin"
+
 else
     export BAT_CONFIG_DIR="$HOME/prj/dotfiles/bat"
     export HELIX_RUNTIME="$HOME/prj/helix/runtime"

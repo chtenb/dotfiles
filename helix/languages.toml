@@ -25,15 +25,18 @@ feature_snippets = true       # enable snippets
 feature_unicode_input = true  # enable "unicode input"
 feature_paths = false          # enable path completion
 
+# [language-server.koka]
+# name = "koka"
+# command = "koka"
+# args = [ "--language-server", "--lsstdio" ]
+
 [[language]]
 name = "koka"
-language-servers = ["scls"]
+# language-servers = ["koka"]
 indent = { tab-width = 2, unit = "  " }
 
-[[grammar]]
-name = "koka"
-# source = { git = "https://github.com/HeikoRibberink/tree-sitter-koka/", rev = "ba082f1d60b0d2754a7b13425486f3d93b1fd79e" }
-source = { git = "https://github.com/HeikoRibberink/tree-sitter-koka/", rev = "330ce79660eabb6506d2d1d68177ba598c0d0595" }
+# [[grammar]]
+# source = { git = "https://github.com/HeikoRibberink/tree-sitter-koka/", rev = "330ce79660eabb6506d2d1d68177ba598c0d0595" }
 
 
 [[language]]

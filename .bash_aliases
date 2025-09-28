@@ -215,8 +215,7 @@ vim()
     stty "$STTYOPTS"
 }
 
-alias koka="C:/Users/ChieltenBrinke/prj/koka/.stack-work/install/80fdb312/bin/koka.exe"
-alias kk="C:\\Users\\ChieltenBrinke\\prj\\koka\\.stack-work\\install\\80fdb312\\bin\\koka.exe -iC:\\Users\\chieltenbrinke\\prj"
+alias kk="koka -iC:/Users/chieltenbrinke/prj"
 
 
 vpncli='"/c/Program Files (x86)/Cisco/Cisco Secure Client/vpncli.exe"'
