@@ -14,7 +14,6 @@ undercurl = true
 true-color = true
 text-width = 88
 rainbow-brackets = true
-atomic-save = false
 
 [editor.soft-wrap]
 enable = true
@@ -107,8 +106,8 @@ x = "keep_selections"
 "A-x" = "remove_selections"
 "_" = ["extend_to_line_bounds", "trim_selections"]
 
-"F5" = [ ":w", ":sh just" ]
-"S-F5" = [ ":w",  ":sh printf 'just\\\\r' | wezterm cli send-text --no-paste --pane-id $(wezterm cli get-pane-direction Right)" ]
+"S-F5" = [ ":w", ":sh just" ]
+"F5" = [ ":w",  ":sh printf 'just\\\\r' | wezterm cli send-text --no-paste --pane-id $(wezterm cli get-pane-direction Right)" ]
 
 [keys.select]
 "C-q" = ":bc"
