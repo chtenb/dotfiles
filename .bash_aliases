@@ -215,9 +215,6 @@ vim()
     stty "$STTYOPTS"
 }
 
-alias kk="koka -iC:/Users/chieltenbrinke/prj"
-
-
 vpncli='"/c/Program Files (x86)/Cisco/Cisco Secure Client/vpncli.exe"'
 alias vpn-cli="$vpncli"                                   # open CLI
 alias ibm-vpn="$vpncli connect \"EUROPE-MEA (windows)\""  # connect to IBM
