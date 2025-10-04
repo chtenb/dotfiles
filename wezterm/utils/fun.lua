@@ -56,7 +56,8 @@ M.home = (os.getenv "USERPROFILE" or os.getenv "HOME" or wez.home_dir or ""):gsu
 
 ---Project directory under home.
 ---@return string Path to the user's project directory.
-M.prj = wez.home_dir .. "/prj"
+-- M.prj = wez.home_dir .. "/prj"
+M.prj = "D:/"
 
 
 ---Equivalent to POSIX `basename(3)`

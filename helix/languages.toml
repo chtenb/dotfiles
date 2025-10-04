@@ -25,14 +25,14 @@ feature_snippets = true       # enable snippets
 feature_unicode_input = true  # enable "unicode input"
 feature_paths = false          # enable path completion
 
-# [language-server.koka]
-# name = "koka"
-# command = "koka"
-# args = [ "--language-server", "--lsstdio" ]
+[language-server.koka]
+name = "koka"
+command = "koka"
+args = [ "--language-server", "--lsstdio", "-iD:/" ]
 
 [[language]]
 name = "koka"
-language-servers = [ { name = "koka", except-features = [ "diagnostics", "completion", "signature-help" ] } ]
+language-servers = [ { name = "koka", except-features = [ "diagnostics", "completion", "signature-help" ] }, { name = "scls" } ]
 indent = { tab-width = 2, unit = "  " }
 
 # [[grammar]]
