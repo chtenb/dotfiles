@@ -2046,14 +2046,7 @@
 <Multi_key> <S> <exclam> 		: "§"   section # SECTION SIGN
 <Multi_key> <Cyrillic_pe> <Cyrillic_a>	: "§"   section # SECTION SIGN
 
-<Multi_key> <o> <x>              	: "¤"   currency # CURRENCY SIGN
-<Multi_key> <x> <o>              	: "¤"   currency # CURRENCY SIGN
 <Multi_key> <o> <X> 			: "¤"   currency # CURRENCY SIGN
-<Multi_key> <X> <o> 			: "¤"   currency # CURRENCY SIGN
-<Multi_key> <O> <X> 			: "¤"   currency # CURRENCY SIGN
-<Multi_key> <X> <O> 			: "¤"   currency # CURRENCY SIGN
-<Multi_key> <O> <x> 			: "¤"   currency # CURRENCY SIGN
-<Multi_key> <x> <O> 			: "¤"   currency # CURRENCY SIGN
 
 <Multi_key> <P> <P>              	: "¶"   paragraph # PILCROW SIGN
 
