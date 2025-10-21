@@ -14,6 +14,7 @@ undercurl = true
 true-color = true
 text-width = 88
 rainbow-brackets = true
+atomic-save = false
 
 [editor.soft-wrap]
 enable = true
@@ -165,6 +166,9 @@ x = "keep_selections"
 z = ":toggle gutters.line-numbers.min-width 48 3"
 i = "hover"
 "\\" = ":reflow"
+"'" = "@s’|‘<ret>r'"
+"\"" = "@s”|“<ret>r\""
+"-" = "@/—<ret>"
 # E = [
 #   ':sh rm -f /tmp/unique-file',
 #   ':insert-output yazi --chooser-file=/tmp/unique-file',

@@ -6007,7 +6007,6 @@
 # "🖊️" U1F58A UFE0F # pen
 <Multi_key> <Multi_key> <p> <a> <i> <n> <t> <b> <r> <u> <s> <h> : "🖌️" U1F58C UFE0F # paintbrush
 <Multi_key> <Multi_key> <c> <r> <a> <y> <o> <n> : "🖍️" U1F58D UFE0F # crayon
-<Multi_key> <Multi_key> <m> <e> <m> <o> : "📝" U1F4DD # memo
 <Multi_key> <Multi_key> <b> <r> <i> <e> <f> <c> <a> <s> <e> : "💼" U1F4BC # briefcase
 <Multi_key> <Multi_key> <f> <i> <l> <e> < > <f> <o> <l> <d> <e> <r> : "📁" U1F4C1 # file folder
 <Multi_key> <Multi_key> <o> <p> <e> <n> < > <f> <i> <l> <e> < > <f> <o> <l> <d> <e> <r> : "📂" U1F4C2 # open file folder
