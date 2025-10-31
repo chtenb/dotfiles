@@ -543,6 +543,7 @@
 <Multi_key> <Left> <Right>		: "↔"	U2194           # LEFT RIGHT ARROW (kragen's)
 <Multi_key> <Right> <Left>		: "↔"	U2194           # LEFT RIGHT ARROW (kragen's)
 <Multi_key> <Up> <Down>			: "↕"	U2195           # UP DOWN ARROW (kragen's)
+<Multi_key> <Down> <Up>			: "↕"	U2195           # UP DOWN ARROW (kragen's)
 <Multi_key> <Up> <ampersand> <Down>     : "⇵"	U21F5		# DOWNWARDS ARROW LEFTWARDS OF UPWARDS ARROW
 <Multi_key> <Down> <Left>		: "↵"	U21B5		# DOWNWARDS ARROW WITH CORNER LEFTWARDS
 <Multi_key> <Left> <o>			: "⟲"	U27F2		# ANTICLOCKWISE GAPPED CIRCLE ARROW
@@ -2853,12 +2854,10 @@
 # "8⃣" U0038 # digit eight + combining enclosing keycap
 # "9⃣" U0039 # digit nine + combining enclosing keycap
 <Multi_key> <i> <n> <f> <o>                                                     : "ℹ" U2139 # information source
-# "↔" U2194 # left right arrow
-# "↕" U2195 # up down arrow
-# "↖" U2196 # north west arrow
-# "↗" U2197 # north east arrow
-# "↘" U2198 # south east arrow
-# "↙" U2199 # south west arrow
+<Multi_key> <Left> <Up> : "↖" U2196 # north west arrow
+<Multi_key> <Right> <Up> : "↗" U2197 # north east arrow
+<Multi_key> <Right> <Down> : "↘" U2198 # south east arrow
+<Multi_key> <Left> <Down> : "↙" U2199 # south west arrow
 <Multi_key> <Multi_key> <Down> <Left>                                           : "↩" U21A9 # leftwards arrow with hook
 <Multi_key> <Multi_key> <Down> <Right>                                          : "↪" U21AA # rightwards arrow with hook
 <Multi_key> <Multi_key> <w> <a> <t> <c> <h>                                     : "⌚" U231A # watch
