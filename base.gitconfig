@@ -102,7 +102,8 @@
 
 [merge]
     # tool = bc4
-    tool = kdiff3
+    # tool = kdiff3
+    tool = vscode
     conflictstyle = diff3
 [mergetool]
     keeptemporaries = false
@@ -113,14 +114,12 @@
 [difftool "kdiff3"]
     path = C:/Users/ChieltenBrinke/AppData/Local/Programs/KDiff3/bin/kdiff3.exe
 
-[difftool "vscode"]
-    cmd = code --wait --diff $LOCAL $REMOTE
-
+[mergetool "vscode"]
+    cmd = code --wait --merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 
 [mergetool "kdiff3"]
     path = C:/Users/ChieltenBrinke/AppData/Local/Programs/KDiff3/bin/kdiff3.exe
-[mergetool "vscode"]
-    cmd = code --wait $MERGED
+
 [mergetool "meld"]
     # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED" --auto-merge
     trustExitCode = false
