@@ -3,6 +3,9 @@
     path = ../neo-ansi/apps/delta/neo-ansi.gitconfig
 
 [delta]
+    # Convert windows style paths to linux style paths, for ease of copy-pasting
+    file-transformation = "s|\\\\|/|g"
+
     syntax-theme = terminal-neo-ansi
     features = decent-decorations zebra-neo-ansi
     # features = plain-git-colors
