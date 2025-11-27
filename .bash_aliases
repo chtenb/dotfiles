@@ -219,7 +219,7 @@ vpncli='"/c/Program Files (x86)/Cisco/Cisco Secure Client/vpncli.exe"'
 alias vpn-cli="$vpncli"                                   # open CLI
 alias ibm-vpn="$vpncli connect \"EUROPE-MEA (windows)\""  # connect to IBM
 alias no-vpn="$vpncli disconnect"                         # disconnect
-alias delft-vpn='"/c/Program Files/Google/Chrome/Application/chrome.exe" "https://bmfw-052p-e4d-e101.e4d-nl.ibm.com:6081/php/uid.php?vsys=1&rule=0"'
+alias delft-vpn='"/c/Program Files/Google/Chrome/Application/chrome.exe" "https://bmfw-170p-e4d-e101.e4d-nl.ibm.com:6081/php/uid.php?vsys=1&rule=0"'
 vpn() {
   ibm-vpn
   delft-vpn
