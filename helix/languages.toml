@@ -74,19 +74,26 @@ indent = { tab-width = 8, unit = "\t" }
 name = "sql"
 formatter = { command = "sqlformat", args = ["--reindent", "--indent_width", "2", "--keywords", "upper", "--identifiers", "lower", "-"] }
 
+[language-server.csharp]
+command = "csharp-language-server"
+
 [[language]]
 name = "c-sharp"
-auto-format = false
-language-servers = [ "omnisharp" ]
+language-servers = ["csharp"]
 
-[language-server.omnisharp]
+# [[language]]
+# name = "c-sharp"
+# auto-format = false
+# language-servers = [ "omnisharp" ]
+
+# [language-server.omnisharp]
 # relevant defaults:
 # csharp-ls = { command = "csharp-ls" }
 # omnisharp = { command = "OmniSharp", args = [ "--languageserver" ] }
 # omnisharp = { command = "OmniSharp", args = [ "--languageserver" ], timeout = 30 }
-command = "dotnet"
-args = [ "C:/Program Files/OmniSharp/OmniSharp.dll", "--languageserver" ]
-timeout = 30
+# command = "dotnet"
+# args = [ "C:/Program Files/OmniSharp/OmniSharp.dll", "--languageserver" ]
+# timeout = 30
 
 [language-server.ucm]
 command = "ncat"
