@@ -1456,50 +1456,7 @@
 <Multi_key> <v> <v>                     : "ʌ"   U028C           # LATIN SMALL LETTER TURNED V
 <Multi_key> <u> <i>			: "ɯ"	U026F		# LATIN SMALL LETTER TURNED M
 # doubling a letter seems to be mostly used for turning
-<Multi_key> <w> <w>			: "ʍ"	U028D		# LATIN SMALL LETTER TURNED W
-<Multi_key> <y> <y>			: "ʎ"	U028E		# LATIN SMALL LETTER TURNED Y
-<Multi_key> <a> <a>			: "ɐ"	U0250		# LATIN SMALL LETTER TURNED A
-<Multi_key> <h> <h>			: "ɥ"	U0265		# LATIN SMALL LETTER TURNED H
-# ı is already available in the "standard" .XCompose
-<Multi_key> <j> <period>    		: "ȷ"	U0237		# LATIN SMALL LETTER DOTLESS J
-<Multi_key> <exclam> <period>		: "Ꞌ"	UA78B		# LATIN CAPITAL LETTER SALTILLO
-<Multi_key> <exclam> <underscore> <period>		: "ꞌ"	UA78C		# LATIN SMALL LETTER SALTILLO
-# I'll use capitals for a different double
-<Multi_key> <W> <W>			: "ʬ"	U02AC		# LATIN LETTER BILABIAL PERCUSSIVE
-# Also handy for writing urls: http://ʬw.omniglot.com/
-# Sorry, I miss having this and hate having to use colon instead:
-<Multi_key> <colon> <plus>  	      	: "ː"	U02D0		# MODIFIER LETTER TRIANGULAR COLON
-# ɣ? ᴥ?  Important enough to add? ᴥ is cool just as a "latin" letter.
-<Multi_key> <g> <h>	     	    : "ɣ"   U0263     # LATIN SMALL LETTER GAMMA
-# It looks like a ɣ and makes an "o" sorta sound:
-<Multi_key> <o> <g> <h>	      	    : "ɤ"  U0264      # LATIN SMALL LETTER RAMS HORN
-<Multi_key> <a> <i> <n>		    : "ᴥ"   U1D25     # LATIN LETTER AIN
-# Sometimes it's a "tail", sometimes a "hook", and sometimes a "retroflex hook"
-<Multi_key> <d> <comma>		    : "ɖ"   U0256     # LATIN SMALL LETTER D WITH TAIL
-<Multi_key> <l> <comma>		    : "ɭ"   U026D     # LATIN SMALL LETTER L WITH RETROFLEX HOOK
-<Multi_key> <n> <comma>		    : "ɳ"   U0273     # LATIN SMALL LETTER N WITH RETROFLEX HOOK
-<Multi_key> <s> <comma>		    : "ʂ"   U0282     # LATIN SMALL LETTER S WITH HOOK
-<Multi_key> <t> <comma>		    : "ʈ"   U0288     # LATIN SMALL LETTER T WITH RETROFLEX HOOK
-<Multi_key> <z> <comma>		    : "ʐ"   U0290     # LATIN SMALL LETTER Z WITH RETROFLEX HOOK
-# This is used for functions, folders, etc.  Yeah, the hook's facing wrong.
-<Multi_key> <f> <comma>		    : "ƒ"   U0192     # LATIN SMALL LETTER F WITH HOOK
-# Sigh, might as well do implosives.  Which is also sometimes a hook.
-<Multi_key> <b> <apostrophe>	    : "ɓ"   U0253     # LATIN SMALL LETTER B WITH HOOK
-<Multi_key> <d> <apostrophe>	    : "ɗ"   U0257     # LATIN SMALL LETTER D WITH HOOK
-<Multi_key> <g> <apostrophe>	    : "ɠ"   U0260     # LATIN SMALL LETTER G WITH HOOK
-<Multi_key> <g> <g>		    : "ɡ"   U0261     # LATIN SMALL LETTER SCRIPT G
-# The h looks the same...
-<Multi_key> <h> <apostrophe>	    : "ɦ"   U0266     # LATIN SMALL LETTER H WITH HOOK
-<Multi_key> <G> <apostrophe>	    : "ʛ"   U029B     # LATIN LETTER SMALL CAPITAL G WITH HOOK
-<Multi_key> <N> <o>			: "№"	U2116		# NUMERO SIGN
-<Multi_key> <R> <x>			: "℞"	U211E		# PRESCRIPTION TAKE
-<Multi_key> <P> <e> <r>			: "⅌"	U214C		# PER SIGN
-<Multi_key> <o> <z> <period>		: "℥"	U2125		# OUNCE SIGN
-<Multi_key> <s> <c> <r> <period>	: "℈"	U2108		# SCRUPLE
-# There are all kinds of awesome combining characters in the U+0300 page.
-# There are a bunch of other awesome combining characters like U+20E0
-<Multi_key> <asterisk> <period> <period> <period> : "๛" U0E5B   # THAI CHARACTER KHOMUT (end of chapter)
-#
+
 # Music stuff.  # is the music mnemonic.
 <Multi_key> <numbersign> <b>		: "♭" U266d # MUSIC FLAT SIGN
 <Multi_key> <numbersign> <f>		: "♮" U266e # MUSIC NATURAL SIGN
@@ -1516,84 +1473,6 @@
 <Multi_key> <numbersign> <w>            : "𝅝" U0001d15d	# MUSICAL SYMBOL WHOLE NOTE
 
 
-# Combining accents, for making things you don't have precomposed chars or keystrokes for:
-<Multi_key> <backslash> <grave>	: "̀"  U0300   # COMBINING GRAVE ACCENT
-<Multi_key> <backslash> <apostrophe>    : "́"   U0301   # COMBINING ACUTE ACCENT
-<Multi_key> <backslash> <asciicircum>    : "̂"   U0302   # COMBINING CIRCUMFLEX ACCENT
-<Multi_key> <backslash> <asciitilde>       : "̃"   U0303	# COMBINING TILDE
-# # <Multi_key> <backslash> <equal>		: "̄"	U0304	# COMBINING MACRON
-<Multi_key> <backslash> <backslash> <equal>		: "̅"	U0305	# COMBINING OVERLINE -- ???
-# <Multi_key> <backslash> <U>		: "̆"	U0306	# COMBINING BREVE
-<Multi_key> <backslash> <period>	: "̇"	U0307	# COMBINING DOT ABOVE
-<Multi_key> <backslash> <quotedbl>	: "̈"	U0308	# COMBINING DIAERESIS
-<Multi_key> <backslash> <question>	: "̉"	U0309	# COMBINING HOOK ABOVE
-<Multi_key> <backslash> <o>		: "̊"	U030a	# COMBINING RING ABOVE
-# That now conflicts with the new 🙌 in the system xcompose.  Alternative:
-<Multi_key> <backslash> <0>   	       	: "̊"	U030a	# COMBINING RING ABOVE
-<Multi_key> <backslash> <backslash> <apostrophe>	: "̋"	U030b	# COMBINING DOUBLE ACUTE ACCENT -- ??
-# <Multi_key> <backslash> <c>		: "̌"	U030c	# COMBINING CARON
-<Multi_key> <backslash> <bar>       	: "̍"	U030d	# COMBINING VERTICAL LINE ABOVE
-<Multi_key> <backslash> <2> <bar>	: "̎"	U030e	# COMBINING DOUBLE VERTICAL LINE ABOVE
-<Multi_key> <backslash> <2> <grave>	: "̏"	U030f	# COMBINING DOUBLE GRAVE ACCENT
-# For writing PSILI and DASIA in Greek
-# Ugh, better key-coding?  I may need @ for BELOW.
-<Multi_key> <backslash> <backslash> <backslash> <comma>	:	"̒"  U0312   # COMBINING TURNED COMMA ABOVE
-<Multi_key> <backslash> <backslash> <comma>	:	"̓"  U0313   # COMBINING COMMA ABOVE
-<Multi_key> <backslash> <backslash> <less> <comma>	:	"̔"   U0314   # COMBINING REVERSED COMMA ABOVE
-<Multi_key> <backslash> <f> <m>                 : "͒"   U0352   # COMBINING FERMATA
-<Multi_key> <backslash> <parenleft> <period>	: "̐"	U0310	# COMBINING CHANDRABINDU
-# <Multi_key> <backslash> <i> <b>		: "̑"	U0311	# COMBINING INVERTED BREVE -- ??
-<Multi_key> <backslash> <parenleft> <parenright>: "⃝"  U20DD # COMBINING ENCLOSING CIRCLE
-<Multi_key> <backslash> <bracketleft> <q> <bracketright>:    "⃞"  U20DE     # COMBINING ENCLOSING SQUARE
-<Multi_key> <backslash> <bracketleft> <d> <bracketright>:    "⃟"  U20DF     # COMBINING ENCLOSING DIAMOND
-<Multi_key> <backslash> <parenleft> <slash> <parenright>:    "⃠"	 U20E0	   # COMBINING ENCLOSING CIRCLE BACKSLASH
-<Multi_key> <backslash> <bracketleft> <s> <bracketright>:    "⃢"  U20E2     # COMBINING ENCLOSING SCREEN
-<Multi_key> <backslash> <bracketleft> <k> <bracketright>:    "⃣"  U20E3     # COMBINING ENCLOSING KEYCAP
-<Multi_key> <backslash> <bracketleft> <t> <bracketright>:    "⃤"  U20E4     # COMBINING ENCLOSING TRIANGLE
-<Multi_key> <backslash> <2> <slash>:  "⃫"  U20EB              # COMBINING LONG DOUBLE SOLIDUS OVERLAY
-<Multi_key> <backslash> <asterisk>:   "⃰"  U20F0     # COMBINING ASTERISK ABOVE
-<Multi_key> <backslash> <exclam>	: "̣"   U0323   # COMBINING DOT BELOW
-# With only one underscore it conflicts with stuff.
-# # <Multi_key> <backslash> <underscore> <underscore>	: "̱"	U0331	# COMBINING MACRON BELOW
-<Multi_key> <backslash> <backslash> <underscore>	: "̲"	U0332	# COMBINING LOW LINE
-<Multi_key> <backslash> <backslash> <backslash> <underscore>	: "̳"	U0333	# COMBINING DOUBLE LOW LINE
-
-# The @ sign will signify reversal to the bottom of the glyph, 'kay?
-
-<Multi_key> <backslash> <at> <o>	: "̥"	U0325	# COMBINING RING BELOW
-
-# <Multi_key> <backslash> <at> <c>	: "̬"	U032c	# COMBINING CARON BELOW
-<Multi_key> <backslash> <at> <asciicircum>	: "̭"	U032d	# COMBINING CIRCUMFLEX ACCENT BELOW
-# <Multi_key> <backslash> <at> <U>	: "̮"	U032e	# COMBINING BREVE BELOW
-# <Multi_key> <backslash> <at> <i> <b>	: "̯"	U032f	# COMBINING INVERTED BREVE BELOW -- ??
-
-# How about leading & (or &&?) for double combiners?  There aren't many anyway.
-# Except that I found myself assuming it was "2" for double.
-# <Multi_key> <backslash> <ampersand> <at> <U> : "͜" U035C # COMBINING DOUBLE BREVE BELOW
-# <Multi_key> <backslash> <2> <at> <U> : "͜" U035C # COMBINING DOUBLE BREVE BELOW
-# <Multi_key> <backslash> <ampersand> <U>	  : "͝"	U035D   # COMBINING DOUBLE BREVE
-# <Multi_key> <backslash> <2> <U>	  : "͝"	U035D   # COMBINING DOUBLE BREVE
-# # <Multi_key> <backslash> <ampersand> <minus> : "͞" U035E	# COMBINING DOUBLE MACRON
-# # <Multi_key> <backslash> <2> <minus> : "͞" U035E	# COMBINING DOUBLE MACRON
-# # <Multi_key> <backslash> <ampersand> <at> <minus> : "͟" U035F # COMBINING DOUBLE MACRON BELOW
-# # <Multi_key> <backslash> <2> <at> <minus> : "͟" U035F # COMBINING DOUBLE MACRON BELOW
-# # <Multi_key> <backslash> <ampersand> <underscore> : "͟" U035F # COMBINING DOUBLE MACRON BELOW
-# # <Multi_key> <backslash> <2> <underscore> : "͟" U035F # COMBINING DOUBLE MACRON BELOW
-<Multi_key> <backslash> <ampersand> <asciitilde> : "͠" U0360 # COMBINING DOUBLE TILDE
-<Multi_key> <backslash> <2> <asciitilde> : "͠" U0360 # COMBINING DOUBLE TILDE
-# <Multi_key> <backslash> <ampersand> <i> <b>  : "͡"  U0361 # COMBINING DOUBLE INVERTED BREVE
-# <Multi_key> <backslash> <2> <i> <b>  : "͡"  U0361 # COMBINING DOUBLE INVERTED BREVE
-# <Multi_key> <backslash> <ampersand> <at> <i> <b>  : "᷼"  U1DFC # COMBINING DOUBLE INVERTED BREVE BELOW
-# <Multi_key> <backslash> <2> <at> <i> <b>  : "᷼"  U1DFC # COMBINING DOUBLE INVERTED BREVE BELOW
-# Might as well finish up the set.
-<Multi_key> <backslash> <ampersand> <greater> : "͢" U0362 # COMBINING DOUBLE RIGHTWARDS ARROW BELOW
-<Multi_key> <backslash> <2> <greater> : "͢" U0362 # COMBINING DOUBLE RIGHTWARDS ARROW BELOW
-
-<Multi_key> <period> <parenright>	: "͒"	U0352   # COMBINING FERMATA
-
-<Multi_key> <backslash> <backslash> <asterisk>	: "҉"	U0489	# COMBINING CYRILLIC MILLIONS SIGN  -- aka COMBINING SHINY
-<Multi_key> <P> <minus>		: "₽"	U20BD	# RUBLE SIGN
-<Multi_key> <p> <minus>		: "₽"	U20BD	# RUBLE SIGN
 
 # How about for a little extra control:
 <Multi_key> <Z> <W> <S> <P>		: "​"	U200B	# ZERO WIDTH SPACE
