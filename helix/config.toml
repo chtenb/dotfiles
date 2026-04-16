@@ -2,7 +2,7 @@ theme = "neo-ansi"
 
 [editor]
 auto-pairs = false
-line-number = "relative"
+# line-number = "relative"
 shell = ["sh", "-c"]
 # shell = ["nu", "-l", "--stdin", "-c"]
 #mouse = false
