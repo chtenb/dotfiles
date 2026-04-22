@@ -214,8 +214,6 @@
 <Multi_key> <O> <asterisk> : "⊛"  # latex \circledast
 <Multi_key> <l> <a> <n> <g> <l> <e> : "⟨"  # latex \langle
 <Multi_key> <r> <a> <n> <g> <l> <e> : "⟩"  # latex \rangle
-<Multi_key> <bracketleft> : "⟦" # latex \llbracket
-<Multi_key> <bracketright> : "⟧" # latex \rrbracket
 <Multi_key> <underscore> <bracketleft> : "⌊" # latex ?
 <Multi_key> <underscore> <bracketright> : "⌋" # latex ?
 <Multi_key> <asciicircum> <bracketleft> : "⌈" # latex ?
