@@ -20,7 +20,7 @@ format = '($ahead_behind( [$all_status](bold red)) )'
 
 
 [directory]
-use_logical_path = false
+use_logical_path = true
 truncate_to_repo = false
 truncation_length = 10
 before_repo_root_style = 'cyan'
