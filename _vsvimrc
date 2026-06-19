@@ -4,7 +4,6 @@ set hlsearch        " highlight search
 set incsearch       " Incremental search
 set gdefault        " auto g flag for substitution
 set number
-set relativenumber
 
 " Indentation stuff
 set softtabstop=4
