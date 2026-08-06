@@ -907,6 +907,8 @@
 <Multi_key> <bracketright> <bracketright>: "⊐"  U2290           # SQUARE ORIGINAL OF
 <Multi_key> <bracketright> <equal>      : "⊒"   U2292           # SQUARE ORIGINAL OF OR EQUAL TO
 <Multi_key> <bracketright> <underscore> : "⊒"   U2292           # SQUARE ORIGINAL OF OR EQUAL TO
+<Multi_key> <bracketleft> <^>  : "⊓"
+<Multi_key> <bracketleft> <U>  : "⊔"
 # If I did more Haskell, I'd want this more:
 <Multi_key> <underscore> <bar> <underscore>:	"⊥"	 U22A5	# UP TACK (bottom) or should we use U27C2 PERPENDICULAR?
 <Multi_key> <underscore> <exclam> <underscore>:	"⊤"	 U22A4	# DOWN TACK (opposite of False)
