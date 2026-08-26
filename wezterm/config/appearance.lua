@@ -84,7 +84,7 @@ function module.get_config()
   Config.text_blink_ease_out = "EaseOut"
   Config.text_blink_rapid_ease_in = "Linear"
   Config.text_blink_rapid_ease_out = "Linear"
-  Config.text_blink_rate = 500
+  Config.text_blink_rate = 1000
   Config.text_blink_rate_rapid = 250
 
   ---visual bell
