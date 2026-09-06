@@ -1,5 +1,41 @@
 # use-grammars = { only = [ "koka" ] }
 
+[[language]]
+name = "tsv"
+scope = "source.tsv"
+injection-regex = "tsv"
+file-types = ["tsv"]
+roots = []
+soft-wrap = { enable = false, wrap-at-text-width = false }
+indent = { tab-width = 28, unit = "\t" }
+
+[[language]]
+name = "tpsv"
+scope = "source.tpsv"
+injection-regex = "tpsv"
+file-types = ["tpsv"]
+roots = []
+soft-wrap = { enable = false, wrap-at-text-width = false }
+indent = { tab-width = 8, unit = "\t" }
+
+[[language]]
+name = "nt8"
+scope = "source.nt8"
+injection-regex = "nt8"
+file-types = ["nt8"]
+roots = []
+soft-wrap = { enable = false, wrap-at-text-width = false }
+indent = { tab-width = 8, unit = "\t" }
+
+[[language]]
+name = "nt16"
+scope = "source.nt16"
+injection-regex = "nt16"
+file-types = ["nt16"]
+roots = []
+soft-wrap = { enable = false, wrap-at-text-width = false }
+indent = { tab-width = 16, unit = "\t" }
+
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
@@ -51,24 +87,6 @@ indent = { tab-width = 8, unit = "\t" }
 formatter = { command = 'sed', args = ['-b', 's/[ \t]*(\r?)$/\1/'] }
 language-servers = ["scls"]
 
-
-[[language]]
-name = "tsv"
-scope = "source.tsv"
-injection-regex = "tsv"
-file-types = ["tsv"]
-roots = []
-soft-wrap = { enable = false, wrap-at-text-width = false }
-indent = { tab-width = 28, unit = "\t" }
-
-[[language]]
-name = "tpsv"
-scope = "source.tpsv"
-injection-regex = "tpsv"
-file-types = ["tpsv"]
-roots = []
-soft-wrap = { enable = false, wrap-at-text-width = false }
-indent = { tab-width = 8, unit = "\t" }
 
 [[language]]
 name = "sql"
