@@ -24,35 +24,43 @@ autoload -Uz compinit && compinit -C
 autoload -Uz promptinit && promptinit # Prompt theming system
 
 eval "$(zoxide init zsh)"
+bindkey -e
 
-bindkey -v
+# Swallow focus-in/out reports (\e[I / \e[O) so they can't do anything
+_noop() {}
+zle -N _noop
+bindkey '\e[I' _noop
+bindkey '\e[O' _noop
 
-# Emacs-style bindings in vi insert mode
-bindkey -M viins '^A' beginning-of-line      # Ctrl-A → move to start of line
-bindkey -M viins '^E' end-of-line            # Ctrl-E → move to end of line
-bindkey -M viins '^K' kill-line              # Ctrl-K → kill to end of line
-bindkey -M viins '^Y' yank                   # Ctrl-Y → yank (paste) last kill
-bindkey -M viins '^D' delete-char            # Ctrl-D → delete char under cursor
+# Turn off focus reporting if some program (e.g. nvim) left it on
+autoload -Uz add-zsh-hook
+_disable_focus_reporting() { printf '\e[?1004l' }
+add-zsh-hook precmd _disable_focus_reporting
+
+# Emacs-style line editing
+bindkey '^A' beginning-of-line      # Ctrl-A → move to start of line
+bindkey '^E' end-of-line            # Ctrl-E → move to end of line
+bindkey '^K' kill-line              # Ctrl-K → kill to end of line
+bindkey '^Y' yank                   # Ctrl-Y → yank (paste) last kill
+bindkey '^D' delete-char            # Ctrl-D → delete char under cursor
 
 # Delete under cursor
-bindkey -M viins '\e[3~' delete-char
+bindkey '\e[3~' delete-char
 
 # Ctrl-Delete → kill next word
-bindkey -M viins '\e[3;5~' kill-word
+bindkey '\e[3;5~' kill-word
 
 # Ctrl-Left/Right → move by word
-bindkey -M viins '\e[1;5D' backward-word
-bindkey -M viins '\e[1;5C' forward-word
-# some terminals use 5D/5C without the “1;”
-bindkey -M viins '\e[5D'   backward-word
-bindkey -M viins '\e[5C'   forward-word
+bindkey '\e[1;5D' backward-word
+bindkey '\e[1;5C' forward-word
+bindkey '\e[5D'   backward-word
+bindkey '\e[5C'   forward-word
 
 # Home/End → go to start/end of line
-bindkey -M viins '\e[1~' beginning-of-line
-bindkey -M viins '\e[4~' end-of-line
-# alternate codes sometimes emitted:
-bindkey -M viins '\e[H'   beginning-of-line
-bindkey -M viins '\e[F'   end-of-line
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
+bindkey '\e[H'  beginning-of-line
+bindkey '\e[F'  end-of-line
 
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-word)
 bindkey '^L' forward-word
