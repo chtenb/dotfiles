@@ -36,6 +36,15 @@ roots = []
 soft-wrap = { enable = false, wrap-at-text-width = false }
 indent = { tab-width = 16, unit = "\t" }
 
+[[language]]
+name = "nt32"
+scope = "source.nt32"
+injection-regex = "nt32"
+file-types = ["nt32"]
+roots = []
+soft-wrap = { enable = false, wrap-at-text-width = false }
+indent = { tab-width = 32, unit = "\t" }
+
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
