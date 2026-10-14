@@ -1,4 +1,17 @@
 # use-grammars = { only = [ "koka" ] }
+use-grammars = { only = [ "monolog" ] }
+
+[[language]]
+name = "monolog"
+scope = "source.monolog"
+file-types = ["mlg"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+grammar = "monolog"
+
+[[grammar]]
+name = "monolog"
+source = { path = "D:/monolog/tree-sitter/" }
 
 [[language]]
 name = "tsv"
