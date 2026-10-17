@@ -1,5 +1,6 @@
 export PAGER="less --tabs=4 -RF"
 alias lesser="less --tabs=4 -RF"
+alias ruplac='MSYS_NO_PATHCONV=1 ruplacer'
 
 # Fast dir crawling
 c() {
