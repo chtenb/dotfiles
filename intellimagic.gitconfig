@@ -1,3 +1,5 @@
+[include]
+    path = ~/prj/dotfiles/windows.gitconfig
 [guitool "Pull"]
     cmd = "git remote update --prune; git pull origin $(git symbolic-ref HEAD | sed s/refs.heads.//)"
 [guitool "Update remote namespace"]
@@ -23,23 +25,5 @@
     drlogx = !sh -c 'git drlog $0 | powershell -NoProfile -ExecutionPolicy Bypass -File /cmd/Get-DRDetails.ps1'
     iclone = !sh -c 'git clone --recurse git@github.ibm.com:IntelliMagic/$0.git && installhooks.sh $0/.git'
     getmodules = !sh -c 'git submodule update --init --recursive && installhooks.sh ./.git'
-[include]
-    path = ~/prj/dotfiles/windows.gitconfig
-[push]
-    default = simple
-[core]
-    preloadindex = true
-[mergetool]
-    keepbackup = false
-[fetch]
-    recurseSubmodules = true
-[winUpdater]
-    recentlySeenVersion = 2.17.0.windows.1
-[credential "http://devhub:3000"]
-    provider = generic
 [http]
     sslbackend = schannel
-[credential "https://devhub.intellimagic.local"]
-    provider = generic
-[credential "https://devhub.intellimagic.ibm.com"]
-    provider = generic

@@ -1,13 +1,24 @@
+[include]
+    path = delta/main.gitconfig
 [credential "https://github.com"]
     username = chtenb
 [user]
     name = chtenb
     email = ctenbrinke@gmail.com
+[advice]
+    detachedHead = false
+[gc]
+    auto = 256
+[color]
+    ui=always
 [submodule]
     recurse = true
 [push]
     default = simple
     recurseSubmodules = false
+[fetch]
+    prune = true
+    recurseSubmodules = true
 [core]
     excludesfile = ~/prj/dotfiles/.gitignore_global
     hooksPath = ~/prj/dotfiles/githooks
@@ -18,8 +29,10 @@
     trustctime = false
     filemode = false
     safecrlf = false
-[fetch]
-    prune = true
+[mergetool]
+    keepbackup = false
+
+# COMMANDS
 [alias]
     l = "!bash -c 'branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name ${branch}@{upstream} 2>/dev/null); git log -10 --notes --graph --abbrev-commit --decorate --left-right --format=format:\"%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)\" ${branch} ${upstream:+$upstream} ${@:2}' -"
     lg = "!bash -c 'branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name ${branch}@{upstream} 2>/dev/null); git log --notes --graph --abbrev-commit --decorate --left-right --format=format:\"%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)\" ${branch} ${upstream:+$upstream} ${@:2}' -"
@@ -72,14 +85,8 @@
     local-diff = "!bash -c 'f() { git diff $(git merge-base ORIG_HEAD MERGE_HEAD) ORIG_HEAD \"$@\"; }; f \"$@\"' --"
 
     patch = !git --no-pager diff --no-color
-[advice]
-    detachedHead = false
-[gc]
-    auto = 256
 
-[color]
-    ui=always
-
+# TOOLS
 [pager]
     diff = delta
     log = delta
@@ -89,16 +96,10 @@
 [interactive]
     diffFilter = delta --color-only #--features interactive
 
-[include]
-    path = delta/main.gitconfig
-
-
-
 [diff]
     colorMoved = default
     colorMovedWS = ignore-space-at-eol
     guitool = vscode
-
 
 [merge]
     # tool = bc4
@@ -109,7 +110,6 @@
     keeptemporaries = false
     keepbackup = false
     hideresolved = true
-
 
 [difftool "kdiff3"]
     path = C:/Users/ChieltenBrinke/AppData/Local/Programs/KDiff3/bin/kdiff3.exe
