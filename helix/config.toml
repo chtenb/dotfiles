@@ -2,12 +2,8 @@ theme = "neo-ansi"
 
 [editor]
 auto-pairs = false
-# line-number = "relative"
 shell = ["sh", "-c"]
-# shell = ["nu", "-l", "--stdin", "-c"]
 #mouse = false
-gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
-# gutters = []
 bufferline = "multiple"
 color-modes = true
 undercurl = true
@@ -15,6 +11,12 @@ true-color = true
 text-width = 88
 rainbow-brackets = true
 atomic-save = false
+gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
+end-of-line-diagnostics = "error"
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+other-lines = "disable"
 
 [editor.soft-wrap]
 enable = true
@@ -24,7 +26,6 @@ max-wrap = 25 # increase value to reduce forced mid-word wrapping
 
 [editor.smart-tab]
 enable = false
-
 
 [editor.indent-guides]
 #render = true
@@ -42,10 +43,6 @@ tab = "→"
 space = "·"
 newline = "⏎"
 #tabpad = "·"
-
-[editor.inline-diagnostics]
-cursor-line = "hint"
-# other-lines = "error"
 
 [editor.file-picker]
 hidden = false
