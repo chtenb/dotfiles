@@ -34,6 +34,7 @@
 
 # COMMANDS
 [alias]
+    rawdiff = --no-pager diff --no-color
     l = "!f() { git lg \"${1:-HEAD}\" -10 \"${@:2}\"; }; f"
     lg = "!bash -c 'branch=${1:-HEAD}; upstream=$(git rev-parse --abbrev-ref --symbolic-full-name \"$branch@{upstream}\" 2>/dev/null) || upstream=; git log --notes --graph --abbrev-commit --decorate --left-right --format=format:\"%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset) %C(dim red)(%ar)%C(reset)\" \"$branch\" ${upstream:+\"$upstream\"} \"${@:2}\"' -"
 
