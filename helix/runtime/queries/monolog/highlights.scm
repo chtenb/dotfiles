@@ -16,6 +16,16 @@
       path: (path [(identifier) (quoted_identifier)] @variable.other.member))
     value: (_)))
 
+; The terms of a top-level sum, as in {R:[a:x], S:[b:y]}, are top-level members too. After the sum rule, since the
+; later pattern wins.
+(rule
+  (qual_expr
+    value: (sum
+      (qual_expr
+        pattern: (path_pattern
+          path: (path [(identifier) (quoted_identifier)] @type))
+        value: (_)))))
+
 ; The shorthand [a] is an attribute bound to a variable of the same name: it is highlighted as a variable, since that is
 ; what other members join on. Themes without variable.other show it as a plain variable.
 (record
