@@ -196,10 +196,7 @@ alias ex="explorer ."
 alias gg="git grep -IPn --color=always --recurse-submodules"
 alias ggn="git grep -IPn --color=always"
 alias gr="git grep --no-index -IPn --color=always"
-alias grec="grep --color"
 alias rcname="python -c \"for i,c in enumerate(f'{input():<12}'[:12]): print(f'\t<C{i+1:>02}>{ord(c)}</C{i+1:>02}>')\""
-#alias die="sudo shutdown -h now"
-alias tmux="TERM=screen-256color-bce tmux"
 
 # Ping google server
 alias pingg="ping google.nl"
