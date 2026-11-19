@@ -1,3 +1,5 @@
+[credential]
+    helper = wincred
 [include]
     path = ~/prj/dotfiles/windows.gitconfig
 [guitool "Pull"]
